@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download Certificate | SSSAM Academy</title>
+    <meta name="description" content="Download your certificate PDF from SSSAM Academy." />
+    <link rel="icon" href="/assets/sssam.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/components/style.css" />
+    <link rel="stylesheet" href="/components/certificate.css" />
+  </head>
+  <body>
+    <main class="certificate-page">
+      <section class="certificate-hero">
+        <p class="hero-kicker">SSSAM Academy</p>
+        <h1>Download Certificate</h1>
+        <p>Enter details to download your certificate PDF.</p>
+      </section>
+
+      <section class="certificate-grid single-grid">
+        <article class="certificate-card" id="download-certificate">
+          <div class="card-head">
+            <h2>Download Certificate</h2>
+            <p>Provide certificate details to download your PDF certificate.</p>
+          </div>
+
+          <form id="downloadCertificateForm" class="form-grid" novalidate>
+            <div class="form-field">
+              <label for="downloadCertificateNumber">Certificate Number</label>
+              <input type="text" id="downloadCertificateNumber" name="certificateNumber" required />
+              <small class="error-text" id="downloadCertificateNumberError"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="downloadDob">Date of Birth</label>
+              <input type="date" id="downloadDob" name="dateOfBirth" required />
+              <small class="error-text" id="downloadDobError"></small>
+            </div>
+
+            <div class="form-field-full action-wrap">
+              <button type="submit" class="btn-primary">Download Certificate</button>
+            </div>
+          </form>
+
+          <div id="downloadResult" class="result-card" hidden></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/components/certificate.js"></script>
+    <script src="/components/script.js"></script>
+  </body>
+</html>

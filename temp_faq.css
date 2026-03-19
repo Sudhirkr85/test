@@ -1,0 +1,207 @@
+/* FAQ SECTION */
+#faq-html-css-course {
+  padding: 84px 0;
+  background: linear-gradient(180deg, rgba(32, 65, 128, 0.04) 0%, rgba(224, 167, 48, 0.04) 100%);
+}
+
+#faq-html-css-course header {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+#faq-html-css-course h2 {
+  margin: 0 0 10px;
+  font-size: clamp(28px, 4.2vw, 42px);
+  line-height: 1.25;
+  font-weight: 700;
+  color: var(--text);
+  position: relative;
+  display: inline-block;
+}
+
+#faq-html-css-course h2::after {
+  content: "?";
+  position: absolute;
+  top: -8px;
+  right: -24px;
+  font-size: 28px;
+  color: var(--accent);
+  opacity: 0.7;
+  animation: faqQuestionBounce 2s ease-in-out infinite;
+}
+
+@keyframes faqQuestionBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+#faq-html-css-course details {
+  margin-bottom: 14px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  transition: all .3s ease;
+}
+
+#faq-html-css-course details[open] {
+  border-color: rgba(224, 167, 48, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  background: linear-gradient(135deg, rgba(224, 167, 48, 0.06), rgba(255, 255, 255, 0.03));
+}
+
+#faq-html-css-course summary {
+  padding: 20px 24px;
+  font-size: clamp(16px, 2.2vw, 19px);
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  position: relative;
+  transition: all .25s ease;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+#faq-html-css-course summary::-webkit-details-marker {
+  display: none;
+}
+
+#faq-html-css-course summary::before {
+  content: "+";
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(224, 167, 48, 0.2), rgba(224, 167, 48, 0.1));
+  color: var(--accent);
+  font-size: 24px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .3s ease;
+  line-height: 1;
+}
+
+#faq-html-css-course details[open] summary::before {
+  content: "−";
+  background: linear-gradient(135deg, var(--accent), rgba(224, 167, 48, 0.8));
+  color: #1a1a1a;
+  transform: rotate(180deg);
+}
+
+#faq-html-css-course summary:hover {
+  color: var(--accent);
+  padding-left: 28px;
+}
+
+#faq-html-css-course summary:hover::before {
+  background: linear-gradient(135deg, var(--accent), rgba(224, 167, 48, 0.8));
+  transform: scale(1.1);
+  box-shadow: 0 0 16px rgba(224, 167, 48, 0.4);
+}
+
+#faq-html-css-course details p {
+  padding: 0 24px 22px 66px;
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: clamp(14px, 2vw, 16px);
+  animation: faqAnswerSlideIn .4s ease-out;
+}
+
+@keyframes faqAnswerSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body.light-mode #faq-html-css-course {
+  background: linear-gradient(180deg, rgba(32, 65, 128, 0.05) 0%, rgba(224, 167, 48, 0.08) 100%);
+}
+
+body.light-mode #faq-html-css-course details {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(224, 167, 48, 0.05));
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+body.light-mode #faq-html-css-course details[open] {
+  background: linear-gradient(135deg, rgba(224, 167, 48, 0.12), rgba(255, 255, 255, 0.95));
+  border-color: rgba(224, 167, 48, 0.3);
+}
+
+body.light-mode #faq-html-css-course summary::before {
+  background: linear-gradient(135deg, rgba(224, 167, 48, 0.25), rgba(224, 167, 48, 0.15));
+}
+
+body.light-mode #faq-html-css-course details[open] summary::before {
+  background: linear-gradient(135deg, #e0a730, #f6cb6a);
+  color: #1a1a1a;
+}
+
+body.light-mode #faq-html-css-course summary:hover {
+  color: #c08415;
+}
+
+body.light-mode #faq-html-css-course summary:hover::before {
+  background: linear-gradient(135deg, #e0a730, #f6cb6a);
+}
+
+@media (max-width: 768px) {
+  #faq-html-css-course {
+    padding: 68px 0;
+  }
+
+  #faq-html-css-course header {
+    margin-bottom: 32px;
+  }
+
+  #faq-html-css-course h2::after {
+    right: -18px;
+    font-size: 24px;
+  }
+
+  #faq-html-css-course summary {
+    padding: 18px 20px;
+    font-size: 16px;
+  }
+
+  #faq-html-css-course details p {
+    padding: 0 20px 20px 58px;
+  }
+}
+
+@media (max-width: 480px) {
+  #faq-html-css-course summary {
+    padding: 16px 18px;
+    gap: 12px;
+  }
+
+  #faq-html-css-course summary::before {
+    width: 26px;
+    height: 26px;
+    font-size: 22px;
+  }
+
+  #faq-html-css-course details p {
+    padding: 0 18px 18px 56px;
+    font-size: 14px;
+  }
+
+  #faq-html-css-course summary:hover {
+    padding-left: 22px;
+  }
+}

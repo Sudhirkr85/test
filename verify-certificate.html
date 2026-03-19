@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verify Certificate | SSSAM Academy</title>
+    <meta name="description" content="Verify certificate authenticity at SSSAM Academy." />
+    <link rel="icon" href="/assets/sssam.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/components/style.css" />
+    <link rel="stylesheet" href="/components/certificate.css" />
+  </head>
+  <body>
+    <main class="certificate-page">
+      <section class="certificate-hero">
+        <p class="hero-kicker">SSSAM Academy</p>
+        <h1>Verify Certificate</h1>
+        <p>Check certificate authenticity using certificate number.</p>
+      </section>
+
+      <section class="certificate-grid single-grid">
+        <article class="certificate-card" id="verify-certificate">
+          <div class="card-head">
+            <h2>Verify Certificate</h2>
+            <p>Enter certificate number to verify authenticity.</p>
+          </div>
+
+          <form id="verifyCertificateForm" class="form-grid" novalidate>
+            <div class="form-field form-field-full">
+              <label for="verifyCertificateNumber">Certificate Number</label>
+              <input type="text" id="verifyCertificateNumber" name="certificateNumber" required />
+              <small class="error-text" id="verifyCertificateNumberError"></small>
+            </div>
+
+            <div class="form-field-full action-wrap">
+              <button type="submit" class="btn-primary">Verify Certificate</button>
+            </div>
+          </form>
+
+          <div id="verifyResult" class="result-card" hidden></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/components/certificate.js"></script>
+    <script src="/components/script.js"></script>
+  </body>
+</html>

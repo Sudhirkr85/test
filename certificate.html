@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificate Page | SSSAM Academy</title>
+    <meta
+      name="description"
+      content="Apply, verify, download and check certificate status online at SSSAM Academy."
+    />
+    <link rel="icon" href="/assets/sssam.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="/components/style.css" />
+    <link rel="stylesheet" href="/components/certificate.css" />
+  </head>
+
+  <body>
+    <main class="certificate-page">
+      <section class="certificate-hero">
+        <p class="hero-kicker">SSSAM Academy</p>
+        <h1>Certificate <span>Services</span></h1>
+        <p>
+          Apply Certificate, Verify Certificate, Download Certificate and Check
+          Application Status.
+        </p>
+        <div class="service-pills" aria-hidden="true">
+          <span>Apply</span>
+          <span>Verify</span>
+          <span>Download</span>
+          <span>Status</span>
+        </div>
+      </section>
+
+      <section class="certificate-grid">
+        <!-- SECTION 1: APPLY CERTIFICATE -->
+        <article class="certificate-card apply-card" id="apply-certificate">
+          <div class="card-head">
+            <h2>Apply Certificate</h2>
+            <p>Submit your details to request a new certificate.</p>
+          </div>
+
+          <form id="applyCertificateForm" class="form-grid" novalidate>
+            <div class="form-field">
+              <label for="applyFullName">Full Name</label>
+              <input type="text" id="applyFullName" name="fullName" required />
+              <small class="error-text" id="applyFullNameError"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="applyPhone">Phone Number</label>
+              <input type="tel" id="applyPhone" name="phoneNumber" maxlength="10" required />
+              <small class="error-text" id="applyPhoneError"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="applyEmail">Email</label>
+              <input type="email" id="applyEmail" name="email" required />
+              <small class="error-text" id="applyEmailError"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="applyDob">Date of Birth</label>
+              <input type="date" id="applyDob" name="dateOfBirth" required />
+              <small class="error-text" id="applyDobError"></small>
+            </div>
+
+            <div class="form-field form-field-full">
+              <label for="applyAddress">Address</label>
+              <textarea id="applyAddress" name="address" rows="3" required></textarea>
+              <small class="error-text" id="applyAddressError"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="applyCourse">Course</label>
+              <select id="applyCourse" name="course" required>
+                <option value="">Select Course</option>
+                <option>Ethical Hacking</option>
+                <option>Data Analytics</option>
+                <option>Data Engineering</option>
+                <option>Data Science</option>
+                <option>Web Development</option>
+                <option>Power BI</option>
+                <option>Graphic Design</option>
+                <option>Video Editing</option>
+                <option>Ruby</option>
+                <option>MySQL</option>
+                <option>PL/SQL</option>
+                <option>Oracle</option>
+                <option>.NET</option>
+                <option>Python Fullstack</option>
+                <option>Java Fullstack</option>
+                <option>AWS Cloud</option>
+                <option>CCNA</option>
+                <option>CCNP</option>
+                <option>Linux</option>
+                <option>Automation Testing</option>
+                <option>AutoCAD</option>
+                <option>MERN Stack</option>
+                <option>C, C++</option>
+                <option>Python</option>
+                <option>Java</option>
+                <option>PHP</option>
+                <option>Cyber Security</option>
+                <option>PostgreSQL</option>
+                <option>SQL Server</option>
+                <option>Spoken English</option>
+                <option>SAP</option>
+                <option>Tally</option>
+                <option>MIS</option>
+                <option>TALLY+GST</option>
+                <option>Advanced Excel</option>
+                <option>Interview Training</option>
+                <option>Digital Marketing</option>
+                <option>SEO</option>
+                <option>Google Ads</option>
+                <option>SMM</option>
+                <option>SEM</option>
+                <option>Basic Computer</option>
+                <option>DCA</option>
+                <option>ADCA</option>
+                <option>O Level</option>
+                <option value="Other (Course Not Listed)">Other (Course Not Listed)</option>
+              </select>
+              <small class="error-text" id="applyCourseError"></small>
+            </div>
+
+            <div class="form-field" id="otherCourseWrap" hidden>
+              <label for="otherCourseName">Enter Course Name</label>
+              <input type="text" id="otherCourseName" name="otherCourseName" />
+              <small class="error-text" id="otherCourseError"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="certificateType">Certificate Type</label>
+              <select id="certificateType" name="certificateType" required>
+                <option value="">Select Certificate Type</option>
+                <option>Training</option>
+                <option>Workshop</option>
+                <option>Internship</option>
+              </select>
+              <small class="error-text" id="certificateTypeError"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="duration">Duration</label>
+              <input type="text" id="duration" name="duration" placeholder="e.g. 3 Months" required />
+              <small class="error-text" id="durationError"></small>
+            </div>
+
+            <p class="important-note form-field-full">
+              Important: Certificate approval may take 24–48 hours.
+            </p>
+
+            <div class="form-field-full action-wrap">
+              <button type="submit" class="btn-primary">Apply Certificate</button>
+            </div>
+          </form>
+
+          <div id="applyResult" class="result-card" hidden></div>
+        </article>
+
+        <!-- SECTION 2: VERIFY CERTIFICATE -->
+        <article class="certificate-card verify-card" id="verify-certificate">
+          <div class="card-head">
+            <h2>Verify Certificate</h2>
+            <p>Check certificate authenticity using certificate number.</p>
+          </div>
+
+          <form id="verifyCertificateForm" class="form-grid" novalidate>
+            <div class="form-field form-field-full">
+              <label for="verifyCertificateNumber">Certificate Number</label>
+              <input type="text" id="verifyCertificateNumber" name="certificateNumber" required />
+              <small class="error-text" id="verifyCertificateNumberError"></small>
+            </div>
+
+            <div class="form-field-full action-wrap">
+              <button type="submit" class="btn-primary">Verify Certificate</button>
+            </div>
+          </form>
+
+          <div id="verifyResult" class="result-card" hidden></div>
+        </article>
+
+        <!-- SECTION 3: DOWNLOAD CERTIFICATE -->
+        <article class="certificate-card download-card" id="download-certificate">
+          <div class="card-head">
+            <h2>Download Certificate</h2>
+            <p>Provide details to download your certificate PDF.</p>
+          </div>
+
+          <form id="downloadCertificateForm" class="form-grid" novalidate>
+            <div class="form-field">
+              <label for="downloadCertificateNumber">Certificate Number</label>
+              <input type="text" id="downloadCertificateNumber" name="certificateNumber" required />
+              <small class="error-text" id="downloadCertificateNumberError"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="downloadDob">Date of Birth</label>
+              <input type="date" id="downloadDob" name="dateOfBirth" required />
+              <small class="error-text" id="downloadDobError"></small>
+            </div>
+
+            <div class="form-field-full action-wrap">
+              <button type="submit" class="btn-primary">Download Certificate</button>
+            </div>
+          </form>
+
+          <div id="downloadResult" class="result-card" hidden></div>
+        </article>
+
+        <!-- SECTION 4: CHECK APPLICATION STATUS -->
+        <article class="certificate-card status-card" id="check-status">
+          <div class="card-head">
+            <h2>Check Application Status</h2>
+            <p>Track your certificate request with Application ID.</p>
+          </div>
+
+          <form id="statusCertificateForm" class="form-grid" novalidate>
+            <div class="form-field form-field-full">
+              <label for="applicationId">Application ID</label>
+              <input type="text" id="applicationId" name="applicationId" required />
+              <small class="error-text" id="applicationIdError"></small>
+            </div>
+
+            <div class="form-field-full action-wrap">
+              <button type="submit" class="btn-primary">Check Status</button>
+            </div>
+          </form>
+
+          <div id="statusResult" class="result-card" hidden></div>
+        </article>
+      </section>
+
+      <section class="certificate-grid single-grid portal-links-block">
+        <article class="certificate-card">
+          <div class="card-head">
+            <h2>Need Quick Access?</h2>
+            <p>You can also open each service as a separate page.</p>
+          </div>
+          <div class="quick-links">
+            <a href="/apply-certificate.html" class="btn-primary">Apply Page</a>
+            <a href="/verify-certificate.html" class="btn-primary">Verify Page</a>
+            <a href="/download-certificate.html" class="btn-primary">Download Page</a>
+            <a href="/check-application-status.html" class="btn-primary">Status Page</a>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/components/certificate.js"></script>
+    <script src="/components/script.js"></script>
+  </body>
+</html>

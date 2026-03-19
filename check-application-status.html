@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Application Status | SSSAM Academy</title>
+    <meta name="description" content="Check your certificate application status at SSSAM Academy." />
+    <link rel="icon" href="/assets/sssam.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/components/style.css" />
+    <link rel="stylesheet" href="/components/certificate.css" />
+  </head>
+  <body>
+    <main class="certificate-page">
+      <section class="certificate-hero">
+        <p class="hero-kicker">SSSAM Academy</p>
+        <h1>Check Application Status</h1>
+        <p>Track your certificate application with application ID.</p>
+      </section>
+
+      <section class="certificate-grid single-grid">
+        <article class="certificate-card" id="check-status">
+          <div class="card-head">
+            <h2>Check Application Status</h2>
+            <p>Track your submitted certificate request using Application ID.</p>
+          </div>
+
+          <form id="statusCertificateForm" class="form-grid" novalidate>
+            <div class="form-field form-field-full">
+              <label for="applicationId">Application ID</label>
+              <input type="text" id="applicationId" name="applicationId" required />
+              <small class="error-text" id="applicationIdError"></small>
+            </div>
+
+            <div class="form-field-full action-wrap">
+              <button type="submit" class="btn-primary">Check Status</button>
+            </div>
+          </form>
+
+          <div id="statusResult" class="result-card" hidden></div>
+        </article>
+      </section>
+    </main>
+
+    <script src="/components/certificate.js"></script>
+    <script src="/components/script.js"></script>
+  </body>
+</html>
