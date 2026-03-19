@@ -2,7 +2,7 @@
   "use strict";
 
   // Change this in one place when backend host/port changes.
-  const BASE_URL = (window.APP_BASE_URL || "http://localhost:5000").replace(/\/+$/, "");
+  const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
 
   const APPLY_API = "/api/certificate/apply";
   const VERIFY_API = "/api/certificate/verify";
