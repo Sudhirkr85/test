@@ -349,11 +349,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const status = document.getElementById("home-demo-status");
   const courseSelect = document.getElementById("home-demo-course");
   const otherCourseInput = document.getElementById("home-demo-other-course");
+  const feedbackModal = document.getElementById("homeDemoFeedback");
+  const feedbackCloseBtn = document.getElementById("homeDemoFeedbackClose");
+  const feedbackIcon = document.getElementById("homeDemoFeedbackIcon");
+  const feedbackTitle = document.getElementById("homeDemoFeedbackTitle");
+  const feedbackMessage = document.getElementById("homeDemoFeedbackMessage");
 
   if (!popup || !form) return;
 
   const BASE_URL = "https://sssam.onrender.com".replace(/\/+$/, "");
   const DEMO_ENQUIRY_API_URL = `${BASE_URL}/api/enquiry/demo-class`;
+  let feedbackTimer = null;
+
+  const syncBodyScrollLock = () => {
+    const isDemoPopupOpen = popup.classList.contains("show");
+    const isFeedbackOpen = feedbackModal && feedbackModal.classList.contains("show");
+    document.body.style.overflow = isDemoPopupOpen || isFeedbackOpen ? "hidden" : "";
+  };
 
   const openPopup = (selectedCourse = "") => {
     if (selectedCourse && courseSelect) {
@@ -363,13 +375,48 @@ document.addEventListener("DOMContentLoaded", () => {
 
     popup.classList.add("show");
     popup.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+    syncBodyScrollLock();
   };
 
   const closePopup = () => {
     popup.classList.remove("show");
     popup.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
+    syncBodyScrollLock();
+  };
+
+  const closeFeedbackModal = () => {
+    if (!feedbackModal) return;
+
+    clearTimeout(feedbackTimer);
+    feedbackModal.classList.remove("show", "success", "error");
+    feedbackModal.setAttribute("aria-hidden", "true");
+    syncBodyScrollLock();
+  };
+
+  const showFeedbackModal = ({
+    state = "success",
+    title = "Thank You!",
+    message = "Your enquiry has been saved successfully.",
+    autoClose = true,
+  }) => {
+    if (!feedbackModal || !feedbackTitle || !feedbackMessage || !feedbackIcon) return;
+
+    clearTimeout(feedbackTimer);
+    feedbackModal.classList.remove("success", "error");
+    feedbackModal.classList.add("show", state);
+    feedbackModal.setAttribute("aria-hidden", "false");
+
+    feedbackTitle.textContent = title;
+    feedbackMessage.textContent = message;
+    feedbackIcon.textContent = state === "success" ? "✔" : "✖";
+
+    syncBodyScrollLock();
+
+    if (autoClose) {
+      feedbackTimer = setTimeout(() => {
+        closeFeedbackModal();
+      }, 3000);
+    }
   };
 
   window.openHomeDemoPopup = openPopup;
@@ -386,13 +433,27 @@ document.addEventListener("DOMContentLoaded", () => {
     closeBtn.addEventListener("click", closePopup);
   }
 
+  if (feedbackCloseBtn) {
+    feedbackCloseBtn.addEventListener("click", closeFeedbackModal);
+  }
+
   popup.querySelectorAll("[data-close-popup]").forEach((el) => {
     el.addEventListener("click", closePopup);
   });
 
+  if (feedbackModal) {
+    feedbackModal.querySelectorAll("[data-close-feedback]").forEach((el) => {
+      el.addEventListener("click", closeFeedbackModal);
+    });
+  }
+
   document.addEventListener("keydown", (e) => {
     if (e.key === "Escape" && popup.classList.contains("show")) {
       closePopup();
+    }
+
+    if (e.key === "Escape" && feedbackModal && feedbackModal.classList.contains("show")) {
+      closeFeedbackModal();
     }
   });
 
@@ -471,6 +532,13 @@ document.addEventListener("DOMContentLoaded", () => {
         status.classList.add("error");
       }
 
+      showFeedbackModal({
+        state: "error",
+        title: "Invalid Mobile Number",
+        message: "Please enter a valid 10-digit mobile number.",
+        autoClose: false,
+      });
+
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.textContent = "Book Free Demo Class";
@@ -484,6 +552,13 @@ document.addEventListener("DOMContentLoaded", () => {
         status.classList.add("error");
       }
 
+      showFeedbackModal({
+        state: "error",
+        title: "Course Required",
+        message: "Please enter your custom course name.",
+        autoClose: false,
+      });
+
       if (submitBtn) {
         submitBtn.disabled = false;
         submitBtn.textContent = "Book Free Demo Class";
@@ -496,6 +571,13 @@ document.addEventListener("DOMContentLoaded", () => {
         status.textContent = "Please select a valid demo type.";
         status.classList.add("error");
       }
+
+      showFeedbackModal({
+        state: "error",
+        title: "Demo Type Missing",
+        message: "Please select online, live, or offline demo type.",
+        autoClose: false,
+      });
 
       if (submitBtn) {
         submitBtn.disabled = false;
@@ -519,18 +601,29 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleOtherCourseInput();
 
       if (status) {
-        status.textContent = "Thanks! Your demo request has been submitted.";
+        status.textContent = "Thank you! Your enquiry has been saved successfully.";
         status.classList.remove("error");
       }
 
-      setTimeout(() => {
-        closePopup();
-      }, 900);
+      closePopup();
+      showFeedbackModal({
+        state: "success",
+        title: "Thank You!",
+        message: "Your enquiry has been saved successfully. Our team will contact you shortly.",
+        autoClose: true,
+      });
     } catch (err) {
       if (status) {
         status.textContent = err.message || "Submission failed. Please try again.";
         status.classList.add("error");
       }
+
+      showFeedbackModal({
+        state: "error",
+        title: "Submission Failed",
+        message: err.message || "Submission failed. Please try again.",
+        autoClose: false,
+      });
     } finally {
       if (submitBtn) {
         submitBtn.disabled = false;
