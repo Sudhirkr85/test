@@ -1506,7 +1506,7 @@
         <form id="home-demo-form" class="home-demo-form" action="#" method="post">
           <div class="home-demo-grid">
             <input type="text" name="name" placeholder="Full Name *" autocomplete="name" required />
-            <input type="tel" name="phone" placeholder="Mobile Number *" inputmode="numeric" required />
+            <input type="tel" name="phone" placeholder="Mobile Number *" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required />
 
             <select name="course" id="home-demo-course" required>
               <option value="" disabled selected>Select Course *</option>
@@ -1561,7 +1561,8 @@
           </div>
 
           <div class="home-demo-mode">
-            <label class="demo-mode-option"><input type="radio" name="mode" value="online" required /><span>Online Live Classes</span></label>
+            <label class="demo-mode-option"><input type="radio" name="mode" value="online" required /><span>Online</span></label>
+            <label class="demo-mode-option"><input type="radio" name="mode" value="live" required /><span>Live Classes</span></label>
             <label class="demo-mode-option"><input type="radio" name="mode" value="offline" required /><span>Offline (Gurugram)</span></label>
           </div>
 

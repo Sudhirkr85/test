@@ -352,7 +352,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!popup || !form) return;
 
-  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz7e3JMuZR23ulfmMXyii56sop28a-tihJk-7WnrEWQ6r0GYNOcrr4Af1hx5n6vK8N4/exec";
+  const BASE_URL = "https://sssam.onrender.com".replace(/\/+$/, "");
+  const DEMO_ENQUIRY_API_URL = `${BASE_URL}/api/enquiry/demo-class`;
 
   const openPopup = (selectedCourse = "") => {
     if (selectedCourse && courseSelect) {
@@ -412,50 +413,41 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleOtherCourseInput();
   }
 
-  function submitToAppsScript(url, payload) {
-    return new Promise((resolve, reject) => {
-      const frameName = `home-demo-frame-${Date.now()}`;
-      const iframe = document.createElement("iframe");
-      iframe.name = frameName;
-      iframe.style.display = "none";
+  function normalizeDemoType(modeValue) {
+    const modeMap = {
+      online: "Online",
+      live: "Live Classes",
+      offline: "Offline (Gurugram)",
+    };
 
-      const postForm = document.createElement("form");
-      postForm.method = "POST";
-      postForm.action = url;
-      postForm.target = frameName;
-      postForm.style.display = "none";
+    return modeMap[modeValue] || "";
+  }
 
-      Object.entries(payload).forEach(([key, value]) => {
-        const input = document.createElement("input");
-        input.type = "hidden";
-        input.name = key;
-        input.value = String(value ?? "");
-        postForm.appendChild(input);
-      });
-
-      let cleaned = false;
-      const cleanup = () => {
-        if (cleaned) return;
-        cleaned = true;
-        iframe.remove();
-        postForm.remove();
-      };
-
-      const timeout = setTimeout(() => {
-        cleanup();
-        reject(new Error("timeout"));
-      }, 12000);
-
-      iframe.onload = () => {
-        clearTimeout(timeout);
-        cleanup();
-        resolve();
-      };
-
-      document.body.appendChild(iframe);
-      document.body.appendChild(postForm);
-      postForm.submit();
+  async function submitDemoEnquiry(payload) {
+    const response = await fetch(DEMO_ENQUIRY_API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
     });
+
+    if (!response.ok) {
+      let message = "Submission failed. Please try again.";
+
+      try {
+        const errorData = await response.json();
+        if (errorData && typeof errorData.message === "string" && errorData.message.trim()) {
+          message = errorData.message;
+        }
+      } catch (_err) {
+        // Ignore JSON parse errors and keep fallback message.
+      }
+
+      throw new Error(message);
+    }
+
+    return response;
   }
 
   form.addEventListener("submit", async (e) => {
@@ -467,20 +459,62 @@ document.addEventListener("DOMContentLoaded", () => {
       submitBtn.textContent = "Submitting...";
     }
 
-    const payload = Object.fromEntries(new FormData(form).entries());
-    if (payload.course === "Other" && payload.other_course) {
-      payload.course = payload.other_course;
+    const formData = Object.fromEntries(new FormData(form).entries());
+    const phoneNumber = String(formData.phone || "").replace(/\D/g, "");
+    const isOthers = formData.course === "Other";
+    const customCourseName = isOthers ? String(formData.other_course || "").trim() : "";
+    const demoType = normalizeDemoType(String(formData.mode || ""));
+
+    if (!/^\d{10}$/.test(phoneNumber)) {
+      if (status) {
+        status.textContent = "Mobile number must be exactly 10 digits.";
+        status.classList.add("error");
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Book Free Demo Class";
+      }
+      return;
     }
 
-    if (payload.course !== "Other") {
-      delete payload.other_course;
+    if (isOthers && !customCourseName) {
+      if (status) {
+        status.textContent = "Please enter your custom course name.";
+        status.classList.add("error");
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Book Free Demo Class";
+      }
+      return;
     }
 
-    payload.submitted_at = new Date().toISOString();
-    payload.page = window.location.pathname.split("/").pop() || "index.html";
+    if (!demoType) {
+      if (status) {
+        status.textContent = "Please select a valid demo type.";
+        status.classList.add("error");
+      }
+
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Book Free Demo Class";
+      }
+      return;
+    }
+
+    const payload = {
+      fullName: String(formData.name || "").trim(),
+      phoneNumber,
+      course: isOthers ? "Others" : String(formData.course || "").trim(),
+      customCourseName,
+      demoType,
+      message: String(formData.message || "").trim(),
+    };
 
     try {
-      await submitToAppsScript(WEB_APP_URL, payload);
+      await submitDemoEnquiry(payload);
       form.reset();
       toggleOtherCourseInput();
 
@@ -494,7 +528,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 900);
     } catch (err) {
       if (status) {
-        status.textContent = "Submission failed. Please try again.";
+        status.textContent = err.message || "Submission failed. Please try again.";
         status.classList.add("error");
       }
     } finally {
