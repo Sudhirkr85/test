@@ -226,6 +226,12 @@ body.light-mode .card-head p {
   color: #f2f2f2;
 }
 
+.form-field label.is-required::after {
+  content: " *";
+  color: #ff6b6b;
+  font-weight: 700;
+}
+
 body.light-mode .form-field label {
   color: #222;
 }
@@ -270,6 +276,16 @@ body.light-mode .form-field textarea {
 .form-field select.is-invalid,
 .form-field textarea.is-invalid {
   border-color: #ea6c6c;
+}
+
+.form-field input.is-invalid:hover,
+.form-field select.is-invalid:hover,
+.form-field textarea.is-invalid:hover,
+.form-field input.is-invalid:focus,
+.form-field select.is-invalid:focus,
+.form-field textarea.is-invalid:focus {
+  border-color: #ea6c6c;
+  box-shadow: 0 0 0 4px rgba(234, 108, 108, 0.2);
 }
 
 .error-text {
@@ -385,12 +401,19 @@ body.light-mode .result-grid strong {
   align-items: center;
   justify-content: center;
   border-radius: 999px;
-  padding: 4px 10px;
-  font-size: 11px;
+  padding: 5px 12px;
+  font-size: 12px;
   font-weight: 700;
   letter-spacing: 0.4px;
   text-transform: uppercase;
-  margin-left: 6px;
+  margin-left: 0;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
 }
 
 .status-badge.verified {
@@ -409,6 +432,24 @@ body.light-mode .result-grid strong {
   color: #ffabab;
   background: rgba(207, 66, 66, 0.18);
   border: 1px solid rgba(207, 66, 66, 0.4);
+}
+
+body.light-mode .status-badge.verified {
+  color: #0f6d33;
+  background: #def7e7;
+  border-color: #7ed8a2;
+}
+
+body.light-mode .status-badge.pending {
+  color: #8a5a00;
+  background: #fff1d1;
+  border-color: #efcb7a;
+}
+
+body.light-mode .status-badge.rejected {
+  color: #a81f1f;
+  background: #ffe0e0;
+  border-color: #f1a1a1;
 }
 
 .portal-links-block .quick-links {

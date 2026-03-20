@@ -2,21 +2,26 @@
 let currentSlide = 0;
 const slides = document.querySelectorAll(".slide");
 const totalSlides = slides.length;
+const nextBtn = document.querySelector(".next");
+const prevBtn = document.querySelector(".prev");
 
-document.querySelector(".next").addEventListener("click", () => {
-  changeSlide(currentSlide + 1);
-});
+if (nextBtn && prevBtn && totalSlides > 0) {
+  nextBtn.addEventListener("click", () => {
+    changeSlide(currentSlide + 1);
+  });
 
-document.querySelector(".prev").addEventListener("click", () => {
-  changeSlide(currentSlide - 1);
-});
+  prevBtn.addEventListener("click", () => {
+    changeSlide(currentSlide - 1);
+  });
 
-// Auto Slide
-setInterval(() => {
-  changeSlide(currentSlide + 1);
-}, 5000); // every 5 seconds
+  // Auto Slide
+  setInterval(() => {
+    changeSlide(currentSlide + 1);
+  }, 5000); // every 5 seconds
+}
 
 function changeSlide(n) {
+  if (!totalSlides) return;
   slides[currentSlide].classList.remove("active");
 
   currentSlide = (n + totalSlides) % totalSlides;
@@ -98,20 +103,23 @@ gsap.registerPlugin(ScrollTrigger);
     });
   }
 
-  // create a ScrollTrigger for the whole gallery section
-  ScrollTrigger.create({
-    trigger: "#gallery",
-    start: "top 85%",
-    end: "bottom 30%",
-    onEnter: () => animateGallery(scrollDirection),
-    onEnterBack: () => animateGallery(scrollDirection),
-    // optional: when leaving, keep items visible (do not hide)
-    // onLeave and onLeaveBack left empty so items stay shown once animated
-  });
+  const gallerySection = document.querySelector("#gallery");
+  if (gallerySection) {
+    // create a ScrollTrigger for the whole gallery section
+    ScrollTrigger.create({
+      trigger: "#gallery",
+      start: "top 85%",
+      end: "bottom 30%",
+      onEnter: () => animateGallery(scrollDirection),
+      onEnterBack: () => animateGallery(scrollDirection),
+      // optional: when leaving, keep items visible (do not hide)
+      // onLeave and onLeaveBack left empty so items stay shown once animated
+    });
 
-  // Optional: animate once on load if #gallery already in view
-  if (document.querySelector("#gallery").getBoundingClientRect().top < window.innerHeight) {
-    animateGallery(scrollDirection);
+    // Optional: animate once on load if #gallery already in view
+    if (gallerySection.getBoundingClientRect().top < window.innerHeight) {
+      animateGallery(scrollDirection);
+    }
   }
 
 
@@ -339,36 +347,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeBtn = document.getElementById("homeDemoPopupClose");
   const form = document.getElementById("home-demo-form");
   const status = document.getElementById("home-demo-status");
-  const dateSelect = document.getElementById("home-demo-date");
+  const courseSelect = document.getElementById("home-demo-course");
+  const otherCourseInput = document.getElementById("home-demo-other-course");
 
   if (!popup || !form) return;
 
   const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz7e3JMuZR23ulfmMXyii56sop28a-tihJk-7WnrEWQ6r0GYNOcrr4Af1hx5n6vK8N4/exec";
 
-  const formatter = new Intl.DateTimeFormat("en-IN", {
-    weekday: "short",
-    day: "2-digit",
-    month: "short",
-    year: "numeric"
-  });
-
-  if (dateSelect && dateSelect.options.length <= 1) {
-    const today = new Date();
-    for (let i = 0; i < 14; i++) {
-      const d = new Date(today);
-      d.setDate(today.getDate() + i);
-      const yyyy = d.getFullYear();
-      const mm = String(d.getMonth() + 1).padStart(2, "0");
-      const dd = String(d.getDate()).padStart(2, "0");
-
-      const option = document.createElement("option");
-      option.value = `${yyyy}-${mm}-${dd}`;
-      option.textContent = formatter.format(d);
-      dateSelect.appendChild(option);
+  const openPopup = (selectedCourse = "") => {
+    if (selectedCourse && courseSelect) {
+      courseSelect.value = selectedCourse;
+      courseSelect.dispatchEvent(new Event("change"));
     }
-  }
 
-  const openPopup = () => {
     popup.classList.add("show");
     popup.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
@@ -380,9 +371,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.style.overflow = "";
   };
 
-  setTimeout(() => {
-    openPopup();
-  }, 5000);
+  window.openHomeDemoPopup = openPopup;
+  window.closeHomeDemoPopup = closePopup;
+
+  const shouldAutoOpen = popup.dataset.autoOpen !== "false";
+  if (shouldAutoOpen) {
+    setTimeout(() => {
+      openPopup();
+    }, 5000);
+  }
 
   if (closeBtn) {
     closeBtn.addEventListener("click", closePopup);
@@ -397,6 +394,23 @@ document.addEventListener("DOMContentLoaded", () => {
       closePopup();
     }
   });
+
+  const toggleOtherCourseInput = () => {
+    if (!courseSelect || !otherCourseInput) return;
+
+    const isOtherSelected = courseSelect.value === "Other";
+    otherCourseInput.classList.toggle("is-hidden", !isOtherSelected);
+    otherCourseInput.required = isOtherSelected;
+
+    if (!isOtherSelected) {
+      otherCourseInput.value = "";
+    }
+  };
+
+  if (courseSelect && otherCourseInput) {
+    courseSelect.addEventListener("change", toggleOtherCourseInput);
+    toggleOtherCourseInput();
+  }
 
   function submitToAppsScript(url, payload) {
     return new Promise((resolve, reject) => {
@@ -454,13 +468,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const payload = Object.fromEntries(new FormData(form).entries());
+    if (payload.course === "Other" && payload.other_course) {
+      payload.course = payload.other_course;
+    }
+
+    if (payload.course !== "Other") {
+      delete payload.other_course;
+    }
+
     payload.submitted_at = new Date().toISOString();
-    payload.page = "index.html";
+    payload.page = window.location.pathname.split("/").pop() || "index.html";
 
     try {
       await submitToAppsScript(WEB_APP_URL, payload);
       form.reset();
-      if (dateSelect) dateSelect.selectedIndex = 0;
+      toggleOtherCourseInput();
 
       if (status) {
         status.textContent = "Thanks! Your demo request has been submitted.";

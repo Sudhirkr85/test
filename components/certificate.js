@@ -99,13 +99,30 @@
     return fallback;
   }
 
-  function notifyUser(message, isError) {
+  function showToast(title, message, isError) {
+    const heading = safeText(title);
     const text = safeText(message);
-    if (isError) {
-      window.alert(`Error: ${text}`);
+
+    if (typeof window.Toastify === "function") {
+      window.Toastify({
+        text: `${heading}: ${text}`,
+        duration: 3200,
+        gravity: "top",
+        position: "right",
+        close: true,
+        stopOnFocus: true,
+        style: {
+          borderRadius: "10px",
+          fontWeight: "600",
+          background: isError
+            ? "linear-gradient(135deg, #e94c4c, #b83434)"
+            : "linear-gradient(135deg, #1f9d53, #15753d)",
+        },
+      }).showToast();
       return;
     }
-    window.alert(text);
+
+    window.alert(`${heading}: ${text}`);
   }
 
   function bindLiveClear(inputId, errorId) {
@@ -114,6 +131,43 @@
     if (!input || !error) return;
     input.addEventListener("input", () => clearError(input, error));
     input.addEventListener("change", () => clearError(input, error));
+  }
+
+  function validateRequiredField(input) {
+    if (!input || !input.required) return;
+
+    const error = document.getElementById(`${input.id}Error`);
+    const value = (input.value || "").trim();
+
+    if (!value) {
+      setError(input, error, "This field is required.");
+      return;
+    }
+
+    clearError(input, error);
+  }
+
+  function bindRequiredFieldBorders() {
+    const requiredFields = document.querySelectorAll("input[required], select[required], textarea[required]");
+
+    requiredFields.forEach((field) => {
+      field.addEventListener("blur", () => validateRequiredField(field));
+      field.addEventListener("change", () => validateRequiredField(field));
+    });
+  }
+
+  function markRequiredLabels() {
+    const requiredFields = document.querySelectorAll(
+      "input[required], select[required], textarea[required]"
+    );
+
+    requiredFields.forEach((field) => {
+      if (!field.id) return;
+      const label = document.querySelector(`label[for="${field.id}"]`);
+      if (label) {
+        label.classList.add("is-required");
+      }
+    });
   }
 
   // Apply form live validation clear
@@ -132,6 +186,9 @@
     ["downloadDob", "downloadDobError"],
     ["applicationId", "applicationIdError"],
   ].forEach(([id, errorId]) => bindLiveClear(id, errorId));
+
+  markRequiredLabels();
+  bindRequiredFieldBorders();
 
   // SECTION 1 — Apply Certificate
   if (applyCourse && otherCourseWrap) {
@@ -245,7 +302,14 @@
         hasError = true;
       }
 
-      if (hasError) return;
+      if (hasError) {
+        showToast(
+          "Required Fields Missing",
+          "Please fill all required fields marked with *.",
+          true
+        );
+        return;
+      }
 
       const submitButton = applyForm.querySelector("button[type='submit']");
       setLoading(submitButton, true, "Submitting...");
@@ -293,12 +357,16 @@
           false
         );
 
-        notifyUser(`${successMessage}. Application ID: ${applicationId}`, false);
+        showToast(
+          "Application Submitted",
+          `${successMessage}. Your Application ID is ${applicationId}.`,
+          false
+        );
 
         applyForm.reset();
         otherCourseWrap.hidden = true;
       } catch (error) {
-        notifyUser(error.message, true);
+        showToast("Submission Failed", error.message, true);
         showResult(
           "applyResult",
           `
@@ -326,6 +394,11 @@
 
       if (!certificateNumber.value.trim()) {
         setError(certificateNumber, certificateNumberError, "Certificate Number is required.");
+        showToast(
+          "Required Field Missing",
+          "Please fill the required field marked with *.",
+          true
+        );
         return;
       }
 
@@ -358,15 +431,15 @@
               <div>Certificate Number: <strong>${safeText(data.certificateNumber || certificateNumber.value.trim())}</strong></div>
               <div>Issue Date: <strong>${safeText(data.issueDate)}</strong></div>
               <div>Institute Name: <strong>${safeText(data.instituteName)}</strong></div>
-              <div>Status: ${getStatusBadge(statusText)}</div>
+              <div class="status-row"><span>Status:</span> ${getStatusBadge(statusText)}</div>
             </div>
           `,
           false
         );
 
-        notifyUser("Certificate verification completed successfully.", false);
+        showToast("Certificate Verified", "Certificate verification completed successfully.", false);
       } catch (error) {
-        notifyUser(error.message, true);
+        showToast("Verification Failed", error.message, true);
         showResult(
           "verifyResult",
           `
@@ -408,7 +481,14 @@
         hasError = true;
       }
 
-      if (hasError) return;
+      if (hasError) {
+        showToast(
+          "Required Fields Missing",
+          "Please fill all required fields marked with *.",
+          true
+        );
+        return;
+      }
 
       const submitButton = downloadForm.querySelector("button[type='submit']");
       setLoading(submitButton, true, "Preparing Download...");
@@ -465,9 +545,9 @@
           false
         );
 
-        notifyUser("Certificate PDF download started.", false);
+        showToast("Download Started", "Your certificate PDF download has started.", false);
       } catch (error) {
-        notifyUser(error.message, true);
+        showToast("Download Failed", error.message, true);
         showResult(
           "downloadResult",
           `
@@ -497,6 +577,7 @@
 
       if (!applicationId) {
         setError(applicationIdInput, applicationIdError, "Application ID is required.");
+        showToast("Required Field Missing", "Please fill the required field marked with *.", true);
         return;
       }
 
@@ -524,7 +605,7 @@
               <div>Name: <strong>${safeText(data.name)}</strong></div>
               <div>Course: <strong>${safeText(data.course)}</strong></div>
               <div>Certificate Type: <strong>${safeText(data.certificateType)}</strong></div>
-              <div>Status: ${getStatusBadge(data.status)}</div>
+              <div class="status-row"><span>Status:</span> ${getStatusBadge(data.status)}</div>
               ${
                 approved
                   ? `<div>Certificate Number: <strong>${safeText(data.certificateNumber)}</strong></div>
@@ -536,9 +617,9 @@
           false
         );
 
-        notifyUser("Application status fetched successfully.", false);
+        showToast("Application Status", "Application status fetched successfully.", false);
       } catch (error) {
-        notifyUser(error.message, true);
+        showToast("Status Check Failed", error.message, true);
         showResult(
           "statusResult",
           `

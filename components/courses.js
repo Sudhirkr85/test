@@ -258,177 +258,37 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  const popup = document.getElementById("courseDemoPopup");
-  const closeBtn = document.getElementById("courseDemoClose");
-  const form = document.getElementById("course-demo-form");
-  const status = document.getElementById("course-demo-status");
-  const courseSelect = document.getElementById("course-demo-course");
-  const dateSelect = document.getElementById("course-demo-date");
+  const courseSelect = document.getElementById("home-demo-course");
 
-  if (!popup || !form || !courseSelect) return;
-
-  const WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz7e3JMuZR23ulfmMXyii56sop28a-tihJk-7WnrEWQ6r0GYNOcrr4Af1hx5n6vK8N4/exec";
-
-  const courseTitles = new Set();
-  document.querySelectorAll(".course-title").forEach((el) => {
-    const text = (el.textContent || "").trim();
-    if (text) courseTitles.add(text);
+  document.querySelectorAll(".course-item .btn-ghost").forEach((btn) => {
+    btn.classList.add("contact-btn");
   });
 
-  [...courseTitles].forEach((title) => {
-    const option = document.createElement("option");
-    option.value = title;
-    option.textContent = title;
-    courseSelect.appendChild(option);
-  });
-
-  if (dateSelect) {
-    const formatter = new Intl.DateTimeFormat("en-IN", {
-      weekday: "short",
-      day: "2-digit",
-      month: "short",
-      year: "numeric"
-    });
-
-    const today = new Date();
-    for (let i = 0; i < 14; i++) {
-      const d = new Date(today);
-      d.setDate(today.getDate() + i);
-      const yyyy = d.getFullYear();
-      const mm = String(d.getMonth() + 1).padStart(2, "0");
-      const dd = String(d.getDate()).padStart(2, "0");
-
-      const option = document.createElement("option");
-      option.value = `${yyyy}-${mm}-${dd}`;
-      option.textContent = formatter.format(d);
-      dateSelect.appendChild(option);
-    }
-  }
-
-  const openPopup = (selectedCourse = "") => {
-    if (selectedCourse && courseSelect) {
-      courseSelect.value = selectedCourse;
-    }
-
-    popup.classList.add("show");
-    popup.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-  };
-
-  const closePopup = () => {
-    popup.classList.remove("show");
-    popup.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
-  };
-
-  document.querySelectorAll(".course-actions .btn-ghost").forEach((btn) => {
+  document.querySelectorAll(".course-item .contact-btn").forEach((btn) => {
     btn.addEventListener("click", (event) => {
       event.preventDefault();
 
       const card = btn.closest(".course-item");
       const title = card?.querySelector(".course-title")?.textContent?.trim() || "";
-      openPopup(title);
+
+      if (courseSelect) {
+        const matchingOption = Array.from(courseSelect.options).find((option) => {
+          const value = (option.value || "").toLowerCase();
+          const text = (option.textContent || "").toLowerCase();
+          const titleLower = title.toLowerCase();
+          return value && (titleLower.includes(value) || text.includes(titleLower));
+        });
+
+        if (matchingOption) {
+          courseSelect.value = matchingOption.value;
+          courseSelect.dispatchEvent(new Event("change"));
+        }
+      }
+
+      if (typeof window.openHomeDemoPopup === "function") {
+        window.openHomeDemoPopup();
+      }
     });
-  });
-
-  if (closeBtn) {
-    closeBtn.addEventListener("click", closePopup);
-  }
-
-  popup.querySelectorAll("[data-close-course-popup]").forEach((el) => {
-    el.addEventListener("click", closePopup);
-  });
-
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && popup.classList.contains("show")) {
-      closePopup();
-    }
-  });
-
-  function submitToAppsScript(url, payload) {
-    return new Promise((resolve, reject) => {
-      const frameName = `course-demo-frame-${Date.now()}`;
-      const iframe = document.createElement("iframe");
-      iframe.name = frameName;
-      iframe.style.display = "none";
-
-      const postForm = document.createElement("form");
-      postForm.method = "POST";
-      postForm.action = url;
-      postForm.target = frameName;
-      postForm.style.display = "none";
-
-      Object.entries(payload).forEach(([key, value]) => {
-        const input = document.createElement("input");
-        input.type = "hidden";
-        input.name = key;
-        input.value = String(value ?? "");
-        postForm.appendChild(input);
-      });
-
-      let cleaned = false;
-      const cleanup = () => {
-        if (cleaned) return;
-        cleaned = true;
-        iframe.remove();
-        postForm.remove();
-      };
-
-      const timeout = setTimeout(() => {
-        cleanup();
-        reject(new Error("timeout"));
-      }, 12000);
-
-      iframe.onload = () => {
-        clearTimeout(timeout);
-        cleanup();
-        resolve();
-      };
-
-      document.body.appendChild(iframe);
-      document.body.appendChild(postForm);
-      postForm.submit();
-    });
-  }
-
-  form.addEventListener("submit", async (event) => {
-    event.preventDefault();
-
-    const submitBtn = form.querySelector(".course-demo-submit");
-    if (submitBtn) {
-      submitBtn.disabled = true;
-      submitBtn.textContent = "Submitting...";
-    }
-
-    const payload = Object.fromEntries(new FormData(form).entries());
-    payload.submitted_at = new Date().toISOString();
-    payload.page = "courses.html";
-
-    try {
-      await submitToAppsScript(WEB_APP_URL, payload);
-      form.reset();
-      if (dateSelect) dateSelect.selectedIndex = 0;
-      if (courseSelect) courseSelect.selectedIndex = 0;
-
-      if (status) {
-        status.textContent = "Thanks! Your demo request has been submitted.";
-        status.classList.remove("error");
-      }
-
-      setTimeout(() => {
-        closePopup();
-      }, 900);
-    } catch (err) {
-      if (status) {
-        status.textContent = "Submission failed. Please try again.";
-        status.classList.add("error");
-      }
-    } finally {
-      if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.textContent = "Book Free Demo Class";
-      }
-    }
   });
 });
 

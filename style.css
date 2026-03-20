@@ -1309,6 +1309,10 @@ body.light-mode .demo-popup-dialog h3 {
   outline: none;
 }
 
+.home-demo-other-course.is-hidden {
+  display: none;
+}
+
 body.light-mode .home-demo-form input,
 body.light-mode .home-demo-form select,
 body.light-mode .home-demo-form textarea {
@@ -1320,14 +1324,61 @@ body.light-mode .home-demo-form textarea {
 .home-demo-mode {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
+  gap: 10px;
   font-size: 15px;
 }
 
-.home-demo-mode label {
-  display: inline-flex;
+.home-demo-mode .demo-mode-option {
+  display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  padding: 10px 14px;
+  border: 1px solid #3a3a3a;
+  border-radius: 12px;
+  background: #101010;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.home-demo-mode .demo-mode-option input[type="radio"] {
+  margin: 0;
+  width: 16px;
+  height: 16px;
+  accent-color: #204180;
+}
+
+.home-demo-mode .demo-mode-option span {
+  font-weight: 600;
+  letter-spacing: 0.1px;
+}
+
+.home-demo-mode .demo-mode-option:hover {
+  border-color: #3f66b8;
+}
+
+.home-demo-mode .demo-mode-option:has(input[type="radio"]:checked) {
+  border-color: #4a79e0;
+  background: rgba(74, 121, 224, 0.16);
+  box-shadow: 0 0 0 1px rgba(74, 121, 224, 0.25) inset;
+}
+
+.home-demo-mode .demo-mode-option:has(input[type="radio"]:focus-visible) {
+  outline: 2px solid #8ab2ff;
+  outline-offset: 2px;
+}
+
+body.light-mode .home-demo-mode .demo-mode-option {
+  background: #fff;
+  border-color: #d6deef;
+}
+
+body.light-mode .home-demo-mode .demo-mode-option:hover {
+  border-color: #7a99d8;
+}
+
+body.light-mode .home-demo-mode .demo-mode-option:has(input[type="radio"]:checked) {
+  border-color: #4a79e0;
+  background: #eef4ff;
 }
 
 .home-demo-submit {
