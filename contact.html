@@ -175,7 +175,7 @@
     <link rel="stylesheet" href="/components/contact.css" />
   </head>
 
-  <body class="dark-mode">
+  <body class="dark-mode contact-page">
     <!-- default = dark -->
     <main class="container">
       <!-- Contact Hero Section -->
@@ -263,7 +263,7 @@
 
           <div class="map-wrapper">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3527.0647682394306!2d77.04239752346833!3d28.45950227243889!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce97b3b3b3b3b%3A0x3b3b3b3b3b3b3b3b!2sOld%20DLF%20Colony%2C%20Sector%2014%2C%20Gurugram!5e0!3m2!1sen!2sin!4v1234567890123"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3333.7675895834977!2d77.04180657528276!3d28.470324575753672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d19eab378231d%3A0xaab1d6ee0aaa6ff8!2sSSSAM%20Academy!5e1!3m2!1sen!2sin!4v1774084684482!5m2!1sen!2sin"
               width="100%"
               height="450"
               style="border: 0"
@@ -548,99 +548,20 @@
         </div>
 
         <div class="form-card">
-          <h2>Contact SSSAM Academy</h2>
-          <form id="contactForm" class="contact-form" autocomplete="off">
-            <div class="field-row">
-              <div class="form-group">
-                <label for="name">Full Name</label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  placeholder="Your full name"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="email">Email</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="field-row">
-              <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input
-                  id="phone"
-                  name="phone"
-                  type="tel"
-                  placeholder="98765 43210"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="subject">Subject</label>
-                <input
-                  id="subject"
-                  name="subject"
-                  type="text"
-                  placeholder="Subject"
-                  required
-                />
-              </div>
-            </div>
-
-            <div class="form-group full">
-              <label for="message">Message</label>
-              <textarea
-                id="message"
-                name="message"
-                rows="6"
-                placeholder="Write your message..."
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">Send Message</button>
-          </form>
+          <div
+            data-enquiry-form-root
+            data-enquiry-variant="static"
+            data-enquiry-title="Contact SSSAM Academy"
+            data-enquiry-subtitle="Share your details and we will contact you with course and admission guidance."
+          ></div>
         </div>
       </section>
     </main>
 
-    <!-- loader & success modals -->
-
-    <div id="form-loader" class="form-loader" aria-hidden="true">
-      <div class="loader-inner">
-        <div class="spinner"></div>
-        <div class="loader-text">Sending your message...</div>
-      </div>
-    </div>
-
-    <div id="form-success" class="form-success" aria-hidden="true">
-      <div class="success-card">
-        <button id="success-close" class="success-close" aria-label="Close">
-          ✕
-        </button>
-        <div class="success-icon">✔️</div>
-        <h3>Message Sent Successfully</h3>
-        <p>
-          Thank you for contacting SSSAM Academy, a computer institute in
-          Gurugram. Our team will respond soon with information about courses,
-          admissions, or training programs.
-        </p>
-        <a id="success-ok" class="btn primary" href="#">OK</a>
-      </div>
-    </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="/components/enquiry-form.js"></script>
     <script src="/components/script.js" defer></script>
-    <script src="/components/contact.js"></script>
+    <script src="/components/contact.js" defer></script>
   </body>
 </html>

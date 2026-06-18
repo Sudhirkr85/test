@@ -203,7 +203,7 @@ body {
 }
 
 .slide-content strong {
-  color: var(--accent);
+  /* color: var(--accent); */
   font-weight: 600;
 }
 
@@ -764,6 +764,18 @@ body {
   color: var(--muted);
   max-width: 700px;
   line-height: 1.6;
+}
+
+body.light-mode .course-hero h1 {
+  color: #0f172a;
+}
+
+body.light-mode .course-hero h2 {
+  color: #0f172a;
+}
+
+body.light-mode .course-hero p {
+  color: #334155;
 }
 
 /* ===== MAIN LAYOUT ===== */

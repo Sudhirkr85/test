@@ -1009,3 +1009,169 @@ body.light-mode .visit-card-description {
   .field-row{ flex-direction:column; }
   .info-cards{  gap:10px; overflow:auto; }
 }
+
+/* =====================================================
+   CONTACT PAGE - ENQUIRY SECTION REDESIGN
+   ===================================================== */
+.contact-page .contact-grid {
+  grid-template-columns: minmax(260px, 340px) minmax(0, 1fr);
+  gap: 28px;
+  margin-top: 34px;
+}
+
+.contact-page .info-cards {
+  position: sticky;
+  top: 96px;
+  gap: 16px;
+}
+
+.contact-page .card {
+  border-radius: 16px;
+  padding: 18px 18px 16px;
+  border: 1px solid rgba(224, 167, 48, 0.24);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.03) 0%, rgba(224, 167, 48, 0.06) 100%);
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-page .card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(224, 167, 48, 0.5);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+}
+
+.contact-page .card .icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(224, 167, 48, 0.15);
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.contact-page .form-card {
+  padding: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.contact-page .form-card .enquiry-static-card {
+  border-radius: 18px;
+  padding: 28px;
+  border: 1px solid rgba(224, 167, 48, 0.3);
+  background:
+    radial-gradient(circle at top right, rgba(224, 167, 48, 0.12), transparent 40%),
+    linear-gradient(180deg, #1d1d1d 0%, #171717 100%);
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.45);
+}
+
+.contact-page .form-card .enquiry-static-card h3 {
+  font-size: clamp(24px, 3vw, 34px);
+  margin: 0 0 8px;
+}
+
+.contact-page .form-card .demo-popup-subtitle {
+  margin-bottom: 18px;
+  color: #d8d8d8;
+}
+
+.contact-page .form-card .home-demo-form {
+  gap: 14px;
+}
+
+.contact-page .form-card .home-demo-grid {
+  gap: 14px;
+}
+
+.contact-page .form-card .home-demo-form input,
+.contact-page .form-card .home-demo-form select,
+.contact-page .form-card .home-demo-form textarea {
+  border-radius: 12px;
+  border-color: rgba(224, 167, 48, 0.22);
+  background: rgba(0, 0, 0, 0.26);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.contact-page .form-card .home-demo-form input:focus,
+.contact-page .form-card .home-demo-form select:focus,
+.contact-page .form-card .home-demo-form textarea:focus {
+  border-color: rgba(88, 141, 255, 0.95);
+  box-shadow: 0 0 0 3px rgba(88, 141, 255, 0.2);
+}
+
+.contact-page .form-card .home-demo-submit {
+  width: 100%;
+  margin-top: 4px;
+  background: linear-gradient(90deg, #204180 0%, #2e62c4 100%);
+  border-radius: 12px;
+  min-height: 48px;
+}
+
+.contact-page .form-card .home-demo-submit:hover {
+  filter: brightness(1.05);
+}
+
+.contact-page .form-card .home-demo-status {
+  min-height: 24px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+body.light-mode.contact-page .card {
+  border-color: rgba(32, 65, 128, 0.2);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.95) 0%, rgba(32, 65, 128, 0.07) 100%);
+}
+
+body.light-mode.contact-page .card .icon {
+  background: rgba(32, 65, 128, 0.12);
+}
+
+body.light-mode.contact-page .card:hover {
+  border-color: rgba(32, 65, 128, 0.4);
+  box-shadow: 0 14px 32px rgba(16, 24, 40, 0.12);
+}
+
+body.light-mode.contact-page .form-card .enquiry-static-card {
+  border-color: rgba(32, 65, 128, 0.22);
+  background:
+    radial-gradient(circle at top right, rgba(32, 65, 128, 0.08), transparent 42%),
+    linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+  box-shadow: 0 20px 44px rgba(16, 24, 40, 0.12);
+}
+
+body.light-mode.contact-page .form-card .demo-popup-subtitle {
+  color: #334155;
+}
+
+body.light-mode.contact-page .form-card .home-demo-form input,
+body.light-mode.contact-page .form-card .home-demo-form select,
+body.light-mode.contact-page .form-card .home-demo-form textarea {
+  background: #ffffff;
+  border-color: rgba(32, 65, 128, 0.22);
+}
+
+@media (max-width: 980px) {
+  .contact-page .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-page .info-cards {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+
+@media (max-width: 740px) {
+  .contact-page .info-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-page .form-card .enquiry-static-card {
+    padding: 20px;
+    border-radius: 14px;
+  }
+}

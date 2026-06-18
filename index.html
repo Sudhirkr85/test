@@ -846,175 +846,19 @@
       </div>
     </section>
 
-    <div class="demo-popup" id="homeDemoPopup" aria-hidden="true">
-      <div class="demo-popup-backdrop" data-close-popup></div>
-      <div
-        class="demo-popup-dialog"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="homeDemoPopupTitle"
-      >
-        <button
-          class="demo-popup-close"
-          type="button"
-          id="homeDemoPopupClose"
-          aria-label="Close demo booking popup"
-        >
-          ×
-        </button>
-        <h3 id="homeDemoPopupTitle">Talk to Our Course Advisor 🎓</h3>
-        <p class="demo-popup-subtitle">
-          Get complete details about courses, fees & placement assistance.
-        </p>
-
-        <form
-          id="home-demo-form"
-          class="home-demo-form"
-          action="#"
-          method="post"
-        >
-          <div class="home-demo-grid">
-            <input
-              type="text"
-              name="name"
-              placeholder="Full Name *"
-              autocomplete="name"
-              required
-            />
-            <input
-              type="tel"
-              name="phone"
-              placeholder="Mobile Number *"
-              inputmode="numeric"
-              pattern="[0-9]{10}"
-              maxlength="10"
-              required
-            />
-
-            <select name="course" id="home-demo-course" required>
-              <option value="" disabled selected>Select Course *</option>
-              <option value="ADCA">ADCA</option>
-              <option value="Advanced Excel">Advanced Excel</option>
-              <option value="AI & ML">AI & ML</option>
-              <option value="AutoCAD">AutoCAD</option>
-              <option value="AWS Cloud">AWS Cloud</option>
-              <option value="Basic Computer">Basic Computer</option>
-              <option value="C Programming">C Programming</option>
-              <option value="CCNA">CCNA</option>
-              <option value="CCNP">CCNP</option>
-              <option value="Cyber Security">Cyber Security</option>
-              <option value="Data Analysis">Data Analysis</option>
-              <option value="Data Engineering">Data Engineering</option>
-              <option value="Data Science">Data Science</option>
-              <option value="Digital Marketing">Digital Marketing</option>
-              <option value="Dot Net">Dot Net</option>
-              <option value="Ethical Hacking">Ethical Hacking</option>
-              <option value="Full Stack Development">
-                Full Stack Development
-              </option>
-              <option value="Google Ads">Google Ads</option>
-              <option value="Graphic Design">Graphic Design</option>
-              <option value="HTML & CSS">HTML & CSS</option>
-              <option value="Java Programming">Java Programming</option>
-              <option value="Java Full Stack">Java Full Stack</option>
-              <option value="Linux">Linux</option>
-              <option value="MIS">MIS</option>
-              <option value="MS Office">MS Office</option>
-              <option value="MySQL">MySQL</option>
-              <option value="PHP">PHP</option>
-              <option value="Python">Python</option>
-              <option value="Python Full Stack">Python Full Stack</option>
-              <option value="Ruby Programming">Ruby Programming</option>
-              <option value="SAP FICO">SAP FICO</option>
-              <option value="Search Engine Marketing">
-                Search Engine Marketing
-              </option>
-              <option value="SEO">SEO</option>
-              <option value="Social Media Marketing">
-                Social Media Marketing
-              </option>
-              <option value="Software Testing">Software Testing</option>
-              <option value="Tally">Tally</option>
-              <option value="Video Editing">Video Editing</option>
-              <option value="Other">Other</option>
-            </select>
-
-            <input
-              type="text"
-              name="other_course"
-              id="home-demo-other-course"
-              class="home-demo-other-course is-hidden"
-              placeholder="Please mention your course name *"
-              autocomplete="off"
-            />
-          </div>
-
-          <div class="home-demo-mode">
-            <label class="demo-mode-option"
-              ><input type="radio" name="mode" value="online" required /><span
-                >Online</span
-              ></label
-            >
-            <label class="demo-mode-option"
-              ><input type="radio" name="mode" value="live" required /><span
-                >Live Classes</span
-              ></label
-            >
-            <label class="demo-mode-option"
-              ><input type="radio" name="mode" value="offline" required /><span
-                >Offline (Gurugram)</span
-              ></label
-            >
-          </div>
-
-          <textarea
-            name="message"
-            rows="3"
-            placeholder="Message / Questions (optional)"
-          ></textarea>
-          <button type="submit" class="home-demo-submit">Submit Enquiry</button>
-          <p
-            id="home-demo-status"
-            class="home-demo-status"
-            aria-live="polite"
-          ></p>
-        </form>
-      </div>
-    </div>
-
-    <div class="demo-feedback-modal" id="homeDemoFeedback" aria-hidden="true">
-      <div class="demo-feedback-backdrop" data-close-feedback></div>
-      <div
-        class="demo-feedback-dialog"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="homeDemoFeedbackTitle"
-      >
-        <button
-          class="demo-feedback-close"
-          type="button"
-          id="homeDemoFeedbackClose"
-          aria-label="Close submission status popup"
-        >
-          ×
-        </button>
-        <div
-          class="demo-feedback-icon"
-          id="homeDemoFeedbackIcon"
-          aria-hidden="true"
-        >
-          ✔
-        </div>
-        <h3 id="homeDemoFeedbackTitle">Thank You!</h3>
-        <p id="homeDemoFeedbackMessage">
-          Your enquiry has been saved successfully.
-        </p>
-      </div>
-    </div>
+    <div
+      data-enquiry-form-root
+      data-enquiry-variant="popup"
+      data-auto-open="true"
+      data-auto-open-delay="5000"
+      data-enquiry-title="Talk to Our Course Advisor 🎓"
+      data-enquiry-subtitle="Get complete details about courses, fees & placement assistance."
+    ></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="/components/enquiry-form.js"></script>
     <script src="./script.js"></script>
     <script src="/components/script.js" defer></script>
   </body>

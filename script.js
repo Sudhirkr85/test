@@ -343,6 +343,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // HOME PAGE DEMO POPUP (5s)
 // ========================
 document.addEventListener("DOMContentLoaded", () => {
+  if (window.__sharedEnquiryFormActive) return;
+
   const popup = document.getElementById("homeDemoPopup");
   const closeBtn = document.getElementById("homeDemoPopupClose");
   const form = document.getElementById("home-demo-form");
