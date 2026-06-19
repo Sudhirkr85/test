@@ -884,14 +884,83 @@ body.light-mode .footer-box a.active-footer {
 }
 
 /* buttons  */
+:root {
+  --pulse-color: rgba(224, 167, 48, 0.6);
+}
+body.light-mode {
+  --pulse-color: rgba(32, 65, 128, 0.6);
+}
+
 .floating-contact {
   position: fixed;
   bottom: 30px;
   right: 30px;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 12px;
   z-index: 99999;
+}
+
+/* Pulsing Main Toggle Button */
+.floating-trigger {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #e0a730;
+  color: #000;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  animation: pulseTrigger 2s infinite;
+  transition: transform 0.3s, background 0.3s;
+}
+
+body.light-mode .floating-trigger {
+  background: #204180;
+  color: #fff;
+}
+
+.floating-trigger:hover {
+  transform: scale(1.1);
+  animation: none;
+}
+
+@keyframes pulseTrigger {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 var(--pulse-color);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 12px rgba(0,0,0,0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0,0,0,0);
+  }
+}
+
+/* Options Wrapper (WhatsApp & Phone) */
+.floating-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 0.3s ease;
+}
+
+.floating-contact:hover .floating-options,
+.floating-contact.active .floating-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
 }
 
 .float-btn {
@@ -905,7 +974,7 @@ body.light-mode .footer-box a.active-footer {
   font-size: 24px;
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-  transition: transform 0.3s;
+  transition: transform 0.2s;
 }
 
 .float-btn:hover {

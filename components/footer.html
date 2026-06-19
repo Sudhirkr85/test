@@ -110,21 +110,42 @@
 
     <!-- FLOATING CONTACT BUTTONS -->
     <div class="floating-contact">
+        <!-- Floating Options -->
+        <div class="floating-options">
+            <a href="https://wa.me/919217031899"
+               target="_blank"
+               class="float-btn whatsapp"
+               title="Chat for Computer Courses in Gurugram">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
 
-        <a href="https://wa.me/919217031899"
-           target="_blank"
-           class="float-btn whatsapp"
-           title="Chat for Computer Courses in Gurugram">
+            <a href="tel:+919217031899"
+               class="float-btn call"
+               title="Call Best Computer Institute Gurugram">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+        </div>
 
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
-
-        <a href="tel:+919217031899"
-           class="float-btn call"
-           title="Call Best Computer Institute Gurugram">
-
-            <i class="fa-solid fa-phone"></i>
-        </a>
-
+        <!-- Main Pulse Trigger -->
+        <button class="floating-trigger" aria-label="Contact Channels Toggle">
+            <i class="fa-solid fa-headset"></i>
+        </button>
     </div>
+
+    <script>
+    (function() {
+      const trigger = document.querySelector('.floating-trigger');
+      if (trigger) {
+        trigger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const fc = document.querySelector('.floating-contact');
+          if (fc) fc.classList.toggle('active');
+        });
+        document.addEventListener('click', function() {
+          const fc = document.querySelector('.floating-contact');
+          if (fc) fc.classList.remove('active');
+        });
+      }
+    })();
+    </script>
 </footer>
