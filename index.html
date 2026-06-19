@@ -258,6 +258,32 @@
       </section>
     </main>
 
+    <!-- COMPANY TICKER SECTION -->
+    <section class="ticker-section">
+      <p class="ticker-title">Train for Careers in Leading IT Companies</p>
+      <div class="ticker-wrap">
+        <div class="ticker">
+          <img class="ticker-logo" src="/assets/logos/google.svg" alt="Google Logo" />
+          <img class="ticker-logo" src="/assets/logos/amazon.svg" alt="Amazon Logo" />
+          <img class="ticker-logo" src="/assets/logos/accenture.svg" alt="Accenture Logo" />
+          <img class="ticker-logo" src="/assets/logos/tcs.svg" alt="TCS Logo" />
+          <img class="ticker-logo" src="/assets/logos/capgemini.svg" alt="Capgemini Logo" />
+          <img class="ticker-logo" src="/assets/logos/infosys.svg" alt="Infosys Logo" />
+          <img class="ticker-logo" src="/assets/logos/wipro.svg" alt="Wipro Logo" />
+          <img class="ticker-logo" src="/assets/logos/cognizant.svg" alt="Cognizant Logo" />
+          <!-- Repeat items for infinite loop -->
+          <img class="ticker-logo" src="/assets/logos/google.svg" alt="Google Logo" />
+          <img class="ticker-logo" src="/assets/logos/amazon.svg" alt="Amazon Logo" />
+          <img class="ticker-logo" src="/assets/logos/accenture.svg" alt="Accenture Logo" />
+          <img class="ticker-logo" src="/assets/logos/tcs.svg" alt="TCS Logo" />
+          <img class="ticker-logo" src="/assets/logos/capgemini.svg" alt="Capgemini Logo" />
+          <img class="ticker-logo" src="/assets/logos/infosys.svg" alt="Infosys Logo" />
+          <img class="ticker-logo" src="/assets/logos/wipro.svg" alt="Wipro Logo" />
+          <img class="ticker-logo" src="/assets/logos/cognizant.svg" alt="Cognizant Logo" />
+        </div>
+      </div>
+    </section>
+
     <section class="about-section">
       <div class="about-container">
         <div class="about-text">
@@ -333,7 +359,9 @@
       <div class="courses-container">
         <!-- Course 1 -->
         <div class="course-card">
-          <i class="fas fa-brain course-icon"></i>
+          <div class="course-icon-wrapper">
+            <i class="fas fa-brain course-icon"></i>
+          </div>
           <h3>
             <a href="./courses/data-science-course-gurugram.html"
               >Data Science Course in Gurugram</a
@@ -348,7 +376,9 @@
 
         <!-- Course 2 -->
         <div class="course-card">
-          <i class="fas fa-database course-icon"></i>
+          <div class="course-icon-wrapper">
+            <i class="fas fa-database course-icon"></i>
+          </div>
           <h3>
             <a href="./courses/data-analysis-course-gurugram.html"
               >Data Analytics + Power BI Course in Gurugram</a
@@ -362,7 +392,9 @@
 
         <!-- Course 3 -->
         <div class="course-card">
-          <i class="fas fa-laptop-code course-icon"></i>
+          <div class="course-icon-wrapper">
+            <i class="fas fa-laptop-code course-icon"></i>
+          </div>
           <h3>
             <a href="./courses/fullstack-course-gurugram.html"
               >Full Stack Development Course in Gurugram (MERN / Java)</a
@@ -376,7 +408,9 @@
 
         <!-- Course 4 -->
         <div class="course-card">
-          <i class="fas fa-shield-alt course-icon"></i>
+          <div class="course-icon-wrapper">
+            <i class="fas fa-shield-alt course-icon"></i>
+          </div>
           <h3>
             <a href="./courses/cyber-security-course-gurugram.html"
               >Cyber Security & Ethical Hacking Course in Gurugram</a
@@ -391,7 +425,9 @@
 
         <!-- Course 5 -->
         <div class="course-card">
-          <i class="fas fa-chart-line course-icon"></i>
+          <div class="course-icon-wrapper">
+            <i class="fas fa-chart-line course-icon"></i>
+          </div>
           <h3>
             <a href="./courses/digital-marketing-course-gurugram.html"
               >Digital Marketing + SEO Course in Gurugram</a
@@ -405,7 +441,9 @@
 
         <!-- Course 6 -->
         <div class="course-card">
-          <i class="fas fa-cloud course-icon"></i>
+          <div class="course-icon-wrapper">
+            <i class="fas fa-cloud course-icon"></i>
+          </div>
           <h3>
             <a href="./courses/aws-cloud-course-gurugram.html"
               >AWS Cloud Computing Course in Gurugram</a
@@ -498,53 +536,165 @@
         Computer Training Institute Gallery in Gurugram
       </h2>
 
-      <div class="horizontal-gallery">
-        <div class="gallery-img">
-          <img
-            src="/assets/gallery/photo1.webp"
-            alt="SSSAM Academy computer training classroom in Old DLF Gurugram"
-            loading="lazy"
-          />
-        </div>
+      <div class="gallery-ticker-wrap">
+        <div class="horizontal-gallery">
+          <!-- Slide 1 -->
+          <div class="gallery-img">
+            <img
+              src="/assets/gallery/photo1.webp"
+              alt="SSSAM Academy computer training classroom in Old DLF Gurugram"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="overlay-tag">SSSAM Academy</span>
+              <p class="overlay-text">Smart Classroom & Labs</p>
+            </div>
+          </div>
 
-        <div class="gallery-img">
-          <img
-            src="/assets/gallery/photo2.webp"
-            alt="Students learning Data Science at SSSAM Academy Gurugram"
-            loading="lazy"
-          />
-        </div>
+          <!-- Slide 2 -->
+          <div class="gallery-img">
+            <img
+              src="/assets/gallery/photo2.webp"
+              alt="Students learning Data Science at SSSAM Academy Gurugram"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="overlay-tag">Practical Training</span>
+              <p class="overlay-text">Data Science & IT Sessions</p>
+            </div>
+          </div>
 
-        <div class="gallery-img">
-          <img
-            src="/assets/gallery/photo3.webp"
-            alt="Practical computer training session at SSSAM Academy in Gurugram"
-            loading="lazy"
-          />
-        </div>
+          <!-- Slide 3 -->
+          <div class="gallery-img">
+            <img
+              src="/assets/gallery/photo3.webp"
+              alt="Practical computer training session at SSSAM Academy in Gurugram"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="overlay-tag">Infrastructure</span>
+              <p class="overlay-text">Modern Practice Setup</p>
+            </div>
+          </div>
 
-        <div class="gallery-img">
-          <img
-            src="/assets/gallery/photo4.webp"
-            alt="IT training lab at SSSAM Academy Old DLF Gurugram"
-            loading="lazy"
-          />
-        </div>
+          <!-- Slide 4 -->
+          <div class="gallery-img">
+            <img
+              src="/assets/gallery/photo4.webp"
+              alt="IT training lab at SSSAM Academy Old DLF Gurugram"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="overlay-tag">SSSAM Academy</span>
+              <p class="overlay-text">High-Tech IT Lab</p>
+            </div>
+          </div>
 
-        <div class="gallery-img">
-          <img
-            src="/assets/gallery/photo5.webp"
-            alt="Students attending Full Stack Development class at SSSAM Academy Gurugram"
-            loading="lazy"
-          />
-        </div>
+          <!-- Slide 5 -->
+          <div class="gallery-img">
+            <img
+              src="/assets/gallery/photo5.webp"
+              alt="Students attending Full Stack Development class at SSSAM Academy Gurugram"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="overlay-tag">MERN Stack Lab</span>
+              <p class="overlay-text">Interactive Development Class</p>
+            </div>
+          </div>
 
-        <div class="gallery-img">
-          <img
-            src="/assets/gallery/photo6.webp"
-            alt="Computer institute classroom environment at SSSAM Academy Gurugram Haryana"
-            loading="lazy"
-          />
+          <!-- Slide 6 -->
+          <div class="gallery-img">
+            <img
+              src="/assets/gallery/photo6.webp"
+              alt="Computer institute classroom environment at SSSAM Academy Gurugram Haryana"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="overlay-tag">Doubt Support</span>
+              <p class="overlay-text">1-on-1 Student Mentorship</p>
+            </div>
+          </div>
+
+          <!-- DUPLICATE SET FOR INFINITE AUTO-SCROLL LOOP -->
+          
+          <!-- Slide 1 -->
+          <div class="gallery-img">
+            <img
+              src="/assets/gallery/photo1.webp"
+              alt="SSSAM Academy computer training classroom in Old DLF Gurugram"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="overlay-tag">SSSAM Academy</span>
+              <p class="overlay-text">Smart Classroom & Labs</p>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="gallery-img">
+            <img
+              src="/assets/gallery/photo2.webp"
+              alt="Students learning Data Science at SSSAM Academy Gurugram"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="overlay-tag">Practical Training</span>
+              <p class="overlay-text">Data Science & IT Sessions</p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="gallery-img">
+            <img
+              src="/assets/gallery/photo3.webp"
+              alt="Practical computer training session at SSSAM Academy in Gurugram"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="overlay-tag">Infrastructure</span>
+              <p class="overlay-text">Modern Practice Setup</p>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="gallery-img">
+            <img
+              src="/assets/gallery/photo4.webp"
+              alt="IT training lab at SSSAM Academy Old DLF Gurugram"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="overlay-tag">SSSAM Academy</span>
+              <p class="overlay-text">High-Tech IT Lab</p>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="gallery-img">
+            <img
+              src="/assets/gallery/photo5.webp"
+              alt="Students attending Full Stack Development class at SSSAM Academy Gurugram"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="overlay-tag">MERN Stack Lab</span>
+              <p class="overlay-text">Interactive Development Class</p>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="gallery-img">
+            <img
+              src="/assets/gallery/photo6.webp"
+              alt="Computer institute classroom environment at SSSAM Academy Gurugram Haryana"
+              loading="lazy"
+            />
+            <div class="gallery-overlay">
+              <span class="overlay-tag">Doubt Support</span>
+              <p class="overlay-text">1-on-1 Student Mentorship</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -553,12 +703,17 @@
       <h2 class="testimonials-title">What Our Students Say</h2>
 
       <div class="testimonials-container">
+        <!-- Testimonial 1 -->
         <div class="testimonial-card left-animate">
-          <div class="t-avatar" style="width:70px;height:70px;border-radius:50%;background:#c8a97e;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;margin:0 auto 12px;">R</div>
+          <div class="t-avatar-wrapper">
+            <div class="t-avatar t-ds">R</div>
+            <span class="t-google-g"><i class="fab fa-google"></i></span>
+          </div>
+          <span class="t-verified-badge"><i class="fab fa-google"></i> Verified Google Review</span>
           <h3>Rahul Sharma</h3>
-          <p style="opacity: 0.8; font-size: 0.9em; margin-top: -5px; margin-bottom: 10px;">Data Science Course | DLF Phase 1, Gurugram</p>
+          <p class="t-meta">Data Science Course | DLF Phase 1, Gurugram</p>
           <div class="stars">★★★★★</div>
-          <p>
+          <p class="t-feedback">
             I joined the Data Science course at SSSAM Academy in Sector 14 
             Gurugram. The trainers explained Python, Machine Learning and real projects 
             very clearly. Within 4 months I got placed as a Data Analyst. Best institute 
@@ -566,12 +721,17 @@
           </p>
         </div>
 
+        <!-- Testimonial 2 -->
         <div class="testimonial-card right-animate">
-          <div class="t-avatar" style="width:70px;height:70px;border-radius:50%;background:#c8a97e;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;margin:0 auto 12px;">P</div>
+          <div class="t-avatar-wrapper">
+            <div class="t-avatar t-da">P</div>
+            <span class="t-google-g"><i class="fab fa-google"></i></span>
+          </div>
+          <span class="t-verified-badge"><i class="fab fa-google"></i> Verified Google Review</span>
           <h3>Priya Verma</h3>
-          <p style="opacity: 0.8; font-size: 0.9em; margin-top: -5px; margin-bottom: 10px;">Data Analytics + Power BI | Sector 14, Gurugram</p>
+          <p class="t-meta">Data Analytics + Power BI | Sector 14, Gurugram</p>
           <div class="stars">★★★★★</div>
-          <p>
+          <p class="t-feedback">
             SSSAM Academy is the best place to learn Data Analytics in Gurugram. 
             I learned Excel, SQL and Power BI with live projects. The practical approach 
             helped me crack my interview. Highly recommend to anyone looking for computer 
@@ -579,12 +739,17 @@
           </p>
         </div>
 
+        <!-- Testimonial 3 -->
         <div class="testimonial-card left-animate">
-          <div class="t-avatar" style="width:70px;height:70px;border-radius:50%;background:#c8a97e;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;margin:0 auto 12px;">A</div>
+          <div class="t-avatar-wrapper">
+            <div class="t-avatar t-fs">A</div>
+            <span class="t-google-g"><i class="fab fa-google"></i></span>
+          </div>
+          <span class="t-verified-badge"><i class="fab fa-google"></i> Verified Google Review</span>
           <h3>Aman Gupta</h3>
-          <p style="opacity: 0.8; font-size: 0.9em; margin-top: -5px; margin-bottom: 10px;">Full Stack Development | DLF Phase 2, Gurugram</p>
+          <p class="t-meta">Full Stack Development | DLF Phase 2, Gurugram</p>
           <div class="stars">★★★★★</div>
-          <p>
+          <p class="t-feedback">
             I completed Full Stack Developer course from SSSAM Academy Gurugram. 
             MERN stack training was very hands-on with real projects. Got job as junior 
             developer within 2 months of completing the course. Great institute in Old 
@@ -592,12 +757,17 @@
           </p>
         </div>
 
+        <!-- Testimonial 4 -->
         <div class="testimonial-card right-animate">
-          <div class="t-avatar" style="width:70px;height:70px;border-radius:50%;background:#c8a97e;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;margin:0 auto 12px;">S</div>
+          <div class="t-avatar-wrapper">
+            <div class="t-avatar t-sec">S</div>
+            <span class="t-google-g"><i class="fab fa-google"></i></span>
+          </div>
+          <span class="t-verified-badge"><i class="fab fa-google"></i> Verified Google Review</span>
           <h3>Simran Kaur</h3>
-          <p style="opacity: 0.8; font-size: 0.9em; margin-top: -5px; margin-bottom: 10px;">Cyber Security & Ethical Hacking | Sushant Lok, Gurugram</p>
+          <p class="t-meta">Cyber Security & Ethical Hacking | Sushant Lok, Gurugram</p>
           <div class="stars">★★★★★</div>
-          <p>
+          <p class="t-feedback">
             Best cyber security course in Gurgaon. SSSAM Academy teaches ethical 
             hacking with practical tools and real scenarios. Trainers are experienced and 
             supportive. I now work as a security analyst. Strongly recommend this 
@@ -605,12 +775,17 @@
           </p>
         </div>
 
+        <!-- Testimonial 5 -->
         <div class="testimonial-card left-animate">
-          <div class="t-avatar" style="width:70px;height:70px;border-radius:50%;background:#c8a97e;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;margin:0 auto 12px;">R</div>
-          <h3>Rohit Yadav</h3>
-          <p style="opacity: 0.8; font-size: 0.9em; margin-top: -5px; margin-bottom: 10px;">AWS Cloud Computing | MG Road, Gurgaon</p>
+          <div class="t-avatar-wrapper">
+            <div class="t-avatar t-aws">R</div>
+            <span class="t-google-g"><i class="fab fa-google"></i></span>
+          </div>
+          <span class="t-verified-badge"><i class="fab fa-google"></i> Verified Google Review</span>
+          <h3> रोहित यादव</h3>
+          <p class="t-meta">AWS Cloud Computing | MG Road, Gurgaon</p>
           <div class="stars">★★★★★</div>
-          <p>
+          <p class="t-feedback">
             I was looking for AWS course near Gurugram and found SSSAM Academy 
             in Old DLF Sector 14. The cloud training was practical and project based. 
             Cleared my AWS certification after completing the course. Very satisfied 
@@ -618,12 +793,17 @@
           </p>
         </div>
 
+        <!-- Testimonial 6 -->
         <div class="testimonial-card right-animate">
-          <div class="t-avatar" style="width:70px;height:70px;border-radius:50%;background:#c8a97e;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;margin:0 auto 12px;">A</div>
+          <div class="t-avatar-wrapper">
+            <div class="t-avatar t-bc">A</div>
+            <span class="t-google-g"><i class="fab fa-google"></i></span>
+          </div>
+          <span class="t-verified-badge google-review"><i class="fab fa-google"></i> Verified Google Review</span>
           <h3>Anjali Singh</h3>
-          <p style="opacity: 0.8; font-size: 0.9em; margin-top: -5px; margin-bottom: 10px;">Basic Computer Course | Palam Vihar, Gurugram</p>
+          <p class="t-meta">Basic Computer Course | Palam Vihar, Gurugram</p>
           <div class="stars">★★★★★</div>
-          <p>
+          <p class="t-feedback">
             I had zero computer knowledge before joining SSSAM Academy. The 
             basic computer course in Gurugram was very easy to understand. Learned MS 
             Office, internet and typing skills. Now I am confident to apply for office 
@@ -918,30 +1098,20 @@
     </section>
 
 <!-- COUNSELING POPUP -->
-<div id="counseling-popup" style="display:none; position:fixed; inset:0; 
-  z-index:9999; align-items:center; justify-content:center;">
+<div id="counseling-popup" class="popup-overlay">
   
-  <div onclick="closeCounselingPopup()" style="position:absolute; inset:0; 
-    background:rgba(0,0,0,0.75); backdrop-filter:blur(3px);"></div>
+  <div onclick="closeCounselingPopup()" class="popup-backdrop"></div>
   
-  <div style="position:relative; z-index:1; background:#1a1a1a; 
-    border:1px solid rgba(224,167,48,0.35); border-radius:16px; 
-    padding:32px 28px; width:min(94vw, 460px); max-height:92vh; 
-    overflow-y:auto; box-shadow:0 24px 60px rgba(0,0,0,0.6);">
+  <div class="popup-content">
     
-    <button onclick="closeCounselingPopup()" style="position:absolute; 
-      top:12px; right:14px; background:rgba(255,255,255,0.1); border:none; 
-      color:#fff; font-size:20px; width:32px; height:32px; border-radius:50%; 
-      cursor:pointer; line-height:1; display:flex; align-items:center; 
-      justify-content:center;">&#10005;</button>
+    <button onclick="closeCounselingPopup()" class="popup-close">&#10005;</button>
     
-    <h3 style="color:#e0a730; font-size:1.4rem; font-weight:700; 
-      margin:0 0 6px; padding-right:40px;">
+    <h3>
       Find the Right IT Course for You &#127891;
     </h3>
-    <p style="color:#bbb; font-size:0.88rem; margin:0 0 22px;">
+    <p class="popup-desc">
       Get free course guidance from our counselor at 
-      <strong style="color:#e0a730;">SSSAM Academy</strong>
+      <strong>SSSAM Academy</strong>
     </p>
     
     <div id="counseling-form">

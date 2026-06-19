@@ -89,38 +89,7 @@ gsap.registerPlugin(ScrollTrigger);
     lastY = y <= 0 ? 0 : y; // avoid negative values on some browsers
   }, { passive: true });
 
-  // function to animate gallery items from a direction
-  function animateGallery(dir) {
-    const fromX = (dir === "down") ? -120 : 120;
-    // reset opacity & position first so animation always plays
-    gsap.set(".gallery-img", { opacity: 0, x: fromX });
-    gsap.to(".gallery-img", {
-      x: 0,
-      opacity: 1,
-      duration: 0.9,
-      ease: "power3.out",
-      stagger: 0.08
-    });
-  }
 
-  const gallerySection = document.querySelector("#gallery");
-  if (gallerySection) {
-    // create a ScrollTrigger for the whole gallery section
-    ScrollTrigger.create({
-      trigger: "#gallery",
-      start: "top 85%",
-      end: "bottom 30%",
-      onEnter: () => animateGallery(scrollDirection),
-      onEnterBack: () => animateGallery(scrollDirection),
-      // optional: when leaving, keep items visible (do not hide)
-      // onLeave and onLeaveBack left empty so items stay shown once animated
-    });
-
-    // Optional: animate once on load if #gallery already in view
-    if (gallerySection.getBoundingClientRect().top < window.innerHeight) {
-      animateGallery(scrollDirection);
-    }
-  }
 
 
 
