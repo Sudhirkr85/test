@@ -1165,6 +1165,72 @@ body.light-mode.contact-page .form-card .home-demo-form textarea {
   }
 }
 
+/* ── Enquiry Form: Searchable Course Input ── */
+.enquiry-course-wrap {
+  position: relative;
+}
+
+.enquiry-course-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+
+.enquiry-course-input:focus {
+  border-color: #e0a730;
+}
+
+.enquiry-course-input::placeholder {
+  color: #888;
+}
+
+.enquiry-course-dd {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 300;
+  margin-top: 4px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  color: #eee;
+}
+
+/* Light mode */
+body.light-mode .enquiry-course-input {
+  background: #fff;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+body.light-mode .enquiry-course-input::placeholder {
+  color: #94a3b8;
+}
+
+body.light-mode .enquiry-course-input:focus {
+  border-color: #e0a730;
+}
+
+body.light-mode .enquiry-course-dd {
+  background: #fff;
+  border-color: #cbd5e1;
+  color: #1e293b;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
 @media (max-width: 740px) {
   .contact-page .info-cards {
     grid-template-columns: 1fr;

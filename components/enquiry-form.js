@@ -4,15 +4,16 @@ window.__sharedEnquiryFormActive = true;
   const BASE_URL = "https://sssam.onrender.com".replace(/\/+$/, "");
   const DEMO_ENQUIRY_API_URL = `${BASE_URL}/api/enquiry/demo-class`;
 
-  function normalizeDemoType(modeValue) {
-    const modeMap = {
-      online: "Online",
-      live: "Live Classes",
-      offline: "Offline (Gurugram)",
-    };
-
-    return modeMap[modeValue] || "";
-  }
+  const COURSES = [
+    "Data Science",
+    "Data Analytics + Power BI",
+    "AI & Machine Learning",
+    "Full Stack Development with AI",
+    "Ethical Hacking & Cyber Security",
+    "Digital Marketing & SEO",
+    "AWS Cloud Computing",
+    "Basic Computer Course"
+  ];
 
   function getVariant(container) {
     const byAttr = (container.dataset.enquiryVariant || "").toLowerCase();
@@ -53,64 +54,27 @@ window.__sharedEnquiryFormActive = true;
             required
           />
 
-          <select name="course" class="home-demo-course" required>
-            <option value="" disabled selected>Select Course *</option>
-            <option value="ADCA">ADCA</option>
-            <option value="Advanced Excel">Advanced Excel</option>
-            <option value="AI & ML">AI & ML</option>
-            <option value="AutoCAD">AutoCAD</option>
-            <option value="AWS Cloud">AWS Cloud</option>
-            <option value="Basic Computer">Basic Computer</option>
-            <option value="C Programming">C Programming</option>
-            <option value="CCNA">CCNA</option>
-            <option value="CCNP">CCNP</option>
-            <option value="Cyber Security">Cyber Security</option>
-            <option value="Data Analysis">Data Analysis</option>
-            <option value="Data Engineering">Data Engineering</option>
-            <option value="Data Science">Data Science</option>
-            <option value="Digital Marketing">Digital Marketing</option>
-            <option value="Dot Net">Dot Net</option>
-            <option value="Ethical Hacking">Ethical Hacking</option>
-            <option value="Full Stack Development">Full Stack Development</option>
-            <option value="Google Ads">Google Ads</option>
-            <option value="Graphic Design">Graphic Design</option>
-            <option value="HTML & CSS">HTML & CSS</option>
-            <option value="Java Programming">Java Programming</option>
-            <option value="Java Full Stack">Java Full Stack</option>
-            <option value="Linux">Linux</option>
-            <option value="MIS">MIS</option>
-            <option value="MS Office">MS Office</option>
-            <option value="MySQL">MySQL</option>
-            <option value="PHP">PHP</option>
-            <option value="Python">Python</option>
-            <option value="Python Full Stack">Python Full Stack</option>
-            <option value="Ruby Programming">Ruby Programming</option>
-            <option value="SAP FICO">SAP FICO</option>
-            <option value="Search Engine Marketing">Search Engine Marketing</option>
-            <option value="SEO">SEO</option>
-            <option value="Social Media Marketing">Social Media Marketing</option>
-            <option value="Software Testing">Software Testing</option>
-            <option value="Tally">Tally</option>
-            <option value="Video Editing">Video Editing</option>
-            <option value="Other">Other</option>
-          </select>
-
           <input
-            type="text"
-            name="other_course"
-            class="home-demo-other-course is-hidden"
-            placeholder="Please mention your course name *"
-            autocomplete="off"
+            type="email"
+            name="email"
+            placeholder="Email Address (optional)"
+            autocomplete="email"
           />
+
+          <div class="enquiry-course-wrap" style="position:relative; grid-column: 1 / -1;">
+            <input
+              type="text"
+              id="enquiry-course-input-${uid}"
+              name="course"
+              class="enquiry-course-input"
+              placeholder="Course Interested In * (type to search)"
+              autocomplete="off"
+              required
+            />
+            <div id="enquiry-course-dd-${uid}" class="enquiry-course-dd"></div>
+          </div>
         </div>
 
-        <div class="home-demo-mode">
-          <label class="demo-mode-option"><input type="radio" name="mode" value="online" required /><span>Online</span></label>
-          <label class="demo-mode-option"><input type="radio" name="mode" value="live" required /><span>Live Classes</span></label>
-          <label class="demo-mode-option"><input type="radio" name="mode" value="offline" required /><span>Offline (Gurugram)</span></label>
-        </div>
-
-        <textarea name="message" rows="3" placeholder="Message / Questions (optional)"></textarea>
         <button type="submit" class="home-demo-submit">Submit Enquiry</button>
         <p class="home-demo-status" aria-live="polite"></p>
       </form>
@@ -148,83 +112,98 @@ window.__sharedEnquiryFormActive = true;
   async function submitDemoEnquiry(payload) {
     const response = await fetch(DEMO_ENQUIRY_API_URL, {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload),
     });
 
     if (!response.ok) {
       let message = "Submission failed. Please try again.";
-
       try {
         const errorData = await response.json();
-        if (
-          errorData &&
-          typeof errorData.message === "string" &&
-          errorData.message.trim()
-        ) {
+        if (errorData && typeof errorData.message === "string" && errorData.message.trim()) {
           message = errorData.message;
         }
-      } catch (_err) {
-        // Keep fallback message when response is not JSON.
-      }
-
+      } catch (_err) {}
       throw new Error(message);
     }
 
     return response;
   }
 
+  function initCourseDropdown(container, uid) {
+    const inp = container.querySelector(`#enquiry-course-input-${uid}`);
+    const dd  = container.querySelector(`#enquiry-course-dd-${uid}`);
+    if (!inp || !dd) return;
+
+    function renderList(list) {
+      dd.innerHTML = "";
+      if (!list.length) { dd.style.display = "none"; return; }
+      list.forEach(function(course) {
+        const item = document.createElement("div");
+        item.textContent = course;
+        item.style.cssText = "padding:10px 14px; cursor:pointer; font-size:0.9rem;" +
+          "border-bottom:1px solid #333; transition:background 0.15s;";
+        item.onmouseenter = function() { this.style.background = "#2a2a2a"; };
+        item.onmouseleave = function() { this.style.background = "transparent"; };
+        item.onmousedown = function(e) { e.preventDefault(); pick(course); };
+        dd.appendChild(item);
+      });
+      dd.style.display = "block";
+    }
+
+    function filter(val) {
+      const filtered = COURSES.filter(c => c.toLowerCase().includes(val.toLowerCase()));
+      if (!filtered.length) { dd.style.display = "none"; } else { renderList(filtered); }
+    }
+
+    function pick(course) {
+      inp.value = course;
+      inp.style.borderColor = "#e0a730";
+      dd.style.display = "none";
+    }
+
+    inp.addEventListener("focus", function() {
+      inp.style.borderColor = "#e0a730";
+      if (inp.value.trim()) { filter(inp.value); } else { renderList(COURSES); }
+    });
+
+    inp.addEventListener("input", function() { filter(this.value); });
+
+    document.addEventListener("click", function(e) {
+      if (!dd.contains(e.target) && e.target !== inp) dd.style.display = "none";
+    });
+  }
+
   function initEnquiryForm(container) {
-    const uid = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
-    const variant = getVariant(container);
-    const title = container.dataset.enquiryTitle || "Talk to Our Course Advisor 🎓";
-    const subtitle =
-      container.dataset.enquirySubtitle ||
-      "Get complete details about courses, fees & placement assistance.";
+    const uid      = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+    const variant  = getVariant(container);
+    const title    = container.dataset.enquiryTitle    || "Talk to Our Course Advisor 🎓";
+    const subtitle = container.dataset.enquirySubtitle || "Get complete details about courses, fees & placement assistance.";
 
     container.innerHTML = getMarkup(variant, uid, title, subtitle);
 
-    const popup = container.querySelector("[data-enquiry-popup]");
-    const form = container.querySelector(".home-demo-form");
+    const popup  = container.querySelector("[data-enquiry-popup]");
+    const form   = container.querySelector(".home-demo-form");
     const status = container.querySelector(".home-demo-status");
-    const courseSelect = container.querySelector(".home-demo-course");
-    const otherCourseInput = container.querySelector(".home-demo-other-course");
+    if (!form || !status) return;
 
-    if (!form || !status || !courseSelect || !otherCourseInput) return;
+    initCourseDropdown(container, uid);
 
-    const setStatus = (message, isError = false) => {
-      status.textContent = message;
+    const setStatus = (msg, isError = false) => {
+      status.textContent = msg;
       status.classList.toggle("error", Boolean(isError));
     };
-
-    const toggleOtherCourseInput = () => {
-      const isOtherSelected = courseSelect.value === "Other";
-      otherCourseInput.classList.toggle("is-hidden", !isOtherSelected);
-      otherCourseInput.required = isOtherSelected;
-
-      if (!isOtherSelected) {
-        otherCourseInput.value = "";
-      }
-    };
-
-    courseSelect.addEventListener("change", toggleOtherCourseInput);
-    toggleOtherCourseInput();
 
     let autoCloseTimer = null;
 
     const openPopup = (selectedCourse = "") => {
       if (!popup) return;
-
       clearTimeout(autoCloseTimer);
       setStatus("", false);
-
       if (selectedCourse) {
-        courseSelect.value = selectedCourse;
-        toggleOtherCourseInput();
+        const inp = container.querySelector(`#enquiry-course-input-${uid}`);
+        if (inp) inp.value = selectedCourse;
       }
-
       popup.classList.add("show");
       popup.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
@@ -232,31 +211,24 @@ window.__sharedEnquiryFormActive = true;
 
     const closePopup = () => {
       if (!popup) return;
-
       popup.classList.remove("show");
       popup.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
     };
 
     if (variant === "popup") {
-      const shouldAutoOpen = container.dataset.autoOpen !== "false";
-      const autoOpenDelay = Number.parseInt(container.dataset.autoOpenDelay || "5000", 10);
-
+      const shouldAutoOpen   = container.dataset.autoOpen !== "false";
+      const autoOpenDelay    = Number.parseInt(container.dataset.autoOpenDelay || "5000", 10);
       if (shouldAutoOpen) {
         window.setTimeout(openPopup, Number.isNaN(autoOpenDelay) ? 5000 : autoOpenDelay);
       }
-
-      container.querySelectorAll("[data-close-popup], [data-popup-close]").forEach((el) => {
+      container.querySelectorAll("[data-close-popup], [data-popup-close]").forEach(el => {
         el.addEventListener("click", closePopup);
       });
-
-      document.addEventListener("keydown", (event) => {
-        if (event.key === "Escape" && popup.classList.contains("show")) {
-          closePopup();
-        }
+      document.addEventListener("keydown", e => {
+        if (e.key === "Escape" && popup.classList.contains("show")) closePopup();
       });
-
-      window.openHomeDemoPopup = openPopup;
+      window.openHomeDemoPopup  = openPopup;
       window.closeHomeDemoPopup = closePopup;
     }
 
@@ -264,87 +236,51 @@ window.__sharedEnquiryFormActive = true;
       event.preventDefault();
 
       const submitBtn = form.querySelector(".home-demo-submit");
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.textContent = "Submitting...";
-      }
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.textContent = "Submitting..."; }
 
-      const formData = Object.fromEntries(new FormData(form).entries());
-      const fullName = String(formData.name || "").trim();
+      const formData    = Object.fromEntries(new FormData(form).entries());
+      const fullName    = String(formData.name  || "").trim();
       const phoneNumber = String(formData.phone || "").replace(/\D/g, "");
-      const isOthers = formData.course === "Other";
-      const customCourseName = isOthers ? String(formData.other_course || "").trim() : "";
-      const demoType = normalizeDemoType(String(formData.mode || ""));
+      const email       = String(formData.email || "").trim();
+      const course      = String(formData.course || "").trim();
 
       if (!fullName) {
         setStatus("Full name is required.", true);
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Submit Enquiry";
-        }
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = "Submit Enquiry"; }
         return;
       }
 
       if (!/^\d{10}$/.test(phoneNumber)) {
         setStatus("Mobile number must be exactly 10 digits.", true);
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Submit Enquiry";
-        }
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = "Submit Enquiry"; }
         return;
       }
 
-      if (isOthers && !customCourseName) {
-        setStatus("Please enter your custom course name.", true);
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Submit Enquiry";
-        }
+      if (!course) {
+        setStatus("Please select a course.", true);
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = "Submit Enquiry"; }
         return;
       }
 
-      if (!demoType) {
-        setStatus("Please select Online / Live / Offline mode.", true);
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Submit Enquiry";
-        }
-        return;
-      }
-
-      const payload = {
-        fullName,
-        phoneNumber,
-        course: isOthers ? "Others" : String(formData.course || "").trim(),
-        customCourseName,
-        demoType,
-        message: String(formData.message || "").trim(),
-      };
+      const payload = { fullName, phoneNumber, email, course };
 
       try {
         await submitDemoEnquiry(payload);
         form.reset();
-        toggleOtherCourseInput();
-        setStatus("✅ Thank you for your enquiry! Our team will contact you shortly.", false);
-
+        setStatus("✅ Thank you! Our team will contact you shortly.", false);
         if (variant === "popup") {
-          autoCloseTimer = window.setTimeout(() => {
-            closePopup();
-          }, 2200);
+          autoCloseTimer = window.setTimeout(closePopup, 2200);
         }
       } catch (error) {
         setStatus(error.message || "Submission failed. Please try again.", true);
       } finally {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.textContent = "Submit Enquiry";
-        }
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = "Submit Enquiry"; }
       }
     });
   }
 
   document.addEventListener("DOMContentLoaded", () => {
     const roots = document.querySelectorAll("[data-enquiry-form-root]");
-    roots.forEach((container) => initEnquiryForm(container));
+    roots.forEach(container => initEnquiryForm(container));
   });
 })();
