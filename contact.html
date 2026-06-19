@@ -203,12 +203,13 @@
                 <span class="btn-text">Call Now</span>
               </a>
               <a
-                href="mailto:info@sssamacademy.com"
+                href="#contact-enquiry-form"
                 class="btn outline"
-                aria-label="Email SSSAM Academy"
+                aria-label="Get a callback from SSSAM Academy"
+                onclick="document.getElementById('contact-enquiry-form').scrollIntoView({behavior:'smooth'}); return false;"
               >
-                <span class="btn-icon">✉️</span>
-                <span class="btn-text">Email Us</span>
+                <span class="btn-icon">📋</span>
+                <span class="btn-text">Get a Callback</span>
               </a>
             </div>
           </div>
@@ -525,7 +526,7 @@
         </div>
       </section>
 
-      <section class="contact-grid">
+      <section class="contact-grid" id="contact-enquiry-form">
         <div class="info-cards">
           <div class="card">
             <div class="icon">📞</div>
