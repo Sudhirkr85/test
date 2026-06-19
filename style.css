@@ -402,8 +402,8 @@ body.light-mode .cta-status {
 
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 100svh;
-    padding: 80px 6%;
+    min-height: auto;
+    padding: 30px 6% 60px;
   }
   .hero-content h1 {
     font-size: 1.8rem;
@@ -480,10 +480,12 @@ body.dark-mode .about-text p {
 
 body.light-mode .about-btn {
   background: #204180;
+  color: #ffffff !important;
 }
 
 body.light-mode .about-btn:hover {
   background: #163260;
+  color: #ffffff !important;
 }
 
 /* About Features Grid */
@@ -1323,7 +1325,7 @@ body.light-mode .cta-content p {
 
 body.light-mode .cta-btn {
   background: #204180;
-  color: #fff;
+  color: #fff !important;
 }
 
 .cta-btn:hover {
@@ -1846,12 +1848,12 @@ body.light-mode .faq-cta p {
 body.light-mode .faq-contact-btn {
   background: #204180;
   border-color: #204180;
-  color: white;
+  color: white !important;
 }
 
 body.light-mode .faq-contact-btn:hover {
   background: transparent;
-  color: #204180;
+  color: #204180 !important;
 }
 
 /* Responsive */
@@ -2539,7 +2541,7 @@ body.light-mode h5 {
   color: #0f172a !important;
 }
 
-body.light-mode a {
+body.light-mode a:not(.about-btn):not(.cta-btn):not(.directions-btn):not(.faq-contact-btn):not(.float-btn) {
   color: #204180;
 }
 
@@ -2687,6 +2689,13 @@ body.light-mode .footer-socials a:hover {
   color: #fff !important;
   box-shadow: 0 4px 12px rgba(32, 65, 128, 0.2);
   border-color: #204180;
+}
+
+/* Call button helper for desktop screens */
+@media (min-width: 769px) {
+  .btn-secondary::after {
+    content: " (+91 92170 31899)";
+  }
 }
 
 

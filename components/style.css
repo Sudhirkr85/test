@@ -970,7 +970,7 @@ body.light-mode .floating-trigger {
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  color: white;
+  color: white !important;
   font-size: 24px;
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0,0,0,0.3);
@@ -2190,12 +2190,12 @@ body.light-mode .faq-cta p {
 body.light-mode .faq-contact-btn {
   background: #204180;
   border-color: #204180;
-  color: white;
+  color: white !important;
 }
 
 body.light-mode .faq-contact-btn:hover {
   background: transparent;
-  color: #204180;
+  color: #204180 !important;
 }
 
 /* FAQ Responsive */
