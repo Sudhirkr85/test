@@ -1269,8 +1269,13 @@
   window.cpShowDropdown = function() {
     const inp = document.getElementById("cp-course-search");
     inp.style.borderColor = "#e0a730";
-    cpRenderList(CP_COURSES);
-    document.getElementById("cp-course-dd").style.display = "block";
+    const val = inp.value.trim();
+    if (val) {
+      cpFilterCourses(val);
+    } else {
+      cpRenderList(CP_COURSES);
+      document.getElementById("cp-course-dd").style.display = "block";
+    }
   };
 
   window.cpFilterCourses = function(val) {

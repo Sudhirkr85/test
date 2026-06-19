@@ -267,22 +267,26 @@ document.addEventListener("DOMContentLoaded", () => {
       const card = btn.closest(".course-item");
       const title = card?.querySelector(".course-title")?.textContent?.trim() || "";
 
-      if (courseSelect) {
-        const matchingOption = Array.from(courseSelect.options).find((option) => {
-          const value = (option.value || "").toLowerCase();
-          const text = (option.textContent || "").toLowerCase();
-          const titleLower = title.toLowerCase();
-          return value && (titleLower.includes(value) || text.includes(titleLower));
-        });
+      // Clean course title for popup pre-fill (e.g. remove "Course in Gurugram" / "Course")
+      let cleanTitle = title
+        .replace(/Course\s+in\s+Gurugram/gi, "")
+        .replace(/Course\s+in\s+Gurgaon/gi, "")
+        .replace(/Course/gi, "")
+        .replace(/\s+/g, " ")
+        .trim();
 
-        if (matchingOption) {
-          courseSelect.value = matchingOption.value;
-          courseSelect.dispatchEvent(new Event("change"));
+      // Set the counseling search dropdown to this clean title
+      const cpSearchInput = document.getElementById("cp-course-search");
+      if (cpSearchInput) {
+        cpSearchInput.value = cleanTitle;
+        // Trigger matching course in local selection variable if window functions exist
+        if (typeof window.cpFilterCourses === "function") {
+          window.cpFilterCourses(cleanTitle);
         }
       }
 
-      if (typeof window.openHomeDemoPopup === "function") {
-        window.openHomeDemoPopup();
+      if (typeof window.openCounselingPopup === "function") {
+        window.openCounselingPopup();
       }
     });
   });

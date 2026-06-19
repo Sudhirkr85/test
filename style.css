@@ -2535,6 +2535,14 @@ body.light-mode #cp-course-dd {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
 }
 
+body.light-mode #cp-course-dd div {
+  color: #1e293b !important;
+}
+
+body.light-mode #cp-course-dd div:hover {
+  background: #f1f5f9 !important;
+}
+
 /* ==========================================================================
    LIGHT MODE CONTRAST & READABILITY ENHANCEMENTS
    ========================================================================== */

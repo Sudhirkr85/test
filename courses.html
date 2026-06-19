@@ -1496,81 +1496,483 @@
       </article>
     </main>
 
-    <div class="demo-popup" id="homeDemoPopup" aria-hidden="true" data-auto-open="false">
-      <div class="demo-popup-backdrop" data-close-popup></div>
-      <div class="demo-popup-dialog" role="dialog" aria-modal="true" aria-labelledby="homeDemoPopupTitle">
-        <button class="demo-popup-close" type="button" id="homeDemoPopupClose" aria-label="Close demo booking popup">×</button>
-        <h3 id="homeDemoPopupTitle">Book Your Free Demo Class</h3>
-        <p class="demo-popup-subtitle">Tell us your preference and we will contact you shortly.</p>
-
-        <form id="home-demo-form" class="home-demo-form" action="#" method="post">
-          <div class="home-demo-grid">
-            <input type="text" name="name" placeholder="Full Name *" autocomplete="name" required />
-            <input type="tel" name="phone" placeholder="Mobile Number *" inputmode="numeric" pattern="[0-9]{10}" maxlength="10" required />
-
-            <select name="course" id="home-demo-course" required>
-              <option value="" disabled selected>Select Course *</option>
-              <option value="ADCA">ADCA</option>
-              <option value="Advanced Excel">Advanced Excel</option>
-              <option value="AI & ML">AI & ML</option>
-              <option value="AutoCAD">AutoCAD</option>
-              <option value="AWS Cloud">AWS Cloud</option>
-              <option value="Basic Computer">Basic Computer</option>
-              <option value="C Programming">C Programming</option>
-              <option value="CCNA">CCNA</option>
-              <option value="CCNP">CCNP</option>
-              <option value="Cyber Security">Cyber Security</option>
-              <option value="Data Analysis">Data Analysis</option>
-              <option value="Data Engineering">Data Engineering</option>
-              <option value="Data Science">Data Science</option>
-              <option value="Digital Marketing">Digital Marketing</option>
-              <option value="Dot Net">Dot Net</option>
-              <option value="Ethical Hacking">Ethical Hacking</option>
-              <option value="Full Stack Development">Full Stack Development</option>
-              <option value="Google Ads">Google Ads</option>
-              <option value="Graphic Design">Graphic Design</option>
-              <option value="HTML & CSS">HTML & CSS</option>
-              <option value="Java Programming">Java Programming</option>
-              <option value="Java Full Stack">Java Full Stack</option>
-              <option value="Linux">Linux</option>
-              <option value="MIS">MIS</option>
-              <option value="MS Office">MS Office</option>
-              <option value="MySQL">MySQL</option>
-              <option value="PHP">PHP</option>
-              <option value="Python">Python</option>
-              <option value="Python Full Stack">Python Full Stack</option>
-              <option value="Ruby Programming">Ruby Programming</option>
-              <option value="SAP FICO">SAP FICO</option>
-              <option value="Search Engine Marketing">Search Engine Marketing</option>
-              <option value="SEO">SEO</option>
-              <option value="Social Media Marketing">Social Media Marketing</option>
-              <option value="Software Testing">Software Testing</option>
-              <option value="Tally">Tally</option>
-              <option value="Video Editing">Video Editing</option>
-              <option value="Other">Other</option>
-            </select>
-
-            <input
-              type="text"
-              name="other_course"
-              id="home-demo-other-course"
-              class="home-demo-other-course is-hidden"
-              placeholder="Please mention your course name *"
-              autocomplete="off"
-            />
-          </div>
-
-          <div class="home-demo-mode">
-            <label class="demo-mode-option"><input type="radio" name="mode" value="online" required /><span>Online</span></label>
-            <label class="demo-mode-option"><input type="radio" name="mode" value="live" required /><span>Live Classes</span></label>
-            <label class="demo-mode-option"><input type="radio" name="mode" value="offline" required /><span>Offline (Gurugram)</span></label>
-          </div>
-
-          <textarea name="message" rows="3" placeholder="Message / Questions (optional)"></textarea>
-          <button type="submit" class="home-demo-submit">Book Free Demo Class</button>
-          <p id="home-demo-status" class="home-demo-status" aria-live="polite"></p>
-        </form>
+    <!-- COUNSELING POPUP -->
+<div id="counseling-popup" class="popup-overlay">
+  
+  <div onclick="closeCounselingPopup()" class="popup-backdrop"></div>
+  
+  <div class="popup-content">
+    
+    <button onclick="closeCounselingPopup()" class="popup-close">&#10005;</button>
+    
+    <h3>
+      Find the Right IT Course for You &#127891;
+    </h3>
+    <p class="popup-desc">
+      Get free course guidance from our counselor at 
+      <strong>SSSAM Academy</strong>
+    </p>
+    
+    <div id="counseling-form">
+      
+      <div style="margin-bottom:14px;">
+        <input type="text" id="cp-name" 
+          placeholder="Your Full Name *" 
+          style="width:100%; padding:12px 14px; border-radius:8px; 
+          border:1px solid #333; background:#111; color:#fff; 
+          font-size:0.95rem; outline:none; box-sizing:border-box;
+          transition:border-color 0.2s;" 
+          onfocus="this.style.borderColor='#e0a730'" 
+          onblur="this.style.borderColor='#333'" />
       </div>
+      
+      <div style="margin-bottom:14px;">
+        <input type="tel" id="cp-mobile" 
+          placeholder="Mobile Number * (10 digits)" 
+          maxlength="10" inputmode="numeric"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+          style="width:100%; padding:12px 14px; border-radius:8px; 
+          border:1px solid #333; background:#111; color:#fff; 
+          font-size:0.95rem; outline:none; box-sizing:border-box;
+          transition:border-color 0.2s;"
+          onfocus="this.style.borderColor='#e0a730'" 
+          onblur="this.style.borderColor='#333'" />
+      </div>
+      
+      <div style="margin-bottom:14px; position:relative;">
+        <input type="text" id="cp-course-search" 
+          placeholder="Course Interested In * (type to search)" 
+          autocomplete="off"
+          oninput="cpFilterCourses(this.value)"
+          onfocus="cpShowDropdown()"
+          style="width:100%; padding:12px 14px; border-radius:8px; 
+          border:1px solid #333; background:#111; color:#fff; 
+          font-size:0.95rem; outline:none; box-sizing:border-box;
+          transition:border-color 0.2s;"
+          onblur="this.style.borderColor='#333'"  />
+        <div id="cp-course-dd" style="display:none; position:absolute; 
+          top:100%; left:0; right:0; background:#222; 
+          border:1px solid #444; border-radius:8px; 
+          max-height:200px; overflow-y:auto; z-index:200; margin-top:4px;
+          box-shadow:0 8px 20px rgba(0,0,0,0.4);">
+        </div>
+      </div>
+      
+      <div style="margin-bottom:20px;">
+        <input type="email" id="cp-email" 
+          placeholder="Email Address (Optional)" 
+          style="width:100%; padding:12px 14px; border-radius:8px; 
+          border:1px solid #333; background:#111; color:#fff; 
+          font-size:0.95rem; outline:none; box-sizing:border-box;
+          transition:border-color 0.2s;"
+          onfocus="this.style.borderColor='#e0a730'" 
+          onblur="this.style.borderColor='#333'" />
+      </div>
+      
+      <div id="cp-error" style="color:#ff6b6b; font-size:0.85rem; 
+        margin-bottom:12px; display:none; padding:8px 12px; 
+        background:rgba(255,107,107,0.1); border-radius:6px;"></div>
+      
+      <button onclick="cpSubmit()" id="cp-submit"
+        style="width:100%; padding:14px; background:#e0a730; color:#000; 
+        border:none; border-radius:8px; font-size:1rem; font-weight:700; 
+        cursor:pointer; transition:background 0.3s; letter-spacing:0.3px;">
+        Get Free Counseling &#127891;
+      </button>
+
+      <p style="text-align:center; color:#777; font-size:0.78rem; 
+        margin:10px 0 0;">
+        &#128274; Your details are safe with us. No spam.
+      </p>
+    </div>
+    
+    <div id="counseling-success" style="display:none; text-align:center; 
+      padding:30px 0;">
+      <div style="font-size:3.5rem; margin-bottom:14px;">&#9989;</div>
+      <h4 style="color:#e0a730; font-size:1.3rem; margin:0 0 10px;">
+        Thank You!
+      </h4>
+      <p style="color:#ccc; font-size:0.95rem; line-height:1.6;">
+        Connecting you to our counselor on WhatsApp...
+      </p>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+(function() {
+  const CP_COURSES = [
+    "Data Science",
+    "Data Analytics + Power BI",
+    "AI & Machine Learning",
+    "Full Stack Development with AI",
+    "Ethical Hacking & Cyber Security",
+    "Digital Marketing & SEO",
+    "AWS Cloud Computing",
+    "Basic Computer Course"
+  ];
+
+  let cpSelected = "";
+
+  function cpRenderList(list) {
+    const dd = document.getElementById("cp-course-dd");
+    dd.innerHTML = "";
+
+    if (list.length === 0) {
+      dd.style.display = "none";
+      return;
+    }
+
+    list.forEach(function(course) {
+      const item = document.createElement("div");
+      item.textContent = course;
+      item.style.cssText = "padding:10px 14px; cursor:pointer; color:#eee;" +
+        "font-size:0.9rem; border-bottom:1px solid #333; transition:background 0.15s;";
+      item.onmouseenter = function() { this.style.background = "#2a2a2a"; };
+      item.onmouseleave = function() { this.style.background = "transparent"; };
+      item.onmousedown = function(e) {
+        e.preventDefault();
+        cpPickCourse(course);
+      };
+      dd.appendChild(item);
+    });
+  }
+
+  window.cpShowDropdown = function() {
+    const inp = document.getElementById("cp-course-search");
+    inp.style.borderColor = "#e0a730";
+    const val = inp.value.trim();
+    if (val) {
+      cpFilterCourses(val);
+    } else {
+      cpRenderList(CP_COURSES);
+      document.getElementById("cp-course-dd").style.display = "block";
+    }
+  };
+
+  window.cpFilterCourses = function(val) {
+    const filtered = CP_COURSES.filter(function(c) {
+      return c.toLowerCase().indexOf(val.toLowerCase()) > -1;
+    });
+
+    const exactMatch = CP_COURSES.find(function(c) {
+      return c.toLowerCase() === val.trim().toLowerCase();
+    });
+
+    if (exactMatch) {
+      cpSelected = exactMatch;
+    } else {
+      cpSelected = "";
+    }
+
+    if (filtered.length === 0) {
+      document.getElementById("cp-course-dd").style.display = "none";
+    } else {
+      cpRenderList(filtered);
+      document.getElementById("cp-course-dd").style.display = "block";
+    }
+  };
+
+  function cpPickCourse(course) {
+    cpSelected = course;
+    document.getElementById("cp-course-search").value = course;
+    document.getElementById("cp-course-search").style.borderColor = "#e0a730";
+    document.getElementById("cp-course-dd").style.display = "none";
+  }
+
+  document.addEventListener("click", function(e) {
+    const dd = document.getElementById("cp-course-dd");
+    const inp = document.getElementById("cp-course-search");
+    if (dd && !dd.contains(e.target) && e.target !== inp) {
+      dd.style.display = "none";
+    }
+  });
+
+  window.openCounselingPopup = function() {
+    const popup = document.getElementById("counseling-popup");
+    popup.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  };
+
+  window.closeCounselingPopup = function() {
+    const popup = document.getElementById("counseling-popup");
+    popup.style.display = "none";
+    document.body.style.overflow = "";
+  };
+
+  window.cpSubmit = function() {
+    const name = document.getElementById("cp-name").value.trim();
+    const mobile = document.getElementById("cp-mobile").value.trim();
+    const courseInput = document.getElementById("cp-course-search").value.trim();
+    const email = document.getElementById("cp-email").value.trim();
+    const error = document.getElementById("cp-error");
+
+    error.style.display = "none";
+    document.getElementById("cp-name").style.borderColor = "#333";
+    document.getElementById("cp-mobile").style.borderColor = "#333";
+    document.getElementById("cp-course-search").style.borderColor = "#333";
+    document.getElementById("cp-email").style.borderColor = "#333";
+
+    if (!name) {
+      error.textContent = "⚠ Please enter your full name.";
+      error.style.display = "block";
+      document.getElementById("cp-name").style.borderColor = "#ff6b6b";
+      return;
+    }
+    if (!mobile || mobile.length !== 10 || !/^\d+$/.test(mobile)) {
+      error.textContent = "⚠ Please enter a valid 10-digit mobile number.";
+      error.style.display = "block";
+      document.getElementById("cp-mobile").style.borderColor = "#ff6b6b";
+      return;
+    }
+    if (!courseInput) {
+      error.textContent = "⚠ Please select or type a course name.";
+      error.style.display = "block";
+      document.getElementById("cp-course-search").style.borderColor = "#ff6b6b";
+      return;
+    }
+    if (email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        error.textContent = "⚠ Please enter a valid email address.";
+        error.style.display = "block";
+        document.getElementById("cp-email").style.borderColor = "#ff6b6b";
+        return;
+      }
+    }
+
+    const btn = document.getElementById("cp-submit");
+    btn.disabled = true;
+    btn.textContent = "Connecting...";
+
+    document.getElementById("counseling-form").style.display = "none";
+    document.getElementById("counseling-success").style.display = "block";
+
+    const msg = encodeURIComponent(
+      "Hi SSSAM Academy! I am " + name +
+      " and I am interested in " + courseInput +
+      " course at your Gurugram institute." +
+      " My mobile number is " + mobile +
+      (email ? " and my email is " + email : "") +
+      ". Please guide me."
+    );
+
+    setTimeout(function() {
+      window.open("https://wa.me/919217031899?text=" + msg, "_blank");
+      window.closeCounselingPopup();
+      document.getElementById("counseling-form").style.display = "block";
+      document.getElementById("counseling-success").style.display = "none";
+      document.getElementById("cp-name").value = "";
+      document.getElementById("cp-mobile").value = "";
+      document.getElementById("cp-course-search").value = "";
+      document.getElementById("cp-course-search").placeholder = 
+        "Course Interested In * (type to search)";
+      document.getElementById("cp-email").value = "";
+      cpSelected = "";
+      btn.disabled = false;
+      btn.textContent = "Get Free Counseling &#127891;";
+    }, 2000);
+  };
+
+  setTimeout(function() {
+    window.openCounselingPopup();
+  }, 5000);
+
+})();
+</script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="./script.js" defer></script>
+    <script src="components/script.js" defer></script>
+  </body>
+</html>
+
+<script>
+(function() {
+  const CP_COURSES = [
+    "Data Science",
+    "Data Analytics + Power BI",
+    "AI & Machine Learning",
+    "Full Stack Development with AI",
+    "Ethical Hacking & Cyber Security",
+    "Digital Marketing & SEO",
+    "AWS Cloud Computing",
+    "Basic Computer Course"
+  ];
+
+  let cpSelected = "";
+
+  function cpRenderList(list) {
+    const dd = document.getElementById("cp-course-dd");
+    dd.innerHTML = "";
+
+    if (list.length === 0) {
+      dd.style.display = "none";
+      return;
+    }
+
+    list.forEach(function(course) {
+      const item = document.createElement("div");
+      item.textContent = course;
+      item.style.cssText = "padding:10px 14px; cursor:pointer; color:#eee;" +
+        "font-size:0.9rem; border-bottom:1px solid #333; transition:background 0.15s;";
+      item.onmouseenter = function() { this.style.background = "#2a2a2a"; };
+      item.onmouseleave = function() { this.style.background = "transparent"; };
+      item.onmousedown = function(e) {
+        e.preventDefault();
+        cpPickCourse(course);
+      };
+      dd.appendChild(item);
+    });
+  }
+
+  window.cpShowDropdown = function() {
+    const inp = document.getElementById("cp-course-search");
+    inp.style.borderColor = "#e0a730";
+    const val = inp.value.trim();
+    if (val) {
+      cpFilterCourses(val);
+    } else {
+      cpRenderList(CP_COURSES);
+      document.getElementById("cp-course-dd").style.display = "block";
+    }
+  };
+
+  window.cpFilterCourses = function(val) {
+    const filtered = CP_COURSES.filter(function(c) {
+      return c.toLowerCase().indexOf(val.toLowerCase()) > -1;
+    });
+
+    const exactMatch = CP_COURSES.find(function(c) {
+      return c.toLowerCase() === val.trim().toLowerCase();
+    });
+
+    if (exactMatch) {
+      cpSelected = exactMatch;
+    } else {
+      cpSelected = "";
+    }
+
+    if (filtered.length === 0) {
+      document.getElementById("cp-course-dd").style.display = "none";
+    } else {
+      cpRenderList(filtered);
+      document.getElementById("cp-course-dd").style.display = "block";
+    }
+  };
+
+  function cpPickCourse(course) {
+    cpSelected = course;
+    document.getElementById("cp-course-search").value = course;
+    document.getElementById("cp-course-search").style.borderColor = "#e0a730";
+    document.getElementById("cp-course-dd").style.display = "none";
+  }
+
+  document.addEventListener("click", function(e) {
+    const dd = document.getElementById("cp-course-dd");
+    const inp = document.getElementById("cp-course-search");
+    if (dd && !dd.contains(e.target) && e.target !== inp) {
+      dd.style.display = "none";
+    }
+  });
+
+  window.openCounselingPopup = function() {
+    const popup = document.getElementById("counseling-popup");
+    popup.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  };
+
+  window.closeCounselingPopup = function() {
+    const popup = document.getElementById("counseling-popup");
+    popup.style.display = "none";
+    document.body.style.overflow = "";
+  };
+
+  window.cpSubmit = function() {
+    const name = document.getElementById("cp-name").value.trim();
+    const mobile = document.getElementById("cp-mobile").value.trim();
+    const courseInput = document.getElementById("cp-course-search").value.trim();
+    const email = document.getElementById("cp-email").value.trim();
+    const error = document.getElementById("cp-error");
+
+    error.style.display = "none";
+    document.getElementById("cp-name").style.borderColor = "#333";
+    document.getElementById("cp-mobile").style.borderColor = "#333";
+    document.getElementById("cp-course-search").style.borderColor = "#333";
+    document.getElementById("cp-email").style.borderColor = "#333";
+
+    if (!name) {
+      error.textContent = "⚠ Please enter your full name.";
+      error.style.display = "block";
+      document.getElementById("cp-name").style.borderColor = "#ff6b6b";
+      return;
+    }
+    if (!mobile || mobile.length !== 10 || !/^\d+$/.test(mobile)) {
+      error.textContent = "⚠ Please enter a valid 10-digit mobile number.";
+      error.style.display = "block";
+      document.getElementById("cp-mobile").style.borderColor = "#ff6b6b";
+      return;
+    }
+    if (!courseInput) {
+      error.textContent = "⚠ Please select or type a course name.";
+      error.style.display = "block";
+      document.getElementById("cp-course-search").style.borderColor = "#ff6b6b";
+      return;
+    }
+    if (email) {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        error.textContent = "⚠ Please enter a valid email address.";
+        error.style.display = "block";
+        document.getElementById("cp-email").style.borderColor = "#ff6b6b";
+        return;
+      }
+    }
+
+    const btn = document.getElementById("cp-submit");
+    btn.disabled = true;
+    btn.textContent = "Connecting...";
+
+    document.getElementById("counseling-form").style.display = "none";
+    document.getElementById("counseling-success").style.display = "block";
+
+    const msg = encodeURIComponent(
+      "Hi SSSAM Academy! I am " + name +
+      " and I am interested in " + courseInput +
+      " course at your Gurugram institute." +
+      " My mobile number is " + mobile +
+      (email ? " and my email is " + email : "") +
+      ". Please guide me."
+    );
+
+    setTimeout(function() {
+      window.open("https://wa.me/919217031899?text=" + msg, "_blank");
+      window.closeCounselingPopup();
+      document.getElementById("counseling-form").style.display = "block";
+      document.getElementById("counseling-success").style.display = "none";
+      document.getElementById("cp-name").value = "";
+      document.getElementById("cp-mobile").value = "";
+      document.getElementById("cp-course-search").value = "";
+      document.getElementById("cp-course-search").placeholder = 
+        "Course Interested In * (type to search)";
+      document.getElementById("cp-email").value = "";
+      cpSelected = "";
+      btn.disabled = false;
+      btn.textContent = "Get Free Counseling &#127891;";
+    }, 2000);
+  };
+
+  setTimeout(function() {
+    window.openCounselingPopup();
+  }, 5000);
+
+})();
+</script>
+
+
     </div>
 
     <!-- optional footer include -->
