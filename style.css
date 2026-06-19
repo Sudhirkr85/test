@@ -1094,13 +1094,23 @@ body.light-mode .testimonials-title {
 }
 
 .testimonials-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
   gap: 30px;
+  padding: 20px 5px;
+  scrollbar-width: none;
+}
+
+.testimonials-container::-webkit-scrollbar {
+  display: none;
 }
 
 /* Card */
 .testimonial-card {
+  flex: 0 0 calc(33.333% - 20px);
+  scroll-snap-align: start;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   padding: 30px;
@@ -1138,6 +1148,8 @@ body.light-mode .testimonials-title {
 .t-avatar.t-sec { background: linear-gradient(135deg, #0f2027 0%, #203a43 100%); }
 .t-avatar.t-aws { background: linear-gradient(135deg, #f857a6 0%, #ff5858 100%); }
 .t-avatar.t-bc { background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); }
+.t-avatar.t-dm { background: linear-gradient(135deg, #8a2387 0%, #e94057 100%); }
+.t-avatar.t-excel { background: linear-gradient(135deg, #117864 0%, #196f3d 100%); }
 
 body.light-mode .t-avatar {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
@@ -1256,19 +1268,16 @@ body.light-mode .stars {
 }
 
 /* Responsive */
-@media(max-width: 900px) {
-  .testimonials-container {
-    grid-template-columns: repeat(1, 1fr);
+@media(max-width: 968px) {
+  .testimonial-card {
+    flex: 0 0 calc(50% - 15px);
   }
 }
 
 @media(max-width: 600px) {
-  .testimonials-container {
-    grid-template-columns: 1fr;
+  .testimonial-card {
+    flex: 0 0 100%;
   }
-
-
-
 }
 
 
@@ -2390,12 +2399,13 @@ body.light-mode .ticker-wrap::after {
   width: auto;
   margin-right: 60px;
   object-fit: contain;
-  opacity: 1;
+  opacity: 0.9;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 .ticker-logo:hover {
   transform: scale(1.1);
+  opacity: 1;
 }
 
 @keyframes scrollTicker {
@@ -2696,6 +2706,36 @@ body.light-mode .footer-socials a:hover {
   .btn-secondary::after {
     content: " (+91 92170 31899)";
   }
+}
+
+/* Testimonials Carousel Dots */
+.testimonials-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+.t-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.t-dot.active {
+  background: #e0a730;
+  transform: scale(1.2);
+}
+
+body.light-mode .t-dot {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+body.light-mode .t-dot.active {
+  background: #204180;
 }
 
 
