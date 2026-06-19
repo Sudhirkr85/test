@@ -1384,6 +1384,7 @@ body.light-mode .map-subtitle {
   grid-template-columns: 2fr 1fr;
   gap: 30px;
   margin-bottom: 40px;
+  align-items: stretch;
 }
 
 /* Map Embed */
@@ -1391,10 +1392,12 @@ body.light-mode .map-subtitle {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  height: 500px;
+  height: 100%;
+  min-height: 480px;
 }
 
-.google-map {
+.google-map,
+.map-embed iframe {
   display: block;
   width: 100%;
   height: 100%;
@@ -1521,11 +1524,12 @@ body.light-mode .info-card a:hover {
 body.light-mode .directions-btn {
   background: linear-gradient(135deg, #204180 0%, #152f5f 100%);
   border-color: #204180;
+  color: #ffffff !important;
 }
 
 body.light-mode .directions-btn:hover {
   background: transparent;
-  color: #204180;
+  color: #204180 !important;
   box-shadow: 0 8px 20px rgba(32, 65, 128, 0.3);
 }
 
@@ -1542,6 +1546,7 @@ body.light-mode .directions-btn:hover {
 
   .map-embed {
     height: 400px;
+    min-height: auto;
   }
 
   .map-info {
@@ -1562,6 +1567,7 @@ body.light-mode .directions-btn:hover {
 
   .map-embed {
     height: 350px;
+    min-height: auto;
   }
 
   .map-info {
@@ -1585,6 +1591,7 @@ body.light-mode .directions-btn:hover {
 
   .map-embed {
     height: 300px;
+    min-height: auto;
   }
 
   .map-info {
@@ -2637,6 +2644,49 @@ body.light-mode .popup-desc {
 }
 body.light-mode .popup-desc strong {
   color: #204180 !important;
+}
+
+/* Footer Social Icons */
+.footer-socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.footer-socials a {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff !important;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+body.light-mode .footer-socials a {
+  background: rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #204180 !important;
+}
+
+.footer-socials a:hover {
+  background: #e0a730;
+  color: #111 !important;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(224, 167, 48, 0.3);
+  border-color: #e0a730;
+}
+
+body.light-mode .footer-socials a:hover {
+  background: #204180;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(32, 65, 128, 0.2);
+  border-color: #204180;
 }
 
 
