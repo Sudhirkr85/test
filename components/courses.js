@@ -260,11 +260,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const courseSelect = document.getElementById("home-demo-course");
 
-  document.querySelectorAll(".course-item .btn-ghost").forEach((btn) => {
-    btn.classList.add("contact-btn");
-  });
-
-  document.querySelectorAll(".course-item .contact-btn").forEach((btn) => {
+  document.querySelectorAll(".course-item .btn-primary").forEach((btn) => {
     btn.addEventListener("click", (event) => {
       event.preventDefault();
 
