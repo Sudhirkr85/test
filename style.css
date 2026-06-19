@@ -10,124 +10,139 @@ img {
     height: auto;
 }
 
-/* MAIN SLIDER WRAPPER */
-.hero-slider {
+.hero-section {
   position: relative;
-  height: 70vh;
-  width: 100%;
-  overflow: hidden;
-}
-
-/* EACH SLIDE */
-.slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
+  min-height: 100vh;
+  background-image: url('./assets/computer-institute-gurugram-banner.png');
   background-size: cover;
   background-position: center;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
 }
 
-.slide.active {
-  opacity: 1;
-}
-
-/* dark overlay to improve text contrast */
-.slide::before {
-  content: "";
+.hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45));
+  background: rgba(0, 0, 0, 0.6);
   z-index: 0;
 }
 
-/* TEXT CONTENT */
-.slide-content {
-  position: absolute;
-  left: 8%;
-  top: 10%;
-  transform: translateY(-50%);
-  color: white;
-  max-width: 680px;
-  padding: 12px;
-  z-index: 2; /* above overlay */
-  animation: fadeInUp 1.2s ease forwards;
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 750px;
+  padding: 120px 0 80px 0;
 }
 
-.slide-content h1 {
-  font-size: 50px;
-  line-height: 1.05;
-  text-shadow: 2px 2px 12px rgba(0,0,0,0.45);
+.hero-content h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.hero-desc {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  color: #f0f0f0;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.hero-address {
+  font-size: 1rem;
+  color: #f0f0f0;
+  font-weight: 600;
   margin-bottom: 10px;
 }
 
-.slide-content p {
-  font-size: 20px;
-  line-height: 1.5;
-  text-shadow: 1px 1px 6px rgba(0,0,0,0.45);
+.hero-trust {
+  font-size: 0.95rem;
+  color: #f0c97a;
+  font-weight: 500;
+  margin-bottom: 28px;
 }
 
-/* ANIMATION */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* NAVIGATION BUTTONS */
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 30px;
-  color: white;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 50%;
-  width: 55px;
-  height: 55px;
+.hero-cta {
   display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
   align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  user-select: none;
 }
 
-.prev { left: 20px; }
-.next { right: 20px; }
-
-.carousel-btn:hover {
-  background: rgba(0, 0, 0, 0.7);
+.btn-primary {
+  background: #e87722;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.3s;
 }
 
-/* Responsive adjustments for hero */
-@media(max-width: 1024px){
-  .slide-content { left: 6%; max-width: 520px; padding-right: 10px; }
-  .slide-content h1 { font-size: 36px; }
-  .slide-content p { font-size: 16px; }
-  .hero-slider { height: 50vh; }
+.btn-primary:hover {
+  background: #cf6510;
 }
 
-@media(max-width: 768px){
-  .slide-content { left: 5%; top: 40%; transform: translateY(-40%); max-width: 90%; }
-  .slide-content h1 { font-size: 26px; }
-  .slide-content p { font-size: 15px; }
-  .carousel-btn {
-    width: 40px;
-    height: 40px;
-    font-size: 25px;
-    top: 42%;
+.btn-secondary {
+  background: transparent;
+  color: #fff;
+  padding: 13px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #fff;
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #fff;
+  color: #000;
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #fff;
+  padding: 14px 24px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe5d;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100svh;
+    padding: 0 6%;
+    background-position: right center;
   }
-  .hero-slider { height: 40vh; }
+  .hero-content {
+    padding: 100px 0 60px 0;
+  }
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .hero-cta {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .btn-primary,
+  .btn-secondary,
+  .btn-whatsapp {
+    text-align: center;
+    width: 100%;
+  }
 }
 
-@media(max-width: 420px){
-  .slide-content { top: 35%; transform: translateY(-35%); }
-  .slide-content h1 { font-size: 20px; }
-  .slide-content p { font-size: 14px; }
-  .hero-slider { height: 36vh; }
-}
 
 
 /* ...........................about section.......................... */
@@ -209,7 +224,7 @@ body.light-mode .about-btn:hover {
 }
 @media(max-width: 900px) {
   .about-container {
-    flex: grid;
+    display: grid;
     justify-content: center;
   }
   .about-text h2 {
@@ -331,8 +346,8 @@ body.light-mode .why-title {
 /* Grid Layout */
 .why-container {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 /* Cards */
@@ -1568,3 +1583,5 @@ body.light-mode .demo-feedback-dialog p {
     transition: none !important;
   }
 }
+
+
