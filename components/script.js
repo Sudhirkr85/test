@@ -60,10 +60,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       // Load Theme
-      if (localStorage.getItem("theme") === "light") {
+      const savedTheme = localStorage.getItem("theme");
+      if (savedTheme === "light" || !savedTheme) {
         document.body.classList.add("light-mode");
-        themeBtn.textContent = "☀️";
-        mobileThemeBtn.textContent = "☀️";
+        if (themeBtn) themeBtn.textContent = "☀️";
+        if (mobileThemeBtn) mobileThemeBtn.textContent = "☀️";
+      } else {
+        document.body.classList.remove("light-mode");
+        if (themeBtn) themeBtn.textContent = "🌙";
+        if (mobileThemeBtn) mobileThemeBtn.textContent = "🌙";
       }
 
 
