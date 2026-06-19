@@ -630,6 +630,7 @@ body.light-mode .courses-title {
 }
 
 .course-card {
+  position: relative;
   background: #1d1d1d;
   padding: 30px;
   border-radius: 12px;
@@ -638,8 +639,16 @@ body.light-mode .courses-title {
   text-align: center;
   min-height: 250px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-  opacity: 0; /* for GSAP */
-  transform: translateY(40px); /* initial GSAP position */
+}
+
+.course-card h3 a::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
 }
 
 body.light-mode .course-card {
