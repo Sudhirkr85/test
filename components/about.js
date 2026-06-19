@@ -393,5 +393,103 @@ if (demoForm) {
   });
 }
 
+
+  // SEARCHABLE COURSE DROPDOWN LOGIC FOR ABOUT PAGE FORM
+  const ABOUT_COURSES = [
+    "Data Science",
+    "Data Analytics + Power BI",
+    "AI & Machine Learning",
+    "Full Stack Development with AI",
+    "Ethical Hacking & Cyber Security",
+    "Digital Marketing & SEO",
+    "AWS Cloud Computing",
+    "Basic Computer Course"
+  ];
+
+  let aboutSelected = "";
+
+  function aboutRenderList(list) {
+    const dd = document.getElementById("about-course-dd");
+    if (!dd) return;
+    dd.innerHTML = "";
+
+    if (list.length === 0) {
+      dd.style.display = "none";
+      return;
+    }
+
+    list.forEach(function(course) {
+      const item = document.createElement("div");
+      item.textContent = course;
+      item.style.cssText = "padding:10px 14px; cursor:pointer; color:#eee;" +
+        "font-size:0.9rem; border-bottom:1px solid #333; transition:background 0.15s;";
+      item.onmouseenter = function() { this.style.background = "#2a2a2a"; };
+      item.onmouseleave = function() { this.style.background = "transparent"; };
+      item.onmousedown = function(e) {
+        e.preventDefault();
+        aboutPickCourse(course);
+      };
+      dd.appendChild(item);
+    });
+  }
+
+  window.aboutShowDropdown = function() {
+    const inp = document.getElementById("demo-course");
+    if (!inp) return;
+    inp.style.borderColor = "#e0a730";
+    const val = inp.value.trim();
+    if (val) {
+      window.aboutFilterCourses(val);
+    } else {
+      aboutRenderList(ABOUT_COURSES);
+      const dd = document.getElementById("about-course-dd");
+      if (dd) dd.style.display = "block";
+    }
+  };
+
+  window.aboutFilterCourses = function(val) {
+    const filtered = ABOUT_COURSES.filter(function(c) {
+      return c.toLowerCase().indexOf(val.toLowerCase()) > -1;
+    });
+
+    const exactMatch = ABOUT_COURSES.find(function(c) {
+      return c.toLowerCase() === val.trim().toLowerCase();
+    });
+
+    if (exactMatch) {
+      aboutSelected = exactMatch;
+    } else {
+      aboutSelected = "";
+    }
+
+    const dd = document.getElementById("about-course-dd");
+    if (!dd) return;
+    if (filtered.length === 0) {
+      dd.style.display = "none";
+    } else {
+      aboutRenderList(filtered);
+      dd.style.display = "block";
+    }
+  };
+
+  function aboutPickCourse(course) {
+    aboutSelected = course;
+    const inp = document.getElementById("demo-course");
+    if (inp) {
+      inp.value = course;
+      inp.style.borderColor = "#e0a730";
+    }
+    const dd = document.getElementById("about-course-dd");
+    if (dd) dd.style.display = "none";
+  }
+
+  document.addEventListener("click", function(e) {
+    const dd = document.getElementById("about-course-dd");
+    const inp = document.getElementById("demo-course");
+    if (dd && !dd.contains(e.target) && e.target !== inp) {
+      dd.style.display = "none";
+    }
+  });
+
 });
 

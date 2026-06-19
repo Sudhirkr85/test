@@ -545,77 +545,28 @@
             <input id="demo-email" type="email" name="email" placeholder="Enter your email (optional)" autocomplete="email" />
           </div>
 
-          <div class="form-group">
+          <div class="form-group" style="position:relative;">
             <label for="demo-course">Course Interested In <span aria-hidden="true">*</span></label>
-            <select id="demo-course" name="course" required>
-              <option value="" disabled selected>Select a course</option>
-              <option value="Ethical Hacking">Ethical Hacking</option>
-              <option value="Data Analytics">Data Analytics</option>
-              <option value="Data Engineering">Data Engineering</option>
-              <option value="Data Science">Data Science</option>
-              <option value="Web Development">Web Development</option>
-              <option value="Power BI">Power BI</option>
-              <option value="Graphic Design">Graphic Design</option>
-              <option value="Video Editing">Video Editing</option>
-              <option value="Ruby">Ruby</option>
-              <option value="MySQL">MySQL</option>
-              <option value="PL/SQL">PL/SQL</option>
-              <option value="Oracle">Oracle</option>
-              <option value=".NET">.NET</option>
-              <option value="Python Fullstack">Python Fullstack</option>
-              <option value="Java Fullstack">Java Fullstack</option>
-              <option value="AWS Cloud">AWS Cloud</option>
-              <option value="CCNA">CCNA</option>
-              <option value="CCNP">CCNP</option>
-              <option value="Linux">Linux</option>
-              <option value="Automation Testing">Automation Testing</option>
-              <option value="AutoCAD">AutoCAD</option>
-              <option value="MERN Stack">MERN Stack</option>
-              <option value="C, C++">C, C++</option>
-              <option value="Python">Python</option>
-              <option value="Java">Java</option>
-              <option value="PHP">PHP</option>
-              <option value="Cyber Security">Cyber Security</option>
-              <option value="PostgreSQL">PostgreSQL</option>
-              <option value="SQL Server">SQL Server</option>
-              <option value="Spoken English">Spoken English</option>
-              <option value="SAP">SAP</option>
-              <option value="Tally">Tally</option>
-              <option value="MIS">MIS</option>
-              <option value="TALLY + GST">TALLY + GST</option>
-              <option value="Advanced Excel">Advanced Excel</option>
-              <option value="Interview Training">Interview Training</option>
-              <option value="Digital Marketing">Digital Marketing</option>
-              <option value="SEO">SEO</option>
-              <option value="Google Ads">Google Ads</option>
-              <option value="SMM">SMM</option>
-              <option value="SEM">SEM</option>
-              <option value="Basic Computer, DCA, ADCA, O Level">Basic Computer, DCA, ADCA, O Level</option>
-            </select>
+            <input type="text" id="demo-course" name="course"
+              placeholder="Course Interested In * (type to search)" 
+              autocomplete="off"
+              oninput="aboutFilterCourses(this.value)"
+              onfocus="aboutShowDropdown()"
+              style="width:100%; padding:12px 14px; border-radius:8px; 
+              border:1px solid #333; background:#111; color:#fff; 
+              font-size:0.95rem; outline:none; box-sizing:border-box;
+              transition:border-color 0.2s;" required />
+            <div id="about-course-dd" style="display:none; position:absolute; 
+              top:100%; left:0; right:0; background:#222; 
+              border:1px solid #444; border-radius:8px; 
+              max-height:200px; overflow-y:auto; z-index:200; margin-top:4px;
+              box-shadow:0 8px 20px rgba(0,0,0,0.4);">
+            </div>
           </div>
 
 
 
 
-        </div>
-
-        <fieldset class="form-group mode-group">
-          <legend>Mode of Learning <span aria-hidden="true">*</span></legend>
-          <div class="mode-options">
-            <label class="mode-option" for="mode-online">
-              <input type="radio" id="mode-online" name="mode" value="online" required />
-              <span>Online Live Classes</span>
-            </label>
-            <label class="mode-option" for="mode-offline">
-              <input type="radio" id="mode-offline" name="mode" value="offline" required />
-              <span>Offline (Gurugram)</span>
-            </label>
-          </div>
-        </fieldset>
-
-        <div class="form-group form-group-full">
-          <label for="demo-message">Message / Questions</label>
-          <textarea id="demo-message" name="message" rows="4" placeholder="Share any questions, preferred timing, or specific requirements (optional)"></textarea>
         </div>
 
         <button type="submit" class="career-cta-btn demo-submit">Get Free Counseling 🎓</button>
