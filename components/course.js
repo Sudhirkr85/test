@@ -204,7 +204,7 @@ function handleEnrollment() {
   showToast('Great! Redirecting to enrollment page...', 'success');
 
   setTimeout(() => {
-    window.location.href = 'admission.html?course=data-science';
+    window.location.href = '/contact.html?course=data-science';
   }, 1500);
 }
 
