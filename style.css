@@ -2551,7 +2551,7 @@ body.light-mode h5 {
   color: #0f172a !important;
 }
 
-body.light-mode a:not(.about-btn):not(.cta-btn):not(.directions-btn):not(.faq-contact-btn):not(.float-btn) {
+body.light-mode a:not([class*="btn"]):not([class*="button"]):not(.float-btn) {
   color: #204180;
 }
 
