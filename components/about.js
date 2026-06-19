@@ -373,12 +373,10 @@ if (demoForm) {
       await submitToAppsScript_(DEMO_SHEET_WEB_APP_URL, payload);
 
       demoForm.reset();
-      if (demoDateSelect) {
-        demoDateSelect.selectedIndex = 0;
-      }
+
 
       if (demoFormStatus) {
-        demoFormStatus.textContent = "Thanks! Your demo request was submitted successfully.";
+        demoFormStatus.textContent = "Thanks! Your counseling request was submitted successfully. Our team will contact you shortly.";
         demoFormStatus.classList.remove("error");
       }
     } catch (error) {
@@ -389,7 +387,7 @@ if (demoForm) {
     } finally {
       if (submitButton) {
         submitButton.disabled = false;
-        submitButton.textContent = "Book Free Demo Class";
+        submitButton.textContent = "Get Free Counseling 🎓";
       }
     }
   });
