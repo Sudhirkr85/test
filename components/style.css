@@ -808,12 +808,24 @@ body.light-mode .footer-box a {
   transition: 0.3s;
 }
 
+/* Social icons must NOT be block — they are flex circles inside .footer-socials */
+.footer-socials a {
+  display: flex !important;
+  margin-bottom: 0 !important;
+  color: #fff !important;
+}
+
 .footer-box a:hover {
   color: #e0a730;
 }
 
 body.light-mode .footer-box a:hover {
   color: #204180;
+}
+
+/* Light mode: social icons use dark circle color */
+body.light-mode .footer-socials a {
+  color: #204180 !important;
 }
 
 /* CONTACT + ADDRESS ICONS */
