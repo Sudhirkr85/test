@@ -2747,17 +2747,3 @@ body.light-mode .t-dot.active {
 }
 
 
-
-body.light-mode #about-course-dd {
-  background: #ffffff !important;
-  border-color: #cbd5e1 !important;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
-}
-
-body.light-mode #about-course-dd div {
-  color: #1e293b !important;
-}
-
-body.light-mode #about-course-dd div:hover {
-  background: #f1f5f9 !important;
-}

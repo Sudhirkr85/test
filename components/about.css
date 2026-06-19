@@ -899,10 +899,11 @@ body.light-mode .career-cta-title {
   text-decoration: none;
   border: none;
   border-radius: 10px;
-  padding: 12px 22px;
-  font-size: 17px;
+  padding: 11px 18px;
+  font-size: 15px;
   font-weight: 700;
   cursor: pointer;
+  white-space: nowrap;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
@@ -1257,4 +1258,68 @@ body.light-mode .faq-icon {
   .faq-answer p {
     font-size: 15px;
   }
+}
+
+/* ── Course Search Input (About Page Form) ── */
+.course-search-wrap {
+  position: relative;
+}
+
+.course-search-input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #1a1a1a;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.2s, background 0.2s;
+  font-family: inherit;
+}
+
+.course-search-input:focus {
+  border-color: #e0a730;
+}
+
+.course-search-input::placeholder {
+  color: #888;
+}
+
+.course-search-dd {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #222;
+  border: 1px solid #444;
+  border-radius: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 200;
+  margin-top: 4px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* Light mode overrides */
+body.light-mode .course-search-input {
+  background: #ffffff;
+  color: #1e293b;
+  border-color: #cbd5e1;
+}
+
+body.light-mode .course-search-input::placeholder {
+  color: #94a3b8;
+}
+
+body.light-mode .course-search-input:focus {
+  border-color: #e0a730;
+}
+
+body.light-mode .course-search-dd {
+  background: #ffffff;
+  border-color: #cbd5e1;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
