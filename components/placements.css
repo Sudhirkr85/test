@@ -27,6 +27,10 @@
   --transition:  0.28s cubic-bezier(.4,0,.2,1);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* ---- Base Reset (page scoped) ---- */
 .placements-page *,
 .placements-page *::before,
