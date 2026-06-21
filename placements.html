@@ -251,26 +251,54 @@
           </div>
         </div>
 
-        <!-- Right Column: Visual Metrics Card -->
-        <div class="pl-companies-visual">
-          <span class="pl-companies-visual-icon">🏢</span>
-          <h3>Placement Cell Assistance</h3>
-          <p>Connecting skilled professionals directly with recruiters looking for high-impact talent.</p>
-          
-          <div class="pl-mini-stats">
-            <div class="pl-mini-stat">
-              <span class="pl-mini-stat-num">95%</span>
-              <span class="pl-mini-stat-lbl">Placement Rate</span>
-            </div>
-            <div class="pl-mini-stat">
-              <span class="pl-mini-stat-num">450+</span>
-              <span class="pl-mini-stat-lbl">Hiring Network</span>
-            </div>
-            <div class="pl-mini-stat">
-              <span class="pl-mini-stat-num">30LPA</span>
-              <span class="pl-mini-stat-lbl">Max Package</span>
-            </div>
+        <!-- Right Column: Hiring Inquiry Form Card -->
+        <div class="pl-form-wrap">
+          <div class="pl-form-header">
+            <h2>Hire Our Graduates</h2>
+            <p>Are you a Recruiter, HR Manager, or Team Lead? Share hiring details to connect.</p>
           </div>
+          <form id="hiring-booking-form" onsubmit="handleHiringSubmit(event)">
+            <div class="pl-form-grid">
+              <div class="pl-form-field">
+                <label for="company_name">Company Name *</label>
+                <input type="text" id="company_name" placeholder="e.g. Google, Tech Mahindra" required>
+              </div>
+              <div class="pl-form-field">
+                <label for="hr_name">HR / Coordinator Name *</label>
+                <input type="text" id="hr_name" placeholder="e.g. Dr. Amit Sharma" required>
+              </div>
+              <div class="pl-form-field">
+                <label for="hr_mobile">Mobile Number *</label>
+                <input type="tel" id="hr_mobile" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+              </div>
+              <div class="pl-form-field">
+                <label for="hr_email">Official Email Address *</label>
+                <input type="email" id="hr_email" placeholder="e.g. hr@company.com" required>
+              </div>
+              <div class="pl-form-field full-width">
+                <label for="hiring_domain">Preferred Tech Domain *</label>
+                <select id="hiring_domain" required onchange="toggleCustomDomain(this)">
+                  <option value="">-- Choose Tech Domain --</option>
+                  <option value="Full Stack Web Development">Full Stack Web Development</option>
+                  <option value="Data Science & AI">Data Science & AI</option>
+                  <option value="Cyber Security & Ethical Hacking">Cyber Security & Ethical Hacking</option>
+                  <option value="Cloud Computing & DevOps">Cloud Computing & DevOps</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="pl-form-field full-width" id="custom_domain_wrapper" style="display: none;">
+                <label for="custom_domain">Specify Tech Domain *</label>
+                <input type="text" id="custom_domain" placeholder="e.g. Mobile App Development, UI/UX">
+              </div>
+            </div>
+            
+            <button type="submit" class="btn-submit-pl">
+              Send Booking Request via WhatsApp <i class="fab fa-whatsapp"></i>
+            </button>
+            <div class="pl-form-note">
+              Or email us at: <a href="mailto:info@sssamacademy.com" style="color: var(--gold); text-decoration: underline;">info@sssamacademy.com</a>
+            </div>
+          </form>
         </div>
 
       </div>
@@ -313,5 +341,52 @@
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
   <script src="components/script.js" defer></script>
+  <script>
+    function toggleCustomDomain(select) {
+      const wrapper = document.getElementById("custom_domain_wrapper");
+      const customInput = document.getElementById("custom_domain");
+      if (select.value === "Other") {
+        wrapper.style.display = "block";
+        customInput.required = true;
+      } else {
+        wrapper.style.display = "none";
+        customInput.required = false;
+        customInput.value = "";
+      }
+    }
+
+    function handleHiringSubmit(e) {
+      e.preventDefault();
+      const company = document.getElementById("company_name").value;
+      const hr = document.getElementById("hr_name").value;
+      const mobile = document.getElementById("hr_mobile").value;
+      const email = document.getElementById("hr_email").value;
+      let domain = document.getElementById("hiring_domain").value;
+
+      if (domain === "Other") {
+        const customDomain = document.getElementById("custom_domain").value;
+        if (customDomain) {
+          domain = `Other (${customDomain})`;
+        }
+      }
+
+      if (!company || !hr || !mobile || !email || !domain) {
+        alert("Please fill in all required fields.");
+        return;
+      }
+
+      const msg = encodeURIComponent(
+        `Hi SSSAM Academy! We want to hire trained IT graduates from your institute:\n\n` +
+        `• Company Name: ${company}\n` +
+        `• HR / Coordinator Name: ${hr}\n` +
+        `• Contact Mobile: ${mobile}\n` +
+        `• Official Email: ${email}\n` +
+        `• Preferred Tech Domain: ${domain}\n\n` +
+        `Please connect us with your placement cell coordinator.`
+      );
+
+      window.open(`https://wa.me/919217031899?text=${msg}`, '_blank');
+    }
+  </script>
 </body>
 </html>

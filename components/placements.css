@@ -902,3 +902,171 @@ body.light-mode .pl-step-title    { color: #111; }
 body.light-mode .pl-partner-name  { color: #444; }
 body.light-mode .pl-student-name  { color: #111; }
 body.light-mode .pl-stat-item:hover { background: rgba(224,167,48,0.1); }
+
+/* ---- Recruitment Booking Form Card ---- */
+.pl-form-wrap {
+  background: var(--dark-card);
+  border: 1px solid var(--dark-border);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+body.light-mode .pl-form-wrap {
+  background: #ffffff;
+  border-color: rgba(0,0,0,0.1);
+}
+
+.pl-form-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-gold);
+}
+
+.pl-form-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.pl-form-header h2 {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.pl-form-header p {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+body.light-mode .pl-form-header p {
+  color: #555;
+}
+
+.pl-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 560px) {
+  .pl-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pl-form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pl-form-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.pl-form-field label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+body.light-mode .pl-form-field label {
+  color: #555;
+}
+
+.pl-form-field input,
+.pl-form-field select {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1.5px solid var(--dark-border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  padding: 12px 14px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+body.light-mode .pl-form-field input,
+body.light-mode .pl-form-field select {
+  background: #fbfbfb;
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #111;
+}
+
+.pl-form-field input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+body.light-mode .pl-form-field input::placeholder {
+  color: #888;
+}
+
+.pl-form-field input:focus,
+.pl-form-field select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(224, 167, 48, 0.15);
+}
+
+.pl-form-field select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23e0a730' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.pl-form-field select option {
+  background: var(--dark-card);
+  color: var(--text-primary);
+}
+
+body.light-mode .pl-form-field select option {
+  background: #ffffff;
+  color: #111111;
+}
+
+.btn-submit-pl {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.2);
+}
+
+.btn-submit-pl:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+}
+
+.pl-form-note {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
