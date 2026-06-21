@@ -74,7 +74,8 @@ body.light-mode .social-icons a {
 /* DESKTOP LINKS */
 .nav-links {
   display: flex;
-  gap: 25px;
+  gap: 20px; /* Reduced from 25px to fit more items nicely */
+  align-items: center;
 }
 
 .nav-item {
@@ -93,7 +94,8 @@ body.light-mode .social-icons a {
 .nav-links a {
   color: white;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 18px; /* Reduced font size from 25px so links fit on one line */
+  font-weight: 500;
 }
 
 .nav-links a:hover {
@@ -113,7 +115,7 @@ body.light-mode .nav-links a:hover {
   border: none;
   cursor: pointer;
   font-family: inherit;
-  font-size: 25px;
+  font-size: 18px; /* Reduced dropdown button size from 25px to match links */
   color: white;
   padding: 0;
   display: inline-flex;
