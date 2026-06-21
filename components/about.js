@@ -32,14 +32,13 @@ gsap.registerPlugin(ScrollTrigger);
 // Left card animation
 gsap.utils.toArray(".left-animate").forEach((el) => {
   gsap.fromTo(el, 
-    { x: -120, opacity: 0 }, 
+    { y: 50, opacity: 0 }, 
     { 
-      x: 0, opacity: 1, duration: 1, ease: "bounce.out",
+      y: 0, opacity: 1, duration: 0.8, ease: "power2.out",
       scrollTrigger: {
         trigger: el,
-        start: "top 85%",
-        end: "bottom 60%",
-        toggleActions: "play reverse play reverse"
+        start: "top 90%",
+        toggleActions: "play none none none"
       }
     }
   );
@@ -48,14 +47,28 @@ gsap.utils.toArray(".left-animate").forEach((el) => {
 // Right card animation
 gsap.utils.toArray(".right-animate").forEach((el) => {
   gsap.fromTo(el, 
-    { x: 120, opacity: 0 }, 
+    { y: 50, opacity: 0 }, 
     { 
-      x: 0, opacity: 1, duration: 1, ease: "bounce.out",
+      y: 0, opacity: 1, duration: 0.8, ease: "power2.out",
       scrollTrigger: {
         trigger: el,
-        start: "top 85%",
-        end: "bottom 60%",
-        toggleActions: "play reverse play reverse"
+        start: "top 90%",
+        toggleActions: "play none none none"
+      }
+    }
+  );
+});
+
+// Up card animation
+gsap.utils.toArray(".up-animate").forEach((el) => {
+  gsap.fromTo(el, 
+    { y: 50, opacity: 0 }, 
+    { 
+      y: 0, opacity: 1, duration: 0.8, ease: "power2.out",
+      scrollTrigger: {
+        trigger: el,
+        start: "top 90%",
+        toggleActions: "play none none none"
       }
     }
   );
