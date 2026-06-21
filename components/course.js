@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeFAQ();
   initializeButtons();
   setupScrollAnimations();
+  initializeTestimonialsCarousel();
 });
 
 /**
@@ -362,3 +363,118 @@ window.coursePageFunctions = {
   showToast,
   trackEvent
 };
+
+/**
+ * Testimonials Carousel Dots & Seamless Infinite Loop Navigation
+ */
+function initializeTestimonialsCarousel() {
+  const container = document.querySelector(".testimonials-container");
+  if (!container) return;
+  const originalCards = Array.from(container.querySelectorAll(".testimonial-card"));
+  if (originalCards.length === 0) return;
+
+  // Clone first 3 cards and append to the end for seamless infinite scroll
+  const cloneCount = Math.min(3, originalCards.length);
+  for (let i = 0; i < cloneCount; i++) {
+    const clone = originalCards[i].cloneNode(true);
+    clone.classList.add("t-clone");
+    container.appendChild(clone);
+  }
+
+  // Create dots container based on original cards
+  const dotsContainer = document.createElement("div");
+  dotsContainer.className = "testimonials-dots";
+  container.after(dotsContainer);
+
+  const allCards = container.querySelectorAll(".testimonial-card");
+  let currentActive = 0;
+  let autoScrollTimer = null;
+  let isJumping = false;
+
+  // Generate dots (only for original cards)
+  originalCards.forEach((_, idx) => {
+    const dot = document.createElement("span");
+    dot.className = "t-dot" + (idx === 0 ? " active" : "");
+    dot.setAttribute("aria-label", `Go to slide ${idx + 1}`);
+    dot.addEventListener("click", () => {
+      resetAutoScroll();
+      container.scrollTo({
+        left: originalCards[idx].offsetLeft - container.offsetLeft,
+        behavior: "smooth"
+      });
+    });
+    dotsContainer.appendChild(dot);
+  });
+
+  // Sync dots and handle instant boundary reset
+  container.addEventListener("scroll", () => {
+    if (isJumping) return;
+    const scrollLeft = container.scrollLeft;
+    const containerWidth = container.clientWidth;
+    const scrollWidth = container.scrollWidth;
+
+    let activeIdx = 0;
+    let minDiff = Infinity;
+    
+    // Find closest card to sync active index (only matching original cards indices)
+    originalCards.forEach((card, idx) => {
+      const cardOffset = card.offsetLeft - container.offsetLeft;
+      const diff = Math.abs(cardOffset - scrollLeft);
+      if (diff < minDiff) {
+        minDiff = diff;
+        activeIdx = idx;
+      }
+    });
+
+    currentActive = activeIdx;
+
+    const dots = dotsContainer.querySelectorAll(".t-dot");
+    dots.forEach((dot, idx) => {
+      if (idx === activeIdx) {
+        dot.classList.add("active");
+      } else {
+        dot.classList.remove("active");
+      }
+    });
+
+    // Seamless wrap-around logic
+    if (scrollLeft >= scrollWidth - containerWidth - 10) {
+      isJumping = true;
+      container.style.scrollBehavior = "auto";
+      container.scrollLeft = 0;
+      container.style.scrollBehavior = "smooth";
+      currentActive = 0;
+      setTimeout(() => { isJumping = false; }, 50);
+    }
+  }, { passive: true });
+
+  // Auto scroll logic
+  function startAutoScroll() {
+    autoScrollTimer = setInterval(() => {
+      if (isJumping) return;
+      currentActive++;
+      if (currentActive >= allCards.length) {
+        currentActive = 0;
+      }
+      if (allCards[currentActive]) {
+        container.scrollTo({
+          left: allCards[currentActive].offsetLeft - container.offsetLeft,
+          behavior: "smooth"
+        });
+      }
+    }, 3000);
+  }
+
+  function resetAutoScroll() {
+    clearInterval(autoScrollTimer);
+    startAutoScroll();
+  }
+
+  startAutoScroll();
+
+  container.addEventListener("touchstart", () => clearInterval(autoScrollTimer), { passive: true });
+  container.addEventListener("touchend", startAutoScroll, { passive: true });
+  container.addEventListener("mousedown", () => clearInterval(autoScrollTimer));
+  container.addEventListener("mouseup", startAutoScroll);
+}
+
