@@ -139,6 +139,20 @@ body.light-mode .hero-actions .btn.outline:hover {
   color: white;
 }
 
+.hero-actions .btn.whatsapp {
+  background: #25D366;
+  color: #ffffff;
+  border-color: #25D366;
+}
+
+.hero-actions .btn.whatsapp:hover {
+  background: #20ba5a;
+  border-color: #20ba5a;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(37, 211, 102, 0.25);
+  color: #ffffff;
+}
+
 /* Hero Image */
 .hero-right {
   flex: 1;
@@ -1241,3 +1255,18 @@ body.light-mode .enquiry-course-dd {
     border-radius: 14px;
   }
 }
+
+/* Direction Link Styling */
+.card .direction-link {
+  color: var(--gold);
+  transition: opacity 0.2s ease;
+}
+
+body.light-mode.contact-page .card .direction-link {
+  color: var(--blue);
+}
+
+.card .direction-link:hover {
+  opacity: 0.85;
+}
+
