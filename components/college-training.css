@@ -108,10 +108,16 @@ body.light-mode {
 /* ── HERO SECTION ───────────────────────────────── */
 .ct-hero {
   position: relative;
-  background: var(--bg-primary);
-  padding: 100px 20px 90px;
+  background: linear-gradient(rgba(15, 14, 14, 0.82), rgba(15, 14, 14, 0.9)), url('../assets/gallery/sssam-academy-gallery-5.webp') no-repeat center center/cover;
+  background-attachment: fixed;
+  padding: 130px 20px 110px;
   overflow: hidden;
   text-align: center;
+}
+
+body.light-mode .ct-hero {
+  background: linear-gradient(rgba(248, 247, 245, 0.8), rgba(248, 247, 245, 0.9)), url('../assets/gallery/sssam-academy-gallery-5.webp') no-repeat center center/cover;
+  background-attachment: fixed;
 }
 
 .ct-hero::before {
