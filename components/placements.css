@@ -304,28 +304,25 @@ body.light-mode .pl-stat-label { color: #666; }
 
 .pl-partners-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
-.pl-partner-box {
+.pl-partner-logo {
   background: var(--dark-card);
   border: 1px solid var(--dark-border);
   border-radius: var(--radius-md);
-  padding: 36px 20px;
+  padding: 30px 20px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 12px;
-  text-align: center;
-  min-height: 110px;
+  min-height: 100px;
   transition: var(--transition);
   position: relative;
   overflow: hidden;
 }
 
-.pl-partner-box::before {
+.pl-partner-logo::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -334,13 +331,41 @@ body.light-mode .pl-stat-label { color: #666; }
   transition: opacity 0.3s;
 }
 
-.pl-partner-box:hover {
+.pl-partner-logo:hover {
   border-color: var(--gold);
   transform: translateY(-4px);
   box-shadow: var(--shadow-gold);
 }
 
-.pl-partner-box:hover::before { opacity: 0.05; }
+.pl-partner-logo:hover::before { opacity: 0.05; }
+
+.pl-partner-logo img {
+  max-height: 38px;
+  max-width: 85%;
+  object-fit: contain;
+  filter: brightness(0) invert(1) opacity(0.75);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.pl-partner-logo:hover img {
+  filter: none;
+  opacity: 1;
+}
+
+body.light-mode .pl-partner-logo {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .pl-partner-logo img {
+  filter: grayscale(1) opacity(0.75);
+}
+
+body.light-mode .pl-partner-logo:hover img {
+  filter: none;
+  opacity: 1;
+}
 
 .pl-partner-icon {
   font-size: 28px;
@@ -664,7 +689,7 @@ body.light-mode .pl-process {
 
 .pl-process-steps {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
   position: relative;
 }
@@ -673,9 +698,9 @@ body.light-mode .pl-process {
 .pl-process-steps::before {
   content: '';
   position: absolute;
-  top: 38px;
-  left: calc(10% + 28px);
-  right: calc(10% + 28px);
+  top: 57px;
+  left: 12.5%;
+  right: 12.5%;
   height: 2px;
   background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
   opacity: 0.25;
@@ -793,7 +818,7 @@ body.light-mode .pl-step {
   .pl-stat-item:nth-child(4) { border-top: 1px solid var(--dark-border); border-right: none; }
 
   .pl-partners-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 
   .pl-students-grid {
