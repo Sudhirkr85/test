@@ -1199,7 +1199,7 @@
     <button onclick="closeCounselingPopup()" class="popup-close">&#10005;</button>
     
     <h3>
-      Find the Right IT Course for You &#127891;
+      Find the Right IT Course for You 🎓
     </h3>
     <p class="popup-desc">
       Get free course guidance from our counselor at 
@@ -1270,7 +1270,7 @@
         style="width:100%; padding:14px; background:#e0a730; color:#000; 
         border:none; border-radius:8px; font-size:1rem; font-weight:700; 
         cursor:pointer; transition:background 0.3s; letter-spacing:0.3px;">
-        Get Free Counseling &#127891;
+        Get Free Counseling 🎓
       </button>
 
       <p style="text-align:center; color:#777; font-size:0.78rem; 
@@ -1451,6 +1451,24 @@
       ". Please guide me."
     );
 
+    // Hit the backend API to save the enquiry
+    fetch("https://sssam.onrender.com/api/enquiry/demo-class", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        fullName: name,
+        phoneNumber: mobile,
+        course: courseInput,
+        customCourseName: "",
+        demoType: "Online",
+        message: email ? ("Email: " + email) : "Counseling Lead from Homepage"
+      })
+    }).catch(function(err) {
+      console.warn("Failed to hit backend API:", err);
+    });
+
     setTimeout(function() {
       window.open("https://wa.me/919217031899?text=" + msg, "_blank");
       window.closeCounselingPopup();
@@ -1464,7 +1482,7 @@
       document.getElementById("cp-email").value = "";
       cpSelected = "";
       btn.disabled = false;
-      btn.textContent = "Get Free Counseling &#127891;";
+      btn.textContent = "Get Free Counseling 🎓";
     }, 2000);
   };
 

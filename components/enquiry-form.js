@@ -262,7 +262,15 @@ window.__sharedEnquiryFormActive = true;
         return;
       }
 
-      const payload = { fullName, phoneNumber, email, course };
+      const payload = {
+        fullName,
+        phoneNumber,
+        email,
+        course,
+        demoType: "Offline (Gurugram)",
+        customCourseName: "",
+        message: "Enquiry submitted via contact/enquiry widget"
+      };
 
       try {
         await submitDemoEnquiry(payload);
