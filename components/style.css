@@ -861,11 +861,20 @@ body.light-mode .footer-box strong {
   font-size: 20px;
 }
 
+.footer-bottom a {
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+  color: #e0a730 !important;
+}
+
 body.light-mode .footer-bottom {
   border-color: #cfcfcf;
 }
-#box2{
-  padding-left: 70px;
+
+body.light-mode .footer-bottom a:hover {
+  color: #204180 !important;
 }
 
 /* MOBILE */
