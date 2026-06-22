@@ -1074,3 +1074,59 @@ body.light-mode .pl-form-field select option {
   color: var(--text-muted);
 }
 
+/* ---- Placement Banners Carousel ---- */
+.pl-banners-carousel-wrap {
+  position: relative;
+  max-width: 350px;
+  width: 100%;
+  margin: 32px auto 30px;
+  overflow: hidden;
+}
+
+.pl-banners-carousel {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+
+.pl-banner-card {
+  flex: 0 0 100%;
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  border: 1px solid var(--dark-border);
+  box-sizing: border-box;
+}
+
+.pl-banner-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Dots navigation */
+.pl-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.pl-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pl-dot.active {
+  background: var(--gold);
+  transform: scale(1.2);
+  box-shadow: 0 0 8px var(--gold);
+}
+
+
+

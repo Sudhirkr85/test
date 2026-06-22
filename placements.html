@@ -85,12 +85,22 @@
         <h2 class="pl-section-title">Placement Achievements 🏆</h2>
         <p class="pl-section-sub">Official placement certificates from SSSAM Academy graduates — real students, real companies.</p>
       </div>
-      <div style="display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; margin-top: 32px; margin-bottom: 20px;">
-        <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.5); max-width: 340px; width: 100%;">
-          <img src="assets/gallery/sssam-placement-laxmi-kumari.webp" alt="Laxmi Kumari placed at CompliStack Technologies as Full Stack Developer - SSSAM Academy" style="width: 100%; display: block;" loading="lazy">
+      <div class="pl-banners-carousel-wrap">
+        <div class="pl-banners-carousel">
+          <div class="pl-banner-card">
+            <img src="assets/gallery/sssam-placement-laxmi-kumari.webp" alt="Laxmi Kumari placed at CompliStack Technologies as Full Stack Developer - SSSAM Academy" loading="lazy">
+          </div>
+          <div class="pl-banner-card">
+            <img src="assets/gallery/sssam-placement-pratibha-anand.webp" alt="Pratibha Anand placed at TCS as System Engineer 11 LPA - SSSAM Academy" loading="lazy">
+          </div>
+          <div class="pl-banner-card">
+            <img src="assets/gallery/sssam-placement-3.webp" alt="SSSAM Academy Placement Success Certificate - IT Graduate Placed in Top Tech Company" loading="lazy">
+          </div>
         </div>
-        <div style="border-radius: 16px; overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.5); max-width: 340px; width: 100%;">
-          <img src="assets/gallery/sssam-placement-pratibha-anand.webp" alt="Pratibha Anand placed at TCS as System Engineer 11 LPA - SSSAM Academy" style="width: 100%; display: block;" loading="lazy">
+        <div class="pl-carousel-dots">
+          <span class="pl-dot active" data-index="0"></span>
+          <span class="pl-dot" data-index="1"></span>
+          <span class="pl-dot" data-index="2"></span>
         </div>
       </div>
     </div>
@@ -383,6 +393,63 @@
 
       window.open(`https://wa.me/919217031899?text=${msg}`, '_blank');
     }
+
+    // Auto-scroll logic for Placements Carousel (1 image at a time)
+    document.addEventListener("DOMContentLoaded", () => {
+      const carousel = document.querySelector(".pl-banners-carousel");
+      const cards = document.querySelectorAll(".pl-banner-card");
+      const dots = document.querySelectorAll(".pl-dot");
+      
+      if (!carousel || cards.length === 0) return;
+      
+      let currentIndex = 0;
+      let slideInterval;
+      const intervalTime = 3000; // Slide every 3 seconds
+      
+      function showSlide(index) {
+        if (index >= cards.length) currentIndex = 0;
+        else if (index < 0) currentIndex = cards.length - 1;
+        else currentIndex = index;
+        
+        // Move the carousel
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+        
+        // Update dots
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle("active", idx === currentIndex);
+        });
+      }
+      
+      function nextSlide() {
+        showSlide(currentIndex + 1);
+      }
+      
+      function startAutoSlide() {
+        stopAutoSlide();
+        slideInterval = setInterval(nextSlide, intervalTime);
+      }
+      
+      function stopAutoSlide() {
+        if (slideInterval) clearInterval(slideInterval);
+      }
+      
+      // Dot clicks
+      dots.forEach((dot, idx) => {
+        dot.addEventListener("click", () => {
+          showSlide(idx);
+          startAutoSlide(); // Reset timer on manual action
+        });
+      });
+      
+      // Pause on hover
+      const container = document.querySelector(".pl-banners-carousel-wrap");
+      if (container) {
+        container.addEventListener("mouseenter", stopAutoSlide);
+        container.addEventListener("mouseleave", startAutoSlide);
+      }
+      
+      startAutoSlide();
+    });
   </script>
 </body>
 </html>
