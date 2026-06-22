@@ -3119,4 +3119,82 @@ body.light-mode .wws-card:hover .wws-btn {
 }
 
 
+/* Infinite Scrolling Testimonials Marquee */
+.testimonials-marquee-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: hidden;
+  width: 100%;
+  padding: 20px 0;
+  position: relative;
+}
 
+.testimonials-marquee-wrapper::before,
+.testimonials-marquee-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.testimonials-marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #0f172a 0%, transparent 100%);
+}
+
+.testimonials-marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #0f172a 0%, transparent 100%);
+}
+
+body.light-mode .testimonials-marquee-wrapper::before {
+  background: linear-gradient(to right, #ffffff 0%, transparent 100%);
+}
+
+body.light-mode .testimonials-marquee-wrapper::after {
+  background: linear-gradient(to left, #ffffff 0%, transparent 100%);
+}
+
+.testimonials-marquee-row {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scroll-left 50s linear infinite;
+}
+
+.testimonials-marquee-row.reverse {
+  animation: scroll-right 50s linear infinite;
+}
+
+.testimonials-marquee-row:hover {
+  animation-play-state: paused;
+}
+
+.testimonials-marquee-row .testimonial-card {
+  flex: 0 0 350px;
+  width: 350px;
+  scroll-snap-align: unset;
+  margin: 0;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

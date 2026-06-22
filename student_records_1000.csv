@@ -1,0 +1,1001 @@
+Student ID,Full Name,Email Address,Phone Number,Course Enrolled,Batch Type,Location (Gurugram),Enrollment Date,Status
+SSSAM-2026-0001,Poonam Mukherjee,poonam.mukherjee91@gmail.com,+91 9676049160,Full Stack Web Development,Weekend Batch,"Sector 56, Gurugram",2025-07-10,Active
+SSSAM-2026-0002,Kajal Aggarwal,kajal.aggarwal37@gmail.com,+91 9101416028,SAP FICO,Weekend Batch,"Sector 21, Gurugram",2025-09-27,Active
+SSSAM-2026-0003,Ritu Bose,ritu.bose61@gmail.com,+91 9810288742,Video Editing,Weekend Batch,"Sector 47, Gurugram",2026-02-28,Active
+SSSAM-2026-0004,Amit Reddy,amit.reddy58@gmail.com,+91 9625879851,AWS Cloud Computing,Weekend Batch,"Palam Vihar, Gurugram",2026-02-13,Active
+SSSAM-2026-0005,Kajal Pandey,kajal.pandey78@gmail.com,+91 6423753366,Python Programming,Weekday Regular,"Sector 7, Gurugram",2026-04-23,Completed
+SSSAM-2026-0006,Vikas Bansal,vikas.bansal43@gmail.com,+91 7614834380,Linux System Administration,Weekday Regular,"Old DLF Colony, Gurugram",2026-02-21,Completed
+SSSAM-2026-0007,Sonia Chawla,sonia.chawla24@gmail.com,+91 7333457269,Cyber Security,Weekday Regular,"Old DLF Colony, Gurugram",2025-07-23,Active
+SSSAM-2026-0008,Vivaan Bose,vivaan.bose82@gmail.com,+91 9546963802,Data Science,Weekend Batch,"Sector 56, Gurugram",2025-01-26,Completed
+SSSAM-2026-0009,Sapna Mukherjee,sapna.mukherjee36@gmail.com,+91 7273506018,Data Science,Evening Fast-track,"Sector 15, Gurugram",2025-10-23,Completed
+SSSAM-2026-0010,Vivaan Chawla,vivaan.chawla73@gmail.com,+91 6866316680,Java Programming,Evening Fast-track,"Sector 14, Gurugram",2025-02-24,Placed
+SSSAM-2026-0011,Mohit Yadav,mohit.yadav91@gmail.com,+91 7193799882,Data Science,Weekday Regular,"Sector 7, Gurugram",2026-04-01,Active
+SSSAM-2026-0012,Poonam Srivastava,poonam.srivastava41@gmail.com,+91 6371022203,Full Stack Web Development,Evening Fast-track,"South City 1, Gurugram",2026-04-06,Active
+SSSAM-2026-0013,Ashish Arora,ashish.arora44@gmail.com,+91 6880744867,AWS Cloud Computing,Weekend Batch,"Sector 45, Gurugram",2025-04-30,Active
+SSSAM-2026-0014,Preeti Kapoor,preeti.kapoor47@gmail.com,+91 9662547050,SAP FICO,Weekday Regular,"Sector 10, Gurugram",2025-01-12,Completed
+SSSAM-2026-0015,Shalini Bhardwaj,shalini.bhardwaj25@gmail.com,+91 9816264579,Python Programming,Weekday Regular,"Sector 56, Gurugram",2026-01-20,Active
+SSSAM-2026-0016,Nisha Iyer,nisha.iyer33@gmail.com,+91 9368788319,SAP FICO,Weekend Batch,"Sector 10, Gurugram",2026-03-06,Active
+SSSAM-2026-0017,Aarav Nair,aarav.nair90@gmail.com,+91 8220344448,SAP FICO,Weekday Regular,"Sector 10, Gurugram",2025-05-14,Active
+SSSAM-2026-0018,Ramesh Iyer,ramesh.iyer32@gmail.com,+91 6398689254,Linux System Administration,Weekday Regular,"DLF Phase 2, Gurugram",2026-01-25,Completed
+SSSAM-2026-0019,Tanvi Goel,tanvi.goel25@gmail.com,+91 6674167905,SAP FICO,Weekend Batch,"Sushant Lok, Gurugram",2025-03-03,Completed
+SSSAM-2026-0020,Rupali Mishra,rupali.mishra13@gmail.com,+91 8117848483,MySQL Database Design,Weekday Regular,"Old DLF Colony, Gurugram",2025-04-06,Placed
+SSSAM-2026-0021,Nisha Singh,nisha.singh78@gmail.com,+91 8613520191,Full Stack Web Development,Weekend Batch,"Palam Vihar, Gurugram",2025-01-28,Active
+SSSAM-2026-0022,Rohit Goel,rohit.goel42@gmail.com,+91 9224786759,Software Testing,Evening Fast-track,"DLF Phase 2, Gurugram",2026-01-20,Placed
+SSSAM-2026-0023,Shalini Pillai,shalini.pillai17@gmail.com,+91 7197874097,Cyber Security,Weekend Batch,"Old DLF Colony, Gurugram",2026-02-15,Active
+SSSAM-2026-0024,Mayank Mehta,mayank.mehta83@gmail.com,+91 8394898253,Java Programming,Weekend Batch,"Sector 45, Gurugram",2025-06-30,Completed
+SSSAM-2026-0025,Aaryan Iyer,aaryan.iyer56@gmail.com,+91 6734943329,Java Programming,Evening Fast-track,"Sector 14, Gurugram",2026-04-09,Placed
+SSSAM-2026-0026,Pankaj Mehta,pankaj.mehta81@gmail.com,+91 7549362456,Software Testing,Weekday Regular,"Sector 7, Gurugram",2025-04-13,Active
+SSSAM-2026-0027,Pihu Malhotra,pihu.malhotra82@gmail.com,+91 8504877085,Data Science,Weekend Batch,"South City 1, Gurugram",2026-03-06,Completed
+SSSAM-2026-0028,Aaradhya Bhardwaj,aaradhya.bhardwaj58@gmail.com,+91 7360959254,Graphic Design,Evening Fast-track,"DLF Phase 1, Gurugram",2025-09-06,Completed
+SSSAM-2026-0029,Sandeep Sharma,sandeep.sharma77@gmail.com,+91 6935257499,Advanced Excel,Weekend Batch,"Palam Vihar, Gurugram",2026-01-17,Completed
+SSSAM-2026-0030,Rahul Malhotra,rahul.malhotra98@gmail.com,+91 9166602064,Data Science,Weekend Batch,"DLF Phase 3, Gurugram",2025-01-04,Completed
+SSSAM-2026-0031,Saisha Garg,saisha.garg33@gmail.com,+91 8705204475,Digital Marketing,Weekend Batch,"Sector 56, Gurugram",2026-01-01,Active
+SSSAM-2026-0032,Aaradhya Mehta,aaradhya.mehta65@gmail.com,+91 6732722818,AWS Cloud Computing,Weekend Batch,"Palam Vihar, Gurugram",2026-02-23,Active
+SSSAM-2026-0033,Aditya Pandey,aditya.pandey59@gmail.com,+91 9939313943,Video Editing,Weekend Batch,"Sector 45, Gurugram",2026-01-17,Active
+SSSAM-2026-0034,Manish Chaudhary,manish.chaudhary40@gmail.com,+91 8429980513,AI & ML,Weekday Regular,"Sector 10, Gurugram",2025-02-28,Active
+SSSAM-2026-0035,Pankaj Banerjee,pankaj.banerjee57@gmail.com,+91 7798793953,SAP FICO,Evening Fast-track,"Sector 15, Gurugram",2025-10-30,Completed
+SSSAM-2026-0036,Manish Bansal,manish.bansal84@gmail.com,+91 7300523352,Java Programming,Weekend Batch,"Sector 21, Gurugram",2026-04-23,Active
+SSSAM-2026-0037,Megha Reddy,megha.reddy20@gmail.com,+91 8147553196,Java Programming,Weekend Batch,"Sector 4, Gurugram",2025-01-20,Active
+SSSAM-2026-0038,Ramesh Nair,ramesh.nair56@gmail.com,+91 7644082551,Software Testing,Weekday Regular,"Sector 10, Gurugram",2026-01-27,Active
+SSSAM-2026-0039,Reyansh Singh,reyansh.singh57@gmail.com,+91 6313338887,TallyPrime Accounting,Weekend Batch,"Sector 4, Gurugram",2026-01-14,Active
+SSSAM-2026-0040,Rahul Mukherjee,rahul.mukherjee47@gmail.com,+91 6240081967,Advanced Excel,Weekday Regular,"DLF Phase 3, Gurugram",2025-12-09,Active
+SSSAM-2026-0041,Suresh Trivedi,suresh.trivedi82@gmail.com,+91 8697934060,Graphic Design,Evening Fast-track,"Sector 4, Gurugram",2025-10-10,Active
+SSSAM-2026-0042,Pari Malhotra,pari.malhotra38@gmail.com,+91 9698510465,Software Testing,Weekday Regular,"Sushant Lok, Gurugram",2025-02-16,Active
+SSSAM-2026-0043,Pranav Sen,pranav.sen52@gmail.com,+91 6258212618,Cyber Security,Evening Fast-track,"Sector 7, Gurugram",2025-01-26,Placed
+SSSAM-2026-0044,Saurabh Kumar,saurabh.kumar43@gmail.com,+91 6492663215,Software Testing,Weekend Batch,"Sector 45, Gurugram",2025-08-15,Completed
+SSSAM-2026-0045,Saisha Bose,saisha.bose98@gmail.com,+91 8234182088,AI & ML,Weekend Batch,"Sector 47, Gurugram",2025-09-25,Completed
+SSSAM-2026-0046,Anjali Gupta,anjali.gupta21@gmail.com,+91 9871802637,Linux System Administration,Weekend Batch,"Old DLF Colony, Gurugram",2025-10-23,Active
+SSSAM-2026-0047,Kajal Srivastava,kajal.srivastava57@gmail.com,+91 8231042623,TallyPrime Accounting,Weekday Regular,"Sector 21, Gurugram",2025-01-09,Active
+SSSAM-2026-0048,Manish Bhardwaj,manish.bhardwaj37@gmail.com,+91 7345931189,AWS Cloud Computing,Weekday Regular,"Sector 21, Gurugram",2026-02-08,Completed
+SSSAM-2026-0049,Arjun Srivastava,arjun.srivastava15@gmail.com,+91 6811365618,SAP FICO,Weekend Batch,"Sector 7, Gurugram",2026-04-26,Completed
+SSSAM-2026-0050,Manish Iyer,manish.iyer38@gmail.com,+91 7290210068,TallyPrime Accounting,Weekend Batch,"DLF Phase 3, Gurugram",2025-03-23,Completed
+SSSAM-2026-0051,Atharva Bansal,atharva.bansal36@gmail.com,+91 8608518448,Cyber Security,Weekend Batch,"Sushant Lok, Gurugram",2025-04-22,Completed
+SSSAM-2026-0052,Sanjay Mishra,sanjay.mishra21@gmail.com,+91 6590619694,SAP FICO,Weekday Regular,"Sector 10, Gurugram",2025-01-31,Placed
+SSSAM-2026-0053,Mayank Pandey,mayank.pandey85@gmail.com,+91 9245171279,SAP FICO,Evening Fast-track,"Old DLF Colony, Gurugram",2025-06-04,Active
+SSSAM-2026-0054,Pari Bhardwaj,pari.bhardwaj50@gmail.com,+91 9353889164,Cyber Security,Weekday Regular,"Sushant Lok, Gurugram",2025-02-04,Active
+SSSAM-2026-0055,Avani Prasad,avani.prasad78@gmail.com,+91 7864436443,TallyPrime Accounting,Weekday Regular,"Palam Vihar, Gurugram",2025-10-24,Active
+SSSAM-2026-0056,Mohit Sen,mohit.sen12@gmail.com,+91 8668584632,Graphic Design,Weekday Regular,"Sector 4, Gurugram",2026-03-23,Active
+SSSAM-2026-0057,Ishan Prasad,ishan.prasad13@gmail.com,+91 7976899900,TallyPrime Accounting,Weekend Batch,"Old DLF Colony, Gurugram",2025-10-28,Placed
+SSSAM-2026-0058,Pranav Patel,pranav.patel97@gmail.com,+91 8864954593,Video Editing,Weekday Regular,"Sector 14, Gurugram",2025-11-01,Placed
+SSSAM-2026-0059,Varun Mukherjee,varun.mukherjee93@gmail.com,+91 6946497335,Software Testing,Weekend Batch,"DLF Phase 2, Gurugram",2025-05-01,Active
+SSSAM-2026-0060,Rakesh Mukherjee,rakesh.mukherjee62@gmail.com,+91 7688009537,Video Editing,Weekday Regular,"Palam Vihar, Gurugram",2025-04-04,Active
+SSSAM-2026-0061,Kajal Kapoor,kajal.kapoor67@gmail.com,+91 7168890213,AI & ML,Weekend Batch,"DLF Phase 1, Gurugram",2026-02-14,Completed
+SSSAM-2026-0062,Sneha Roy,sneha.roy39@gmail.com,+91 8136045394,TallyPrime Accounting,Weekend Batch,"Sector 56, Gurugram",2025-03-28,Completed
+SSSAM-2026-0063,Mayank Pandey,mayank.pandey29@gmail.com,+91 8158881571,AI & ML,Weekday Regular,"Sector 45, Gurugram",2025-02-19,Active
+SSSAM-2026-0064,Diya Mishra,diya.mishra64@gmail.com,+91 8452127588,Video Editing,Weekday Regular,"Old DLF Colony, Gurugram",2026-04-12,Active
+SSSAM-2026-0065,Sandeep Trivedi,sandeep.trivedi69@gmail.com,+91 9318985678,SAP FICO,Weekday Regular,"Sector 21, Gurugram",2025-10-18,Placed
+SSSAM-2026-0066,Aaryan Pandey,aaryan.pandey16@gmail.com,+91 9876918400,Data Science,Weekend Batch,"DLF Phase 3, Gurugram",2025-06-18,Completed
+SSSAM-2026-0067,Aadhya Banerjee,aadhya.banerjee72@gmail.com,+91 7198670866,Full Stack Web Development,Weekday Regular,"Sector 15, Gurugram",2025-07-08,Active
+SSSAM-2026-0068,Komal Reddy,komal.reddy73@gmail.com,+91 9717502862,AI & ML,Weekday Regular,"Sector 45, Gurugram",2025-07-02,Active
+SSSAM-2026-0069,Mayank Arora,mayank.arora98@gmail.com,+91 7807989672,Java Programming,Weekend Batch,"Sushant Lok, Gurugram",2025-11-07,Placed
+SSSAM-2026-0070,Aarti Chawla,aarti.chawla46@gmail.com,+91 6964462974,Java Programming,Weekday Regular,"Sector 45, Gurugram",2025-02-16,Active
+SSSAM-2026-0071,Raghav Prasad,raghav.prasad49@gmail.com,+91 6391853428,Video Editing,Weekend Batch,"Sushant Lok, Gurugram",2025-03-10,Completed
+SSSAM-2026-0072,Tanvi Prasad,tanvi.prasad72@gmail.com,+91 7612037036,Java Programming,Weekend Batch,"Sector 45, Gurugram",2025-04-12,Active
+SSSAM-2026-0073,Tanvi Banerjee,tanvi.banerjee37@gmail.com,+91 6971028490,Python Programming,Weekday Regular,"Sector 10, Gurugram",2026-04-07,Completed
+SSSAM-2026-0074,Sonia Kapoor,sonia.kapoor12@gmail.com,+91 6634670288,Graphic Design,Evening Fast-track,"DLF Phase 3, Gurugram",2025-08-12,Completed
+SSSAM-2026-0075,Divya Sinha,divya.sinha92@gmail.com,+91 9117322015,Data Science,Weekend Batch,"Sector 10, Gurugram",2025-09-05,Active
+SSSAM-2026-0076,Saurabh Iyer,saurabh.iyer83@gmail.com,+91 7659709717,Video Editing,Weekday Regular,"Sector 14, Gurugram",2025-12-31,Active
+SSSAM-2026-0077,Pihu Joshi,pihu.joshi61@gmail.com,+91 8161461085,Python Programming,Evening Fast-track,"Sector 15, Gurugram",2026-04-07,Completed
+SSSAM-2026-0078,Rashmi Bose,rashmi.bose20@gmail.com,+91 9595227657,SAP FICO,Evening Fast-track,"DLF Phase 3, Gurugram",2025-08-12,Completed
+SSSAM-2026-0079,Dev Chawla,dev.chawla93@gmail.com,+91 9815159830,Software Testing,Weekend Batch,"Sector 45, Gurugram",2026-02-09,Completed
+SSSAM-2026-0080,Mohit Yadav,mohit.yadav78@gmail.com,+91 6305660566,AI & ML,Weekday Regular,"Palam Vihar, Gurugram",2025-12-14,Completed
+SSSAM-2026-0081,Diya Sinha,diya.sinha14@gmail.com,+91 7895917584,TallyPrime Accounting,Weekend Batch,"Sector 4, Gurugram",2026-03-28,Active
+SSSAM-2026-0082,Rohit Dubey,rohit.dubey39@gmail.com,+91 6336715748,Linux System Administration,Evening Fast-track,"Sector 21, Gurugram",2026-02-23,Completed
+SSSAM-2026-0083,Jyoti Trivedi,jyoti.trivedi10@gmail.com,+91 8313784941,AWS Cloud Computing,Weekday Regular,"DLF Phase 2, Gurugram",2025-06-05,Active
+SSSAM-2026-0084,Arjun Mukherjee,arjun.mukherjee59@gmail.com,+91 9951310445,Cyber Security,Weekend Batch,"Sector 15, Gurugram",2026-01-02,Completed
+SSSAM-2026-0085,Reyansh Banerjee,reyansh.banerjee66@gmail.com,+91 7806817742,Software Testing,Weekday Regular,"DLF Phase 2, Gurugram",2025-12-03,Completed
+SSSAM-2026-0086,Kriti Arora,kriti.arora49@gmail.com,+91 7714079355,SAP FICO,Evening Fast-track,"Palam Vihar, Gurugram",2025-10-23,Active
+SSSAM-2026-0087,Kiran Gupta,kiran.gupta32@gmail.com,+91 7198334430,Data Science,Evening Fast-track,"Sector 7, Gurugram",2025-07-12,Completed
+SSSAM-2026-0088,Aaradhya Pillai,aaradhya.pillai62@gmail.com,+91 9863469725,Video Editing,Weekend Batch,"Sector 56, Gurugram",2025-04-19,Active
+SSSAM-2026-0089,Aaradhya Rajput,aaradhya.rajput90@gmail.com,+91 7995300466,Cyber Security,Evening Fast-track,"DLF Phase 1, Gurugram",2025-07-15,Active
+SSSAM-2026-0090,Ankit Aggarwal,ankit.aggarwal67@gmail.com,+91 9764413945,AI & ML,Evening Fast-track,"Sector 4, Gurugram",2025-12-14,Placed
+SSSAM-2026-0091,Dev Prasad,dev.prasad31@gmail.com,+91 7885021491,Cyber Security,Weekday Regular,"Sector 45, Gurugram",2025-08-13,Active
+SSSAM-2026-0092,Manish Joshi,manish.joshi54@gmail.com,+91 7176690013,AWS Cloud Computing,Weekend Batch,"Old DLF Colony, Gurugram",2025-06-03,Completed
+SSSAM-2026-0093,Shalini Garg,shalini.garg66@gmail.com,+91 6319531493,TallyPrime Accounting,Evening Fast-track,"Sushant Lok, Gurugram",2026-05-15,Active
+SSSAM-2026-0094,Ishan Pillai,ishan.pillai31@gmail.com,+91 8570226398,Graphic Design,Evening Fast-track,"Sector 14, Gurugram",2025-12-07,Completed
+SSSAM-2026-0095,Aadhya Verma,aadhya.verma66@gmail.com,+91 9325686351,C++ Programming,Weekend Batch,"Palam Vihar, Gurugram",2025-03-20,Active
+SSSAM-2026-0096,Aanya Aggarwal,aanya.aggarwal74@gmail.com,+91 8478370738,Video Editing,Evening Fast-track,"DLF Phase 1, Gurugram",2025-10-06,Active
+SSSAM-2026-0097,Aarti Rajput,aarti.rajput85@gmail.com,+91 6314740646,Advanced Excel,Weekend Batch,"Old DLF Colony, Gurugram",2025-07-19,Completed
+SSSAM-2026-0098,Kajal Garg,kajal.garg74@gmail.com,+91 8362961616,Java Programming,Weekday Regular,"Sector 15, Gurugram",2026-03-27,Active
+SSSAM-2026-0099,Kriti Kumar,kriti.kumar86@gmail.com,+91 9173467780,Python Programming,Weekday Regular,"Sushant Lok, Gurugram",2025-02-04,Placed
+SSSAM-2026-0100,Rohit Joshi,rohit.joshi43@gmail.com,+91 9236680988,AI & ML,Evening Fast-track,"Sector 47, Gurugram",2026-05-09,Completed
+SSSAM-2026-0101,Pari Nair,pari.nair98@gmail.com,+91 8427083645,C++ Programming,Evening Fast-track,"South City 1, Gurugram",2025-02-08,Active
+SSSAM-2026-0102,Divya Garg,divya.garg70@gmail.com,+91 9348910205,Python Programming,Weekday Regular,"DLF Phase 2, Gurugram",2025-09-20,Placed
+SSSAM-2026-0103,Pari Singh,pari.singh73@gmail.com,+91 8719938115,Graphic Design,Weekend Batch,"Old DLF Colony, Gurugram",2026-04-03,Active
+SSSAM-2026-0104,Pihu Shah,pihu.shah59@gmail.com,+91 7720616161,MySQL Database Design,Evening Fast-track,"Old DLF Colony, Gurugram",2026-01-31,Placed
+SSSAM-2026-0105,Aditya Pandey,aditya.pandey42@gmail.com,+91 8412606219,Graphic Design,Weekend Batch,"Sector 56, Gurugram",2026-02-20,Active
+SSSAM-2026-0106,Amit Sinha,amit.sinha29@gmail.com,+91 6257678276,Java Programming,Evening Fast-track,"Sector 14, Gurugram",2025-02-08,Placed
+SSSAM-2026-0107,Deepak Saxena,deepak.saxena93@gmail.com,+91 8533140402,AI & ML,Evening Fast-track,"Palam Vihar, Gurugram",2025-03-23,Completed
+SSSAM-2026-0108,Ramesh Gupta,ramesh.gupta33@gmail.com,+91 9164176683,Software Testing,Weekend Batch,"DLF Phase 2, Gurugram",2025-03-03,Completed
+SSSAM-2026-0109,Preeti Sen,preeti.sen78@gmail.com,+91 9947076459,SAP FICO,Weekday Regular,"Sector 56, Gurugram",2025-06-01,Completed
+SSSAM-2026-0110,Priya Patel,priya.patel78@gmail.com,+91 8985075244,Digital Marketing,Evening Fast-track,"DLF Phase 3, Gurugram",2026-04-23,Active
+SSSAM-2026-0111,Megha Pandey,megha.pandey57@gmail.com,+91 8905093463,Graphic Design,Weekday Regular,"Old DLF Colony, Gurugram",2025-06-06,Placed
+SSSAM-2026-0112,Anvi Yadav,anvi.yadav44@gmail.com,+91 7757341607,TallyPrime Accounting,Evening Fast-track,"Sector 14, Gurugram",2026-03-20,Active
+SSSAM-2026-0113,Diya Roy,diya.roy82@gmail.com,+91 9810737555,TallyPrime Accounting,Weekend Batch,"Sector 7, Gurugram",2025-03-28,Completed
+SSSAM-2026-0114,Komal Rajput,komal.rajput96@gmail.com,+91 6503383152,AWS Cloud Computing,Weekday Regular,"Sector 4, Gurugram",2025-03-05,Completed
+SSSAM-2026-0115,Aaryan Malhotra,aaryan.malhotra89@gmail.com,+91 9621429865,Software Testing,Weekday Regular,"Sector 47, Gurugram",2025-06-03,Active
+SSSAM-2026-0116,Kajal Bhardwaj,kajal.bhardwaj30@gmail.com,+91 6963270348,Digital Marketing,Weekend Batch,"Sector 10, Gurugram",2025-12-25,Active
+SSSAM-2026-0117,Ananya Mehta,ananya.mehta20@gmail.com,+91 8611670501,Software Testing,Weekday Regular,"Sector 45, Gurugram",2026-03-12,Completed
+SSSAM-2026-0118,Gaurav Reddy,gaurav.reddy60@gmail.com,+91 9282415874,AWS Cloud Computing,Weekday Regular,"DLF Phase 2, Gurugram",2025-06-30,Active
+SSSAM-2026-0119,Diya Goel,diya.goel65@gmail.com,+91 9980389219,C++ Programming,Weekday Regular,"Sector 15, Gurugram",2025-06-07,Placed
+SSSAM-2026-0120,Saurabh Srivastava,saurabh.srivastava15@gmail.com,+91 7397680707,Full Stack Web Development,Weekend Batch,"Sector 21, Gurugram",2025-06-15,Active
+SSSAM-2026-0121,Kajal Roy,kajal.roy12@gmail.com,+91 8588727972,SAP FICO,Weekend Batch,"Sector 15, Gurugram",2026-01-03,Completed
+SSSAM-2026-0122,Nisha Reddy,nisha.reddy97@gmail.com,+91 9247695746,Video Editing,Weekday Regular,"South City 1, Gurugram",2025-01-07,Active
+SSSAM-2026-0123,Saurabh Mukherjee,saurabh.mukherjee54@gmail.com,+91 6479444901,Advanced Excel,Weekend Batch,"Sushant Lok, Gurugram",2026-04-02,Active
+SSSAM-2026-0124,Mayank Chaudhary,mayank.chaudhary77@gmail.com,+91 8369815968,Python Programming,Evening Fast-track,"Sector 15, Gurugram",2025-05-01,Active
+SSSAM-2026-0125,Sanjay Sharma,sanjay.sharma49@gmail.com,+91 6140232683,C++ Programming,Weekday Regular,"Palam Vihar, Gurugram",2025-07-16,Active
+SSSAM-2026-0126,Riya Arora,riya.arora28@gmail.com,+91 8746998471,MySQL Database Design,Weekend Batch,"Sector 47, Gurugram",2025-08-11,Completed
+SSSAM-2026-0127,Riya Rajput,riya.rajput14@gmail.com,+91 8951842846,TallyPrime Accounting,Weekday Regular,"Sector 14, Gurugram",2025-10-05,Active
+SSSAM-2026-0128,Shreya Nair,shreya.nair44@gmail.com,+91 9697648285,Data Science,Weekend Batch,"South City 1, Gurugram",2025-10-15,Active
+SSSAM-2026-0129,Shaurya Singh,shaurya.singh16@gmail.com,+91 6918300898,MySQL Database Design,Weekend Batch,"DLF Phase 3, Gurugram",2026-02-26,Active
+SSSAM-2026-0130,Sakshi Malhotra,sakshi.malhotra86@gmail.com,+91 7995508653,Digital Marketing,Weekday Regular,"Sector 21, Gurugram",2026-03-03,Active
+SSSAM-2026-0131,Kiran Malhotra,kiran.malhotra84@gmail.com,+91 7837103479,C++ Programming,Weekday Regular,"DLF Phase 3, Gurugram",2025-08-06,Completed
+SSSAM-2026-0132,Aarti Mukherjee,aarti.mukherjee10@gmail.com,+91 8946689185,Graphic Design,Weekday Regular,"Sector 4, Gurugram",2026-02-19,Placed
+SSSAM-2026-0133,Neha Sen,neha.sen68@gmail.com,+91 8941041161,Python Programming,Evening Fast-track,"DLF Phase 1, Gurugram",2025-05-19,Completed
+SSSAM-2026-0134,Aarti Patel,aarti.patel44@gmail.com,+91 6981282240,Advanced Excel,Weekday Regular,"Sushant Lok, Gurugram",2025-02-11,Placed
+SSSAM-2026-0135,Vivaan Iyer,vivaan.iyer17@gmail.com,+91 7468062592,AWS Cloud Computing,Evening Fast-track,"Sector 4, Gurugram",2025-06-14,Active
+SSSAM-2026-0136,Rohan Arora,rohan.arora40@gmail.com,+91 7872709162,Graphic Design,Weekend Batch,"Sector 21, Gurugram",2026-04-05,Completed
+SSSAM-2026-0137,Saurabh Sharma,saurabh.sharma72@gmail.com,+91 6135595531,Cyber Security,Weekday Regular,"Sector 56, Gurugram",2026-04-22,Completed
+SSSAM-2026-0138,Neha Pandey,neha.pandey81@gmail.com,+91 6595238665,Java Programming,Weekday Regular,"Sector 56, Gurugram",2025-07-28,Placed
+SSSAM-2026-0139,Kajal Verma,kajal.verma65@gmail.com,+91 9657588346,Graphic Design,Weekend Batch,"Sector 47, Gurugram",2025-04-12,Active
+SSSAM-2026-0140,Swati Iyer,swati.iyer45@gmail.com,+91 9609454609,AI & ML,Weekday Regular,"Sector 10, Gurugram",2026-01-31,Completed
+SSSAM-2026-0141,Neha Iyer,neha.iyer17@gmail.com,+91 9103724666,AI & ML,Weekday Regular,"Palam Vihar, Gurugram",2025-03-25,Completed
+SSSAM-2026-0142,Diya Gupta,diya.gupta51@gmail.com,+91 7746244395,Video Editing,Weekend Batch,"Sushant Lok, Gurugram",2026-02-16,Completed
+SSSAM-2026-0143,Aaryan Reddy,aaryan.reddy84@gmail.com,+91 7270235608,Data Science,Weekend Batch,"Sector 15, Gurugram",2025-10-23,Completed
+SSSAM-2026-0144,Pari Pandey,pari.pandey79@gmail.com,+91 6449447802,Cyber Security,Weekday Regular,"Sector 14, Gurugram",2025-12-27,Active
+SSSAM-2026-0145,Gaurav Bose,gaurav.bose10@gmail.com,+91 8998261877,Cyber Security,Weekend Batch,"DLF Phase 2, Gurugram",2025-06-27,Active
+SSSAM-2026-0146,Aditya Chawla,aditya.chawla19@gmail.com,+91 6535139078,Video Editing,Weekday Regular,"Sector 4, Gurugram",2025-05-19,Placed
+SSSAM-2026-0147,Shreya Rajput,shreya.rajput82@gmail.com,+91 6868099676,Full Stack Web Development,Evening Fast-track,"DLF Phase 1, Gurugram",2026-03-05,Completed
+SSSAM-2026-0148,Poonam Sen,poonam.sen34@gmail.com,+91 7590040296,Graphic Design,Weekday Regular,"Sushant Lok, Gurugram",2025-12-04,Active
+SSSAM-2026-0149,Shaurya Mehta,shaurya.mehta93@gmail.com,+91 7662426774,TallyPrime Accounting,Weekday Regular,"Sector 4, Gurugram",2025-08-01,Completed
+SSSAM-2026-0150,Pankaj Shah,pankaj.shah43@gmail.com,+91 9679425042,AI & ML,Weekday Regular,"Palam Vihar, Gurugram",2025-11-04,Active
+SSSAM-2026-0151,Gaurav Kumar,gaurav.kumar15@gmail.com,+91 6925747018,Data Science,Weekday Regular,"DLF Phase 3, Gurugram",2025-09-29,Completed
+SSSAM-2026-0152,Deepak Sen,deepak.sen20@gmail.com,+91 8716141182,MySQL Database Design,Weekday Regular,"Sector 47, Gurugram",2025-09-16,Active
+SSSAM-2026-0153,Ramesh Bose,ramesh.bose43@gmail.com,+91 9392111024,AI & ML,Evening Fast-track,"Sector 21, Gurugram",2025-02-25,Completed
+SSSAM-2026-0154,Anvi Chaudhary,anvi.chaudhary73@gmail.com,+91 9705347511,MySQL Database Design,Evening Fast-track,"Sector 7, Gurugram",2025-10-12,Placed
+SSSAM-2026-0155,Pooja Banerjee,pooja.banerjee33@gmail.com,+91 7976579427,Linux System Administration,Weekday Regular,"Sector 47, Gurugram",2026-02-27,Active
+SSSAM-2026-0156,Pooja Kapoor,pooja.kapoor61@gmail.com,+91 7123759210,AI & ML,Weekday Regular,"Sector 45, Gurugram",2026-03-27,Completed
+SSSAM-2026-0157,Rahul Dubey,rahul.dubey33@gmail.com,+91 9617009966,Full Stack Web Development,Evening Fast-track,"Palam Vihar, Gurugram",2025-05-16,Active
+SSSAM-2026-0158,Kriti Nair,kriti.nair31@gmail.com,+91 8969056379,C++ Programming,Evening Fast-track,"Sector 56, Gurugram",2025-02-05,Active
+SSSAM-2026-0159,Deepak Yadav,deepak.yadav66@gmail.com,+91 8826205090,AI & ML,Weekend Batch,"Sector 15, Gurugram",2025-04-17,Active
+SSSAM-2026-0160,Tanvi Banerjee,tanvi.banerjee79@gmail.com,+91 7452364489,Data Science,Weekend Batch,"Palam Vihar, Gurugram",2026-04-17,Completed
+SSSAM-2026-0161,Aanya Yadav,aanya.yadav84@gmail.com,+91 9514573800,Full Stack Web Development,Weekday Regular,"Sector 15, Gurugram",2025-01-03,Active
+SSSAM-2026-0162,Saurabh Mehta,saurabh.mehta66@gmail.com,+91 6397844129,Software Testing,Weekend Batch,"DLF Phase 3, Gurugram",2026-02-14,Completed
+SSSAM-2026-0163,Pranav Srivastava,pranav.srivastava34@gmail.com,+91 8971037031,Data Science,Weekend Batch,"South City 1, Gurugram",2026-01-30,Active
+SSSAM-2026-0164,Kriti Reddy,kriti.reddy10@gmail.com,+91 6718961509,Graphic Design,Weekday Regular,"Sector 45, Gurugram",2026-03-22,Active
+SSSAM-2026-0165,Kajal Sinha,kajal.sinha77@gmail.com,+91 6101520329,Graphic Design,Weekday Regular,"DLF Phase 1, Gurugram",2026-05-01,Active
+SSSAM-2026-0166,Ishan Aggarwal,ishan.aggarwal59@gmail.com,+91 7262403883,Graphic Design,Evening Fast-track,"DLF Phase 1, Gurugram",2025-08-03,Active
+SSSAM-2026-0167,Riya Malhotra,riya.malhotra68@gmail.com,+91 8961791202,TallyPrime Accounting,Weekend Batch,"DLF Phase 3, Gurugram",2025-05-11,Completed
+SSSAM-2026-0168,Sonia Bansal,sonia.bansal53@gmail.com,+91 6210198267,MySQL Database Design,Evening Fast-track,"Sushant Lok, Gurugram",2026-04-13,Active
+SSSAM-2026-0169,Aarti Gupta,aarti.gupta81@gmail.com,+91 7822029036,Video Editing,Weekday Regular,"DLF Phase 1, Gurugram",2026-03-17,Completed
+SSSAM-2026-0170,Kavita Bose,kavita.bose96@gmail.com,+91 8421586976,Advanced Excel,Weekday Regular,"Sector 10, Gurugram",2025-12-16,Active
+SSSAM-2026-0171,Vihaan Singh,vihaan.singh44@gmail.com,+91 6272204643,TallyPrime Accounting,Weekday Regular,"Sushant Lok, Gurugram",2025-09-07,Completed
+SSSAM-2026-0172,Shaurya Banerjee,shaurya.banerjee10@gmail.com,+91 6184516128,Cyber Security,Evening Fast-track,"Sector 47, Gurugram",2026-02-10,Completed
+SSSAM-2026-0173,Abhishek Bhardwaj,abhishek.bhardwaj20@gmail.com,+91 6929757612,MySQL Database Design,Evening Fast-track,"Old DLF Colony, Gurugram",2026-04-05,Active
+SSSAM-2026-0174,Vivaan Iyer,vivaan.iyer32@gmail.com,+91 7650006588,Python Programming,Weekday Regular,"DLF Phase 2, Gurugram",2025-11-14,Active
+SSSAM-2026-0175,Aarav Malhotra,aarav.malhotra67@gmail.com,+91 6558102125,Linux System Administration,Weekday Regular,"Sector 7, Gurugram",2026-01-11,Active
+SSSAM-2026-0176,Pankaj Chawla,pankaj.chawla67@gmail.com,+91 9128872160,Data Science,Weekend Batch,"Sector 45, Gurugram",2025-10-29,Active
+SSSAM-2026-0177,Sneha Prasad,sneha.prasad66@gmail.com,+91 9242566260,AI & ML,Weekday Regular,"Palam Vihar, Gurugram",2025-07-09,Active
+SSSAM-2026-0178,Jyoti Sharma,jyoti.sharma66@gmail.com,+91 9392571294,SAP FICO,Weekday Regular,"Old DLF Colony, Gurugram",2025-06-11,Placed
+SSSAM-2026-0179,Krishna Arora,krishna.arora15@gmail.com,+91 6152162707,MySQL Database Design,Weekend Batch,"Sector 56, Gurugram",2025-08-05,Active
+SSSAM-2026-0180,Ananya Nair,ananya.nair67@gmail.com,+91 8766527178,AI & ML,Weekend Batch,"Old DLF Colony, Gurugram",2025-11-17,Completed
+SSSAM-2026-0181,Sakshi Sharma,sakshi.sharma81@gmail.com,+91 6420843054,Advanced Excel,Evening Fast-track,"Old DLF Colony, Gurugram",2025-06-26,Active
+SSSAM-2026-0182,Sakshi Bose,sakshi.bose41@gmail.com,+91 8105053742,Video Editing,Evening Fast-track,"Sector 4, Gurugram",2025-09-23,Active
+SSSAM-2026-0183,Karan Verma,karan.verma58@gmail.com,+91 9244482564,Data Science,Weekend Batch,"Sector 15, Gurugram",2026-02-25,Completed
+SSSAM-2026-0184,Vikas Goel,vikas.goel55@gmail.com,+91 7990283932,Cyber Security,Weekday Regular,"Sector 4, Gurugram",2025-02-13,Placed
+SSSAM-2026-0185,Sanjay Mukherjee,sanjay.mukherjee58@gmail.com,+91 7431571087,TallyPrime Accounting,Weekend Batch,"Sector 7, Gurugram",2025-05-25,Placed
+SSSAM-2026-0186,Ishan Goel,ishan.goel17@gmail.com,+91 6317748337,Data Science,Weekend Batch,"Old DLF Colony, Gurugram",2025-03-23,Completed
+SSSAM-2026-0187,Rakesh Sharma,rakesh.sharma18@gmail.com,+91 6679330860,Graphic Design,Weekday Regular,"Old DLF Colony, Gurugram",2025-07-13,Active
+SSSAM-2026-0188,Rohan Singh,rohan.singh96@gmail.com,+91 7313746080,Digital Marketing,Weekend Batch,"Palam Vihar, Gurugram",2026-01-12,Completed
+SSSAM-2026-0189,Kriti Pillai,kriti.pillai21@gmail.com,+91 9134645179,AI & ML,Evening Fast-track,"Sector 14, Gurugram",2026-03-29,Active
+SSSAM-2026-0190,Sakshi Pillai,sakshi.pillai75@gmail.com,+91 6810885430,C++ Programming,Weekend Batch,"Sector 7, Gurugram",2025-03-08,Placed
+SSSAM-2026-0191,Suresh Gupta,suresh.gupta28@gmail.com,+91 7592609379,AI & ML,Weekday Regular,"DLF Phase 2, Gurugram",2025-04-22,Active
+SSSAM-2026-0192,Ananya Sinha,ananya.sinha26@gmail.com,+91 6192021976,Python Programming,Weekend Batch,"Sector 14, Gurugram",2025-12-19,Completed
+SSSAM-2026-0193,Pooja Goel,pooja.goel21@gmail.com,+91 7707253910,Graphic Design,Weekend Batch,"Sushant Lok, Gurugram",2025-11-25,Completed
+SSSAM-2026-0194,Neha Mukherjee,neha.mukherjee70@gmail.com,+91 8817003349,MySQL Database Design,Weekday Regular,"Sector 21, Gurugram",2026-02-10,Placed
+SSSAM-2026-0195,Vijay Malhotra,vijay.malhotra59@gmail.com,+91 6681614798,Data Science,Weekend Batch,"Sector 21, Gurugram",2025-07-15,Placed
+SSSAM-2026-0196,Abhishek Verma,abhishek.verma67@gmail.com,+91 9213889549,Video Editing,Evening Fast-track,"South City 1, Gurugram",2025-01-27,Placed
+SSSAM-2026-0197,Kiran Malhotra,kiran.malhotra23@gmail.com,+91 9348852003,Java Programming,Weekend Batch,"Sector 21, Gurugram",2026-02-18,Completed
+SSSAM-2026-0198,Varun Bose,varun.bose37@gmail.com,+91 6477510653,MySQL Database Design,Weekday Regular,"Sector 4, Gurugram",2025-10-14,Placed
+SSSAM-2026-0199,Avani Sinha,avani.sinha94@gmail.com,+91 6102450081,Graphic Design,Weekend Batch,"Sector 45, Gurugram",2025-03-28,Active
+SSSAM-2026-0200,Vihaan Kumar,vihaan.kumar31@gmail.com,+91 7986490377,Linux System Administration,Evening Fast-track,"Sector 45, Gurugram",2026-03-19,Completed
+SSSAM-2026-0201,Ankit Saxena,ankit.saxena50@gmail.com,+91 7300505734,AI & ML,Weekend Batch,"Sector 10, Gurugram",2026-01-13,Active
+SSSAM-2026-0202,Anvi Bansal,anvi.bansal46@gmail.com,+91 9370319185,Python Programming,Weekday Regular,"Sector 56, Gurugram",2025-05-11,Completed
+SSSAM-2026-0203,Ankit Joshi,ankit.joshi13@gmail.com,+91 9606878246,Full Stack Web Development,Weekend Batch,"Sector 15, Gurugram",2025-09-17,Active
+SSSAM-2026-0204,Aaryan Srivastava,aaryan.srivastava35@gmail.com,+91 7672170102,AI & ML,Weekday Regular,"South City 1, Gurugram",2025-08-26,Completed
+SSSAM-2026-0205,Saisha Aggarwal,saisha.aggarwal87@gmail.com,+91 8104296065,Cyber Security,Weekend Batch,"Sector 45, Gurugram",2026-04-11,Active
+SSSAM-2026-0206,Sanjay Chaudhary,sanjay.chaudhary55@gmail.com,+91 8981456094,Advanced Excel,Weekday Regular,"DLF Phase 1, Gurugram",2025-12-29,Active
+SSSAM-2026-0207,Anjali Trivedi,anjali.trivedi15@gmail.com,+91 7187171097,Advanced Excel,Weekend Batch,"DLF Phase 2, Gurugram",2025-04-23,Active
+SSSAM-2026-0208,Varun Prasad,varun.prasad12@gmail.com,+91 8476451994,Python Programming,Weekend Batch,"Sector 56, Gurugram",2025-12-02,Active
+SSSAM-2026-0209,Kriti Bose,kriti.bose75@gmail.com,+91 9385238343,Java Programming,Weekend Batch,"Sector 15, Gurugram",2025-03-24,Completed
+SSSAM-2026-0210,Raghav Trivedi,raghav.trivedi68@gmail.com,+91 8552146916,MySQL Database Design,Evening Fast-track,"DLF Phase 1, Gurugram",2025-07-10,Placed
+SSSAM-2026-0211,Priya Patel,priya.patel28@gmail.com,+91 8136674857,Java Programming,Weekday Regular,"South City 1, Gurugram",2025-01-14,Completed
+SSSAM-2026-0212,Ananya Pillai,ananya.pillai95@gmail.com,+91 6675124150,C++ Programming,Evening Fast-track,"Sector 45, Gurugram",2026-03-01,Completed
+SSSAM-2026-0213,Mohit Chawla,mohit.chawla65@gmail.com,+91 8757048493,Digital Marketing,Weekend Batch,"Sector 21, Gurugram",2025-05-27,Active
+SSSAM-2026-0214,Raghav Dubey,raghav.dubey92@gmail.com,+91 8803513985,MySQL Database Design,Evening Fast-track,"Palam Vihar, Gurugram",2025-11-06,Active
+SSSAM-2026-0215,Rohan Aggarwal,rohan.aggarwal82@gmail.com,+91 8452500895,Advanced Excel,Weekend Batch,"Sector 4, Gurugram",2025-05-03,Active
+SSSAM-2026-0216,Nisha Patel,nisha.patel74@gmail.com,+91 9904905010,Advanced Excel,Weekend Batch,"DLF Phase 3, Gurugram",2026-04-17,Completed
+SSSAM-2026-0217,Preeti Sinha,preeti.sinha76@gmail.com,+91 7733035494,AWS Cloud Computing,Weekday Regular,"Sector 15, Gurugram",2025-10-02,Active
+SSSAM-2026-0218,Suresh Yadav,suresh.yadav17@gmail.com,+91 6351109808,Full Stack Web Development,Weekend Batch,"DLF Phase 2, Gurugram",2025-11-06,Active
+SSSAM-2026-0219,Ritu Pillai,ritu.pillai17@gmail.com,+91 7722143021,SAP FICO,Evening Fast-track,"Sector 56, Gurugram",2025-02-17,Placed
+SSSAM-2026-0220,Karan Chaudhary,karan.chaudhary21@gmail.com,+91 7238478758,TallyPrime Accounting,Evening Fast-track,"Sector 21, Gurugram",2025-08-30,Completed
+SSSAM-2026-0221,Divya Pillai,divya.pillai27@gmail.com,+91 8983091140,Java Programming,Evening Fast-track,"DLF Phase 3, Gurugram",2025-08-21,Completed
+SSSAM-2026-0222,Preeti Joshi,preeti.joshi83@gmail.com,+91 8710667992,Python Programming,Evening Fast-track,"Old DLF Colony, Gurugram",2025-07-29,Active
+SSSAM-2026-0223,Anjali Mehta,anjali.mehta82@gmail.com,+91 9842695497,SAP FICO,Weekday Regular,"Sector 7, Gurugram",2025-12-20,Completed
+SSSAM-2026-0224,Reyansh Mukherjee,reyansh.mukherjee72@gmail.com,+91 8494823390,Advanced Excel,Evening Fast-track,"Palam Vihar, Gurugram",2025-08-07,Active
+SSSAM-2026-0225,Aditya Pillai,aditya.pillai79@gmail.com,+91 8281664845,Advanced Excel,Weekend Batch,"Sector 10, Gurugram",2025-12-11,Completed
+SSSAM-2026-0226,Rahul Pillai,rahul.pillai78@gmail.com,+91 7926911054,Digital Marketing,Weekend Batch,"Sector 10, Gurugram",2025-03-14,Active
+SSSAM-2026-0227,Jyoti Banerjee,jyoti.banerjee41@gmail.com,+91 8757515296,Software Testing,Weekend Batch,"DLF Phase 1, Gurugram",2026-02-07,Completed
+SSSAM-2026-0228,Diya Chaudhary,diya.chaudhary66@gmail.com,+91 8220857718,Linux System Administration,Weekday Regular,"DLF Phase 2, Gurugram",2025-01-14,Completed
+SSSAM-2026-0229,Ishan Verma,ishan.verma18@gmail.com,+91 7387118350,AWS Cloud Computing,Weekday Regular,"Sector 10, Gurugram",2025-03-05,Active
+SSSAM-2026-0230,Kiran Joshi,kiran.joshi48@gmail.com,+91 8920909271,Data Science,Evening Fast-track,"Sector 14, Gurugram",2026-03-11,Active
+SSSAM-2026-0231,Deepak Roy,deepak.roy41@gmail.com,+91 9241071562,Cyber Security,Weekend Batch,"Sector 45, Gurugram",2026-04-04,Placed
+SSSAM-2026-0232,Megha Iyer,megha.iyer66@gmail.com,+91 7344375227,Python Programming,Weekday Regular,"DLF Phase 2, Gurugram",2026-01-20,Completed
+SSSAM-2026-0233,Tanvi Prasad,tanvi.prasad18@gmail.com,+91 8235188731,Advanced Excel,Weekday Regular,"Sector 47, Gurugram",2025-08-19,Placed
+SSSAM-2026-0234,Gaurav Bhardwaj,gaurav.bhardwaj71@gmail.com,+91 8806507180,Java Programming,Weekday Regular,"Sector 45, Gurugram",2026-01-31,Active
+SSSAM-2026-0235,Shruti Roy,shruti.roy62@gmail.com,+91 7127565849,MySQL Database Design,Weekend Batch,"Sector 4, Gurugram",2026-05-08,Placed
+SSSAM-2026-0236,Aaradhya Garg,aaradhya.garg65@gmail.com,+91 7535659786,Full Stack Web Development,Weekend Batch,"Sector 21, Gurugram",2025-04-03,Placed
+SSSAM-2026-0237,Rashmi Nair,rashmi.nair59@gmail.com,+91 7657925309,C++ Programming,Evening Fast-track,"Palam Vihar, Gurugram",2026-01-07,Placed
+SSSAM-2026-0238,Priya Bansal,priya.bansal52@gmail.com,+91 7990526728,Full Stack Web Development,Weekend Batch,"DLF Phase 3, Gurugram",2026-03-08,Active
+SSSAM-2026-0239,Krishna Goel,krishna.goel93@gmail.com,+91 7477452294,C++ Programming,Weekday Regular,"Sector 45, Gurugram",2025-05-06,Completed
+SSSAM-2026-0240,Vikas Kapoor,vikas.kapoor68@gmail.com,+91 7600157276,Python Programming,Evening Fast-track,"Sector 15, Gurugram",2026-04-26,Placed
+SSSAM-2026-0241,Shreya Shah,shreya.shah32@gmail.com,+91 8608013691,Data Science,Evening Fast-track,"Sector 14, Gurugram",2025-11-06,Active
+SSSAM-2026-0242,Kabir Reddy,kabir.reddy49@gmail.com,+91 8386607156,AI & ML,Weekday Regular,"Old DLF Colony, Gurugram",2026-03-27,Completed
+SSSAM-2026-0243,Vihaan Prasad,vihaan.prasad36@gmail.com,+91 8475566741,SAP FICO,Weekend Batch,"Sector 14, Gurugram",2025-12-21,Active
+SSSAM-2026-0244,Aarti Chawla,aarti.chawla89@gmail.com,+91 6586813773,AI & ML,Weekend Batch,"Sector 4, Gurugram",2025-06-22,Completed
+SSSAM-2026-0245,Isha Kapoor,isha.kapoor36@gmail.com,+91 8331584306,Java Programming,Weekend Batch,"DLF Phase 3, Gurugram",2025-10-24,Placed
+SSSAM-2026-0246,Rakesh Roy,rakesh.roy32@gmail.com,+91 9192436861,Linux System Administration,Weekend Batch,"Sector 15, Gurugram",2025-12-28,Completed
+SSSAM-2026-0247,Karan Bansal,karan.bansal31@gmail.com,+91 9810094270,Data Science,Weekend Batch,"DLF Phase 1, Gurugram",2026-04-05,Active
+SSSAM-2026-0248,Ritu Joshi,ritu.joshi93@gmail.com,+91 6125083963,TallyPrime Accounting,Weekend Batch,"DLF Phase 2, Gurugram",2025-05-21,Active
+SSSAM-2026-0249,Aadhya Saxena,aadhya.saxena97@gmail.com,+91 7962915867,AWS Cloud Computing,Evening Fast-track,"Sector 10, Gurugram",2026-03-04,Placed
+SSSAM-2026-0250,Sonia Aggarwal,sonia.aggarwal43@gmail.com,+91 6937338789,C++ Programming,Evening Fast-track,"Sector 15, Gurugram",2025-10-15,Active
+SSSAM-2026-0251,Kriti Yadav,kriti.yadav11@gmail.com,+91 8227538162,Linux System Administration,Evening Fast-track,"Sector 47, Gurugram",2026-04-26,Active
+SSSAM-2026-0252,Dev Trivedi,dev.trivedi12@gmail.com,+91 7633775566,Video Editing,Evening Fast-track,"DLF Phase 2, Gurugram",2026-03-22,Active
+SSSAM-2026-0253,Kriti Bose,kriti.bose97@gmail.com,+91 8436228780,AI & ML,Weekend Batch,"Old DLF Colony, Gurugram",2026-04-26,Active
+SSSAM-2026-0254,Mohit Pillai,mohit.pillai72@gmail.com,+91 7372122472,Advanced Excel,Weekend Batch,"Sector 7, Gurugram",2025-08-28,Active
+SSSAM-2026-0255,Raghav Bansal,raghav.bansal95@gmail.com,+91 6412513040,Digital Marketing,Weekday Regular,"DLF Phase 3, Gurugram",2025-07-13,Placed
+SSSAM-2026-0256,Rupali Kapoor,rupali.kapoor20@gmail.com,+91 6510161076,Graphic Design,Weekend Batch,"Sector 10, Gurugram",2025-01-16,Placed
+SSSAM-2026-0257,Kriti Singh,kriti.singh13@gmail.com,+91 6312438561,Video Editing,Evening Fast-track,"Sector 21, Gurugram",2026-03-18,Active
+SSSAM-2026-0258,Aadhya Kapoor,aadhya.kapoor29@gmail.com,+91 6405955607,MySQL Database Design,Weekend Batch,"Old DLF Colony, Gurugram",2025-06-16,Completed
+SSSAM-2026-0259,Shalini Goel,shalini.goel52@gmail.com,+91 9702897261,Data Science,Weekend Batch,"South City 1, Gurugram",2025-01-08,Placed
+SSSAM-2026-0260,Riya Rao,riya.rao53@gmail.com,+91 8825456569,Data Science,Weekend Batch,"DLF Phase 2, Gurugram",2025-02-09,Completed
+SSSAM-2026-0261,Pari Mukherjee,pari.mukherjee73@gmail.com,+91 7733363669,AI & ML,Evening Fast-track,"Old DLF Colony, Gurugram",2025-12-06,Active
+SSSAM-2026-0262,Sonia Pillai,sonia.pillai34@gmail.com,+91 9776977369,Video Editing,Weekday Regular,"Sector 45, Gurugram",2026-05-07,Completed
+SSSAM-2026-0263,Rajesh Gupta,rajesh.gupta37@gmail.com,+91 6572238212,Linux System Administration,Evening Fast-track,"Sector 56, Gurugram",2025-07-31,Active
+SSSAM-2026-0264,Mohit Mishra,mohit.mishra37@gmail.com,+91 6245367437,SAP FICO,Weekend Batch,"Palam Vihar, Gurugram",2025-03-20,Active
+SSSAM-2026-0265,Saurabh Srivastava,saurabh.srivastava83@gmail.com,+91 8755511307,Software Testing,Weekday Regular,"DLF Phase 1, Gurugram",2025-01-10,Completed
+SSSAM-2026-0266,Rashmi Joshi,rashmi.joshi57@gmail.com,+91 7310014959,Cyber Security,Weekend Batch,"DLF Phase 1, Gurugram",2025-11-15,Completed
+SSSAM-2026-0267,Poonam Shah,poonam.shah20@gmail.com,+91 8143452386,Java Programming,Evening Fast-track,"Sector 21, Gurugram",2025-10-30,Active
+SSSAM-2026-0268,Aarav Kumar,aarav.kumar28@gmail.com,+91 6813321465,Full Stack Web Development,Weekend Batch,"Sector 7, Gurugram",2025-11-29,Active
+SSSAM-2026-0269,Pari Bansal,pari.bansal71@gmail.com,+91 8346961625,Advanced Excel,Weekend Batch,"Sector 7, Gurugram",2026-01-10,Active
+SSSAM-2026-0270,Avani Bhardwaj,avani.bhardwaj52@gmail.com,+91 7830267235,C++ Programming,Weekday Regular,"Sector 21, Gurugram",2026-03-27,Completed
+SSSAM-2026-0271,Aarav Dubey,aarav.dubey28@gmail.com,+91 7187988637,Graphic Design,Evening Fast-track,"Sushant Lok, Gurugram",2026-01-18,Completed
+SSSAM-2026-0272,Rahul Arora,rahul.arora95@gmail.com,+91 7363938222,Graphic Design,Weekend Batch,"DLF Phase 1, Gurugram",2026-03-29,Active
+SSSAM-2026-0273,Pankaj Dubey,pankaj.dubey36@gmail.com,+91 7718317530,Linux System Administration,Weekend Batch,"Palam Vihar, Gurugram",2025-07-10,Completed
+SSSAM-2026-0274,Abhishek Trivedi,abhishek.trivedi26@gmail.com,+91 7961914810,Full Stack Web Development,Evening Fast-track,"DLF Phase 1, Gurugram",2025-05-01,Active
+SSSAM-2026-0275,Sapna Arora,sapna.arora49@gmail.com,+91 6340947830,Data Science,Evening Fast-track,"Sector 45, Gurugram",2025-11-14,Completed
+SSSAM-2026-0276,Avani Chaudhary,avani.chaudhary36@gmail.com,+91 9818685060,Cyber Security,Evening Fast-track,"Sushant Lok, Gurugram",2025-09-15,Completed
+SSSAM-2026-0277,Tanvi Chawla,tanvi.chawla81@gmail.com,+91 7421124690,SAP FICO,Evening Fast-track,"Sector 15, Gurugram",2025-05-03,Active
+SSSAM-2026-0278,Riya Das,riya.das24@gmail.com,+91 6681152496,Software Testing,Weekday Regular,"Old DLF Colony, Gurugram",2025-04-05,Completed
+SSSAM-2026-0279,Sakshi Reddy,sakshi.reddy64@gmail.com,+91 6457192151,Advanced Excel,Evening Fast-track,"Sector 15, Gurugram",2025-10-03,Completed
+SSSAM-2026-0280,Swati Kapoor,swati.kapoor80@gmail.com,+91 6305575717,Full Stack Web Development,Weekend Batch,"Sector 45, Gurugram",2026-02-18,Completed
+SSSAM-2026-0281,Aanya Arora,aanya.arora37@gmail.com,+91 9552226398,C++ Programming,Weekend Batch,"Sector 7, Gurugram",2025-12-06,Active
+SSSAM-2026-0282,Sandeep Trivedi,sandeep.trivedi61@gmail.com,+91 6216153398,AI & ML,Evening Fast-track,"Sector 15, Gurugram",2025-09-26,Completed
+SSSAM-2026-0283,Manish Shah,manish.shah41@gmail.com,+91 6345913481,Java Programming,Weekday Regular,"Palam Vihar, Gurugram",2025-12-08,Placed
+SSSAM-2026-0284,Neha Banerjee,neha.banerjee14@gmail.com,+91 9322440352,Full Stack Web Development,Weekday Regular,"Sector 7, Gurugram",2025-01-25,Placed
+SSSAM-2026-0285,Anjali Mehta,anjali.mehta81@gmail.com,+91 6276231773,Java Programming,Weekday Regular,"DLF Phase 3, Gurugram",2025-06-15,Completed
+SSSAM-2026-0286,Ramesh Mukherjee,ramesh.mukherjee66@gmail.com,+91 6863196912,Linux System Administration,Weekend Batch,"South City 1, Gurugram",2026-03-19,Completed
+SSSAM-2026-0287,Avani Sinha,avani.sinha31@gmail.com,+91 6712901495,Python Programming,Weekend Batch,"DLF Phase 1, Gurugram",2026-04-18,Completed
+SSSAM-2026-0288,Amit Sharma,amit.sharma54@gmail.com,+91 9567359655,Digital Marketing,Weekday Regular,"Sector 21, Gurugram",2025-06-23,Completed
+SSSAM-2026-0289,Divya Pandey,divya.pandey74@gmail.com,+91 9466146950,Data Science,Weekday Regular,"Sector 7, Gurugram",2025-02-13,Active
+SSSAM-2026-0290,Kriti Srivastava,kriti.srivastava99@gmail.com,+91 6700357875,Advanced Excel,Evening Fast-track,"Sushant Lok, Gurugram",2026-02-27,Active
+SSSAM-2026-0291,Ramesh Banerjee,ramesh.banerjee14@gmail.com,+91 6148659316,AWS Cloud Computing,Weekend Batch,"DLF Phase 3, Gurugram",2026-02-16,Active
+SSSAM-2026-0292,Rashmi Iyer,rashmi.iyer83@gmail.com,+91 6968114976,Python Programming,Evening Fast-track,"South City 1, Gurugram",2025-03-27,Completed
+SSSAM-2026-0293,Aarti Reddy,aarti.reddy91@gmail.com,+91 8998363941,Advanced Excel,Evening Fast-track,"Sushant Lok, Gurugram",2025-09-11,Completed
+SSSAM-2026-0294,Sonia Sinha,sonia.sinha36@gmail.com,+91 9836858914,Data Science,Weekday Regular,"Sector 47, Gurugram",2025-07-11,Active
+SSSAM-2026-0295,Dev Mukherjee,dev.mukherjee85@gmail.com,+91 8538437819,MySQL Database Design,Evening Fast-track,"Sector 4, Gurugram",2025-09-12,Active
+SSSAM-2026-0296,Ashish Kapoor,ashish.kapoor99@gmail.com,+91 6701426219,Graphic Design,Weekend Batch,"Sector 45, Gurugram",2026-02-03,Completed
+SSSAM-2026-0297,Karan Sharma,karan.sharma85@gmail.com,+91 9263713842,Python Programming,Weekday Regular,"Sector 45, Gurugram",2025-01-08,Active
+SSSAM-2026-0298,Ankit Shah,ankit.shah45@gmail.com,+91 6334213245,SAP FICO,Weekend Batch,"DLF Phase 2, Gurugram",2025-05-11,Placed
+SSSAM-2026-0299,Deepak Roy,deepak.roy20@gmail.com,+91 7200947015,TallyPrime Accounting,Evening Fast-track,"Sector 21, Gurugram",2026-01-24,Completed
+SSSAM-2026-0300,Mohit Das,mohit.das50@gmail.com,+91 8841338068,AWS Cloud Computing,Weekend Batch,"Sector 10, Gurugram",2025-02-07,Completed
+SSSAM-2026-0301,Pranav Bose,pranav.bose27@gmail.com,+91 8901045445,Software Testing,Weekend Batch,"Sector 10, Gurugram",2025-02-13,Placed
+SSSAM-2026-0302,Avani Prasad,avani.prasad21@gmail.com,+91 6362166549,Video Editing,Evening Fast-track,"Sushant Lok, Gurugram",2025-07-14,Completed
+SSSAM-2026-0303,Aanya Sharma,aanya.sharma35@gmail.com,+91 9119743641,Video Editing,Weekday Regular,"Sector 45, Gurugram",2026-04-13,Active
+SSSAM-2026-0304,Pari Malhotra,pari.malhotra62@gmail.com,+91 7296203351,C++ Programming,Weekday Regular,"Sector 45, Gurugram",2025-07-06,Placed
+SSSAM-2026-0305,Vijay Joshi,vijay.joshi44@gmail.com,+91 7760616399,Graphic Design,Evening Fast-track,"Sector 56, Gurugram",2026-05-10,Completed
+SSSAM-2026-0306,Arjun Bansal,arjun.bansal54@gmail.com,+91 7704820800,AWS Cloud Computing,Weekend Batch,"DLF Phase 3, Gurugram",2025-07-02,Completed
+SSSAM-2026-0307,Rohit Dubey,rohit.dubey32@gmail.com,+91 7604069566,Software Testing,Evening Fast-track,"South City 1, Gurugram",2025-10-31,Placed
+SSSAM-2026-0308,Aaryan Trivedi,aaryan.trivedi77@gmail.com,+91 6876295389,Full Stack Web Development,Weekend Batch,"Sector 15, Gurugram",2025-11-22,Completed
+SSSAM-2026-0309,Rahul Sinha,rahul.sinha15@gmail.com,+91 8974462789,Python Programming,Evening Fast-track,"Sushant Lok, Gurugram",2025-10-04,Active
+SSSAM-2026-0310,Aaryan Aggarwal,aaryan.aggarwal41@gmail.com,+91 7199267178,Linux System Administration,Weekday Regular,"South City 1, Gurugram",2025-08-22,Active
+SSSAM-2026-0311,Priya Garg,priya.garg16@gmail.com,+91 6916326468,Video Editing,Weekend Batch,"Sector 45, Gurugram",2025-08-31,Active
+SSSAM-2026-0312,Varun Sinha,varun.sinha91@gmail.com,+91 7764538773,Advanced Excel,Weekday Regular,"Sector 21, Gurugram",2025-11-09,Completed
+SSSAM-2026-0313,Reyansh Prasad,reyansh.prasad47@gmail.com,+91 7508890009,C++ Programming,Weekday Regular,"Sector 45, Gurugram",2025-07-21,Active
+SSSAM-2026-0314,Shaurya Yadav,shaurya.yadav36@gmail.com,+91 8920597156,Software Testing,Weekday Regular,"DLF Phase 3, Gurugram",2025-10-04,Completed
+SSSAM-2026-0315,Raghav Rao,raghav.rao17@gmail.com,+91 6664015819,Python Programming,Weekend Batch,"Sector 7, Gurugram",2025-08-27,Completed
+SSSAM-2026-0316,Shreya Singh,shreya.singh86@gmail.com,+91 6293802882,Advanced Excel,Weekday Regular,"DLF Phase 1, Gurugram",2026-04-27,Active
+SSSAM-2026-0317,Sonia Rajput,sonia.rajput68@gmail.com,+91 9341139828,AWS Cloud Computing,Evening Fast-track,"DLF Phase 1, Gurugram",2025-11-17,Placed
+SSSAM-2026-0318,Atharva Sharma,atharva.sharma96@gmail.com,+91 8822887962,C++ Programming,Evening Fast-track,"Sector 14, Gurugram",2025-01-16,Completed
+SSSAM-2026-0319,Aarti Iyer,aarti.iyer27@gmail.com,+91 8864237155,Cyber Security,Weekend Batch,"Sector 14, Gurugram",2025-03-10,Active
+SSSAM-2026-0320,Gaurav Gupta,gaurav.gupta95@gmail.com,+91 7205703008,Advanced Excel,Weekend Batch,"Sector 47, Gurugram",2025-03-04,Placed
+SSSAM-2026-0321,Tanvi Patel,tanvi.patel14@gmail.com,+91 9569288916,Java Programming,Weekday Regular,"Sector 10, Gurugram",2025-06-27,Active
+SSSAM-2026-0322,Mayank Iyer,mayank.iyer71@gmail.com,+91 8857207195,Video Editing,Weekend Batch,"South City 1, Gurugram",2026-02-17,Active
+SSSAM-2026-0323,Ashish Shah,ashish.shah94@gmail.com,+91 9173997814,Full Stack Web Development,Weekend Batch,"DLF Phase 2, Gurugram",2025-05-25,Placed
+SSSAM-2026-0324,Rakesh Rao,rakesh.rao23@gmail.com,+91 6452015945,Full Stack Web Development,Evening Fast-track,"Sector 47, Gurugram",2026-03-05,Active
+SSSAM-2026-0325,Preeti Das,preeti.das74@gmail.com,+91 7839583949,Cyber Security,Evening Fast-track,"Palam Vihar, Gurugram",2026-01-23,Completed
+SSSAM-2026-0326,Nisha Mehta,nisha.mehta66@gmail.com,+91 9839099254,AWS Cloud Computing,Weekday Regular,"Sushant Lok, Gurugram",2025-04-24,Active
+SSSAM-2026-0327,Aadhya Nair,aadhya.nair16@gmail.com,+91 9222762747,Linux System Administration,Evening Fast-track,"Sector 45, Gurugram",2025-04-23,Active
+SSSAM-2026-0328,Krishna Aggarwal,krishna.aggarwal61@gmail.com,+91 8473873717,Video Editing,Weekend Batch,"Sushant Lok, Gurugram",2025-08-11,Active
+SSSAM-2026-0329,Sai Bhardwaj,sai.bhardwaj97@gmail.com,+91 8296873942,C++ Programming,Weekend Batch,"DLF Phase 3, Gurugram",2026-05-15,Placed
+SSSAM-2026-0330,Deepak Patel,deepak.patel62@gmail.com,+91 9755526960,Cyber Security,Weekday Regular,"Sector 15, Gurugram",2026-01-31,Active
+SSSAM-2026-0331,Aarti Aggarwal,aarti.aggarwal48@gmail.com,+91 9932929993,AI & ML,Weekend Batch,"DLF Phase 2, Gurugram",2025-05-11,Active
+SSSAM-2026-0332,Tanvi Verma,tanvi.verma21@gmail.com,+91 6610269695,Java Programming,Evening Fast-track,"Sector 14, Gurugram",2026-05-02,Completed
+SSSAM-2026-0333,Aarti Gupta,aarti.gupta43@gmail.com,+91 6438017098,Software Testing,Weekday Regular,"Sushant Lok, Gurugram",2025-03-18,Active
+SSSAM-2026-0334,Divya Sen,divya.sen40@gmail.com,+91 8296105790,Software Testing,Weekend Batch,"Palam Vihar, Gurugram",2025-09-09,Completed
+SSSAM-2026-0335,Amit Gupta,amit.gupta53@gmail.com,+91 8795615401,Digital Marketing,Weekday Regular,"DLF Phase 3, Gurugram",2025-05-28,Placed
+SSSAM-2026-0336,Shalini Pillai,shalini.pillai32@gmail.com,+91 9188176255,Digital Marketing,Weekday Regular,"Palam Vihar, Gurugram",2025-06-10,Completed
+SSSAM-2026-0337,Sandeep Mishra,sandeep.mishra41@gmail.com,+91 7925539173,Full Stack Web Development,Weekend Batch,"Sector 45, Gurugram",2025-11-26,Completed
+SSSAM-2026-0338,Pihu Rao,pihu.rao17@gmail.com,+91 6860359121,AWS Cloud Computing,Weekday Regular,"Sector 7, Gurugram",2026-03-17,Active
+SSSAM-2026-0339,Arjun Rao,arjun.rao89@gmail.com,+91 8804378887,Software Testing,Weekend Batch,"Palam Vihar, Gurugram",2025-04-02,Active
+SSSAM-2026-0340,Ananya Gupta,ananya.gupta54@gmail.com,+91 9487666665,SAP FICO,Weekend Batch,"DLF Phase 1, Gurugram",2026-03-19,Placed
+SSSAM-2026-0341,Poonam Mehta,poonam.mehta65@gmail.com,+91 6927573677,MySQL Database Design,Weekday Regular,"Sector 21, Gurugram",2025-05-05,Active
+SSSAM-2026-0342,Rajesh Shah,rajesh.shah46@gmail.com,+91 8675180581,C++ Programming,Weekday Regular,"Sector 56, Gurugram",2025-08-11,Active
+SSSAM-2026-0343,Mayank Kapoor,mayank.kapoor83@gmail.com,+91 6254330323,MySQL Database Design,Weekday Regular,"DLF Phase 1, Gurugram",2025-04-21,Completed
+SSSAM-2026-0344,Sapna Goel,sapna.goel40@gmail.com,+91 9580767443,TallyPrime Accounting,Weekend Batch,"Sector 7, Gurugram",2026-03-12,Active
+SSSAM-2026-0345,Rohit Kapoor,rohit.kapoor46@gmail.com,+91 7376151661,Advanced Excel,Weekend Batch,"Sushant Lok, Gurugram",2025-08-13,Active
+SSSAM-2026-0346,Vivaan Saxena,vivaan.saxena38@gmail.com,+91 6312485861,Video Editing,Weekend Batch,"Sector 47, Gurugram",2025-01-20,Active
+SSSAM-2026-0347,Pranav Roy,pranav.roy69@gmail.com,+91 8132058031,Graphic Design,Weekday Regular,"South City 1, Gurugram",2025-01-15,Completed
+SSSAM-2026-0348,Avani Prasad,avani.prasad47@gmail.com,+91 9946705420,Data Science,Weekend Batch,"Sector 45, Gurugram",2026-01-13,Completed
+SSSAM-2026-0349,Isha Verma,isha.verma76@gmail.com,+91 8360441284,AWS Cloud Computing,Evening Fast-track,"DLF Phase 1, Gurugram",2025-09-15,Active
+SSSAM-2026-0350,Rohit Kumar,rohit.kumar96@gmail.com,+91 9404303347,SAP FICO,Weekend Batch,"Sector 10, Gurugram",2025-06-27,Active
+SSSAM-2026-0351,Manish Aggarwal,manish.aggarwal73@gmail.com,+91 8171052101,Digital Marketing,Weekend Batch,"Sushant Lok, Gurugram",2025-03-16,Completed
+SSSAM-2026-0352,Varun Rajput,varun.rajput73@gmail.com,+91 8132988652,Digital Marketing,Weekend Batch,"Sector 15, Gurugram",2025-11-27,Placed
+SSSAM-2026-0353,Amit Das,amit.das18@gmail.com,+91 8470317919,Cyber Security,Weekday Regular,"Sector 4, Gurugram",2025-05-16,Completed
+SSSAM-2026-0354,Pihu Gupta,pihu.gupta87@gmail.com,+91 8833181022,AWS Cloud Computing,Evening Fast-track,"Sector 15, Gurugram",2025-11-09,Active
+SSSAM-2026-0355,Avani Sinha,avani.sinha88@gmail.com,+91 7707146703,Advanced Excel,Evening Fast-track,"Palam Vihar, Gurugram",2025-07-12,Active
+SSSAM-2026-0356,Sapna Trivedi,sapna.trivedi46@gmail.com,+91 7738017261,Software Testing,Weekend Batch,"DLF Phase 2, Gurugram",2025-05-17,Active
+SSSAM-2026-0357,Shaurya Aggarwal,shaurya.aggarwal51@gmail.com,+91 8634894250,C++ Programming,Evening Fast-track,"Sector 21, Gurugram",2025-04-17,Placed
+SSSAM-2026-0358,Mohit Banerjee,mohit.banerjee85@gmail.com,+91 8914613390,AI & ML,Weekend Batch,"Old DLF Colony, Gurugram",2025-12-05,Active
+SSSAM-2026-0359,Mohit Chaudhary,mohit.chaudhary11@gmail.com,+91 6852851739,Software Testing,Weekday Regular,"DLF Phase 3, Gurugram",2025-03-09,Active
+SSSAM-2026-0360,Mayank Bose,mayank.bose28@gmail.com,+91 7955014491,C++ Programming,Evening Fast-track,"Sector 14, Gurugram",2025-07-07,Active
+SSSAM-2026-0361,Priya Banerjee,priya.banerjee15@gmail.com,+91 7846178063,Video Editing,Weekday Regular,"DLF Phase 3, Gurugram",2025-04-18,Active
+SSSAM-2026-0362,Sakshi Yadav,sakshi.yadav24@gmail.com,+91 9524232056,C++ Programming,Weekend Batch,"DLF Phase 1, Gurugram",2025-10-04,Active
+SSSAM-2026-0363,Pooja Chaudhary,pooja.chaudhary27@gmail.com,+91 6605838873,Digital Marketing,Weekday Regular,"DLF Phase 1, Gurugram",2025-01-22,Active
+SSSAM-2026-0364,Neha Chaudhary,neha.chaudhary84@gmail.com,+91 9930117637,Graphic Design,Weekend Batch,"Old DLF Colony, Gurugram",2025-03-28,Active
+SSSAM-2026-0365,Amit Banerjee,amit.banerjee85@gmail.com,+91 6537542064,Full Stack Web Development,Weekday Regular,"Sector 47, Gurugram",2025-09-04,Active
+SSSAM-2026-0366,Rohan Rao,rohan.rao92@gmail.com,+91 8395387375,Digital Marketing,Weekend Batch,"Sector 56, Gurugram",2025-10-17,Active
+SSSAM-2026-0367,Rashmi Gupta,rashmi.gupta24@gmail.com,+91 8538571101,C++ Programming,Weekday Regular,"Palam Vihar, Gurugram",2025-05-02,Active
+SSSAM-2026-0368,Megha Kapoor,megha.kapoor32@gmail.com,+91 6609173150,AWS Cloud Computing,Weekend Batch,"Sector 21, Gurugram",2026-01-16,Active
+SSSAM-2026-0369,Sapna Joshi,sapna.joshi88@gmail.com,+91 7405199844,Cyber Security,Weekend Batch,"Sector 45, Gurugram",2025-05-06,Completed
+SSSAM-2026-0370,Rajesh Trivedi,rajesh.trivedi80@gmail.com,+91 8706594506,AWS Cloud Computing,Weekday Regular,"Palam Vihar, Gurugram",2025-12-03,Active
+SSSAM-2026-0371,Sai Shah,sai.shah45@gmail.com,+91 9127943953,AI & ML,Evening Fast-track,"Sector 7, Gurugram",2025-07-01,Active
+SSSAM-2026-0372,Gaurav Garg,gaurav.garg43@gmail.com,+91 8500679470,SAP FICO,Weekday Regular,"Sector 47, Gurugram",2026-05-04,Active
+SSSAM-2026-0373,Sanjay Chawla,sanjay.chawla16@gmail.com,+91 9246816202,Data Science,Weekday Regular,"Sector 21, Gurugram",2025-12-06,Active
+SSSAM-2026-0374,Poonam Mukherjee,poonam.mukherjee19@gmail.com,+91 9302937507,MySQL Database Design,Weekday Regular,"Sector 21, Gurugram",2025-03-07,Completed
+SSSAM-2026-0375,Pihu Prasad,pihu.prasad34@gmail.com,+91 8908234224,Advanced Excel,Weekend Batch,"Sector 45, Gurugram",2025-10-02,Active
+SSSAM-2026-0376,Pari Kapoor,pari.kapoor63@gmail.com,+91 9781436057,TallyPrime Accounting,Weekend Batch,"Sector 21, Gurugram",2025-01-21,Placed
+SSSAM-2026-0377,Aadhya Joshi,aadhya.joshi88@gmail.com,+91 8575973280,TallyPrime Accounting,Weekend Batch,"DLF Phase 3, Gurugram",2025-04-19,Completed
+SSSAM-2026-0378,Neha Bose,neha.bose26@gmail.com,+91 9489843479,Python Programming,Evening Fast-track,"DLF Phase 2, Gurugram",2025-07-10,Completed
+SSSAM-2026-0379,Manish Das,manish.das37@gmail.com,+91 9243326209,C++ Programming,Evening Fast-track,"Old DLF Colony, Gurugram",2025-04-10,Active
+SSSAM-2026-0380,Saisha Rajput,saisha.rajput90@gmail.com,+91 9763322476,AI & ML,Weekday Regular,"Sushant Lok, Gurugram",2025-05-06,Completed
+SSSAM-2026-0381,Manish Chawla,manish.chawla60@gmail.com,+91 7309404267,Data Science,Evening Fast-track,"Palam Vihar, Gurugram",2025-03-08,Completed
+SSSAM-2026-0382,Aarav Joshi,aarav.joshi27@gmail.com,+91 6849589135,Full Stack Web Development,Weekday Regular,"South City 1, Gurugram",2025-10-09,Completed
+SSSAM-2026-0383,Aadhya Pandey,aadhya.pandey60@gmail.com,+91 8535219860,Data Science,Evening Fast-track,"Sector 14, Gurugram",2025-11-07,Active
+SSSAM-2026-0384,Shreya Reddy,shreya.reddy99@gmail.com,+91 8878851240,Video Editing,Weekday Regular,"Sector 47, Gurugram",2025-01-29,Completed
+SSSAM-2026-0385,Jyoti Kumar,jyoti.kumar59@gmail.com,+91 6844691773,Data Science,Evening Fast-track,"South City 1, Gurugram",2025-05-15,Completed
+SSSAM-2026-0386,Pihu Kapoor,pihu.kapoor53@gmail.com,+91 7248287308,Java Programming,Evening Fast-track,"Sushant Lok, Gurugram",2025-04-04,Active
+SSSAM-2026-0387,Aarti Nair,aarti.nair18@gmail.com,+91 9264256943,Advanced Excel,Weekend Batch,"DLF Phase 3, Gurugram",2025-03-15,Active
+SSSAM-2026-0388,Rakesh Dubey,rakesh.dubey54@gmail.com,+91 8497345929,Graphic Design,Evening Fast-track,"DLF Phase 1, Gurugram",2026-05-12,Completed
+SSSAM-2026-0389,Kriti Bansal,kriti.bansal88@gmail.com,+91 9433316117,Full Stack Web Development,Weekday Regular,"Sector 7, Gurugram",2025-05-18,Completed
+SSSAM-2026-0390,Sanjay Banerjee,sanjay.banerjee47@gmail.com,+91 9330133025,Advanced Excel,Evening Fast-track,"Palam Vihar, Gurugram",2026-03-14,Completed
+SSSAM-2026-0391,Vivaan Chawla,vivaan.chawla60@gmail.com,+91 6503918982,Python Programming,Evening Fast-track,"Sector 14, Gurugram",2025-05-28,Active
+SSSAM-2026-0392,Ankit Joshi,ankit.joshi90@gmail.com,+91 6731921416,SAP FICO,Evening Fast-track,"Sushant Lok, Gurugram",2025-04-11,Active
+SSSAM-2026-0393,Poonam Verma,poonam.verma45@gmail.com,+91 8218782065,Video Editing,Evening Fast-track,"Sector 45, Gurugram",2026-04-21,Active
+SSSAM-2026-0394,Aadhya Reddy,aadhya.reddy43@gmail.com,+91 6766790300,Cyber Security,Evening Fast-track,"Sector 21, Gurugram",2025-02-22,Active
+SSSAM-2026-0395,Mohit Reddy,mohit.reddy26@gmail.com,+91 6544397755,Graphic Design,Weekday Regular,"Sector 7, Gurugram",2026-05-11,Active
+SSSAM-2026-0396,Rohit Kumar,rohit.kumar13@gmail.com,+91 8617787007,SAP FICO,Weekend Batch,"Sector 45, Gurugram",2025-06-05,Active
+SSSAM-2026-0397,Anvi Kapoor,anvi.kapoor34@gmail.com,+91 6589755015,Python Programming,Evening Fast-track,"Sector 47, Gurugram",2025-07-22,Active
+SSSAM-2026-0398,Atharva Garg,atharva.garg24@gmail.com,+91 8790407749,SAP FICO,Weekday Regular,"Sector 14, Gurugram",2025-06-23,Placed
+SSSAM-2026-0399,Neha Malhotra,neha.malhotra96@gmail.com,+91 9277858871,Digital Marketing,Evening Fast-track,"Palam Vihar, Gurugram",2025-05-23,Completed
+SSSAM-2026-0400,Kiran Bose,kiran.bose31@gmail.com,+91 7928710411,Software Testing,Evening Fast-track,"Sector 10, Gurugram",2025-04-29,Active
+SSSAM-2026-0401,Neha Mukherjee,neha.mukherjee93@gmail.com,+91 9741198422,Digital Marketing,Weekend Batch,"Sector 47, Gurugram",2026-02-08,Active
+SSSAM-2026-0402,Preeti Pillai,preeti.pillai89@gmail.com,+91 7213343792,Software Testing,Weekday Regular,"Sector 15, Gurugram",2026-01-04,Active
+SSSAM-2026-0403,Raghav Mehta,raghav.mehta17@gmail.com,+91 7587369711,SAP FICO,Weekday Regular,"Sector 45, Gurugram",2026-03-26,Active
+SSSAM-2026-0404,Sakshi Rao,sakshi.rao51@gmail.com,+91 8252084240,AWS Cloud Computing,Evening Fast-track,"Sushant Lok, Gurugram",2025-09-25,Active
+SSSAM-2026-0405,Preeti Shah,preeti.shah56@gmail.com,+91 7118333849,Cyber Security,Evening Fast-track,"Sushant Lok, Gurugram",2025-11-10,Active
+SSSAM-2026-0406,Aarav Sharma,aarav.sharma62@gmail.com,+91 8575612320,Advanced Excel,Evening Fast-track,"Old DLF Colony, Gurugram",2025-03-21,Completed
+SSSAM-2026-0407,Kabir Rajput,kabir.rajput89@gmail.com,+91 9797741271,Graphic Design,Evening Fast-track,"South City 1, Gurugram",2025-07-10,Completed
+SSSAM-2026-0408,Rajesh Chawla,rajesh.chawla29@gmail.com,+91 6916706174,MySQL Database Design,Weekend Batch,"DLF Phase 2, Gurugram",2026-04-21,Placed
+SSSAM-2026-0409,Ankit Joshi,ankit.joshi99@gmail.com,+91 7324724422,AWS Cloud Computing,Weekday Regular,"Sector 4, Gurugram",2025-08-12,Completed
+SSSAM-2026-0410,Reyansh Singh,reyansh.singh91@gmail.com,+91 6570866223,SAP FICO,Weekend Batch,"Sector 56, Gurugram",2025-11-25,Active
+SSSAM-2026-0411,Sandeep Chaudhary,sandeep.chaudhary14@gmail.com,+91 8474885081,Video Editing,Evening Fast-track,"Old DLF Colony, Gurugram",2026-01-04,Placed
+SSSAM-2026-0412,Gaurav Roy,gaurav.roy38@gmail.com,+91 7882863229,Cyber Security,Weekday Regular,"Sector 4, Gurugram",2025-08-16,Completed
+SSSAM-2026-0413,Rupali Mukherjee,rupali.mukherjee28@gmail.com,+91 9639408088,Software Testing,Weekday Regular,"Sector 21, Gurugram",2025-06-21,Active
+SSSAM-2026-0414,Rajesh Chawla,rajesh.chawla32@gmail.com,+91 9506188079,Graphic Design,Weekend Batch,"Sector 45, Gurugram",2025-11-05,Completed
+SSSAM-2026-0415,Anjali Kapoor,anjali.kapoor13@gmail.com,+91 9570302463,Python Programming,Weekday Regular,"Old DLF Colony, Gurugram",2025-11-21,Completed
+SSSAM-2026-0416,Ananya Chaudhary,ananya.chaudhary47@gmail.com,+91 7243846098,Software Testing,Evening Fast-track,"Palam Vihar, Gurugram",2025-05-16,Active
+SSSAM-2026-0417,Abhishek Nair,abhishek.nair96@gmail.com,+91 7796422808,Java Programming,Evening Fast-track,"Sector 10, Gurugram",2025-11-14,Active
+SSSAM-2026-0418,Dev Aggarwal,dev.aggarwal24@gmail.com,+91 8753798854,TallyPrime Accounting,Evening Fast-track,"DLF Phase 2, Gurugram",2026-02-06,Placed
+SSSAM-2026-0419,Neha Pandey,neha.pandey63@gmail.com,+91 6500657761,AI & ML,Weekend Batch,"DLF Phase 3, Gurugram",2025-12-17,Completed
+SSSAM-2026-0420,Shalini Srivastava,shalini.srivastava45@gmail.com,+91 7527606328,TallyPrime Accounting,Evening Fast-track,"Old DLF Colony, Gurugram",2025-12-20,Completed
+SSSAM-2026-0421,Sandeep Prasad,sandeep.prasad14@gmail.com,+91 6862930712,Java Programming,Weekend Batch,"Sector 47, Gurugram",2025-01-14,Completed
+SSSAM-2026-0422,Reyansh Shah,reyansh.shah30@gmail.com,+91 8449496176,Video Editing,Evening Fast-track,"Sector 4, Gurugram",2025-07-27,Active
+SSSAM-2026-0423,Neha Rao,neha.rao27@gmail.com,+91 8605354353,Software Testing,Weekend Batch,"Sector 10, Gurugram",2026-02-13,Placed
+SSSAM-2026-0424,Sonia Prasad,sonia.prasad82@gmail.com,+91 9885409950,Software Testing,Weekday Regular,"DLF Phase 2, Gurugram",2026-03-04,Completed
+SSSAM-2026-0425,Priya Aggarwal,priya.aggarwal11@gmail.com,+91 7225298841,Linux System Administration,Weekday Regular,"Sector 14, Gurugram",2025-07-14,Active
+SSSAM-2026-0426,Swati Bose,swati.bose36@gmail.com,+91 8201000174,Video Editing,Weekend Batch,"Palam Vihar, Gurugram",2025-12-07,Active
+SSSAM-2026-0427,Shreya Verma,shreya.verma36@gmail.com,+91 7983670579,Digital Marketing,Evening Fast-track,"Sushant Lok, Gurugram",2025-12-18,Completed
+SSSAM-2026-0428,Aarav Reddy,aarav.reddy33@gmail.com,+91 9726477232,MySQL Database Design,Weekday Regular,"Sector 14, Gurugram",2025-07-18,Active
+SSSAM-2026-0429,Aadhya Nair,aadhya.nair92@gmail.com,+91 7186498678,Data Science,Evening Fast-track,"DLF Phase 1, Gurugram",2025-10-10,Completed
+SSSAM-2026-0430,Komal Goel,komal.goel31@gmail.com,+91 7815118060,Graphic Design,Weekday Regular,"Sector 47, Gurugram",2025-01-09,Completed
+SSSAM-2026-0431,Raghav Roy,raghav.roy52@gmail.com,+91 8946630700,SAP FICO,Weekend Batch,"Palam Vihar, Gurugram",2026-02-25,Active
+SSSAM-2026-0432,Aanya Patel,aanya.patel30@gmail.com,+91 8364092710,Graphic Design,Weekend Batch,"Sector 4, Gurugram",2025-05-25,Active
+SSSAM-2026-0433,Manish Roy,manish.roy47@gmail.com,+91 7705164146,Linux System Administration,Weekday Regular,"Sector 14, Gurugram",2025-05-10,Completed
+SSSAM-2026-0434,Pihu Mishra,pihu.mishra55@gmail.com,+91 7540899247,SAP FICO,Evening Fast-track,"Sushant Lok, Gurugram",2025-01-29,Completed
+SSSAM-2026-0435,Jyoti Shah,jyoti.shah67@gmail.com,+91 8683895961,Graphic Design,Weekend Batch,"DLF Phase 3, Gurugram",2026-04-29,Active
+SSSAM-2026-0436,Komal Sen,komal.sen85@gmail.com,+91 9674614510,Data Science,Weekday Regular,"Sector 4, Gurugram",2026-05-01,Completed
+SSSAM-2026-0437,Ritu Das,ritu.das31@gmail.com,+91 9346468954,MySQL Database Design,Weekday Regular,"Sushant Lok, Gurugram",2025-03-19,Active
+SSSAM-2026-0438,Pooja Das,pooja.das51@gmail.com,+91 8283898085,Advanced Excel,Weekday Regular,"Sector 56, Gurugram",2025-04-08,Active
+SSSAM-2026-0439,Kiran Bhardwaj,kiran.bhardwaj47@gmail.com,+91 6396979977,Advanced Excel,Evening Fast-track,"Sector 45, Gurugram",2026-02-13,Completed
+SSSAM-2026-0440,Ananya Bansal,ananya.bansal96@gmail.com,+91 7144833564,Cyber Security,Weekday Regular,"Sector 45, Gurugram",2025-10-15,Completed
+SSSAM-2026-0441,Shreya Pillai,shreya.pillai60@gmail.com,+91 7902481746,AWS Cloud Computing,Weekday Regular,"Sector 47, Gurugram",2026-04-18,Active
+SSSAM-2026-0442,Kavita Arora,kavita.arora75@gmail.com,+91 6296171134,Python Programming,Evening Fast-track,"Sushant Lok, Gurugram",2025-03-14,Active
+SSSAM-2026-0443,Ashish Shah,ashish.shah87@gmail.com,+91 9660952115,MySQL Database Design,Evening Fast-track,"Sector 15, Gurugram",2026-01-22,Completed
+SSSAM-2026-0444,Tanvi Prasad,tanvi.prasad34@gmail.com,+91 6829831683,Full Stack Web Development,Weekend Batch,"Sector 56, Gurugram",2025-05-22,Placed
+SSSAM-2026-0445,Ankit Roy,ankit.roy67@gmail.com,+91 8678561051,Python Programming,Weekend Batch,"Sector 7, Gurugram",2026-05-03,Active
+SSSAM-2026-0446,Ishan Das,ishan.das19@gmail.com,+91 9128208649,AWS Cloud Computing,Weekday Regular,"Sector 4, Gurugram",2025-02-23,Active
+SSSAM-2026-0447,Shreya Pandey,shreya.pandey93@gmail.com,+91 9383914761,Full Stack Web Development,Evening Fast-track,"Sector 45, Gurugram",2025-03-23,Active
+SSSAM-2026-0448,Raghav Goel,raghav.goel28@gmail.com,+91 8813547469,Software Testing,Weekend Batch,"Old DLF Colony, Gurugram",2025-07-17,Active
+SSSAM-2026-0449,Nisha Singh,nisha.singh77@gmail.com,+91 9668131398,Video Editing,Weekend Batch,"Palam Vihar, Gurugram",2025-09-20,Active
+SSSAM-2026-0450,Krishna Kumar,krishna.kumar41@gmail.com,+91 9387089925,Linux System Administration,Evening Fast-track,"Sector 45, Gurugram",2025-06-30,Active
+SSSAM-2026-0451,Ananya Saxena,ananya.saxena83@gmail.com,+91 7872396931,Data Science,Weekday Regular,"Sector 15, Gurugram",2025-02-18,Completed
+SSSAM-2026-0452,Raghav Mishra,raghav.mishra91@gmail.com,+91 7488906704,TallyPrime Accounting,Weekend Batch,"Sector 14, Gurugram",2025-12-30,Active
+SSSAM-2026-0453,Nisha Prasad,nisha.prasad85@gmail.com,+91 6659492652,Full Stack Web Development,Evening Fast-track,"Sector 56, Gurugram",2025-05-02,Active
+SSSAM-2026-0454,Shreya Saxena,shreya.saxena61@gmail.com,+91 9569163246,Java Programming,Weekend Batch,"Sector 21, Gurugram",2025-02-06,Completed
+SSSAM-2026-0455,Sakshi Bose,sakshi.bose75@gmail.com,+91 8198905240,Video Editing,Weekday Regular,"Sector 7, Gurugram",2025-02-04,Completed
+SSSAM-2026-0456,Jyoti Nair,jyoti.nair57@gmail.com,+91 7795453144,Linux System Administration,Evening Fast-track,"Sector 10, Gurugram",2025-11-26,Placed
+SSSAM-2026-0457,Preeti Bose,preeti.bose87@gmail.com,+91 9699685938,Java Programming,Weekday Regular,"Sushant Lok, Gurugram",2025-03-16,Completed
+SSSAM-2026-0458,Sandeep Mehta,sandeep.mehta76@gmail.com,+91 9620853800,AWS Cloud Computing,Evening Fast-track,"Sushant Lok, Gurugram",2025-11-26,Active
+SSSAM-2026-0459,Pihu Sen,pihu.sen51@gmail.com,+91 9314928967,Linux System Administration,Weekend Batch,"DLF Phase 3, Gurugram",2026-03-08,Active
+SSSAM-2026-0460,Amit Bose,amit.bose31@gmail.com,+91 9346922890,SAP FICO,Weekend Batch,"Palam Vihar, Gurugram",2026-01-01,Active
+SSSAM-2026-0461,Sneha Joshi,sneha.joshi14@gmail.com,+91 9440663191,MySQL Database Design,Evening Fast-track,"Old DLF Colony, Gurugram",2025-12-27,Completed
+SSSAM-2026-0462,Sanjay Nair,sanjay.nair74@gmail.com,+91 9281456824,C++ Programming,Weekday Regular,"Sector 45, Gurugram",2025-04-08,Active
+SSSAM-2026-0463,Sneha Nair,sneha.nair90@gmail.com,+91 8603040546,AI & ML,Weekend Batch,"DLF Phase 1, Gurugram",2026-03-12,Active
+SSSAM-2026-0464,Sonia Mehta,sonia.mehta66@gmail.com,+91 9471874438,SAP FICO,Weekday Regular,"Sector 7, Gurugram",2025-04-25,Placed
+SSSAM-2026-0465,Dev Malhotra,dev.malhotra54@gmail.com,+91 9950579004,Data Science,Weekday Regular,"Sushant Lok, Gurugram",2025-04-25,Placed
+SSSAM-2026-0466,Sakshi Goel,sakshi.goel40@gmail.com,+91 9376114441,Java Programming,Evening Fast-track,"Sector 56, Gurugram",2025-10-05,Placed
+SSSAM-2026-0467,Ankit Bose,ankit.bose20@gmail.com,+91 7304191095,Advanced Excel,Weekend Batch,"Sector 15, Gurugram",2026-03-14,Active
+SSSAM-2026-0468,Mohit Mishra,mohit.mishra21@gmail.com,+91 7596653196,Python Programming,Weekday Regular,"Sector 56, Gurugram",2025-07-13,Active
+SSSAM-2026-0469,Megha Roy,megha.roy50@gmail.com,+91 9738541534,Java Programming,Weekend Batch,"Sector 56, Gurugram",2025-06-26,Active
+SSSAM-2026-0470,Suresh Mishra,suresh.mishra13@gmail.com,+91 9642448100,Full Stack Web Development,Weekday Regular,"Sushant Lok, Gurugram",2026-03-29,Active
+SSSAM-2026-0471,Rohan Kumar,rohan.kumar56@gmail.com,+91 7407923795,Graphic Design,Weekday Regular,"Sector 56, Gurugram",2025-05-18,Completed
+SSSAM-2026-0472,Aditya Saxena,aditya.saxena87@gmail.com,+91 6560900503,MySQL Database Design,Weekend Batch,"DLF Phase 1, Gurugram",2025-05-17,Active
+SSSAM-2026-0473,Sanjay Gupta,sanjay.gupta33@gmail.com,+91 6895972254,Data Science,Weekday Regular,"Sector 47, Gurugram",2025-08-12,Active
+SSSAM-2026-0474,Vihaan Bhardwaj,vihaan.bhardwaj18@gmail.com,+91 9938793174,Java Programming,Evening Fast-track,"DLF Phase 2, Gurugram",2026-01-11,Active
+SSSAM-2026-0475,Atharva Nair,atharva.nair98@gmail.com,+91 9678373176,Cyber Security,Weekend Batch,"Sector 14, Gurugram",2025-01-16,Placed
+SSSAM-2026-0476,Kabir Verma,kabir.verma15@gmail.com,+91 9718035254,MySQL Database Design,Weekend Batch,"DLF Phase 3, Gurugram",2025-12-20,Completed
+SSSAM-2026-0477,Shalini Goel,shalini.goel60@gmail.com,+91 9126643210,TallyPrime Accounting,Weekday Regular,"Old DLF Colony, Gurugram",2026-04-25,Active
+SSSAM-2026-0478,Isha Malhotra,isha.malhotra47@gmail.com,+91 6232794551,Data Science,Evening Fast-track,"DLF Phase 2, Gurugram",2025-03-08,Active
+SSSAM-2026-0479,Gaurav Prasad,gaurav.prasad37@gmail.com,+91 8319359636,Video Editing,Evening Fast-track,"Sector 4, Gurugram",2025-08-31,Active
+SSSAM-2026-0480,Kabir Sen,kabir.sen70@gmail.com,+91 9909644231,Java Programming,Evening Fast-track,"South City 1, Gurugram",2025-03-28,Active
+SSSAM-2026-0481,Vihaan Das,vihaan.das49@gmail.com,+91 7235636045,Video Editing,Evening Fast-track,"Sector 15, Gurugram",2025-04-28,Placed
+SSSAM-2026-0482,Sapna Singh,sapna.singh94@gmail.com,+91 8651237530,AI & ML,Weekday Regular,"South City 1, Gurugram",2026-05-07,Completed
+SSSAM-2026-0483,Poonam Trivedi,poonam.trivedi84@gmail.com,+91 8254245751,AI & ML,Weekday Regular,"Sector 45, Gurugram",2025-07-31,Active
+SSSAM-2026-0484,Saisha Iyer,saisha.iyer63@gmail.com,+91 7183344480,Java Programming,Evening Fast-track,"Sector 45, Gurugram",2025-07-06,Active
+SSSAM-2026-0485,Rajesh Yadav,rajesh.yadav23@gmail.com,+91 7376754946,AWS Cloud Computing,Weekend Batch,"Sector 21, Gurugram",2025-03-04,Active
+SSSAM-2026-0486,Mayank Goel,mayank.goel26@gmail.com,+91 8108928305,SAP FICO,Weekday Regular,"Sector 10, Gurugram",2025-09-19,Active
+SSSAM-2026-0487,Sakshi Goel,sakshi.goel19@gmail.com,+91 6933945273,AI & ML,Evening Fast-track,"Sector 14, Gurugram",2025-12-25,Active
+SSSAM-2026-0488,Rohan Singh,rohan.singh30@gmail.com,+91 9673571151,C++ Programming,Weekday Regular,"Sushant Lok, Gurugram",2025-10-18,Active
+SSSAM-2026-0489,Rohit Goel,rohit.goel33@gmail.com,+91 7145572257,Cyber Security,Weekday Regular,"Sector 14, Gurugram",2025-06-12,Completed
+SSSAM-2026-0490,Kavita Reddy,kavita.reddy29@gmail.com,+91 7888318818,Cyber Security,Weekend Batch,"Sector 21, Gurugram",2026-01-09,Active
+SSSAM-2026-0491,Sakshi Kumar,sakshi.kumar13@gmail.com,+91 8671810026,Graphic Design,Weekend Batch,"Sushant Lok, Gurugram",2025-11-04,Completed
+SSSAM-2026-0492,Sanjay Goel,sanjay.goel18@gmail.com,+91 6178648642,SAP FICO,Weekday Regular,"South City 1, Gurugram",2026-01-16,Active
+SSSAM-2026-0493,Mohit Banerjee,mohit.banerjee84@gmail.com,+91 7985776977,Python Programming,Weekend Batch,"Palam Vihar, Gurugram",2025-08-08,Active
+SSSAM-2026-0494,Rupali Gupta,rupali.gupta46@gmail.com,+91 6751901581,Linux System Administration,Weekend Batch,"Sector 14, Gurugram",2025-10-07,Completed
+SSSAM-2026-0495,Ankit Sinha,ankit.sinha23@gmail.com,+91 9232110204,Software Testing,Weekend Batch,"DLF Phase 2, Gurugram",2025-08-08,Placed
+SSSAM-2026-0496,Pankaj Goel,pankaj.goel84@gmail.com,+91 6282978767,Digital Marketing,Weekday Regular,"Sector 45, Gurugram",2026-05-07,Placed
+SSSAM-2026-0497,Rakesh Bansal,rakesh.bansal68@gmail.com,+91 6986434615,Data Science,Weekday Regular,"DLF Phase 1, Gurugram",2026-03-20,Completed
+SSSAM-2026-0498,Manish Kumar,manish.kumar85@gmail.com,+91 7242261331,Video Editing,Weekend Batch,"Sector 21, Gurugram",2026-05-06,Completed
+SSSAM-2026-0499,Isha Nair,isha.nair89@gmail.com,+91 8693841436,Linux System Administration,Evening Fast-track,"DLF Phase 1, Gurugram",2025-12-29,Active
+SSSAM-2026-0500,Aarti Trivedi,aarti.trivedi93@gmail.com,+91 9977999546,Linux System Administration,Weekend Batch,"Sector 14, Gurugram",2025-05-22,Completed
+SSSAM-2026-0501,Aarav Arora,aarav.arora89@gmail.com,+91 7918114029,Cyber Security,Weekend Batch,"Sector 15, Gurugram",2025-11-29,Placed
+SSSAM-2026-0502,Vikas Arora,vikas.arora29@gmail.com,+91 6784138163,Software Testing,Evening Fast-track,"Sector 4, Gurugram",2026-03-20,Active
+SSSAM-2026-0503,Mohit Mehta,mohit.mehta74@gmail.com,+91 8582477381,Data Science,Weekend Batch,"Sector 56, Gurugram",2026-02-06,Active
+SSSAM-2026-0504,Pihu Reddy,pihu.reddy48@gmail.com,+91 7427451052,Video Editing,Weekday Regular,"Sector 56, Gurugram",2025-07-17,Completed
+SSSAM-2026-0505,Dev Roy,dev.roy27@gmail.com,+91 6496804906,Full Stack Web Development,Weekday Regular,"Sector 14, Gurugram",2025-02-02,Active
+SSSAM-2026-0506,Aarti Banerjee,aarti.banerjee63@gmail.com,+91 7763830376,Advanced Excel,Evening Fast-track,"Sector 56, Gurugram",2025-01-25,Active
+SSSAM-2026-0507,Aaradhya Bansal,aaradhya.bansal92@gmail.com,+91 9729627142,AWS Cloud Computing,Weekend Batch,"Sector 47, Gurugram",2026-03-17,Completed
+SSSAM-2026-0508,Anvi Dubey,anvi.dubey76@gmail.com,+91 8112060247,TallyPrime Accounting,Evening Fast-track,"Sector 15, Gurugram",2025-05-25,Active
+SSSAM-2026-0509,Mohit Prasad,mohit.prasad12@gmail.com,+91 9787942576,Graphic Design,Weekday Regular,"Sector 10, Gurugram",2025-12-20,Completed
+SSSAM-2026-0510,Preeti Goel,preeti.goel56@gmail.com,+91 7878977382,Full Stack Web Development,Evening Fast-track,"Sector 15, Gurugram",2025-12-27,Completed
+SSSAM-2026-0511,Aarav Pandey,aarav.pandey18@gmail.com,+91 7953775172,Advanced Excel,Weekday Regular,"Sector 7, Gurugram",2025-07-16,Active
+SSSAM-2026-0512,Ananya Arora,ananya.arora73@gmail.com,+91 8896953527,Full Stack Web Development,Weekend Batch,"Sector 7, Gurugram",2025-05-14,Completed
+SSSAM-2026-0513,Vivaan Goel,vivaan.goel65@gmail.com,+91 6803347921,Digital Marketing,Evening Fast-track,"DLF Phase 1, Gurugram",2025-10-24,Active
+SSSAM-2026-0514,Saisha Roy,saisha.roy54@gmail.com,+91 6536829407,Software Testing,Weekday Regular,"Old DLF Colony, Gurugram",2025-09-25,Active
+SSSAM-2026-0515,Riya Shah,riya.shah10@gmail.com,+91 9109249501,Python Programming,Evening Fast-track,"Palam Vihar, Gurugram",2025-01-15,Active
+SSSAM-2026-0516,Vivaan Srivastava,vivaan.srivastava60@gmail.com,+91 7736505177,Software Testing,Weekend Batch,"Sushant Lok, Gurugram",2026-04-02,Placed
+SSSAM-2026-0517,Vivaan Arora,vivaan.arora79@gmail.com,+91 6374104083,Cyber Security,Weekday Regular,"Sector 4, Gurugram",2025-11-27,Placed
+SSSAM-2026-0518,Rupali Bhardwaj,rupali.bhardwaj59@gmail.com,+91 7911838504,Cyber Security,Evening Fast-track,"Old DLF Colony, Gurugram",2025-03-30,Active
+SSSAM-2026-0519,Sonia Mukherjee,sonia.mukherjee55@gmail.com,+91 7152589234,Video Editing,Weekday Regular,"Sector 4, Gurugram",2026-04-25,Active
+SSSAM-2026-0520,Mohit Bose,mohit.bose63@gmail.com,+91 7890335442,C++ Programming,Evening Fast-track,"Sector 14, Gurugram",2025-04-03,Completed
+SSSAM-2026-0521,Rajesh Reddy,rajesh.reddy47@gmail.com,+91 7734503545,Full Stack Web Development,Weekday Regular,"Sector 47, Gurugram",2026-04-23,Completed
+SSSAM-2026-0522,Poonam Yadav,poonam.yadav35@gmail.com,+91 6589037654,C++ Programming,Weekend Batch,"Sector 56, Gurugram",2026-01-08,Completed
+SSSAM-2026-0523,Deepak Sharma,deepak.sharma16@gmail.com,+91 8128783106,Software Testing,Weekday Regular,"Sector 45, Gurugram",2025-10-13,Active
+SSSAM-2026-0524,Avani Das,avani.das36@gmail.com,+91 9472808071,MySQL Database Design,Weekday Regular,"Sector 10, Gurugram",2025-07-23,Placed
+SSSAM-2026-0525,Avani Rajput,avani.rajput17@gmail.com,+91 8433970427,AI & ML,Evening Fast-track,"Sector 7, Gurugram",2025-03-13,Active
+SSSAM-2026-0526,Nisha Mehta,nisha.mehta27@gmail.com,+91 7376238889,AI & ML,Evening Fast-track,"Sector 56, Gurugram",2025-01-27,Completed
+SSSAM-2026-0527,Manish Srivastava,manish.srivastava11@gmail.com,+91 6174855805,Linux System Administration,Weekday Regular,"DLF Phase 3, Gurugram",2025-03-20,Placed
+SSSAM-2026-0528,Kiran Trivedi,kiran.trivedi46@gmail.com,+91 7314384894,Graphic Design,Evening Fast-track,"Sector 15, Gurugram",2026-05-05,Placed
+SSSAM-2026-0529,Aarav Bose,aarav.bose38@gmail.com,+91 8197878980,C++ Programming,Evening Fast-track,"Sector 10, Gurugram",2025-11-16,Active
+SSSAM-2026-0530,Varun Sen,varun.sen41@gmail.com,+91 6228485726,Java Programming,Weekday Regular,"Palam Vihar, Gurugram",2025-02-16,Active
+SSSAM-2026-0531,Krishna Garg,krishna.garg26@gmail.com,+91 9833197535,TallyPrime Accounting,Weekend Batch,"DLF Phase 1, Gurugram",2025-09-15,Active
+SSSAM-2026-0532,Sapna Kumar,sapna.kumar38@gmail.com,+91 6936816707,Software Testing,Weekday Regular,"Sector 15, Gurugram",2025-04-27,Completed
+SSSAM-2026-0533,Amit Garg,amit.garg46@gmail.com,+91 6765464080,TallyPrime Accounting,Evening Fast-track,"South City 1, Gurugram",2025-10-30,Placed
+SSSAM-2026-0534,Shruti Kapoor,shruti.kapoor23@gmail.com,+91 9898859602,Data Science,Weekday Regular,"DLF Phase 1, Gurugram",2025-06-12,Completed
+SSSAM-2026-0535,Atharva Banerjee,atharva.banerjee10@gmail.com,+91 7275041764,MySQL Database Design,Weekend Batch,"Sector 15, Gurugram",2025-05-04,Active
+SSSAM-2026-0536,Sanjay Shah,sanjay.shah52@gmail.com,+91 9480407442,TallyPrime Accounting,Evening Fast-track,"DLF Phase 2, Gurugram",2025-05-09,Active
+SSSAM-2026-0537,Shalini Kapoor,shalini.kapoor72@gmail.com,+91 6821727840,C++ Programming,Weekend Batch,"Sector 21, Gurugram",2025-04-29,Completed
+SSSAM-2026-0538,Vivaan Dubey,vivaan.dubey31@gmail.com,+91 8569398959,Java Programming,Weekend Batch,"Sector 47, Gurugram",2025-07-22,Placed
+SSSAM-2026-0539,Shaurya Rao,shaurya.rao74@gmail.com,+91 8378763757,Python Programming,Weekday Regular,"South City 1, Gurugram",2026-03-08,Completed
+SSSAM-2026-0540,Sai Chaudhary,sai.chaudhary42@gmail.com,+91 6981651609,TallyPrime Accounting,Weekday Regular,"Sector 14, Gurugram",2025-06-24,Active
+SSSAM-2026-0541,Komal Roy,komal.roy50@gmail.com,+91 6807336020,C++ Programming,Weekend Batch,"DLF Phase 1, Gurugram",2025-05-22,Active
+SSSAM-2026-0542,Riya Das,riya.das92@gmail.com,+91 9758710909,Graphic Design,Weekend Batch,"Sector 14, Gurugram",2025-03-01,Active
+SSSAM-2026-0543,Komal Chaudhary,komal.chaudhary29@gmail.com,+91 6653915010,Graphic Design,Weekday Regular,"DLF Phase 1, Gurugram",2026-02-17,Completed
+SSSAM-2026-0544,Sapna Yadav,sapna.yadav34@gmail.com,+91 9197474703,TallyPrime Accounting,Weekday Regular,"Sector 45, Gurugram",2025-04-20,Active
+SSSAM-2026-0545,Mohit Kumar,mohit.kumar34@gmail.com,+91 6341651080,SAP FICO,Weekday Regular,"DLF Phase 1, Gurugram",2025-02-24,Completed
+SSSAM-2026-0546,Anvi Iyer,anvi.iyer36@gmail.com,+91 7745520430,Data Science,Weekend Batch,"DLF Phase 1, Gurugram",2025-08-24,Active
+SSSAM-2026-0547,Sai Chaudhary,sai.chaudhary27@gmail.com,+91 7888006746,Digital Marketing,Weekday Regular,"Sector 10, Gurugram",2025-09-03,Completed
+SSSAM-2026-0548,Komal Arora,komal.arora89@gmail.com,+91 6379088468,Python Programming,Evening Fast-track,"Old DLF Colony, Gurugram",2025-05-22,Active
+SSSAM-2026-0549,Swati Bhardwaj,swati.bhardwaj15@gmail.com,+91 9369443392,C++ Programming,Weekday Regular,"Sector 14, Gurugram",2025-10-21,Active
+SSSAM-2026-0550,Shreya Sinha,shreya.sinha36@gmail.com,+91 9164650715,Cyber Security,Evening Fast-track,"Sector 21, Gurugram",2025-03-24,Placed
+SSSAM-2026-0551,Aaradhya Kapoor,aaradhya.kapoor43@gmail.com,+91 8826254630,C++ Programming,Evening Fast-track,"DLF Phase 1, Gurugram",2025-05-12,Completed
+SSSAM-2026-0552,Kriti Sinha,kriti.sinha38@gmail.com,+91 8523383176,TallyPrime Accounting,Weekday Regular,"DLF Phase 3, Gurugram",2025-03-27,Placed
+SSSAM-2026-0553,Atharva Prasad,atharva.prasad29@gmail.com,+91 8432486501,Linux System Administration,Weekend Batch,"Sector 10, Gurugram",2025-09-29,Active
+SSSAM-2026-0554,Shaurya Iyer,shaurya.iyer72@gmail.com,+91 7957405391,Digital Marketing,Weekday Regular,"South City 1, Gurugram",2026-03-09,Placed
+SSSAM-2026-0555,Aditya Banerjee,aditya.banerjee67@gmail.com,+91 7491767348,Full Stack Web Development,Evening Fast-track,"Sector 47, Gurugram",2025-10-08,Placed
+SSSAM-2026-0556,Vikas Arora,vikas.arora27@gmail.com,+91 9707867255,Graphic Design,Weekday Regular,"Sector 47, Gurugram",2026-04-22,Active
+SSSAM-2026-0557,Sandeep Yadav,sandeep.yadav48@gmail.com,+91 7250334448,C++ Programming,Evening Fast-track,"Palam Vihar, Gurugram",2025-08-23,Active
+SSSAM-2026-0558,Rajesh Sinha,rajesh.sinha31@gmail.com,+91 9714224390,MySQL Database Design,Weekend Batch,"South City 1, Gurugram",2025-07-04,Completed
+SSSAM-2026-0559,Ritu Chaudhary,ritu.chaudhary46@gmail.com,+91 7192575875,C++ Programming,Weekend Batch,"Sector 45, Gurugram",2026-03-16,Completed
+SSSAM-2026-0560,Vijay Bhardwaj,vijay.bhardwaj34@gmail.com,+91 9641148093,Software Testing,Evening Fast-track,"Sector 10, Gurugram",2025-03-30,Completed
+SSSAM-2026-0561,Jyoti Kumar,jyoti.kumar83@gmail.com,+91 6646512809,Digital Marketing,Weekend Batch,"Sector 15, Gurugram",2026-02-26,Active
+SSSAM-2026-0562,Manish Yadav,manish.yadav46@gmail.com,+91 9453754325,Linux System Administration,Weekend Batch,"DLF Phase 2, Gurugram",2026-05-16,Completed
+SSSAM-2026-0563,Arjun Pillai,arjun.pillai70@gmail.com,+91 6225657998,MySQL Database Design,Weekday Regular,"Sushant Lok, Gurugram",2025-11-20,Active
+SSSAM-2026-0564,Rajesh Mishra,rajesh.mishra72@gmail.com,+91 7397655245,MySQL Database Design,Weekend Batch,"Sushant Lok, Gurugram",2026-01-17,Placed
+SSSAM-2026-0565,Atharva Pandey,atharva.pandey18@gmail.com,+91 7854369550,AWS Cloud Computing,Evening Fast-track,"Palam Vihar, Gurugram",2026-01-21,Completed
+SSSAM-2026-0566,Atharva Mehta,atharva.mehta56@gmail.com,+91 9327691797,AWS Cloud Computing,Weekday Regular,"Palam Vihar, Gurugram",2025-06-15,Active
+SSSAM-2026-0567,Pranav Rajput,pranav.rajput73@gmail.com,+91 7664676170,Cyber Security,Weekday Regular,"Old DLF Colony, Gurugram",2025-12-12,Completed
+SSSAM-2026-0568,Pankaj Chawla,pankaj.chawla78@gmail.com,+91 6726182537,SAP FICO,Weekday Regular,"Old DLF Colony, Gurugram",2025-02-09,Completed
+SSSAM-2026-0569,Neha Nair,neha.nair83@gmail.com,+91 8957667778,Graphic Design,Weekday Regular,"Sector 47, Gurugram",2025-05-26,Active
+SSSAM-2026-0570,Vijay Roy,vijay.roy52@gmail.com,+91 7978790032,Java Programming,Weekday Regular,"Palam Vihar, Gurugram",2025-11-22,Placed
+SSSAM-2026-0571,Aarti Das,aarti.das64@gmail.com,+91 8371848234,AI & ML,Weekend Batch,"DLF Phase 3, Gurugram",2025-05-12,Completed
+SSSAM-2026-0572,Ashish Pandey,ashish.pandey22@gmail.com,+91 9105270492,Linux System Administration,Evening Fast-track,"DLF Phase 2, Gurugram",2025-03-19,Active
+SSSAM-2026-0573,Kavita Arora,kavita.arora33@gmail.com,+91 9109913646,Java Programming,Weekday Regular,"Sector 47, Gurugram",2025-11-09,Completed
+SSSAM-2026-0574,Mohit Yadav,mohit.yadav88@gmail.com,+91 6617176362,SAP FICO,Evening Fast-track,"Sector 4, Gurugram",2025-10-31,Placed
+SSSAM-2026-0575,Pihu Pandey,pihu.pandey33@gmail.com,+91 6155936783,C++ Programming,Evening Fast-track,"Palam Vihar, Gurugram",2025-10-02,Completed
+SSSAM-2026-0576,Rohit Joshi,rohit.joshi69@gmail.com,+91 6690782297,Graphic Design,Evening Fast-track,"Sector 4, Gurugram",2025-12-27,Completed
+SSSAM-2026-0577,Sonia Saxena,sonia.saxena38@gmail.com,+91 8983288557,Software Testing,Weekend Batch,"Old DLF Colony, Gurugram",2025-06-22,Completed
+SSSAM-2026-0578,Suresh Garg,suresh.garg68@gmail.com,+91 9848875831,Linux System Administration,Weekend Batch,"Sector 45, Gurugram",2026-04-08,Completed
+SSSAM-2026-0579,Jyoti Sharma,jyoti.sharma54@gmail.com,+91 9151977357,Full Stack Web Development,Weekday Regular,"Sushant Lok, Gurugram",2025-08-07,Active
+SSSAM-2026-0580,Riya Bansal,riya.bansal14@gmail.com,+91 8326978964,Cyber Security,Evening Fast-track,"Sector 7, Gurugram",2025-05-05,Completed
+SSSAM-2026-0581,Sonia Garg,sonia.garg24@gmail.com,+91 7812543713,AWS Cloud Computing,Weekday Regular,"Sushant Lok, Gurugram",2026-05-10,Placed
+SSSAM-2026-0582,Poonam Bose,poonam.bose68@gmail.com,+91 7766256278,SAP FICO,Evening Fast-track,"Sector 21, Gurugram",2025-12-22,Completed
+SSSAM-2026-0583,Aadhya Trivedi,aadhya.trivedi90@gmail.com,+91 8931126252,Graphic Design,Weekend Batch,"DLF Phase 1, Gurugram",2025-01-30,Active
+SSSAM-2026-0584,Sandeep Gupta,sandeep.gupta40@gmail.com,+91 8251147930,Java Programming,Weekday Regular,"DLF Phase 3, Gurugram",2026-04-22,Active
+SSSAM-2026-0585,Preeti Garg,preeti.garg51@gmail.com,+91 6322902372,MySQL Database Design,Weekend Batch,"DLF Phase 2, Gurugram",2025-12-04,Placed
+SSSAM-2026-0586,Rajesh Rao,rajesh.rao42@gmail.com,+91 8440751784,SAP FICO,Weekday Regular,"Sushant Lok, Gurugram",2025-06-17,Active
+SSSAM-2026-0587,Anvi Mishra,anvi.mishra53@gmail.com,+91 9805618607,SAP FICO,Evening Fast-track,"Sector 56, Gurugram",2025-02-15,Active
+SSSAM-2026-0588,Pankaj Pandey,pankaj.pandey51@gmail.com,+91 8353250738,SAP FICO,Evening Fast-track,"DLF Phase 1, Gurugram",2026-01-09,Active
+SSSAM-2026-0589,Riya Verma,riya.verma27@gmail.com,+91 6354056690,C++ Programming,Evening Fast-track,"Sushant Lok, Gurugram",2025-09-08,Active
+SSSAM-2026-0590,Suresh Saxena,suresh.saxena13@gmail.com,+91 7535491762,TallyPrime Accounting,Weekend Batch,"Sector 45, Gurugram",2026-05-03,Placed
+SSSAM-2026-0591,Divya Sharma,divya.sharma57@gmail.com,+91 6362971791,Software Testing,Weekday Regular,"Sector 45, Gurugram",2025-02-01,Active
+SSSAM-2026-0592,Sandeep Shah,sandeep.shah25@gmail.com,+91 8852530765,Graphic Design,Weekday Regular,"Sector 15, Gurugram",2026-01-09,Completed
+SSSAM-2026-0593,Aanya Shah,aanya.shah97@gmail.com,+91 6219996536,Advanced Excel,Weekday Regular,"Old DLF Colony, Gurugram",2025-03-10,Active
+SSSAM-2026-0594,Sapna Yadav,sapna.yadav31@gmail.com,+91 7774256782,Software Testing,Evening Fast-track,"DLF Phase 1, Gurugram",2025-03-05,Active
+SSSAM-2026-0595,Aaradhya Patel,aaradhya.patel59@gmail.com,+91 9272111661,C++ Programming,Weekday Regular,"Sector 56, Gurugram",2025-04-18,Active
+SSSAM-2026-0596,Vihaan Sharma,vihaan.sharma67@gmail.com,+91 9951926049,Video Editing,Evening Fast-track,"DLF Phase 2, Gurugram",2025-10-28,Active
+SSSAM-2026-0597,Gaurav Chawla,gaurav.chawla24@gmail.com,+91 7966520480,AWS Cloud Computing,Evening Fast-track,"Old DLF Colony, Gurugram",2025-04-11,Placed
+SSSAM-2026-0598,Pranav Rao,pranav.rao43@gmail.com,+91 8587413765,AI & ML,Weekend Batch,"Palam Vihar, Gurugram",2025-10-28,Active
+SSSAM-2026-0599,Shalini Rajput,shalini.rajput54@gmail.com,+91 9274279976,TallyPrime Accounting,Weekend Batch,"Palam Vihar, Gurugram",2025-02-27,Active
+SSSAM-2026-0600,Manish Arora,manish.arora10@gmail.com,+91 6875961116,Java Programming,Weekend Batch,"Sector 7, Gurugram",2025-10-03,Active
+SSSAM-2026-0601,Sai Aggarwal,sai.aggarwal59@gmail.com,+91 9110530484,SAP FICO,Weekend Batch,"Old DLF Colony, Gurugram",2025-05-12,Active
+SSSAM-2026-0602,Ishan Kumar,ishan.kumar61@gmail.com,+91 8965362616,Digital Marketing,Weekend Batch,"DLF Phase 1, Gurugram",2026-03-12,Placed
+SSSAM-2026-0603,Vivaan Trivedi,vivaan.trivedi18@gmail.com,+91 6594172930,Advanced Excel,Weekday Regular,"South City 1, Gurugram",2026-03-24,Completed
+SSSAM-2026-0604,Saurabh Kumar,saurabh.kumar79@gmail.com,+91 9487528687,Linux System Administration,Weekend Batch,"Sector 7, Gurugram",2025-10-25,Placed
+SSSAM-2026-0605,Ishan Garg,ishan.garg60@gmail.com,+91 6116016662,Cyber Security,Weekday Regular,"Sector 7, Gurugram",2026-02-08,Active
+SSSAM-2026-0606,Swati Kumar,swati.kumar30@gmail.com,+91 6861132924,Graphic Design,Weekend Batch,"Sector 10, Gurugram",2025-10-27,Active
+SSSAM-2026-0607,Sanjay Shah,sanjay.shah74@gmail.com,+91 9699277954,Python Programming,Weekday Regular,"Palam Vihar, Gurugram",2025-01-20,Completed
+SSSAM-2026-0608,Atharva Mukherjee,atharva.mukherjee34@gmail.com,+91 9219746259,SAP FICO,Evening Fast-track,"Sector 45, Gurugram",2025-06-08,Active
+SSSAM-2026-0609,Aarav Iyer,aarav.iyer64@gmail.com,+91 9250637467,MySQL Database Design,Weekday Regular,"South City 1, Gurugram",2025-08-13,Completed
+SSSAM-2026-0610,Pooja Mehta,pooja.mehta25@gmail.com,+91 7191178383,AI & ML,Weekday Regular,"Sector 10, Gurugram",2026-01-29,Active
+SSSAM-2026-0611,Kavita Kapoor,kavita.kapoor57@gmail.com,+91 7570028518,MySQL Database Design,Weekend Batch,"Palam Vihar, Gurugram",2025-01-30,Completed
+SSSAM-2026-0612,Ramesh Mehta,ramesh.mehta23@gmail.com,+91 7164959556,Graphic Design,Weekend Batch,"Sector 4, Gurugram",2025-04-15,Completed
+SSSAM-2026-0613,Anvi Banerjee,anvi.banerjee41@gmail.com,+91 7430484594,Full Stack Web Development,Weekend Batch,"Sector 21, Gurugram",2026-03-21,Completed
+SSSAM-2026-0614,Rajesh Bose,rajesh.bose41@gmail.com,+91 7833247086,AWS Cloud Computing,Weekday Regular,"Sector 10, Gurugram",2025-09-06,Active
+SSSAM-2026-0615,Reyansh Bose,reyansh.bose42@gmail.com,+91 6962061338,MySQL Database Design,Weekday Regular,"DLF Phase 2, Gurugram",2025-11-05,Active
+SSSAM-2026-0616,Aaradhya Sinha,aaradhya.sinha17@gmail.com,+91 6631404905,C++ Programming,Evening Fast-track,"Sector 15, Gurugram",2025-11-18,Active
+SSSAM-2026-0617,Reyansh Rajput,reyansh.rajput73@gmail.com,+91 8342545078,Data Science,Weekday Regular,"Sector 7, Gurugram",2025-12-22,Placed
+SSSAM-2026-0618,Rohan Bansal,rohan.bansal91@gmail.com,+91 8319408884,Advanced Excel,Evening Fast-track,"DLF Phase 1, Gurugram",2025-08-10,Placed
+SSSAM-2026-0619,Arjun Sinha,arjun.sinha33@gmail.com,+91 7184102107,AI & ML,Weekend Batch,"Old DLF Colony, Gurugram",2025-01-07,Placed
+SSSAM-2026-0620,Komal Iyer,komal.iyer27@gmail.com,+91 9889528667,Software Testing,Weekend Batch,"Sector 4, Gurugram",2026-02-16,Active
+SSSAM-2026-0621,Gaurav Mishra,gaurav.mishra32@gmail.com,+91 9862804061,Graphic Design,Weekend Batch,"Sector 14, Gurugram",2025-10-19,Active
+SSSAM-2026-0622,Aditya Dubey,aditya.dubey44@gmail.com,+91 9718361309,Software Testing,Weekday Regular,"DLF Phase 3, Gurugram",2025-05-30,Active
+SSSAM-2026-0623,Aaryan Verma,aaryan.verma69@gmail.com,+91 8946450552,Digital Marketing,Weekday Regular,"Palam Vihar, Gurugram",2025-11-11,Active
+SSSAM-2026-0624,Manish Trivedi,manish.trivedi38@gmail.com,+91 6737371225,AWS Cloud Computing,Evening Fast-track,"Sector 47, Gurugram",2026-05-11,Active
+SSSAM-2026-0625,Aditya Shah,aditya.shah64@gmail.com,+91 7605244968,Linux System Administration,Evening Fast-track,"Old DLF Colony, Gurugram",2025-09-12,Active
+SSSAM-2026-0626,Nisha Sen,nisha.sen96@gmail.com,+91 7117487805,MySQL Database Design,Evening Fast-track,"DLF Phase 3, Gurugram",2025-07-28,Active
+SSSAM-2026-0627,Neha Bhardwaj,neha.bhardwaj37@gmail.com,+91 6988605830,Advanced Excel,Weekend Batch,"Sector 15, Gurugram",2025-01-08,Active
+SSSAM-2026-0628,Varun Kumar,varun.kumar86@gmail.com,+91 9294437304,Linux System Administration,Weekend Batch,"Sector 10, Gurugram",2025-03-06,Placed
+SSSAM-2026-0629,Pankaj Kumar,pankaj.kumar35@gmail.com,+91 8687718491,C++ Programming,Evening Fast-track,"Sector 15, Gurugram",2026-03-21,Active
+SSSAM-2026-0630,Sai Srivastava,sai.srivastava61@gmail.com,+91 7325255166,Java Programming,Weekend Batch,"Sector 15, Gurugram",2026-01-14,Active
+SSSAM-2026-0631,Rupali Mukherjee,rupali.mukherjee80@gmail.com,+91 8749020796,AWS Cloud Computing,Weekday Regular,"Sector 56, Gurugram",2025-12-27,Active
+SSSAM-2026-0632,Mohit Joshi,mohit.joshi57@gmail.com,+91 9552839953,SAP FICO,Evening Fast-track,"DLF Phase 2, Gurugram",2025-07-28,Active
+SSSAM-2026-0633,Vivaan Bansal,vivaan.bansal36@gmail.com,+91 8329100363,MySQL Database Design,Weekend Batch,"Sector 56, Gurugram",2025-02-25,Active
+SSSAM-2026-0634,Arjun Reddy,arjun.reddy68@gmail.com,+91 8834391559,Advanced Excel,Weekend Batch,"Sector 45, Gurugram",2025-03-08,Completed
+SSSAM-2026-0635,Karan Chawla,karan.chawla20@gmail.com,+91 9462911207,Linux System Administration,Weekend Batch,"DLF Phase 1, Gurugram",2025-12-17,Completed
+SSSAM-2026-0636,Gaurav Patel,gaurav.patel55@gmail.com,+91 7388767383,Graphic Design,Evening Fast-track,"Sector 45, Gurugram",2025-05-15,Active
+SSSAM-2026-0637,Saisha Reddy,saisha.reddy71@gmail.com,+91 9795230034,Video Editing,Weekday Regular,"Sector 15, Gurugram",2025-03-08,Completed
+SSSAM-2026-0638,Isha Mehta,isha.mehta41@gmail.com,+91 6472450407,MySQL Database Design,Evening Fast-track,"Old DLF Colony, Gurugram",2025-07-10,Active
+SSSAM-2026-0639,Rupali Shah,rupali.shah73@gmail.com,+91 6973333905,C++ Programming,Weekend Batch,"DLF Phase 3, Gurugram",2025-12-09,Placed
+SSSAM-2026-0640,Nisha Mishra,nisha.mishra45@gmail.com,+91 8828551771,Full Stack Web Development,Evening Fast-track,"Sector 14, Gurugram",2025-12-07,Active
+SSSAM-2026-0641,Pankaj Saxena,pankaj.saxena10@gmail.com,+91 6946326883,Graphic Design,Weekend Batch,"Sector 21, Gurugram",2026-04-21,Active
+SSSAM-2026-0642,Ramesh Sharma,ramesh.sharma71@gmail.com,+91 6926833000,MySQL Database Design,Weekend Batch,"Old DLF Colony, Gurugram",2025-02-03,Active
+SSSAM-2026-0643,Komal Bansal,komal.bansal99@gmail.com,+91 6424424055,Software Testing,Weekday Regular,"Sector 4, Gurugram",2026-02-23,Active
+SSSAM-2026-0644,Aditya Saxena,aditya.saxena84@gmail.com,+91 7139815137,Data Science,Weekend Batch,"Sushant Lok, Gurugram",2025-08-02,Active
+SSSAM-2026-0645,Swati Sen,swati.sen54@gmail.com,+91 8100795572,AWS Cloud Computing,Weekday Regular,"Sector 45, Gurugram",2025-10-07,Active
+SSSAM-2026-0646,Rajesh Pillai,rajesh.pillai19@gmail.com,+91 8556082480,C++ Programming,Evening Fast-track,"Sushant Lok, Gurugram",2025-11-26,Active
+SSSAM-2026-0647,Kajal Chaudhary,kajal.chaudhary50@gmail.com,+91 7947784034,SAP FICO,Weekend Batch,"Sector 10, Gurugram",2025-02-28,Active
+SSSAM-2026-0648,Aadhya Chaudhary,aadhya.chaudhary48@gmail.com,+91 6863588896,Data Science,Evening Fast-track,"DLF Phase 1, Gurugram",2025-12-17,Active
+SSSAM-2026-0649,Tanvi Yadav,tanvi.yadav72@gmail.com,+91 7472624548,AI & ML,Weekday Regular,"Sector 47, Gurugram",2025-05-24,Active
+SSSAM-2026-0650,Ramesh Sinha,ramesh.sinha21@gmail.com,+91 8149623647,Advanced Excel,Evening Fast-track,"DLF Phase 2, Gurugram",2025-10-09,Placed
+SSSAM-2026-0651,Rohan Sen,rohan.sen43@gmail.com,+91 6696595517,AWS Cloud Computing,Weekend Batch,"Sushant Lok, Gurugram",2025-05-14,Placed
+SSSAM-2026-0652,Deepak Sharma,deepak.sharma54@gmail.com,+91 8497064332,MySQL Database Design,Evening Fast-track,"Sector 14, Gurugram",2026-01-21,Active
+SSSAM-2026-0653,Anvi Verma,anvi.verma94@gmail.com,+91 9971275490,Full Stack Web Development,Weekday Regular,"Sector 10, Gurugram",2025-11-13,Active
+SSSAM-2026-0654,Pooja Aggarwal,pooja.aggarwal98@gmail.com,+91 8278420349,Python Programming,Evening Fast-track,"Sector 21, Gurugram",2026-01-06,Active
+SSSAM-2026-0655,Mohit Banerjee,mohit.banerjee25@gmail.com,+91 9635181278,Python Programming,Evening Fast-track,"Sector 15, Gurugram",2025-04-10,Active
+SSSAM-2026-0656,Priya Trivedi,priya.trivedi22@gmail.com,+91 6202788944,Cyber Security,Weekend Batch,"Sector 47, Gurugram",2025-04-29,Placed
+SSSAM-2026-0657,Kabir Kumar,kabir.kumar15@gmail.com,+91 6639884380,MySQL Database Design,Weekend Batch,"Sector 45, Gurugram",2025-04-14,Completed
+SSSAM-2026-0658,Shalini Aggarwal,shalini.aggarwal76@gmail.com,+91 8435784464,TallyPrime Accounting,Weekday Regular,"Palam Vihar, Gurugram",2025-01-26,Placed
+SSSAM-2026-0659,Divya Prasad,divya.prasad73@gmail.com,+91 7514031351,Video Editing,Weekend Batch,"Sector 7, Gurugram",2025-10-03,Completed
+SSSAM-2026-0660,Mohit Yadav,mohit.yadav30@gmail.com,+91 9417006500,Python Programming,Weekend Batch,"South City 1, Gurugram",2025-06-22,Active
+SSSAM-2026-0661,Aadhya Nair,aadhya.nair26@gmail.com,+91 7890518464,Software Testing,Weekday Regular,"Sector 15, Gurugram",2025-11-01,Active
+SSSAM-2026-0662,Varun Sharma,varun.sharma90@gmail.com,+91 8814781599,Graphic Design,Weekday Regular,"South City 1, Gurugram",2026-01-21,Active
+SSSAM-2026-0663,Komal Gupta,komal.gupta26@gmail.com,+91 6470168239,Advanced Excel,Weekend Batch,"Sector 45, Gurugram",2025-09-14,Active
+SSSAM-2026-0664,Pankaj Garg,pankaj.garg69@gmail.com,+91 6800773627,Video Editing,Weekend Batch,"Sector 7, Gurugram",2026-03-20,Active
+SSSAM-2026-0665,Ashish Garg,ashish.garg53@gmail.com,+91 6660911066,Advanced Excel,Weekend Batch,"Sector 45, Gurugram",2025-12-23,Placed
+SSSAM-2026-0666,Aarti Reddy,aarti.reddy22@gmail.com,+91 9564578551,Python Programming,Weekend Batch,"Sector 7, Gurugram",2025-03-22,Completed
+SSSAM-2026-0667,Saurabh Kumar,saurabh.kumar79@gmail.com,+91 9701769982,SAP FICO,Weekend Batch,"Sector 10, Gurugram",2025-01-18,Active
+SSSAM-2026-0668,Isha Bose,isha.bose18@gmail.com,+91 8690506160,AWS Cloud Computing,Weekday Regular,"Sector 45, Gurugram",2025-05-17,Completed
+SSSAM-2026-0669,Rajesh Malhotra,rajesh.malhotra40@gmail.com,+91 8255574418,Linux System Administration,Weekend Batch,"Sector 4, Gurugram",2025-05-05,Placed
+SSSAM-2026-0670,Kriti Singh,kriti.singh28@gmail.com,+91 7346480634,Python Programming,Weekday Regular,"Sector 56, Gurugram",2025-05-17,Active
+SSSAM-2026-0671,Aaradhya Kumar,aaradhya.kumar29@gmail.com,+91 6913041980,Full Stack Web Development,Evening Fast-track,"Sector 56, Gurugram",2025-11-10,Active
+SSSAM-2026-0672,Kajal Das,kajal.das33@gmail.com,+91 8501364234,C++ Programming,Weekend Batch,"Sector 14, Gurugram",2025-05-15,Placed
+SSSAM-2026-0673,Aditya Prasad,aditya.prasad52@gmail.com,+91 9775434506,Software Testing,Weekday Regular,"Sector 7, Gurugram",2025-08-25,Active
+SSSAM-2026-0674,Vikas Verma,vikas.verma40@gmail.com,+91 7655644406,Full Stack Web Development,Evening Fast-track,"Sector 10, Gurugram",2025-03-24,Active
+SSSAM-2026-0675,Rohit Bhardwaj,rohit.bhardwaj67@gmail.com,+91 8175771967,Python Programming,Evening Fast-track,"Sector 10, Gurugram",2025-03-30,Active
+SSSAM-2026-0676,Pankaj Chawla,pankaj.chawla91@gmail.com,+91 9991775060,Java Programming,Weekend Batch,"Sector 56, Gurugram",2026-01-08,Completed
+SSSAM-2026-0677,Kriti Aggarwal,kriti.aggarwal43@gmail.com,+91 7244032923,C++ Programming,Evening Fast-track,"Palam Vihar, Gurugram",2025-02-23,Active
+SSSAM-2026-0678,Manish Singh,manish.singh61@gmail.com,+91 7531595354,Python Programming,Evening Fast-track,"Sushant Lok, Gurugram",2025-01-07,Completed
+SSSAM-2026-0679,Sandeep Arora,sandeep.arora22@gmail.com,+91 7373733890,Digital Marketing,Evening Fast-track,"Sector 14, Gurugram",2025-12-02,Placed
+SSSAM-2026-0680,Sonia Arora,sonia.arora60@gmail.com,+91 9106478944,Software Testing,Evening Fast-track,"Sector 15, Gurugram",2025-03-02,Placed
+SSSAM-2026-0681,Divya Pandey,divya.pandey39@gmail.com,+91 9593847373,Data Science,Weekend Batch,"DLF Phase 1, Gurugram",2025-09-19,Active
+SSSAM-2026-0682,Poonam Gupta,poonam.gupta56@gmail.com,+91 6545204718,AWS Cloud Computing,Evening Fast-track,"Sector 45, Gurugram",2025-04-22,Placed
+SSSAM-2026-0683,Swati Bhardwaj,swati.bhardwaj96@gmail.com,+91 7532597916,Python Programming,Weekday Regular,"Sector 7, Gurugram",2025-04-12,Active
+SSSAM-2026-0684,Aarav Mukherjee,aarav.mukherjee85@gmail.com,+91 9512591179,AI & ML,Weekday Regular,"Sector 10, Gurugram",2025-11-27,Active
+SSSAM-2026-0685,Amit Dubey,amit.dubey96@gmail.com,+91 7125502945,Linux System Administration,Weekend Batch,"Sector 4, Gurugram",2026-04-11,Active
+SSSAM-2026-0686,Ankit Sen,ankit.sen96@gmail.com,+91 6557808649,SAP FICO,Evening Fast-track,"Sushant Lok, Gurugram",2026-04-10,Active
+SSSAM-2026-0687,Kiran Bansal,kiran.bansal87@gmail.com,+91 9537282029,Software Testing,Evening Fast-track,"Sector 4, Gurugram",2025-03-26,Active
+SSSAM-2026-0688,Pankaj Bose,pankaj.bose87@gmail.com,+91 8636796997,MySQL Database Design,Weekend Batch,"DLF Phase 3, Gurugram",2025-11-07,Active
+SSSAM-2026-0689,Sai Bansal,sai.bansal68@gmail.com,+91 6344335478,MySQL Database Design,Weekday Regular,"Old DLF Colony, Gurugram",2026-03-16,Active
+SSSAM-2026-0690,Ankit Arora,ankit.arora39@gmail.com,+91 8630806757,Java Programming,Weekday Regular,"DLF Phase 1, Gurugram",2025-10-11,Completed
+SSSAM-2026-0691,Divya Kapoor,divya.kapoor71@gmail.com,+91 6803365899,Software Testing,Weekend Batch,"Palam Vihar, Gurugram",2025-10-15,Completed
+SSSAM-2026-0692,Vivaan Trivedi,vivaan.trivedi36@gmail.com,+91 6641257990,Java Programming,Weekend Batch,"DLF Phase 1, Gurugram",2026-03-18,Active
+SSSAM-2026-0693,Pihu Yadav,pihu.yadav46@gmail.com,+91 8103099722,Advanced Excel,Weekday Regular,"DLF Phase 1, Gurugram",2025-04-10,Completed
+SSSAM-2026-0694,Deepak Mukherjee,deepak.mukherjee10@gmail.com,+91 6491216491,Java Programming,Weekday Regular,"Sector 21, Gurugram",2025-09-04,Placed
+SSSAM-2026-0695,Vijay Gupta,vijay.gupta46@gmail.com,+91 6777078319,Cyber Security,Weekday Regular,"Old DLF Colony, Gurugram",2025-06-25,Completed
+SSSAM-2026-0696,Ankit Saxena,ankit.saxena12@gmail.com,+91 6822031524,Java Programming,Weekend Batch,"Old DLF Colony, Gurugram",2025-03-16,Active
+SSSAM-2026-0697,Saisha Arora,saisha.arora21@gmail.com,+91 8613436617,Java Programming,Evening Fast-track,"Sector 10, Gurugram",2026-05-11,Placed
+SSSAM-2026-0698,Amit Aggarwal,amit.aggarwal92@gmail.com,+91 8415001942,SAP FICO,Evening Fast-track,"Sector 56, Gurugram",2025-01-10,Active
+SSSAM-2026-0699,Kiran Garg,kiran.garg60@gmail.com,+91 7861843755,Cyber Security,Evening Fast-track,"Sector 45, Gurugram",2025-09-15,Active
+SSSAM-2026-0700,Shalini Malhotra,shalini.malhotra76@gmail.com,+91 8535455495,Digital Marketing,Evening Fast-track,"Sector 7, Gurugram",2025-01-03,Active
+SSSAM-2026-0701,Pihu Srivastava,pihu.srivastava74@gmail.com,+91 8545524832,C++ Programming,Evening Fast-track,"Sector 56, Gurugram",2025-01-03,Active
+SSSAM-2026-0702,Pranav Arora,pranav.arora28@gmail.com,+91 6321344889,Python Programming,Weekday Regular,"Sector 10, Gurugram",2025-08-20,Completed
+SSSAM-2026-0703,Priya Nair,priya.nair41@gmail.com,+91 6582634441,AI & ML,Weekend Batch,"Sector 45, Gurugram",2025-09-14,Active
+SSSAM-2026-0704,Ritu Bansal,ritu.bansal44@gmail.com,+91 8978306625,SAP FICO,Weekday Regular,"DLF Phase 3, Gurugram",2026-03-21,Active
+SSSAM-2026-0705,Pari Aggarwal,pari.aggarwal37@gmail.com,+91 9535115667,Digital Marketing,Weekday Regular,"Sector 7, Gurugram",2025-12-12,Completed
+SSSAM-2026-0706,Sai Sinha,sai.sinha73@gmail.com,+91 8694358059,AWS Cloud Computing,Weekend Batch,"Sector 14, Gurugram",2025-06-25,Completed
+SSSAM-2026-0707,Saurabh Arora,saurabh.arora10@gmail.com,+91 9326357031,AI & ML,Evening Fast-track,"South City 1, Gurugram",2026-04-13,Active
+SSSAM-2026-0708,Krishna Nair,krishna.nair94@gmail.com,+91 7646823876,Java Programming,Evening Fast-track,"Palam Vihar, Gurugram",2025-01-16,Active
+SSSAM-2026-0709,Rahul Shah,rahul.shah49@gmail.com,+91 6483395703,Video Editing,Weekday Regular,"Sushant Lok, Gurugram",2025-06-04,Active
+SSSAM-2026-0710,Divya Prasad,divya.prasad15@gmail.com,+91 8171288329,C++ Programming,Evening Fast-track,"Sector 10, Gurugram",2025-08-02,Active
+SSSAM-2026-0711,Rajesh Joshi,rajesh.joshi95@gmail.com,+91 8634247082,AI & ML,Evening Fast-track,"Sushant Lok, Gurugram",2025-06-04,Completed
+SSSAM-2026-0712,Ananya Aggarwal,ananya.aggarwal93@gmail.com,+91 7622884292,Digital Marketing,Evening Fast-track,"DLF Phase 1, Gurugram",2025-07-06,Active
+SSSAM-2026-0713,Rohit Banerjee,rohit.banerjee77@gmail.com,+91 8366727523,Linux System Administration,Evening Fast-track,"Sector 10, Gurugram",2026-03-28,Active
+SSSAM-2026-0714,Rohan Trivedi,rohan.trivedi20@gmail.com,+91 8220027172,Digital Marketing,Evening Fast-track,"DLF Phase 3, Gurugram",2025-12-19,Placed
+SSSAM-2026-0715,Suresh Chawla,suresh.chawla46@gmail.com,+91 6720076078,Digital Marketing,Weekend Batch,"DLF Phase 3, Gurugram",2026-03-13,Active
+SSSAM-2026-0716,Diya Gupta,diya.gupta50@gmail.com,+91 9595445450,SAP FICO,Weekend Batch,"Sushant Lok, Gurugram",2025-12-20,Active
+SSSAM-2026-0717,Aarav Roy,aarav.roy63@gmail.com,+91 8999969174,AI & ML,Weekday Regular,"DLF Phase 2, Gurugram",2025-06-10,Active
+SSSAM-2026-0718,Ashish Bhardwaj,ashish.bhardwaj47@gmail.com,+91 6537441395,AI & ML,Weekday Regular,"Sector 21, Gurugram",2026-02-03,Completed
+SSSAM-2026-0719,Priya Prasad,priya.prasad96@gmail.com,+91 9534299451,Graphic Design,Evening Fast-track,"South City 1, Gurugram",2025-01-08,Completed
+SSSAM-2026-0720,Diya Bose,diya.bose74@gmail.com,+91 7519265617,Full Stack Web Development,Weekend Batch,"Sushant Lok, Gurugram",2025-09-19,Completed
+SSSAM-2026-0721,Arjun Joshi,arjun.joshi56@gmail.com,+91 6199972138,Graphic Design,Evening Fast-track,"South City 1, Gurugram",2025-04-24,Active
+SSSAM-2026-0722,Sakshi Bose,sakshi.bose64@gmail.com,+91 9427156477,Java Programming,Evening Fast-track,"Old DLF Colony, Gurugram",2025-08-29,Placed
+SSSAM-2026-0723,Rohan Das,rohan.das95@gmail.com,+91 6927778001,AWS Cloud Computing,Weekend Batch,"Sector 7, Gurugram",2025-05-17,Active
+SSSAM-2026-0724,Tanvi Rao,tanvi.rao18@gmail.com,+91 8950303964,Linux System Administration,Weekend Batch,"DLF Phase 2, Gurugram",2026-03-22,Active
+SSSAM-2026-0725,Ramesh Yadav,ramesh.yadav38@gmail.com,+91 9221585733,Digital Marketing,Evening Fast-track,"Sector 7, Gurugram",2025-08-07,Active
+SSSAM-2026-0726,Aaryan Sharma,aaryan.sharma74@gmail.com,+91 9307200339,Software Testing,Weekend Batch,"DLF Phase 3, Gurugram",2025-08-14,Active
+SSSAM-2026-0727,Amit Reddy,amit.reddy15@gmail.com,+91 7298636671,Python Programming,Evening Fast-track,"DLF Phase 1, Gurugram",2025-09-07,Active
+SSSAM-2026-0728,Kabir Malhotra,kabir.malhotra10@gmail.com,+91 6976388509,Digital Marketing,Weekend Batch,"Sector 56, Gurugram",2025-12-20,Active
+SSSAM-2026-0729,Preeti Kapoor,preeti.kapoor17@gmail.com,+91 9252104440,Advanced Excel,Weekend Batch,"Sector 21, Gurugram",2025-05-16,Completed
+SSSAM-2026-0730,Neha Goel,neha.goel51@gmail.com,+91 6980660486,Cyber Security,Weekday Regular,"Sector 45, Gurugram",2026-04-19,Completed
+SSSAM-2026-0731,Varun Pandey,varun.pandey65@gmail.com,+91 8759688645,Video Editing,Weekday Regular,"Sushant Lok, Gurugram",2026-04-11,Completed
+SSSAM-2026-0732,Shruti Shah,shruti.shah27@gmail.com,+91 8401116113,Video Editing,Evening Fast-track,"Sector 47, Gurugram",2025-05-10,Completed
+SSSAM-2026-0733,Sai Shah,sai.shah62@gmail.com,+91 6990832092,Video Editing,Weekday Regular,"Sector 45, Gurugram",2025-10-24,Completed
+SSSAM-2026-0734,Rohit Kumar,rohit.kumar74@gmail.com,+91 6332551200,Cyber Security,Evening Fast-track,"Sector 47, Gurugram",2026-02-16,Completed
+SSSAM-2026-0735,Priya Kapoor,priya.kapoor15@gmail.com,+91 6620791023,AI & ML,Weekend Batch,"Sector 4, Gurugram",2025-10-16,Completed
+SSSAM-2026-0736,Shruti Trivedi,shruti.trivedi80@gmail.com,+91 7707825493,TallyPrime Accounting,Evening Fast-track,"Sector 7, Gurugram",2025-03-05,Active
+SSSAM-2026-0737,Shreya Pandey,shreya.pandey30@gmail.com,+91 6636941421,Full Stack Web Development,Weekday Regular,"DLF Phase 2, Gurugram",2025-11-27,Active
+SSSAM-2026-0738,Kriti Iyer,kriti.iyer19@gmail.com,+91 6523306419,Linux System Administration,Weekday Regular,"Sector 15, Gurugram",2026-04-27,Completed
+SSSAM-2026-0739,Sakshi Bose,sakshi.bose14@gmail.com,+91 6450971824,Java Programming,Evening Fast-track,"Sector 45, Gurugram",2025-09-17,Active
+SSSAM-2026-0740,Aanya Saxena,aanya.saxena32@gmail.com,+91 6730488046,Java Programming,Weekday Regular,"Palam Vihar, Gurugram",2025-01-10,Completed
+SSSAM-2026-0741,Vikas Verma,vikas.verma11@gmail.com,+91 8385267155,AWS Cloud Computing,Weekday Regular,"Sector 45, Gurugram",2025-03-26,Active
+SSSAM-2026-0742,Pankaj Mukherjee,pankaj.mukherjee92@gmail.com,+91 6781929031,TallyPrime Accounting,Weekend Batch,"Sector 14, Gurugram",2025-07-23,Placed
+SSSAM-2026-0743,Isha Rao,isha.rao66@gmail.com,+91 8947753468,Video Editing,Evening Fast-track,"Sector 4, Gurugram",2025-08-26,Active
+SSSAM-2026-0744,Atharva Singh,atharva.singh94@gmail.com,+91 6741481408,Video Editing,Weekend Batch,"DLF Phase 2, Gurugram",2026-05-12,Completed
+SSSAM-2026-0745,Dev Singh,dev.singh76@gmail.com,+91 9849786436,Data Science,Weekday Regular,"Sector 45, Gurugram",2025-01-31,Active
+SSSAM-2026-0746,Neha Banerjee,neha.banerjee92@gmail.com,+91 8148878441,Advanced Excel,Weekend Batch,"Sector 4, Gurugram",2025-05-30,Completed
+SSSAM-2026-0747,Vikas Bansal,vikas.bansal40@gmail.com,+91 7778691817,Software Testing,Weekend Batch,"Sector 45, Gurugram",2025-11-29,Placed
+SSSAM-2026-0748,Shruti Verma,shruti.verma56@gmail.com,+91 9721760210,Software Testing,Evening Fast-track,"Old DLF Colony, Gurugram",2026-03-12,Placed
+SSSAM-2026-0749,Pranav Chaudhary,pranav.chaudhary89@gmail.com,+91 7601015305,Data Science,Weekday Regular,"Sector 14, Gurugram",2025-06-19,Active
+SSSAM-2026-0750,Nisha Sen,nisha.sen79@gmail.com,+91 6493056495,Cyber Security,Evening Fast-track,"South City 1, Gurugram",2026-02-25,Active
+SSSAM-2026-0751,Preeti Das,preeti.das51@gmail.com,+91 8285891728,Advanced Excel,Weekend Batch,"Sector 4, Gurugram",2025-06-24,Placed
+SSSAM-2026-0752,Sapna Dubey,sapna.dubey53@gmail.com,+91 8216894529,Digital Marketing,Evening Fast-track,"Sushant Lok, Gurugram",2025-05-04,Active
+SSSAM-2026-0753,Aarav Kumar,aarav.kumar70@gmail.com,+91 9569486212,Data Science,Weekday Regular,"Sector 10, Gurugram",2025-02-27,Placed
+SSSAM-2026-0754,Pankaj Reddy,pankaj.reddy81@gmail.com,+91 7487678420,C++ Programming,Weekend Batch,"Palam Vihar, Gurugram",2025-02-28,Completed
+SSSAM-2026-0755,Sandeep Pillai,sandeep.pillai84@gmail.com,+91 9104848731,TallyPrime Accounting,Weekend Batch,"DLF Phase 3, Gurugram",2025-09-19,Completed
+SSSAM-2026-0756,Rahul Iyer,rahul.iyer99@gmail.com,+91 9875407672,Python Programming,Weekend Batch,"Sushant Lok, Gurugram",2025-12-25,Placed
+SSSAM-2026-0757,Ashish Chawla,ashish.chawla34@gmail.com,+91 6564208513,Java Programming,Evening Fast-track,"Palam Vihar, Gurugram",2026-04-03,Active
+SSSAM-2026-0758,Raghav Mukherjee,raghav.mukherjee47@gmail.com,+91 8478751944,AWS Cloud Computing,Weekend Batch,"Sector 45, Gurugram",2025-05-30,Completed
+SSSAM-2026-0759,Nisha Chawla,nisha.chawla53@gmail.com,+91 8667744428,Software Testing,Evening Fast-track,"Sector 4, Gurugram",2025-02-09,Active
+SSSAM-2026-0760,Ananya Aggarwal,ananya.aggarwal33@gmail.com,+91 8697927875,TallyPrime Accounting,Weekend Batch,"Sector 10, Gurugram",2026-01-18,Completed
+SSSAM-2026-0761,Ananya Srivastava,ananya.srivastava78@gmail.com,+91 6889085547,C++ Programming,Evening Fast-track,"DLF Phase 3, Gurugram",2025-11-04,Completed
+SSSAM-2026-0762,Aditya Chaudhary,aditya.chaudhary49@gmail.com,+91 8524279373,Software Testing,Weekend Batch,"Sector 7, Gurugram",2026-03-28,Completed
+SSSAM-2026-0763,Amit Joshi,amit.joshi46@gmail.com,+91 7923538825,Graphic Design,Evening Fast-track,"Sector 7, Gurugram",2026-01-20,Completed
+SSSAM-2026-0764,Pranav Pandey,pranav.pandey98@gmail.com,+91 7469630326,Graphic Design,Weekend Batch,"DLF Phase 2, Gurugram",2025-02-15,Completed
+SSSAM-2026-0765,Amit Bhardwaj,amit.bhardwaj31@gmail.com,+91 7227483668,AWS Cloud Computing,Evening Fast-track,"Sector 56, Gurugram",2025-01-30,Active
+SSSAM-2026-0766,Reyansh Saxena,reyansh.saxena50@gmail.com,+91 9324533437,Cyber Security,Evening Fast-track,"Palam Vihar, Gurugram",2026-05-04,Active
+SSSAM-2026-0767,Rashmi Sen,rashmi.sen99@gmail.com,+91 8489830586,Linux System Administration,Weekend Batch,"Sector 21, Gurugram",2026-01-20,Completed
+SSSAM-2026-0768,Aaryan Nair,aaryan.nair75@gmail.com,+91 8591741840,AI & ML,Evening Fast-track,"Old DLF Colony, Gurugram",2025-12-18,Completed
+SSSAM-2026-0769,Aditya Nair,aditya.nair24@gmail.com,+91 8532178161,Python Programming,Evening Fast-track,"South City 1, Gurugram",2025-10-21,Active
+SSSAM-2026-0770,Rohit Garg,rohit.garg71@gmail.com,+91 6450377428,AWS Cloud Computing,Evening Fast-track,"Sector 21, Gurugram",2025-02-26,Active
+SSSAM-2026-0771,Aarav Joshi,aarav.joshi62@gmail.com,+91 7562106018,Video Editing,Weekday Regular,"DLF Phase 2, Gurugram",2025-02-08,Active
+SSSAM-2026-0772,Vijay Pandey,vijay.pandey36@gmail.com,+91 8111207541,C++ Programming,Weekday Regular,"Sector 14, Gurugram",2025-07-26,Active
+SSSAM-2026-0773,Manish Shah,manish.shah78@gmail.com,+91 9882311598,C++ Programming,Weekend Batch,"DLF Phase 1, Gurugram",2025-06-06,Placed
+SSSAM-2026-0774,Karan Mehta,karan.mehta38@gmail.com,+91 7581706649,Digital Marketing,Weekday Regular,"Sector 56, Gurugram",2026-03-02,Placed
+SSSAM-2026-0775,Aarav Verma,aarav.verma87@gmail.com,+91 6297571889,MySQL Database Design,Evening Fast-track,"Sushant Lok, Gurugram",2026-02-27,Completed
+SSSAM-2026-0776,Vihaan Bansal,vihaan.bansal11@gmail.com,+91 6849025901,Java Programming,Evening Fast-track,"Sector 10, Gurugram",2026-02-17,Active
+SSSAM-2026-0777,Jyoti Shah,jyoti.shah25@gmail.com,+91 9374126141,Advanced Excel,Evening Fast-track,"Sector 7, Gurugram",2026-04-13,Completed
+SSSAM-2026-0778,Aarav Reddy,aarav.reddy32@gmail.com,+91 9336419349,Graphic Design,Evening Fast-track,"Sector 14, Gurugram",2025-03-11,Completed
+SSSAM-2026-0779,Rajesh Bose,rajesh.bose90@gmail.com,+91 8375936029,Cyber Security,Weekend Batch,"Palam Vihar, Gurugram",2025-09-15,Active
+SSSAM-2026-0780,Amit Pandey,amit.pandey58@gmail.com,+91 9342863127,Java Programming,Weekend Batch,"Sector 10, Gurugram",2025-10-18,Active
+SSSAM-2026-0781,Rajesh Trivedi,rajesh.trivedi10@gmail.com,+91 9798750099,Video Editing,Weekend Batch,"Sector 10, Gurugram",2025-03-01,Completed
+SSSAM-2026-0782,Saurabh Mehta,saurabh.mehta85@gmail.com,+91 7642821613,Java Programming,Evening Fast-track,"Sushant Lok, Gurugram",2025-06-10,Placed
+SSSAM-2026-0783,Manish Kumar,manish.kumar99@gmail.com,+91 6478743783,Java Programming,Weekend Batch,"Sector 14, Gurugram",2025-06-25,Active
+SSSAM-2026-0784,Pari Goel,pari.goel21@gmail.com,+91 6131810609,Software Testing,Weekday Regular,"Sector 4, Gurugram",2025-01-08,Completed
+SSSAM-2026-0785,Komal Pillai,komal.pillai71@gmail.com,+91 6773614713,AI & ML,Weekend Batch,"Sector 56, Gurugram",2025-10-27,Active
+SSSAM-2026-0786,Krishna Bansal,krishna.bansal89@gmail.com,+91 7196946731,AI & ML,Evening Fast-track,"Sector 7, Gurugram",2025-06-05,Completed
+SSSAM-2026-0787,Kavita Gupta,kavita.gupta35@gmail.com,+91 6896204142,Graphic Design,Evening Fast-track,"Sushant Lok, Gurugram",2025-03-28,Completed
+SSSAM-2026-0788,Riya Singh,riya.singh13@gmail.com,+91 7138807438,SAP FICO,Weekend Batch,"Sector 4, Gurugram",2025-10-25,Placed
+SSSAM-2026-0789,Isha Bose,isha.bose78@gmail.com,+91 6133177630,AI & ML,Weekend Batch,"Sector 21, Gurugram",2025-07-31,Active
+SSSAM-2026-0790,Krishna Rao,krishna.rao81@gmail.com,+91 8763936737,AI & ML,Weekday Regular,"Sector 15, Gurugram",2026-03-18,Active
+SSSAM-2026-0791,Amit Srivastava,amit.srivastava89@gmail.com,+91 8964976694,AWS Cloud Computing,Weekend Batch,"DLF Phase 3, Gurugram",2025-12-15,Active
+SSSAM-2026-0792,Saurabh Goel,saurabh.goel41@gmail.com,+91 8469242398,MySQL Database Design,Evening Fast-track,"Old DLF Colony, Gurugram",2025-02-03,Placed
+SSSAM-2026-0793,Aarav Aggarwal,aarav.aggarwal56@gmail.com,+91 7506614767,Python Programming,Weekend Batch,"Sector 56, Gurugram",2025-02-17,Completed
+SSSAM-2026-0794,Vikas Bhardwaj,vikas.bhardwaj38@gmail.com,+91 7284071954,C++ Programming,Weekend Batch,"Sector 4, Gurugram",2025-01-22,Active
+SSSAM-2026-0795,Sanjay Bhardwaj,sanjay.bhardwaj21@gmail.com,+91 8683392376,Cyber Security,Weekday Regular,"Sector 45, Gurugram",2025-02-23,Active
+SSSAM-2026-0796,Shreya Garg,shreya.garg60@gmail.com,+91 9465931162,Full Stack Web Development,Evening Fast-track,"Sector 21, Gurugram",2025-05-03,Completed
+SSSAM-2026-0797,Komal Patel,komal.patel56@gmail.com,+91 9821618767,Linux System Administration,Evening Fast-track,"Sector 56, Gurugram",2026-04-23,Completed
+SSSAM-2026-0798,Rohit Sinha,rohit.sinha24@gmail.com,+91 9418996989,Full Stack Web Development,Weekend Batch,"DLF Phase 2, Gurugram",2025-07-03,Placed
+SSSAM-2026-0799,Swati Sen,swati.sen81@gmail.com,+91 8104899721,Python Programming,Weekend Batch,"DLF Phase 2, Gurugram",2025-06-15,Active
+SSSAM-2026-0800,Pankaj Sharma,pankaj.sharma94@gmail.com,+91 6969461781,Python Programming,Weekend Batch,"DLF Phase 2, Gurugram",2026-04-14,Active
+SSSAM-2026-0801,Shreya Srivastava,shreya.srivastava65@gmail.com,+91 9906606293,Linux System Administration,Weekday Regular,"Old DLF Colony, Gurugram",2025-08-25,Completed
+SSSAM-2026-0802,Avani Chawla,avani.chawla83@gmail.com,+91 8699179345,Python Programming,Evening Fast-track,"Sector 47, Gurugram",2025-10-10,Active
+SSSAM-2026-0803,Jyoti Aggarwal,jyoti.aggarwal62@gmail.com,+91 8632359269,MySQL Database Design,Weekday Regular,"Sushant Lok, Gurugram",2025-05-15,Active
+SSSAM-2026-0804,Pankaj Banerjee,pankaj.banerjee30@gmail.com,+91 7808386416,Full Stack Web Development,Weekend Batch,"Sushant Lok, Gurugram",2025-11-08,Completed
+SSSAM-2026-0805,Rupali Singh,rupali.singh48@gmail.com,+91 9621757395,AWS Cloud Computing,Evening Fast-track,"Sector 56, Gurugram",2025-08-28,Completed
+SSSAM-2026-0806,Riya Bansal,riya.bansal11@gmail.com,+91 8412797726,AI & ML,Evening Fast-track,"Sushant Lok, Gurugram",2025-12-05,Placed
+SSSAM-2026-0807,Vikas Mehta,vikas.mehta65@gmail.com,+91 9970577441,SAP FICO,Weekend Batch,"Sector 45, Gurugram",2025-02-06,Active
+SSSAM-2026-0808,Reyansh Bansal,reyansh.bansal25@gmail.com,+91 8954346689,TallyPrime Accounting,Weekend Batch,"Old DLF Colony, Gurugram",2026-04-30,Active
+SSSAM-2026-0809,Saurabh Iyer,saurabh.iyer19@gmail.com,+91 9728539139,Linux System Administration,Evening Fast-track,"Palam Vihar, Gurugram",2025-03-01,Placed
+SSSAM-2026-0810,Arjun Chaudhary,arjun.chaudhary54@gmail.com,+91 8305323365,Linux System Administration,Weekend Batch,"Sushant Lok, Gurugram",2025-06-21,Placed
+SSSAM-2026-0811,Suresh Reddy,suresh.reddy91@gmail.com,+91 8847307936,SAP FICO,Evening Fast-track,"Old DLF Colony, Gurugram",2026-03-04,Active
+SSSAM-2026-0812,Pooja Srivastava,pooja.srivastava44@gmail.com,+91 6528164012,C++ Programming,Weekday Regular,"Sector 4, Gurugram",2025-09-10,Active
+SSSAM-2026-0813,Ankit Malhotra,ankit.malhotra62@gmail.com,+91 6154094907,Graphic Design,Weekend Batch,"DLF Phase 1, Gurugram",2026-03-21,Placed
+SSSAM-2026-0814,Aditya Saxena,aditya.saxena15@gmail.com,+91 7475228341,Advanced Excel,Weekday Regular,"Palam Vihar, Gurugram",2025-05-04,Completed
+SSSAM-2026-0815,Sonia Garg,sonia.garg79@gmail.com,+91 6599127745,Linux System Administration,Weekday Regular,"Sector 21, Gurugram",2025-04-30,Active
+SSSAM-2026-0816,Shruti Banerjee,shruti.banerjee40@gmail.com,+91 7399202891,Advanced Excel,Weekend Batch,"Sector 15, Gurugram",2025-03-06,Active
+SSSAM-2026-0817,Rakesh Chawla,rakesh.chawla94@gmail.com,+91 8803018440,C++ Programming,Weekday Regular,"DLF Phase 3, Gurugram",2025-01-08,Active
+SSSAM-2026-0818,Amit Singh,amit.singh71@gmail.com,+91 9776439786,C++ Programming,Weekend Batch,"Sushant Lok, Gurugram",2025-02-01,Active
+SSSAM-2026-0819,Varun Rajput,varun.rajput44@gmail.com,+91 7850605262,AWS Cloud Computing,Weekend Batch,"DLF Phase 2, Gurugram",2025-03-21,Completed
+SSSAM-2026-0820,Pooja Bansal,pooja.bansal23@gmail.com,+91 6851221581,Software Testing,Evening Fast-track,"Sector 21, Gurugram",2026-01-23,Placed
+SSSAM-2026-0821,Vijay Iyer,vijay.iyer23@gmail.com,+91 6923007667,MySQL Database Design,Weekday Regular,"Sector 14, Gurugram",2025-01-11,Active
+SSSAM-2026-0822,Nisha Aggarwal,nisha.aggarwal41@gmail.com,+91 6757537544,SAP FICO,Weekend Batch,"DLF Phase 3, Gurugram",2026-03-17,Active
+SSSAM-2026-0823,Nisha Patel,nisha.patel70@gmail.com,+91 9192486273,Python Programming,Weekday Regular,"Old DLF Colony, Gurugram",2025-12-25,Completed
+SSSAM-2026-0824,Poonam Arora,poonam.arora22@gmail.com,+91 6281757661,MySQL Database Design,Weekend Batch,"Old DLF Colony, Gurugram",2025-04-19,Active
+SSSAM-2026-0825,Aadhya Kumar,aadhya.kumar90@gmail.com,+91 9967838789,SAP FICO,Evening Fast-track,"DLF Phase 3, Gurugram",2026-03-04,Placed
+SSSAM-2026-0826,Pankaj Bansal,pankaj.bansal13@gmail.com,+91 7595308872,Python Programming,Evening Fast-track,"Sushant Lok, Gurugram",2025-12-26,Active
+SSSAM-2026-0827,Vivaan Rao,vivaan.rao14@gmail.com,+91 8851725732,Full Stack Web Development,Evening Fast-track,"DLF Phase 1, Gurugram",2025-09-09,Completed
+SSSAM-2026-0828,Divya Singh,divya.singh40@gmail.com,+91 8617603136,Advanced Excel,Weekday Regular,"Sector 47, Gurugram",2025-04-13,Active
+SSSAM-2026-0829,Ritu Reddy,ritu.reddy29@gmail.com,+91 8200957786,SAP FICO,Weekend Batch,"Sector 45, Gurugram",2025-03-30,Placed
+SSSAM-2026-0830,Aarti Kapoor,aarti.kapoor49@gmail.com,+91 9117928359,AWS Cloud Computing,Evening Fast-track,"Sector 4, Gurugram",2026-03-17,Completed
+SSSAM-2026-0831,Atharva Patel,atharva.patel46@gmail.com,+91 9806281324,Graphic Design,Weekday Regular,"Sector 10, Gurugram",2025-02-18,Placed
+SSSAM-2026-0832,Rohan Singh,rohan.singh29@gmail.com,+91 9602228738,TallyPrime Accounting,Evening Fast-track,"DLF Phase 3, Gurugram",2025-05-17,Active
+SSSAM-2026-0833,Shalini Reddy,shalini.reddy48@gmail.com,+91 9156981677,Video Editing,Evening Fast-track,"Sector 4, Gurugram",2025-10-15,Active
+SSSAM-2026-0834,Pooja Bhardwaj,pooja.bhardwaj16@gmail.com,+91 7476616573,Digital Marketing,Weekend Batch,"DLF Phase 2, Gurugram",2025-04-17,Active
+SSSAM-2026-0835,Sneha Shah,sneha.shah57@gmail.com,+91 7396444481,Video Editing,Evening Fast-track,"DLF Phase 1, Gurugram",2025-12-07,Active
+SSSAM-2026-0836,Atharva Patel,atharva.patel95@gmail.com,+91 6555403922,Java Programming,Weekday Regular,"Old DLF Colony, Gurugram",2025-10-11,Active
+SSSAM-2026-0837,Rohit Bansal,rohit.bansal10@gmail.com,+91 8882732892,Advanced Excel,Evening Fast-track,"Old DLF Colony, Gurugram",2025-04-25,Active
+SSSAM-2026-0838,Swati Aggarwal,swati.aggarwal93@gmail.com,+91 8568409469,Graphic Design,Evening Fast-track,"Sector 7, Gurugram",2025-07-21,Completed
+SSSAM-2026-0839,Manish Dubey,manish.dubey55@gmail.com,+91 8961798249,Full Stack Web Development,Weekend Batch,"Sector 21, Gurugram",2025-11-21,Placed
+SSSAM-2026-0840,Atharva Nair,atharva.nair28@gmail.com,+91 9432268541,Data Science,Evening Fast-track,"Sector 7, Gurugram",2026-03-10,Active
+SSSAM-2026-0841,Vijay Sinha,vijay.sinha42@gmail.com,+91 7517874135,Linux System Administration,Weekend Batch,"Palam Vihar, Gurugram",2025-08-11,Completed
+SSSAM-2026-0842,Rohit Garg,rohit.garg94@gmail.com,+91 6214085640,Full Stack Web Development,Weekend Batch,"Palam Vihar, Gurugram",2025-02-13,Active
+SSSAM-2026-0843,Vivaan Trivedi,vivaan.trivedi81@gmail.com,+91 9101256296,Video Editing,Weekday Regular,"South City 1, Gurugram",2025-11-22,Active
+SSSAM-2026-0844,Kajal Yadav,kajal.yadav69@gmail.com,+91 9922100475,Cyber Security,Weekend Batch,"Sushant Lok, Gurugram",2025-12-28,Completed
+SSSAM-2026-0845,Shreya Bhardwaj,shreya.bhardwaj66@gmail.com,+91 9942914694,Advanced Excel,Evening Fast-track,"Sector 45, Gurugram",2026-04-20,Completed
+SSSAM-2026-0846,Tanvi Saxena,tanvi.saxena50@gmail.com,+91 7767843501,Data Science,Weekend Batch,"DLF Phase 2, Gurugram",2026-03-06,Active
+SSSAM-2026-0847,Abhishek Banerjee,abhishek.banerjee79@gmail.com,+91 8686537149,MySQL Database Design,Weekday Regular,"DLF Phase 1, Gurugram",2025-01-08,Completed
+SSSAM-2026-0848,Poonam Goel,poonam.goel22@gmail.com,+91 8346145460,Java Programming,Weekend Batch,"Palam Vihar, Gurugram",2025-12-17,Active
+SSSAM-2026-0849,Ananya Roy,ananya.roy50@gmail.com,+91 6681090341,Java Programming,Evening Fast-track,"Sector 10, Gurugram",2025-09-12,Active
+SSSAM-2026-0850,Gaurav Banerjee,gaurav.banerjee16@gmail.com,+91 6326021955,C++ Programming,Weekend Batch,"Sushant Lok, Gurugram",2025-03-13,Completed
+SSSAM-2026-0851,Rupali Mukherjee,rupali.mukherjee78@gmail.com,+91 7813820525,SAP FICO,Weekday Regular,"DLF Phase 3, Gurugram",2025-06-30,Active
+SSSAM-2026-0852,Kiran Roy,kiran.roy12@gmail.com,+91 6516346288,Graphic Design,Weekday Regular,"Sector 45, Gurugram",2025-08-05,Active
+SSSAM-2026-0853,Raghav Joshi,raghav.joshi22@gmail.com,+91 6644538243,AI & ML,Weekend Batch,"Sector 14, Gurugram",2025-05-19,Completed
+SSSAM-2026-0854,Rohan Trivedi,rohan.trivedi81@gmail.com,+91 7899101177,Advanced Excel,Evening Fast-track,"Sector 15, Gurugram",2025-05-04,Completed
+SSSAM-2026-0855,Poonam Bhardwaj,poonam.bhardwaj69@gmail.com,+91 7440241510,Advanced Excel,Evening Fast-track,"Sector 15, Gurugram",2025-09-07,Active
+SSSAM-2026-0856,Nisha Patel,nisha.patel17@gmail.com,+91 6623412522,Cyber Security,Weekend Batch,"Sector 4, Gurugram",2026-05-12,Completed
+SSSAM-2026-0857,Gaurav Bansal,gaurav.bansal43@gmail.com,+91 6324735082,MySQL Database Design,Weekday Regular,"Sector 15, Gurugram",2025-10-30,Placed
+SSSAM-2026-0858,Ashish Bansal,ashish.bansal75@gmail.com,+91 7480422750,C++ Programming,Weekday Regular,"Sector 56, Gurugram",2025-04-09,Completed
+SSSAM-2026-0859,Rahul Banerjee,rahul.banerjee36@gmail.com,+91 7270478856,Full Stack Web Development,Weekday Regular,"Old DLF Colony, Gurugram",2025-04-24,Placed
+SSSAM-2026-0860,Pooja Verma,pooja.verma75@gmail.com,+91 8456004336,Software Testing,Weekend Batch,"Sector 45, Gurugram",2026-01-06,Completed
+SSSAM-2026-0861,Isha Mishra,isha.mishra26@gmail.com,+91 9471143528,C++ Programming,Evening Fast-track,"South City 1, Gurugram",2025-03-12,Active
+SSSAM-2026-0862,Riya Rajput,riya.rajput65@gmail.com,+91 6460716434,Graphic Design,Evening Fast-track,"Palam Vihar, Gurugram",2025-04-10,Active
+SSSAM-2026-0863,Kavita Pillai,kavita.pillai47@gmail.com,+91 7340778197,Java Programming,Evening Fast-track,"Sector 15, Gurugram",2026-04-02,Active
+SSSAM-2026-0864,Jyoti Pandey,jyoti.pandey65@gmail.com,+91 8225767612,MySQL Database Design,Weekday Regular,"DLF Phase 2, Gurugram",2026-02-20,Active
+SSSAM-2026-0865,Neha Nair,neha.nair40@gmail.com,+91 7608846574,Data Science,Weekday Regular,"DLF Phase 2, Gurugram",2025-08-24,Active
+SSSAM-2026-0866,Shalini Trivedi,shalini.trivedi22@gmail.com,+91 7977665099,C++ Programming,Evening Fast-track,"Sector 15, Gurugram",2025-11-09,Placed
+SSSAM-2026-0867,Rashmi Shah,rashmi.shah69@gmail.com,+91 7434503138,Advanced Excel,Evening Fast-track,"Sector 56, Gurugram",2025-04-01,Completed
+SSSAM-2026-0868,Pranav Trivedi,pranav.trivedi46@gmail.com,+91 7211115933,Digital Marketing,Evening Fast-track,"Sector 4, Gurugram",2026-04-09,Active
+SSSAM-2026-0869,Ramesh Rao,ramesh.rao97@gmail.com,+91 7385793711,AWS Cloud Computing,Evening Fast-track,"Sector 15, Gurugram",2025-01-19,Completed
+SSSAM-2026-0870,Arjun Sen,arjun.sen96@gmail.com,+91 9743245335,MySQL Database Design,Evening Fast-track,"Sector 15, Gurugram",2025-06-06,Completed
+SSSAM-2026-0871,Pari Pillai,pari.pillai12@gmail.com,+91 7266017636,TallyPrime Accounting,Weekend Batch,"Sector 56, Gurugram",2025-08-08,Completed
+SSSAM-2026-0872,Karan Roy,karan.roy35@gmail.com,+91 6593074059,Data Science,Evening Fast-track,"Sector 56, Gurugram",2025-09-14,Active
+SSSAM-2026-0873,Kajal Dubey,kajal.dubey13@gmail.com,+91 7559321768,Software Testing,Evening Fast-track,"Sector 15, Gurugram",2025-07-02,Active
+SSSAM-2026-0874,Tanvi Bansal,tanvi.bansal50@gmail.com,+91 7925205156,Software Testing,Weekend Batch,"Palam Vihar, Gurugram",2026-05-05,Active
+SSSAM-2026-0875,Suresh Goel,suresh.goel51@gmail.com,+91 7668518864,Advanced Excel,Weekend Batch,"DLF Phase 2, Gurugram",2025-10-04,Active
+SSSAM-2026-0876,Priya Bose,priya.bose36@gmail.com,+91 6223929856,AWS Cloud Computing,Evening Fast-track,"Sector 14, Gurugram",2026-01-14,Active
+SSSAM-2026-0877,Megha Arora,megha.arora16@gmail.com,+91 8146466028,Advanced Excel,Weekend Batch,"DLF Phase 3, Gurugram",2025-06-05,Completed
+SSSAM-2026-0878,Dev Sen,dev.sen47@gmail.com,+91 6561915375,Java Programming,Weekend Batch,"Sector 45, Gurugram",2025-11-24,Active
+SSSAM-2026-0879,Anvi Rao,anvi.rao10@gmail.com,+91 8586590595,Video Editing,Evening Fast-track,"Palam Vihar, Gurugram",2025-03-13,Completed
+SSSAM-2026-0880,Ananya Dubey,ananya.dubey68@gmail.com,+91 6540240250,Cyber Security,Evening Fast-track,"DLF Phase 3, Gurugram",2025-11-26,Completed
+SSSAM-2026-0881,Raghav Garg,raghav.garg64@gmail.com,+91 8106675776,Python Programming,Weekend Batch,"DLF Phase 3, Gurugram",2025-06-11,Completed
+SSSAM-2026-0882,Pooja Goel,pooja.goel59@gmail.com,+91 6237010151,C++ Programming,Weekend Batch,"South City 1, Gurugram",2025-03-30,Active
+SSSAM-2026-0883,Mayank Verma,mayank.verma12@gmail.com,+91 8355795492,Data Science,Weekend Batch,"DLF Phase 3, Gurugram",2025-04-18,Completed
+SSSAM-2026-0884,Poonam Garg,poonam.garg23@gmail.com,+91 8207519952,AWS Cloud Computing,Weekday Regular,"Palam Vihar, Gurugram",2025-02-06,Active
+SSSAM-2026-0885,Mayank Pillai,mayank.pillai57@gmail.com,+91 8692247158,Java Programming,Evening Fast-track,"Sector 14, Gurugram",2025-05-15,Completed
+SSSAM-2026-0886,Mohit Rao,mohit.rao23@gmail.com,+91 9423260932,TallyPrime Accounting,Weekday Regular,"Old DLF Colony, Gurugram",2026-04-10,Placed
+SSSAM-2026-0887,Vijay Trivedi,vijay.trivedi49@gmail.com,+91 7137457680,Full Stack Web Development,Evening Fast-track,"South City 1, Gurugram",2025-12-12,Completed
+SSSAM-2026-0888,Poonam Singh,poonam.singh93@gmail.com,+91 9743890487,MySQL Database Design,Weekday Regular,"Sector 14, Gurugram",2025-09-25,Completed
+SSSAM-2026-0889,Aarav Nair,aarav.nair55@gmail.com,+91 6102174052,Python Programming,Weekend Batch,"Sector 21, Gurugram",2025-10-03,Completed
+SSSAM-2026-0890,Mohit Sinha,mohit.sinha94@gmail.com,+91 8886745541,SAP FICO,Weekend Batch,"Palam Vihar, Gurugram",2025-06-29,Placed
+SSSAM-2026-0891,Shaurya Gupta,shaurya.gupta27@gmail.com,+91 9657923568,AI & ML,Weekday Regular,"Sector 14, Gurugram",2025-07-13,Completed
+SSSAM-2026-0892,Aditya Kapoor,aditya.kapoor21@gmail.com,+91 9574385613,Digital Marketing,Evening Fast-track,"Palam Vihar, Gurugram",2025-03-22,Active
+SSSAM-2026-0893,Ankit Pandey,ankit.pandey91@gmail.com,+91 9175986262,Full Stack Web Development,Weekend Batch,"South City 1, Gurugram",2026-04-27,Active
+SSSAM-2026-0894,Aanya Gupta,aanya.gupta63@gmail.com,+91 9267355312,Advanced Excel,Weekend Batch,"Sector 10, Gurugram",2025-05-01,Active
+SSSAM-2026-0895,Reyansh Das,reyansh.das26@gmail.com,+91 6358551270,C++ Programming,Evening Fast-track,"Sector 21, Gurugram",2025-02-05,Active
+SSSAM-2026-0896,Ashish Chawla,ashish.chawla94@gmail.com,+91 9603892012,Full Stack Web Development,Weekday Regular,"Sushant Lok, Gurugram",2025-12-10,Completed
+SSSAM-2026-0897,Vikas Banerjee,vikas.banerjee57@gmail.com,+91 6426961504,MySQL Database Design,Weekday Regular,"South City 1, Gurugram",2025-06-16,Completed
+SSSAM-2026-0898,Anvi Pandey,anvi.pandey72@gmail.com,+91 8462310355,Linux System Administration,Weekday Regular,"Old DLF Colony, Gurugram",2025-07-05,Active
+SSSAM-2026-0899,Ashish Saxena,ashish.saxena31@gmail.com,+91 6792047258,Software Testing,Weekend Batch,"Sector 56, Gurugram",2025-06-19,Active
+SSSAM-2026-0900,Shruti Malhotra,shruti.malhotra46@gmail.com,+91 7859941451,MySQL Database Design,Weekend Batch,"DLF Phase 3, Gurugram",2026-01-26,Active
+SSSAM-2026-0901,Ananya Gupta,ananya.gupta90@gmail.com,+91 7480944107,Graphic Design,Weekday Regular,"Sector 21, Gurugram",2025-04-21,Active
+SSSAM-2026-0902,Arjun Chawla,arjun.chawla22@gmail.com,+91 9847496991,TallyPrime Accounting,Weekend Batch,"Sector 47, Gurugram",2025-08-04,Active
+SSSAM-2026-0903,Anjali Goel,anjali.goel42@gmail.com,+91 7515920086,Graphic Design,Weekend Batch,"Sector 10, Gurugram",2026-04-21,Completed
+SSSAM-2026-0904,Krishna Arora,krishna.arora97@gmail.com,+91 6631393916,C++ Programming,Weekend Batch,"DLF Phase 3, Gurugram",2026-01-06,Completed
+SSSAM-2026-0905,Kiran Srivastava,kiran.srivastava91@gmail.com,+91 9848852627,SAP FICO,Evening Fast-track,"Sector 15, Gurugram",2025-12-16,Placed
+SSSAM-2026-0906,Amit Mishra,amit.mishra83@gmail.com,+91 7132731670,MySQL Database Design,Evening Fast-track,"Old DLF Colony, Gurugram",2026-03-02,Completed
+SSSAM-2026-0907,Ashish Singh,ashish.singh80@gmail.com,+91 7354145256,Python Programming,Weekend Batch,"DLF Phase 3, Gurugram",2026-01-18,Active
+SSSAM-2026-0908,Kajal Das,kajal.das69@gmail.com,+91 9617762625,Full Stack Web Development,Weekend Batch,"South City 1, Gurugram",2026-02-13,Active
+SSSAM-2026-0909,Ritu Bansal,ritu.bansal46@gmail.com,+91 7291980527,AI & ML,Weekday Regular,"Sector 14, Gurugram",2025-07-19,Placed
+SSSAM-2026-0910,Divya Arora,divya.arora43@gmail.com,+91 7663106564,Cyber Security,Weekday Regular,"Sector 56, Gurugram",2025-07-01,Active
+SSSAM-2026-0911,Mohit Bose,mohit.bose29@gmail.com,+91 9183194127,Software Testing,Weekday Regular,"Sector 4, Gurugram",2025-04-02,Completed
+SSSAM-2026-0912,Rajesh Arora,rajesh.arora58@gmail.com,+91 9129799336,AWS Cloud Computing,Weekend Batch,"Sector 10, Gurugram",2025-09-08,Completed
+SSSAM-2026-0913,Ananya Verma,ananya.verma17@gmail.com,+91 8102104022,MySQL Database Design,Weekend Batch,"South City 1, Gurugram",2025-03-09,Completed
+SSSAM-2026-0914,Saurabh Kumar,saurabh.kumar85@gmail.com,+91 7298770679,Java Programming,Weekday Regular,"Sector 7, Gurugram",2025-01-06,Completed
+SSSAM-2026-0915,Aanya Bansal,aanya.bansal12@gmail.com,+91 9536621012,MySQL Database Design,Weekday Regular,"South City 1, Gurugram",2025-05-22,Active
+SSSAM-2026-0916,Kabir Sinha,kabir.sinha12@gmail.com,+91 7342118261,Software Testing,Weekday Regular,"DLF Phase 3, Gurugram",2026-03-16,Completed
+SSSAM-2026-0917,Karan Pandey,karan.pandey79@gmail.com,+91 7558746673,Advanced Excel,Weekend Batch,"Sector 4, Gurugram",2025-01-22,Placed
+SSSAM-2026-0918,Ritu Chawla,ritu.chawla37@gmail.com,+91 6544175340,TallyPrime Accounting,Evening Fast-track,"DLF Phase 3, Gurugram",2025-11-14,Placed
+SSSAM-2026-0919,Ritu Bansal,ritu.bansal22@gmail.com,+91 6858443518,Advanced Excel,Weekday Regular,"Sector 47, Gurugram",2025-05-16,Completed
+SSSAM-2026-0920,Kavita Roy,kavita.roy93@gmail.com,+91 6984856348,AWS Cloud Computing,Evening Fast-track,"Sector 10, Gurugram",2026-01-31,Completed
+SSSAM-2026-0921,Megha Arora,megha.arora65@gmail.com,+91 9413903414,AI & ML,Weekend Batch,"DLF Phase 3, Gurugram",2025-03-27,Active
+SSSAM-2026-0922,Pranav Yadav,pranav.yadav91@gmail.com,+91 7318911559,C++ Programming,Weekend Batch,"DLF Phase 3, Gurugram",2025-06-07,Completed
+SSSAM-2026-0923,Mohit Verma,mohit.verma63@gmail.com,+91 9998918980,Java Programming,Weekend Batch,"Sector 4, Gurugram",2025-02-18,Active
+SSSAM-2026-0924,Raghav Saxena,raghav.saxena81@gmail.com,+91 7617257442,Software Testing,Weekend Batch,"DLF Phase 1, Gurugram",2025-11-07,Completed
+SSSAM-2026-0925,Deepak Aggarwal,deepak.aggarwal61@gmail.com,+91 8273244917,Data Science,Weekday Regular,"Sector 7, Gurugram",2025-10-13,Active
+SSSAM-2026-0926,Mohit Verma,mohit.verma70@gmail.com,+91 7398834757,TallyPrime Accounting,Weekday Regular,"Sector 15, Gurugram",2025-02-21,Active
+SSSAM-2026-0927,Kriti Reddy,kriti.reddy65@gmail.com,+91 9273959474,Linux System Administration,Weekday Regular,"South City 1, Gurugram",2025-10-19,Completed
+SSSAM-2026-0928,Saurabh Sen,saurabh.sen85@gmail.com,+91 7652100636,AI & ML,Evening Fast-track,"Sector 10, Gurugram",2025-04-30,Active
+SSSAM-2026-0929,Vivaan Trivedi,vivaan.trivedi58@gmail.com,+91 6685651483,Java Programming,Weekday Regular,"Sector 7, Gurugram",2025-09-14,Completed
+SSSAM-2026-0930,Rajesh Joshi,rajesh.joshi95@gmail.com,+91 9252044226,C++ Programming,Evening Fast-track,"Sector 56, Gurugram",2025-01-25,Completed
+SSSAM-2026-0931,Ananya Rao,ananya.rao51@gmail.com,+91 9773654590,Software Testing,Weekday Regular,"Sector 7, Gurugram",2025-05-01,Completed
+SSSAM-2026-0932,Vijay Kumar,vijay.kumar17@gmail.com,+91 6851416367,Linux System Administration,Weekend Batch,"Sector 4, Gurugram",2025-12-02,Active
+SSSAM-2026-0933,Isha Garg,isha.garg82@gmail.com,+91 8579448957,Java Programming,Evening Fast-track,"DLF Phase 2, Gurugram",2026-03-25,Completed
+SSSAM-2026-0934,Sonia Mishra,sonia.mishra99@gmail.com,+91 6577638700,Python Programming,Weekend Batch,"Sector 10, Gurugram",2025-05-09,Completed
+SSSAM-2026-0935,Aarti Bansal,aarti.bansal96@gmail.com,+91 8517868069,TallyPrime Accounting,Weekend Batch,"South City 1, Gurugram",2025-05-25,Active
+SSSAM-2026-0936,Aaryan Chaudhary,aaryan.chaudhary67@gmail.com,+91 8365060160,Data Science,Weekend Batch,"Sector 21, Gurugram",2025-04-10,Completed
+SSSAM-2026-0937,Sonia Goel,sonia.goel84@gmail.com,+91 8986307126,Cyber Security,Weekend Batch,"Sector 10, Gurugram",2025-11-14,Active
+SSSAM-2026-0938,Tanvi Chaudhary,tanvi.chaudhary23@gmail.com,+91 7158721335,Software Testing,Weekday Regular,"Sector 47, Gurugram",2026-03-03,Completed
+SSSAM-2026-0939,Rohan Srivastava,rohan.srivastava12@gmail.com,+91 6230883957,Data Science,Weekend Batch,"South City 1, Gurugram",2025-06-03,Completed
+SSSAM-2026-0940,Megha Chawla,megha.chawla68@gmail.com,+91 9579711512,Advanced Excel,Weekend Batch,"Sector 56, Gurugram",2025-01-08,Completed
+SSSAM-2026-0941,Ramesh Trivedi,ramesh.trivedi50@gmail.com,+91 7399888663,Linux System Administration,Evening Fast-track,"Sector 56, Gurugram",2025-07-13,Active
+SSSAM-2026-0942,Aaryan Banerjee,aaryan.banerjee36@gmail.com,+91 8887213735,Digital Marketing,Weekend Batch,"Old DLF Colony, Gurugram",2026-01-02,Placed
+SSSAM-2026-0943,Aaryan Mehta,aaryan.mehta59@gmail.com,+91 9939257098,SAP FICO,Weekday Regular,"Sector 7, Gurugram",2025-11-25,Completed
+SSSAM-2026-0944,Kriti Singh,kriti.singh34@gmail.com,+91 9567324943,Advanced Excel,Weekend Batch,"Sector 45, Gurugram",2025-07-09,Active
+SSSAM-2026-0945,Pari Sharma,pari.sharma73@gmail.com,+91 9887718451,Cyber Security,Evening Fast-track,"Sector 45, Gurugram",2025-07-10,Placed
+SSSAM-2026-0946,Manish Roy,manish.roy83@gmail.com,+91 9304247151,Graphic Design,Evening Fast-track,"Sector 4, Gurugram",2026-05-04,Completed
+SSSAM-2026-0947,Vihaan Yadav,vihaan.yadav44@gmail.com,+91 8289000564,Graphic Design,Weekday Regular,"Sector 10, Gurugram",2025-06-21,Active
+SSSAM-2026-0948,Reyansh Rao,reyansh.rao33@gmail.com,+91 7945221188,Advanced Excel,Evening Fast-track,"DLF Phase 2, Gurugram",2025-07-03,Active
+SSSAM-2026-0949,Kajal Mehta,kajal.mehta22@gmail.com,+91 8697373064,Graphic Design,Weekday Regular,"DLF Phase 2, Gurugram",2026-04-18,Active
+SSSAM-2026-0950,Atharva Joshi,atharva.joshi28@gmail.com,+91 8653388669,Data Science,Weekend Batch,"Sector 15, Gurugram",2026-01-16,Completed
+SSSAM-2026-0951,Rashmi Prasad,rashmi.prasad42@gmail.com,+91 8496458071,Full Stack Web Development,Evening Fast-track,"Sector 21, Gurugram",2025-12-27,Placed
+SSSAM-2026-0952,Manish Rajput,manish.rajput85@gmail.com,+91 8620902773,Linux System Administration,Weekend Batch,"Sector 56, Gurugram",2025-07-25,Active
+SSSAM-2026-0953,Abhishek Garg,abhishek.garg21@gmail.com,+91 8327219499,Video Editing,Weekday Regular,"Sector 47, Gurugram",2025-11-11,Active
+SSSAM-2026-0954,Rohan Patel,rohan.patel14@gmail.com,+91 8105994018,C++ Programming,Weekday Regular,"South City 1, Gurugram",2025-05-19,Completed
+SSSAM-2026-0955,Saisha Rajput,saisha.rajput28@gmail.com,+91 7790217558,C++ Programming,Weekend Batch,"Sector 45, Gurugram",2026-05-04,Active
+SSSAM-2026-0956,Pooja Dubey,pooja.dubey50@gmail.com,+91 6970612937,Java Programming,Weekend Batch,"Old DLF Colony, Gurugram",2026-02-25,Active
+SSSAM-2026-0957,Neha Shah,neha.shah92@gmail.com,+91 6537893696,Graphic Design,Evening Fast-track,"Old DLF Colony, Gurugram",2025-04-10,Placed
+SSSAM-2026-0958,Amit Singh,amit.singh72@gmail.com,+91 9968716619,Video Editing,Weekday Regular,"Sector 21, Gurugram",2025-02-19,Active
+SSSAM-2026-0959,Shalini Das,shalini.das70@gmail.com,+91 9488113617,Full Stack Web Development,Evening Fast-track,"South City 1, Gurugram",2025-12-22,Active
+SSSAM-2026-0960,Rashmi Pandey,rashmi.pandey87@gmail.com,+91 7502785335,AWS Cloud Computing,Evening Fast-track,"Sector 10, Gurugram",2025-03-09,Active
+SSSAM-2026-0961,Isha Joshi,isha.joshi89@gmail.com,+91 6686968486,TallyPrime Accounting,Weekday Regular,"Sector 15, Gurugram",2026-03-31,Completed
+SSSAM-2026-0962,Tanvi Garg,tanvi.garg30@gmail.com,+91 8834692746,Java Programming,Weekend Batch,"Sector 56, Gurugram",2025-09-25,Active
+SSSAM-2026-0963,Ishan Banerjee,ishan.banerjee82@gmail.com,+91 9670284653,Digital Marketing,Evening Fast-track,"Sector 4, Gurugram",2025-08-08,Active
+SSSAM-2026-0964,Kavita Sen,kavita.sen54@gmail.com,+91 6575826861,Python Programming,Evening Fast-track,"Sector 47, Gurugram",2026-01-31,Active
+SSSAM-2026-0965,Sapna Das,sapna.das27@gmail.com,+91 9786098998,Graphic Design,Weekend Batch,"Palam Vihar, Gurugram",2026-02-03,Active
+SSSAM-2026-0966,Mohit Patel,mohit.patel38@gmail.com,+91 6216805710,Digital Marketing,Weekday Regular,"Sector 4, Gurugram",2025-06-05,Active
+SSSAM-2026-0967,Vikas Rao,vikas.rao17@gmail.com,+91 6526929564,Software Testing,Evening Fast-track,"Sector 7, Gurugram",2025-04-08,Completed
+SSSAM-2026-0968,Suresh Arora,suresh.arora63@gmail.com,+91 6682244970,Data Science,Evening Fast-track,"Sector 4, Gurugram",2025-10-24,Active
+SSSAM-2026-0969,Ashish Chaudhary,ashish.chaudhary96@gmail.com,+91 7275914551,Full Stack Web Development,Weekday Regular,"Sector 45, Gurugram",2026-01-10,Active
+SSSAM-2026-0970,Manish Kapoor,manish.kapoor69@gmail.com,+91 7722315230,Python Programming,Weekend Batch,"Sector 7, Gurugram",2025-06-25,Placed
+SSSAM-2026-0971,Raghav Banerjee,raghav.banerjee90@gmail.com,+91 8424491738,Full Stack Web Development,Weekday Regular,"Sector 14, Gurugram",2025-05-17,Placed
+SSSAM-2026-0972,Vihaan Bansal,vihaan.bansal76@gmail.com,+91 7964884650,Full Stack Web Development,Evening Fast-track,"Sector 56, Gurugram",2025-11-07,Active
+SSSAM-2026-0973,Gaurav Saxena,gaurav.saxena16@gmail.com,+91 9660473024,C++ Programming,Weekend Batch,"DLF Phase 3, Gurugram",2025-04-11,Completed
+SSSAM-2026-0974,Preeti Aggarwal,preeti.aggarwal73@gmail.com,+91 6423291990,Java Programming,Weekend Batch,"South City 1, Gurugram",2025-07-24,Active
+SSSAM-2026-0975,Rakesh Reddy,rakesh.reddy95@gmail.com,+91 9575769092,Python Programming,Weekend Batch,"Palam Vihar, Gurugram",2025-07-24,Completed
+SSSAM-2026-0976,Saisha Malhotra,saisha.malhotra12@gmail.com,+91 6444452967,Linux System Administration,Evening Fast-track,"Sector 10, Gurugram",2025-01-25,Active
+SSSAM-2026-0977,Ananya Kumar,ananya.kumar27@gmail.com,+91 8558907999,TallyPrime Accounting,Weekday Regular,"Sector 7, Gurugram",2025-09-15,Completed
+SSSAM-2026-0978,Mohit Pandey,mohit.pandey41@gmail.com,+91 7252928049,Data Science,Weekend Batch,"Sector 4, Gurugram",2026-01-24,Active
+SSSAM-2026-0979,Mohit Sen,mohit.sen61@gmail.com,+91 9565023649,MySQL Database Design,Weekend Batch,"Sector 21, Gurugram",2025-03-15,Completed
+SSSAM-2026-0980,Ishan Malhotra,ishan.malhotra27@gmail.com,+91 8357726767,Video Editing,Weekday Regular,"DLF Phase 1, Gurugram",2025-07-30,Completed
+SSSAM-2026-0981,Avani Mukherjee,avani.mukherjee86@gmail.com,+91 6386511867,Java Programming,Weekday Regular,"Sector 21, Gurugram",2026-01-21,Active
+SSSAM-2026-0982,Krishna Garg,krishna.garg74@gmail.com,+91 7409915332,MySQL Database Design,Weekend Batch,"South City 1, Gurugram",2026-01-19,Active
+SSSAM-2026-0983,Saurabh Mishra,saurabh.mishra37@gmail.com,+91 6374235855,AWS Cloud Computing,Evening Fast-track,"Sector 14, Gurugram",2025-05-06,Completed
+SSSAM-2026-0984,Vikas Kumar,vikas.kumar42@gmail.com,+91 6933052581,Java Programming,Weekend Batch,"Sector 56, Gurugram",2025-09-24,Active
+SSSAM-2026-0985,Kavita Kapoor,kavita.kapoor18@gmail.com,+91 8177216350,C++ Programming,Evening Fast-track,"Sector 10, Gurugram",2025-06-26,Completed
+SSSAM-2026-0986,Ashish Nair,ashish.nair83@gmail.com,+91 6632550879,AWS Cloud Computing,Weekend Batch,"Sushant Lok, Gurugram",2025-04-10,Active
+SSSAM-2026-0987,Tanvi Kumar,tanvi.kumar66@gmail.com,+91 9486224745,Data Science,Weekend Batch,"Sector 21, Gurugram",2025-07-20,Active
+SSSAM-2026-0988,Pari Chawla,pari.chawla48@gmail.com,+91 8414890100,Software Testing,Evening Fast-track,"Sector 14, Gurugram",2025-03-07,Active
+SSSAM-2026-0989,Shruti Kumar,shruti.kumar70@gmail.com,+91 8864947563,Graphic Design,Weekday Regular,"Sector 4, Gurugram",2025-06-26,Active
+SSSAM-2026-0990,Swati Srivastava,swati.srivastava16@gmail.com,+91 9420966286,Digital Marketing,Weekend Batch,"Sector 10, Gurugram",2025-12-17,Completed
+SSSAM-2026-0991,Ashish Yadav,ashish.yadav33@gmail.com,+91 7294258868,Java Programming,Weekend Batch,"Sector 56, Gurugram",2025-09-01,Completed
+SSSAM-2026-0992,Ramesh Pandey,ramesh.pandey73@gmail.com,+91 7360856557,Software Testing,Weekday Regular,"Sector 7, Gurugram",2026-03-11,Completed
+SSSAM-2026-0993,Divya Bhardwaj,divya.bhardwaj78@gmail.com,+91 8468945319,TallyPrime Accounting,Weekend Batch,"Sector 56, Gurugram",2025-11-08,Completed
+SSSAM-2026-0994,Ankit Sen,ankit.sen93@gmail.com,+91 6684582224,Software Testing,Weekend Batch,"Old DLF Colony, Gurugram",2025-05-21,Placed
+SSSAM-2026-0995,Sanjay Das,sanjay.das36@gmail.com,+91 8690302146,Linux System Administration,Weekend Batch,"DLF Phase 3, Gurugram",2025-08-14,Placed
+SSSAM-2026-0996,Ritu Kumar,ritu.kumar29@gmail.com,+91 6188594108,MySQL Database Design,Weekday Regular,"Sector 45, Gurugram",2025-09-13,Placed
+SSSAM-2026-0997,Aaryan Rao,aaryan.rao36@gmail.com,+91 7632910624,SAP FICO,Weekend Batch,"Sector 7, Gurugram",2025-05-02,Placed
+SSSAM-2026-0998,Tanvi Verma,tanvi.verma34@gmail.com,+91 7549723957,SAP FICO,Evening Fast-track,"Sector 7, Gurugram",2025-01-15,Completed
+SSSAM-2026-0999,Rupali Srivastava,rupali.srivastava75@gmail.com,+91 6780141762,SAP FICO,Weekend Batch,"Palam Vihar, Gurugram",2025-07-17,Active
+SSSAM-2026-1000,Pari Shah,pari.shah63@gmail.com,+91 8732592431,Digital Marketing,Weekend Batch,"Palam Vihar, Gurugram",2025-03-08,Active

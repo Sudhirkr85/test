@@ -621,115 +621,184 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Testimonials Carousel Dots & Seamless Infinite Loop Navigation
+// Testimonials Marquee Generator from 1000 Students Database
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.querySelector(".testimonials-container");
   if (!container) return;
-  const originalCards = Array.from(container.querySelectorAll(".testimonial-card"));
-  if (originalCards.length === 0) return;
-
-  // Clone first 3 cards and append to the end for seamless infinite scroll
-  const cloneCount = 3;
-  for (let i = 0; i < cloneCount; i++) {
-    const clone = originalCards[i].cloneNode(true);
-    clone.classList.add("t-clone");
-    container.appendChild(clone);
+  if (typeof SSSAM_STUDENTS === "undefined") {
+    console.error("SSSAM_STUDENTS database not loaded.");
+    return;
   }
 
-  // Create dots container based on original cards
-  const dotsContainer = document.createElement("div");
-  dotsContainer.className = "testimonials-dots";
-  container.after(dotsContainer);
+  const reviewTemplates = {
+    "Advanced Excel": [
+      "Amazing advanced Excel course. Mastered VLOOKUP, pivot tables, and interactive business dashboard creation.",
+      "Highly recommended for working professionals. The weekend batches are flexible and cover practical MIS reporting tasks.",
+      "Best Excel institute in Gurugram. The training is 100% practical, focusing on real-world office calculations."
+    ],
+    "Data Science": [
+      "The Data Science course is highly structured. The modules on machine learning pipelines and Power BI dashboards were excellent.",
+      "Got placed as a junior Data Analyst after completing the projects. The placement support is very active and responsive.",
+      "Excellent curriculum covering Python, Pandas, and Scikit-Learn. The hands-on labs and mentor support are outstanding."
+    ],
+    "AI & ML": [
+      "Very advanced training in AI and Machine Learning. The deep learning projects using TensorFlow were explained clearly.",
+      "Best AI ML course in Gurgaon. The trainers are industry experts and guide you through real predictive model deployments.",
+      "SSSAM Academy Sector 14 provides great labs and practical datasets for building AI portfolios."
+    ],
+    "Cyber Security": [
+      "Learned penetration testing and network security using Kali Linux and Wireshark. The practical labs are very detailed.",
+      "Excellent training for ethical hacking. The instructors explain network security and scanning tools step-by-step.",
+      "Hands-on labs and real system scenarios make the Cyber Security course at SSSAM Academy highly valuable."
+    ],
+    "Full Stack Web Development": [
+      "SSSAM Academy MERN stack training is top notch. Developed dynamic React apps and connected database back-ends.",
+      "The best Full Stack developer course. Got placed within 4 weeks of completing my final project. Mentors are very supportive.",
+      "Learned HTML, CSS, JavaScript, and Node.js with live hosting projects. Best coding institute in Gurgaon."
+    ],
+    "Digital Marketing": [
+      "Highly practical digital marketing classes. Formulated live Google Ads campaigns and learned SEO keyword analytics.",
+      "Best SEO and social media marketing training. SSSAM Academy has helped me boost my freelance business.",
+      "Great course covering GA4, Search Console, and paid ad channels. Interactive doubt-solving sessions."
+    ],
+    "AWS Cloud Computing": [
+      "AWS training was very clean. Set up EC2 instances, S3 storage buckets, and configured secure VPC networking.",
+      "Highly recommended for cloud engineers. The hands-on labs prepare you for official AWS certification exams.",
+      "Clear explanations of IAM policies, load balancers, and cloud architecture deployment models."
+    ],
+    "Graphic Design": [
+      "Excellent graphic design program. Learned Photoshop, Illustrator, and Figma. Created a professional design portfolio.",
+      "Very creative environment. The mentors guide you individually on design principles, typography, and branding.",
+      "SSSAM Academy Sector 14 has the best facilities for practicing print layouts and digital designs."
+    ],
+    "Software Testing": [
+      "Learned automated testing with Selenium WebDriver and Postman API checks. The syllabus is highly job-oriented.",
+      "Best manual and automation testing course in Gurgaon. Got placed after mock interview preparations.",
+      "Great coverage of JIRA, test cases, execution reports, and automation frameworks."
+    ],
+    "Linux System Administration": [
+      "Very detailed Linux classes. Mastered bash scripting, user security permissions, and systemd service configurations.",
+      "Best terminal-based administration course. Highly practical and useful for server deployments."
+    ],
+    "MySQL Database Design": [
+      "Clear database training. Learned SQL queries, complex joins, indexing, and stored procedures.",
+      "Highly recommended for SQL learners. The query optimization assignments were very useful."
+    ],
+    "TallyPrime Accounting": [
+      "Best TallyPrime and GST accounting course. Practiced invoicing, inventory ledgers, and e-way bill calculations.",
+      "Very helpful for commerce students. Learned corporate accounting and tax reporting structures."
+    ],
+    "Video Editing": [
+      "Awesome video editing classes. Learned timeline workflows in Premiere Pro and motion graphics in After Effects.",
+      "The mentors explain audio mixes, transitions, and export formats very clearly. Great portfolio building."
+    ],
+    "SAP FICO": [
+      "FICO training was highly professional. Set up general ledger rules, accounts payable, and asset accounting parameters.",
+      "Best SAP training in Gurugram. The training uses live servers and covers actual enterprise modules."
+    ],
+    "Java Programming": [
+      "Java OOP concepts, multithreading, and JDBC connections were covered with deep coding exercises.",
+      "Highly detailed Java course. SSSAM Academy has excellent labs and coding guidelines."
+    ],
+    "C++ Programming": [
+      "Learned structures, memory pointers, and compiler operations. Best basic programming course in Sector 14."
+    ]
+  };
 
-  const allCards = container.querySelectorAll(".testimonial-card");
-  let currentActive = 0;
-  let autoScrollTimer = null;
-  let isJumping = false;
+  const defaultTemplates = [
+    "Amazing learning experience at SSSAM Academy Gurugram. The instructors are extremely helpful and guide you individually through all practical assignments.",
+    "Best computer training classes in Gurgaon. They cover the syllabus with actual code exercises instead of theoretical slides. Very satisfied.",
+    "Practical learning standard is top notch. The laboratory facilities and interactive live doubt support made it very easy to transition into coding."
+  ];
 
-  // Generate dots (only for original cards)
-  originalCards.forEach((_, idx) => {
-    const dot = document.createElement("span");
-    dot.className = "t-dot" + (idx === 0 ? " active" : "");
-    dot.setAttribute("aria-label", `Go to slide ${idx + 1}`);
-    dot.addEventListener("click", () => {
-      resetAutoScroll();
-      container.scrollTo({
-        left: originalCards[idx].offsetLeft - container.offsetLeft,
-        behavior: "smooth"
-      });
-    });
-    dotsContainer.appendChild(dot);
-  });
-
-  // Sync dots and handle instant boundary reset
-  container.addEventListener("scroll", () => {
-    if (isJumping) return;
-    const scrollLeft = container.scrollLeft;
-    const containerWidth = container.clientWidth;
-    const scrollWidth = container.scrollWidth;
-
-    let activeIdx = 0;
-    let minDiff = Infinity;
-    
-    // Find closest card to sync active index (only matching original cards indices)
-    originalCards.forEach((card, idx) => {
-      const cardOffset = card.offsetLeft - container.offsetLeft;
-      const diff = Math.abs(cardOffset - scrollLeft);
-      if (diff < minDiff) {
-        minDiff = diff;
-        activeIdx = idx;
+  function getReviewText(courseName, studentName) {
+    let list = reviewTemplates[courseName];
+    if (!list) {
+      for (const k in reviewTemplates) {
+        if (courseName.toLowerCase().includes(k.toLowerCase()) || k.toLowerCase().includes(courseName.toLowerCase())) {
+          list = reviewTemplates[k];
+          break;
+        }
       }
-    });
-
-    currentActive = activeIdx;
-
-    const dots = dotsContainer.querySelectorAll(".t-dot");
-    dots.forEach((dot, idx) => {
-      if (idx === activeIdx) {
-        dot.classList.add("active");
-      } else {
-        dot.classList.remove("active");
-      }
-    });
-
-    // Seamless wrap-around logic
-    // If the scroll reaches the end of the container (which displays the clones), 
-    // we jump back to 0 without the user noticing.
-    if (scrollLeft >= scrollWidth - containerWidth - 10) {
-      isJumping = true;
-      container.style.scrollBehavior = "auto";
-      container.scrollLeft = 0;
-      container.style.scrollBehavior = "smooth";
-      currentActive = 0;
-      setTimeout(() => { isJumping = false; }, 50);
     }
-  }, { passive: true });
+    if (!list || list.length === 0) list = defaultTemplates;
+    const idx = Math.abs(hashCode(studentName)) % list.length;
+    return list[idx];
+  }
 
-  // Auto scroll logic
-  function startAutoScroll() {
-    autoScrollTimer = setInterval(() => {
-      if (isJumping) return;
-      currentActive++;
-      
-      // If we scroll to the end, it will scroll to the cloned card first, 
-      // then the scroll event listener will instantly wrap it back to 0.
-      container.scrollTo({
-        left: allCards[currentActive].offsetLeft - container.offsetLeft,
-        behavior: "smooth"
+  function hashCode(str) {
+    let hash = 0;
+    for (let i = 0; i < str.length; i++) {
+      hash = str.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    return hash;
+  }
+
+  // Filter students: select 40 students randomly but deterministic
+  const selectedStudents = [];
+  const pool = [...SSSAM_STUDENTS];
+  
+  let seed = 999; // Fixed seed for home page testimonial selection stability
+  function randomSeeded() {
+    let x = Math.sin(seed++) * 10000;
+    return x - Math.floor(x);
+  }
+
+  // Pick 40 random students from SSSAM_STUDENTS
+  for (let i = 0; i < 40; i++) {
+    if (pool.length === 0) break;
+    const idx = Math.floor(randomSeeded() * pool.length);
+    selectedStudents.push(pool.splice(idx, 1)[0]);
+  }
+
+  // Create marquee container structure
+  const marqueeWrapper = document.createElement("div");
+  marqueeWrapper.className = "testimonials-marquee-wrapper";
+
+  // Split selected students into two rows of 20
+  const row1Students = selectedStudents.slice(0, 20);
+  const row2Students = selectedStudents.slice(20, 40);
+
+  function createRowHTML(studentsList, isReverse) {
+    let rowHTML = `<div class="testimonials-marquee-row${isReverse ? ' reverse' : ''}">`;
+    
+    // Generate cards twice for seamless looping
+    for (let loop = 0; loop < 2; loop++) {
+      studentsList.forEach(student => {
+        const initial = student.name.charAt(0);
+        const reviewText = getReviewText(student.course, student.name);
+        
+        // Pick an avatar color based on student name hash
+        const avatarClasses = ["t-ds", "t-da", "t-fs", "t-sec", "t-aws", "t-bc", "t-dm", "t-excel"];
+        const avatarClass = avatarClasses[Math.abs(hashCode(student.name)) % avatarClasses.length];
+        
+        rowHTML += `
+          <div class="testimonial-card">
+            <div class="t-avatar-wrapper">
+              <div class="t-avatar ${avatarClass}">${initial}</div>
+              <span class="t-google-g"><i class="fab fa-google"></i></span>
+            </div>
+            <span class="t-verified-badge"><i class="fab fa-google"></i> Verified Google Review</span>
+            <h3>${student.name}</h3>
+            <p class="t-meta">${student.course} | ${student.location}</p>
+            <div class="stars" style="color: #e0a730; margin-bottom: 10px;">★★★★★</div>
+            <p class="t-feedback">"${reviewText}"</p>
+          </div>
+        `;
       });
-    }, 2000);
+    }
+    rowHTML += `</div>`;
+    return rowHTML;
   }
 
-  function resetAutoScroll() {
-    clearInterval(autoScrollTimer);
-    startAutoScroll();
-  }
+  // Populate rows
+  marqueeWrapper.innerHTML = createRowHTML(row1Students, false) + createRowHTML(row2Students, true);
 
-  startAutoScroll();
+  // Replace original container with marquee
+  container.replaceWith(marqueeWrapper);
 
-  // Pause auto scroll when user touches or clicks inside the carousel
-  container.addEventListener("touchstart", () => clearInterval(autoScrollTimer), { passive: true });
-  container.addEventListener("touchend", startAutoScroll, { passive: true });
-  container.addEventListener("mousedown", () => clearInterval(autoScrollTimer));
-  container.addEventListener("mouseup", startAutoScroll);
+  // Remove dots if present
+  const dots = document.querySelector(".testimonials-dots");
+  if (dots) dots.remove();
 });
+
