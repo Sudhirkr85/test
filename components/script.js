@@ -131,34 +131,38 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
       // Desktop Theme Toggle
-      themeBtn.addEventListener("click", () => {
-        document.body.classList.toggle("light-mode");
+      if (themeBtn) {
+        themeBtn.addEventListener("click", () => {
+          document.body.classList.toggle("light-mode");
 
-        if (document.body.classList.contains("light-mode")) {
-          localStorage.setItem("theme", "light");
-          themeBtn.textContent = "☀️";
-          mobileThemeBtn.textContent = "☀️";
-        } else {
-          localStorage.setItem("theme", "dark");
-          themeBtn.textContent = "🌙";
-          mobileThemeBtn.textContent = "🌙";
-        }
-      });
+          if (document.body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+            themeBtn.textContent = "☀️";
+            if (mobileThemeBtn) mobileThemeBtn.textContent = "☀️";
+          } else {
+            localStorage.setItem("theme", "dark");
+            themeBtn.textContent = "🌙";
+            if (mobileThemeBtn) mobileThemeBtn.textContent = "🌙";
+          }
+        });
+      }
 
       // Mobile Menu Theme Toggle
-      mobileThemeBtn.addEventListener("click", () => {
-        document.body.classList.toggle("light-mode");
+      if (mobileThemeBtn) {
+        mobileThemeBtn.addEventListener("click", () => {
+          document.body.classList.toggle("light-mode");
 
-        if (document.body.classList.contains("light-mode")) {
-          localStorage.setItem("theme", "light");
-          themeBtn.textContent = "☀️";
-          mobileThemeBtn.textContent = "☀️";
-        } else {
-          localStorage.setItem("theme", "dark");
-          themeBtn.textContent = "🌙";
-          mobileThemeBtn.textContent = "🌙";
-        }
-      });
+          if (document.body.classList.contains("light-mode")) {
+            localStorage.setItem("theme", "light");
+            if (themeBtn) themeBtn.textContent = "☀️";
+            mobileThemeBtn.textContent = "☀️";
+          } else {
+            localStorage.setItem("theme", "dark");
+            if (themeBtn) themeBtn.textContent = "🌙";
+            mobileThemeBtn.textContent = "🌙";
+          }
+        });
+      }
 
 
 
