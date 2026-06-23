@@ -11,6 +11,7 @@ body {
   background: #0f0e0e;
   color: white;
   transition: 0.3s ease;
+  padding-top: 72px; /* Prevent Cumulative Layout Shift (CLS) from dynamic navbar load */
 }
 
 /* Light Mode */
@@ -24,11 +25,14 @@ body.light-mode {
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 15px 25px;
-  position: sticky;
+  position: fixed; /* Changed from sticky to fixed to prevent shifting the layout on load */
   top: 0;
+  left: 0;
+  right: 0;
   width: 100%;
   z-index: 999;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 body.light-mode .navbar {
