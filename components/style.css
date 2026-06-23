@@ -1050,13 +1050,13 @@ body.light-mode .floating-trigger {
 
 /* ✅ Primary Button (Book Demo Class) */
 .btn-primary {
-  background-color: #ff6600;
+  background-color: #bf5100;
   color: white;
   border: none;
 }
 
 .btn-primary:hover {
-  background-color: #e65c00;
+  background-color: #a34400;
   transform: translateY(-2px);
 }
 
