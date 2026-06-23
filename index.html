@@ -1385,15 +1385,26 @@
     }
   });
 
+  function cpShakeField(el) {
+    el.classList.add("cp-shake-field");
+    setTimeout(function() {
+      el.classList.remove("cp-shake-field");
+    }, 400);
+  }
+
   window.openCounselingPopup = function() {
     const popup = document.getElementById("counseling-popup");
+    const content = popup.querySelector(".popup-content");
+    content.className = "popup-content rocket-enter";
     popup.style.display = "flex";
     document.body.style.overflow = "hidden";
   };
 
   window.closeCounselingPopup = function() {
     const popup = document.getElementById("counseling-popup");
+    const content = popup.querySelector(".popup-content");
     popup.style.display = "none";
+    content.className = "popup-content";
     document.body.style.overflow = "";
   };
 
@@ -1413,19 +1424,25 @@
     if (!name) {
       error.textContent = "⚠ Please enter your full name.";
       error.style.display = "block";
-      document.getElementById("cp-name").style.borderColor = "#ff6b6b";
+      const field = document.getElementById("cp-name");
+      field.style.borderColor = "#ff6b6b";
+      cpShakeField(field);
       return;
     }
     if (!mobile || mobile.length !== 10 || !/^\d+$/.test(mobile)) {
       error.textContent = "⚠ Please enter a valid 10-digit mobile number.";
       error.style.display = "block";
-      document.getElementById("cp-mobile").style.borderColor = "#ff6b6b";
+      const field = document.getElementById("cp-mobile");
+      field.style.borderColor = "#ff6b6b";
+      cpShakeField(field);
       return;
     }
     if (!courseInput) {
       error.textContent = "⚠ Please select or type a course name.";
       error.style.display = "block";
-      document.getElementById("cp-course-search").style.borderColor = "#ff6b6b";
+      const field = document.getElementById("cp-course-search");
+      field.style.borderColor = "#ff6b6b";
+      cpShakeField(field);
       return;
     }
     if (email) {
@@ -1433,7 +1450,9 @@
       if (!emailRegex.test(email)) {
         error.textContent = "⚠ Please enter a valid email address.";
         error.style.display = "block";
-        document.getElementById("cp-email").style.borderColor = "#ff6b6b";
+        const field = document.getElementById("cp-email");
+        field.style.borderColor = "#ff6b6b";
+        cpShakeField(field);
         return;
       }
     }
@@ -1442,8 +1461,14 @@
     btn.disabled = true;
     btn.textContent = "Connecting...";
 
-    document.getElementById("counseling-form").style.display = "none";
-    document.getElementById("counseling-success").style.display = "block";
+    const content = document.querySelector("#counseling-popup .popup-content");
+    content.className = "popup-content rocket-exit";
+
+    setTimeout(function() {
+      document.getElementById("counseling-form").style.display = "none";
+      document.getElementById("counseling-success").style.display = "block";
+      content.className = "popup-content thankyou-enter";
+    }, 450);
 
     const msg = encodeURIComponent(
       "Hi SSSAM Academy! I am " + name +
@@ -1475,23 +1500,25 @@
     setTimeout(function() {
       window.open("https://wa.me/919217031899?text=" + msg, "_blank");
       window.closeCounselingPopup();
-      document.getElementById("counseling-form").style.display = "block";
-      document.getElementById("counseling-success").style.display = "none";
-      document.getElementById("cp-name").value = "";
-      document.getElementById("cp-mobile").value = "";
-      document.getElementById("cp-course-search").value = "";
-      document.getElementById("cp-course-search").placeholder = 
-        "Course Interested In * (type to search)";
-      document.getElementById("cp-email").value = "";
-      cpSelected = "";
-      btn.disabled = false;
-      btn.textContent = "Get Free Counseling 🎓";
-    }, 2000);
+      setTimeout(function() {
+        document.getElementById("counseling-form").style.display = "block";
+        document.getElementById("counseling-success").style.display = "none";
+        document.getElementById("cp-name").value = "";
+        document.getElementById("cp-mobile").value = "";
+        document.getElementById("cp-course-search").value = "";
+        document.getElementById("cp-course-search").placeholder = 
+          "Course Interested In * (type to search)";
+        document.getElementById("cp-email").value = "";
+        cpSelected = "";
+        btn.disabled = false;
+        btn.textContent = "Get Free Counseling 🎓";
+      }, 300);
+    }, 2500);
   };
 
   setTimeout(function() {
     window.openCounselingPopup();
-  }, 5000);
+  }, 7000);
 
 })();
 </script>
