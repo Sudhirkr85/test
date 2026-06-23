@@ -325,12 +325,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const feedbackIcon = document.getElementById("homeDemoFeedbackIcon");
   const feedbackTitle = document.getElementById("homeDemoFeedbackTitle");
   const feedbackMessage = document.getElementById("homeDemoFeedbackMessage");
+
+  if (!popup || !form) return;
+
   const homeDemoGrid = form.querySelector(".home-demo-grid");
   const homeDemoMode = form.querySelector(".home-demo-mode");
   const homeDemoMessage = form.querySelector("textarea[name='message']");
   const homeDemoSubmitBtn = form.querySelector(".home-demo-submit");
-
-  if (!popup || !form) return;
 
   const BASE_URL = "https://sssam.onrender.com".replace(/\/+$/, "");
   const DEMO_ENQUIRY_API_URL = `${BASE_URL}/api/enquiry/demo-class`;
