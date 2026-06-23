@@ -275,7 +275,7 @@
               </div>
               <div class="pl-form-field">
                 <label for="hr_mobile">Mobile Number *</label>
-                <input type="tel" id="hr_mobile" placeholder="10-digit mobile number" pattern="[0-9]{10}" required>
+                <input type="tel" id="hr_mobile" placeholder="10-digit mobile number" pattern="[0-9]{5}\s[0-9]{5}" maxlength="11" oninput="let v = this.value.replace(/\D/g, '').slice(0,10); this.value = v.length > 5 ? v.slice(0,5) + ' ' + v.slice(5) : v;" required>
               </div>
               <div class="pl-form-field">
                 <label for="hr_email">Official Email Address *</label>
@@ -365,7 +365,7 @@
       e.preventDefault();
       const company = document.getElementById("company_name").value;
       const hr = document.getElementById("hr_name").value;
-      const mobile = document.getElementById("hr_mobile").value;
+      const mobile = document.getElementById("hr_mobile").value.replace(/\s/g, "");
       const email = document.getElementById("hr_email").value;
       let domain = document.getElementById("hiring_domain").value;
 

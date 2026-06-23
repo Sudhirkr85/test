@@ -227,7 +227,7 @@
             </div>
             <div class="ct-form-field">
               <label for="coordinator_mobile">Mobile Number *</label>
-              <input type="tel" id="coordinator_mobile" required placeholder="10-digit mobile number">
+              <input type="tel" id="coordinator_mobile" required placeholder="10-digit mobile number" maxlength="11" oninput="let v = this.value.replace(/\D/g, '').slice(0,10); this.value = v.length > 5 ? v.slice(0,5) + ' ' + v.slice(5) : v;">
             </div>
             <div class="ct-form-field">
               <label for="coordinator_email">Official Email Address</label>
@@ -323,7 +323,7 @@
       e.preventDefault();
       const college = document.getElementById("college_name").value;
       const coordinator = document.getElementById("coordinator_name").value;
-      const mobile = document.getElementById("coordinator_mobile").value;
+      const mobile = document.getElementById("coordinator_mobile").value.replace(/\s/g, "");
       const email = document.getElementById("coordinator_email").value || 'Not provided';
       let topic = document.getElementById("seminar_topic").value;
 

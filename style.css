@@ -373,6 +373,13 @@ body.light-mode .hero-image-details-clean p {
   color: #475569;
 }
 
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+  margin: 18px 0;
+}
+
 .chip {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);

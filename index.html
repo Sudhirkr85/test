@@ -1222,8 +1222,8 @@
       <div style="margin-bottom:14px;">
         <input type="tel" id="cp-mobile" 
           placeholder="Mobile Number * (10 digits)" 
-          maxlength="10" inputmode="numeric"
-          oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+          maxlength="11" inputmode="numeric"
+          oninput="let v = this.value.replace(/\D/g, '').slice(0,10); this.value = v.length > 5 ? v.slice(0,5) + ' ' + v.slice(5) : v;"
           style="width:100%; padding:12px 14px; border-radius:8px; 
           border:1px solid #333; background:#111; color:#fff; 
           font-size:0.95rem; outline:none; box-sizing:border-box;
@@ -1396,7 +1396,7 @@
 
   window.cpSubmit = function() {
     const name = document.getElementById("cp-name").value.trim();
-    const mobile = document.getElementById("cp-mobile").value.trim();
+    const mobile = document.getElementById("cp-mobile").value.replace(/\s/g, "");
     const courseInput = document.getElementById("cp-course-search").value.trim();
     const email = document.getElementById("cp-email").value.trim();
     const error = document.getElementById("cp-error");
