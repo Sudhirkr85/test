@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /certificate.html
+Disallow: /verify-certificate.html
+Disallow: /download-certificate.html
+Disallow: /apply-certificate.html
+Disallow: /check-application-status.html
+
+Sitemap: https://sssamacademy.com/sitemap.xml
