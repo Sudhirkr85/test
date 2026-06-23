@@ -588,6 +588,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       await submitDemoEnquiry(payload);
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18132709725/3nUFCIiP7MMcEN3irMZD'
+        });
+      }
       form.reset();
       toggleOtherCourseInput();
 

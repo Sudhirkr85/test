@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18132709725"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-18132709725');
+</script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -1465,6 +1474,11 @@
     content.className = "popup-content rocket-exit";
 
     setTimeout(function() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18132709725/3nUFCIiP7MMcEN3irMZD'
+        });
+      }
       document.getElementById("counseling-form").style.display = "none";
       document.getElementById("counseling-success").style.display = "block";
       content.className = "popup-content thankyou-enter";
