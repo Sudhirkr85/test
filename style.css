@@ -501,7 +501,7 @@ body.light-mode .cta-status {
 }
 
 @media (max-width: 768px) {
-  .hero-image picture {
+  .hero-image img {
     display: none;
   }
   .hero-section {
