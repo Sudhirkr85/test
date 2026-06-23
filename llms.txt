@@ -5,15 +5,20 @@
 ## Contact Information
 - **Location:** Old DLF Colony, Sector 14, Gurugram, Haryana, India (Near IFFCO Chowk)
 - **Phone / WhatsApp:** +91 92170 31899
-- **Website:** https://sssamacademy.com/
+- **Website:** [SSSAM Academy Home](https://sssamacademy.com/)
+- **Contact Page:** [Contact SSSAM](https://sssamacademy.com/contact.html)
 
 ## Key Offerings & Courses
 SSSAM Academy provides professional training in the following domains:
-- **Data Science:** Comprehensive curriculum covering Python, Machine Learning, AI, and statistics.
-- **Data Analytics:** Hands-on training with Power BI, Tableau, Advanced Excel, and SQL.
-- **Full Stack Development:** Frontend (HTML, CSS, JavaScript, React) and backend technologies (NodeJS, databases).
-- **Cyber Security & Ethical Hacking:** Network security, ethical hacking tools, cryptography, and defense strategies.
-- **Cloud Computing:** AWS and cloud infrastructure management.
+- **[Data Science Course](https://sssamacademy.com/courses.html):** Comprehensive curriculum covering Python, Machine Learning, AI, and statistics.
+- **[Data Analytics Course](https://sssamacademy.com/courses.html):** Hands-on training with Power BI, Tableau, Advanced Excel, and SQL.
+- **[Full Stack Development](https://sssamacademy.com/courses.html):** Frontend (HTML, CSS, JavaScript, React) and backend technologies (NodeJS, databases).
+- **[Cyber Security & Ethical Hacking](https://sssamacademy.com/courses.html):** Network security, ethical hacking tools, cryptography, and defense strategies.
+- **[Cloud Computing / AWS](https://sssamacademy.com/courses.html):** AWS and cloud infrastructure management.
+
+## Other Quick Links
+- **[Student Placements](https://sssamacademy.com/placements.html)**
+- **[Free College Seminars](https://sssamacademy.com/college-training.html)**
 
 ## Center Details
 - **Center Hours:** Monday - Saturday, 9:00 AM - 7:00 PM

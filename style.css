@@ -501,6 +501,9 @@ body.light-mode .cta-status {
 }
 
 @media (max-width: 768px) {
+  .hero-image picture {
+    display: none;
+  }
   .hero-section {
     min-height: auto;
     padding: 30px 6% 60px;

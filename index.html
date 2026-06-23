@@ -18,6 +18,8 @@
 
     <!-- Performance -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin />
     <link
       rel="preload"
       as="image"
@@ -223,7 +225,10 @@
           </div>
           <div class="hero-image">
             <div class="hero-glow-blob"></div>
-            <img src="assets/home_page.webp" alt="SSSAM Academy IT Training Gurugram Banner" width="1200" height="600" fetchpriority="high" />
+            <picture>
+              <source media="(max-width: 768px)" srcset="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='1'></svg>" />
+              <img src="assets/home_page.webp" alt="SSSAM Academy IT Training Gurugram Banner" width="1200" height="600" fetchpriority="high" />
+            </picture>
             <div class="hero-badge badge-1">
               <span class="badge-icon">🎓</span>
               <div class="badge-info">
