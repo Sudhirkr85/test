@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apply for Training | SSSAM Academy</title>
+    <meta
+      name="description"
+      content="Apply for IT and Computer training courses at SSSAM Academy old DLF center in Gurugram."
+    />
+    <link rel="icon" href="/assets/logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/components/style.css" />
+    <link rel="stylesheet" href="/components/certificate.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <style>
+      /* Required field asterisk */
+      .req { color: #e94c4c; margin-left: 3px; }
+
+      /* Shake + red highlight for invalid fields */
+      @keyframes fieldShake {
+        0%   { transform: translateX(0); }
+        20%  { transform: translateX(-6px); }
+        40%  { transform: translateX(6px); }
+        60%  { transform: translateX(-4px); }
+        80%  { transform: translateX(4px); }
+        100% { transform: translateX(0); }
+      }
+      .field-error input,
+      .field-error select,
+      .field-error textarea {
+        border-color: #e94c4c !important;
+        box-shadow: 0 0 0 3px rgba(233,76,76,0.18) !important;
+        animation: fieldShake 0.35s ease;
+      }
+      .field-error .sd-wrapper {
+        border-color: #e94c4c !important;
+        box-shadow: 0 0 0 3px rgba(233,76,76,0.18) !important;
+        animation: fieldShake 0.35s ease;
+      }
+      .field-error-checkbox {
+        outline: 2px solid #e94c4c;
+        border-radius: 3px;
+        animation: fieldShake 0.35s ease;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="certificate-page">
+      <!-- HERO SECTION -->
+      <section class="certificate-hero">
+        <p class="hero-kicker">SSSAM Academy</p>
+        <h1>Apply for Training</h1>
+        <p>Start your learning journey with Gurugram's top computer institute.</p>
+      </section>
+
+      <!-- VIDEO SECTION (How to Apply) -->
+      <section class="apply-video-section" id="how-to-apply" style="text-align:center; padding: 20px;">
+        <p style="margin-bottom: 12px; color: #aaa; font-size: 0.95rem;">Want to see how the process works?</p>
+        <button
+          id="watchVideoBtn"
+          onclick="toggleGuideVideo()"
+          style="
+            background: transparent;
+            border: 2px solid #e0a730;
+            color: #e0a730;
+            padding: 10px 26px;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            letter-spacing: 0.3px;
+          "
+          onmouseover="this.style.background='#e0a730'; this.style.color='#000';"
+          onmouseout="this.style.background='transparent'; this.style.color='#e0a730';"
+        >
+          ▶ Watch: How to Apply
+        </button>
+
+        <!-- Hidden video — shown only on button click -->
+        <div id="guideVideoWrap" style="display:none; margin-top:20px; position:relative; padding-bottom:56.25%; height:0; border-radius:12px; overflow:hidden;">
+          <iframe
+            id="guideIframe"
+            src=""
+            data-src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="How to Apply for Certificate at SSSAM Academy"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            style="position:absolute; inset:0; width:100%; height:100%; border:0; border-radius:12px;"
+          ></iframe>
+        </div>
+
+        <script>
+          function toggleGuideVideo() {
+            const wrap = document.getElementById('guideVideoWrap');
+            const iframe = document.getElementById('guideIframe');
+            const btn = document.getElementById('watchVideoBtn');
+            const isHidden = wrap.style.display === 'none';
+            if (isHidden) {
+              iframe.src = iframe.getAttribute('data-src');
+              wrap.style.display = 'block';
+              btn.textContent = '✕ Hide Video';
+            } else {
+              iframe.src = '';
+              wrap.style.display = 'none';
+              btn.textContent = '▶ Watch: How to Apply';
+            }
+          }
+        </script>
+      </section>
+
+      <!-- WIZARD CONTAINER -->
+      <section style="padding: 20px;">
+        <div class="wizard-card">
+          <div id="wizardFormInner">
+            <!-- Progress Indicator -->
+            <div class="wizard-progress">
+              <div class="wizard-progress-bar"></div>
+              <div class="wizard-step-node active">1<span class="wizard-step-node-label">Type</span></div>
+              <div class="wizard-step-node">2<span class="wizard-step-node-label">Category</span></div>
+              <div class="wizard-step-node">3<span class="wizard-step-node-label">Course</span></div>
+              <div class="wizard-step-node">4<span class="wizard-step-node-label">Details</span></div>
+            </div>
+
+              <!-- Quick Guidance Box -->
+            <div class="apply-guide-box">
+              <strong class="guide-title">
+                <span>💡</span> Guidelines & Information
+              </strong>
+              <div id="applyGuideText" class="guide-content">
+                <ul style="margin: 0; padding-left: 20px; list-style-type: disc;">
+                  <li style="margin-bottom: 6px;"><strong>Training (SSSAM Student):</strong> Select if you are a regular student at our center. (Requires duration in Months, no dates needed).</li>
+                  <li style="margin-bottom: 6px;"><strong>College Training:</strong> Choose this if training was conducted inside your college campus. (Requires College & Date range).</li>
+                  <li style="margin-bottom: 6px;"><strong>Corporate Training:</strong> Choose this if training was completed inside a company. (Requires Company & Date range).</li>
+                  <li style="margin-bottom: 0;"><strong>Workshop / Internship:</strong> Select these for short term workshops or SSSAM internships.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Dynamic Header -->
+            <h2 id="stepTitle" style="text-align: center; margin-bottom: 20px; font-family: 'Outfit', sans-serif; color: #fff;">Select Training Type</h2>
+
+            <form id="applyWizardForm" class="form-grid" novalidate>
+              <!-- STEP 1: TRAINING TYPE -->
+              <div class="wizard-step-panel active" data-step="1">
+                <div class="category-grid">
+                  <div class="category-card training-type-btn" data-value="Training">
+                    <span class="category-card-icon">🎓</span>
+                    <span class="category-card-title">Training</span>
+                    <span class="category-card-sub" style="font-size: 0.72rem; color: #888; display: block; margin-top: 4px;">SSSAM Student</span>
+                  </div>
+                  <div class="category-card training-type-btn" data-value="College Training">
+                    <span class="category-card-icon">🏫</span>
+                    <span class="category-card-title">College Training</span>
+                    <span class="category-card-sub" style="font-size: 0.72rem; color: #888; display: block; margin-top: 4px;">Training in your college</span>
+                  </div>
+                  <div class="category-card training-type-btn" data-value="Corporate Training">
+                    <span class="category-card-icon">🏢</span>
+                    <span class="category-card-title">Corporate Training</span>
+                    <span class="category-card-sub" style="font-size: 0.72rem; color: #888; display: block; margin-top: 4px;">Training done in your company</span>
+                  </div>
+                  <div class="category-card training-type-btn" data-value="Internship">
+                    <span class="category-card-icon">💼</span>
+                    <span class="category-card-title">Internship</span>
+                    <span class="category-card-sub" style="font-size: 0.72rem; color: #888; display: block; margin-top: 4px;">Internship from SSSAM</span>
+                  </div>
+                  <div class="category-card training-type-btn" data-value="Workshop">
+                    <span class="category-card-icon">🛠️</span>
+                    <span class="category-card-title">Workshop</span>
+                    <span class="category-card-sub" style="font-size: 0.72rem; color: #888; display: block; margin-top: 4px;">Short term workshop</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 2: COURSE CATEGORY -->
+              <div class="wizard-step-panel" data-step="2">
+                <div class="category-grid">
+                  <div class="category-card" data-category="Programming & Development">
+                    <span class="category-card-icon">💻</span>
+                    <span class="category-card-title">Programming & Development</span>
+                  </div>
+                  <div class="category-card" data-category="Data & AI">
+                    <span class="category-card-icon">📊</span>
+                    <span class="category-card-title">Data & AI</span>
+                  </div>
+                  <div class="category-card" data-category="Cyber Security & Ethical Hacking">
+                    <span class="category-card-icon">🛡️</span>
+                    <span class="category-card-title">Cyber Security & Ethical Hacking</span>
+                  </div>
+                  <div class="category-card" data-category="Digital Marketing">
+                    <span class="category-card-icon">📈</span>
+                    <span class="category-card-title">Digital Marketing</span>
+                  </div>
+                  <div class="category-card" data-category="Office & Business Skills">
+                    <span class="category-card-icon">📝</span>
+                    <span class="category-card-title">Office & Business Skills</span>
+                  </div>
+                  <div class="category-card" data-category="Design & Creative">
+                    <span class="category-card-icon">🎨</span>
+                    <span class="category-card-title">Design & Creative</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- STEP 3: COURSE SELECT -->
+              <div class="wizard-step-panel" data-step="3">
+                <div class="form-field form-field-full" id="courseFieldWrap" style="max-width: 500px; margin: 0 auto;">
+                  <label>Select Course <span class="req">*</span></label>
+                  <div id="courseDropdownWrap"></div>
+                </div>
+              </div>
+
+              <!-- STEP 4: STUDENT DETAILS -->
+              <div class="wizard-step-panel" data-step="4">
+                <div class="form-grid">
+                  <div class="form-field" id="nameFieldWrap">
+                    <label for="applyFullName">Full Name <span class="req">*</span></label>
+                    <input type="text" id="applyFullName" required />
+                  </div>
+
+                  <div class="form-field" id="phoneFieldWrap">
+                    <label for="applyPhone">Mobile Number <span class="req">*</span></label>
+                    <input type="tel" id="applyPhone" maxlength="10" required />
+                  </div>
+
+                  <div class="form-field" id="emailFieldWrap">
+                    <label for="applyEmail">Email Address <span class="req">*</span></label>
+                    <input type="email" id="applyEmail" required />
+                  </div>
+
+                  <div class="form-field" id="dobFieldWrap">
+                    <label for="applyDob">Date of Birth <span class="req">*</span></label>
+                    <input type="date" id="applyDob" required />
+                  </div>
+
+                  <div class="form-field" id="qualFieldWrap">
+                    <label>Qualification <span class="req">*</span></label>
+                    <div id="qualificationDropdownWrap"></div>
+                  </div>
+
+                  <div class="form-field" id="durationFieldWrap">
+                    <label id="durationFieldLabel">Duration (in Hours) <span class="req">*</span></label>
+                    <div id="durationDropdownWrap"></div>
+                  </div>
+
+                  <div class="form-field" id="startDateFieldWrap">
+                    <label for="applyStartDate">Training Start Date <span class="req">*</span></label>
+                    <input type="date" id="applyStartDate" required />
+                  </div>
+
+                  <div class="form-field" id="endDateFieldWrap">
+                    <label for="applyEndDate">Training End Date <span class="req">*</span></label>
+                    <input type="date" id="applyEndDate" required />
+                  </div>
+
+                  <div class="form-field form-field-full" id="collegeFieldContainer" style="display: none;">
+                    <label id="collegeFieldLabel">Select College / Institute <span class="req">*</span></label>
+                    <div id="collegeDropdownWrap"></div>
+                  </div>
+
+                  <div class="form-field form-field-full" id="corporateFieldContainer" style="display: none;">
+                    <label id="corporateFieldLabel">Select Corporate Company <span class="req">*</span></label>
+                    <div id="corporateDropdownWrap"></div>
+                  </div>
+
+                  <div class="form-field form-field-full" style="display: flex; align-items: flex-start; gap: 10px; margin-top: 15px;">
+                    <input type="checkbox" id="applyTerms" style="width: auto; margin-top: 4px;" required />
+                    <label for="applyTerms" class="apply-terms-label" style="font-size: 0.88rem; cursor: pointer;">
+                      I agree to the training terms, conditions, and privacy policies of SSSAM Academy. <span class="req">*</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ACTIONS -->
+              <div class="wizard-actions">
+                <button type="button" class="btn-secondary" id="btnPrev" style="visibility: hidden;">Back</button>
+                <button type="button" class="btn-primary" id="btnNext">Next Step</button>
+              </div>
+            </form>
+          </div>
+
+          <!-- SUCCESS RESULT -->
+          <div id="wizardResult" hidden></div>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      // Allow dynamic API hostname mappings based on windows host.
+      window.APP_BASE_URL = window.location.origin;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="/js/searchable-dropdown.js"></script>
+    <script src="/js/apply-wizard.js"></script>
+    <script src="/components/script.js"></script>
+  </body>
+</html>

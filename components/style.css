@@ -24,15 +24,15 @@ body.light-mode {
   background: rgba(23, 23, 23, 0.85);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 15px 25px;
-  position: fixed; /* Changed from sticky to fixed to prevent shifting the layout on load */
+  padding: 15px 5%; /* Adjusted for better side spacing */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
   z-index: 999;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  box-sizing: border-box;
 }
 
 body.light-mode .navbar {
@@ -42,9 +42,12 @@ body.light-mode .navbar {
 
 .nav_content {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between; /* Switched to space-between for luxury alignment */
   align-items: center;
   position: relative;
+  max-width: 1200px; /* Constrains menu items inside an elegant desktop container */
+  margin: 0 auto;
+  width: 100%;
 }
 
 /* LOGO */

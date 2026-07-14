@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certificate Services | SSSAM Academy</title>
+    <meta
+      name="description"
+      content="Verify and download course certificates online from SSSAM Academy."
+    />
+    <link rel="icon" href="/assets/logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/components/style.css" />
+    <link rel="stylesheet" href="/components/certificate.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <style>
+      .services-tabs {
+        display: flex;
+        border-bottom: 2px solid rgba(255,255,255,0.08);
+        margin-bottom: 30px;
+        gap: 10px;
+      }
+      body.light-mode .services-tabs {
+        border-bottom-color: rgba(0,0,0,0.08);
+      }
+      .service-tab-btn {
+        flex: 1;
+        background: none;
+        border: none;
+        padding: 15px 10px;
+        color: #888;
+        font-weight: 700;
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.05rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center;
+        border-bottom: 3px solid transparent;
+      }
+      body.light-mode .service-tab-btn {
+        color: #64748b;
+      }
+      .service-tab-btn:hover {
+        color: #fff;
+      }
+      body.light-mode .service-tab-btn:hover {
+        color: #0f172a;
+      }
+      .service-tab-btn.active {
+        color: #e0a730;
+        border-bottom-color: #e0a730;
+      }
+      body.light-mode .service-tab-btn.active {
+        color: #204180;
+        border-bottom-color: #204180;
+      }
+      .tab-panel {
+        display: none;
+        animation: fadeIn 0.35s ease forwards;
+      }
+      .tab-panel.active {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main class="certificate-page">
+      <section class="certificate-hero">
+        <p class="hero-kicker">SSSAM Academy</p>
+        <h1>Certificate Services</h1>
+        <p>Verify the authenticity of SSSAM Academy credentials or securely download a digital PDF copy.</p>
+      </section>
+
+      <section class="certificate-grid single-grid">
+        <article class="certificate-card">
+          <!-- TABS -->
+          <div class="services-tabs">
+            <button class="service-tab-btn active" data-tab="verify">Verify Certificate</button>
+            <button class="service-tab-btn" data-tab="download">Download PDF</button>
+          </div>
+
+          <!-- TAB PANEL: VERIFY -->
+          <div class="tab-panel active" id="panel-verify">
+            <div class="card-head">
+              <h2>Verify Certificate</h2>
+              <p>Enter the certificate number to instantly verify its validity. Works for both old and new certificate numbers.</p>
+            </div>
+            <form id="verifyCertificateForm" class="form-grid" novalidate>
+              <div class="form-field form-field-full">
+                <label for="verifyCertificateNumber">Certificate Number</label>
+                <input type="text" id="verifyCertificateNumber" placeholder="e.g. SSSAM/CERT/123456 or SSSAM-2026-0001" required />
+                <small class="error-text" id="verifyCertificateNumberError"></small>
+              </div>
+              <div class="form-field-full action-wrap">
+                <button type="submit" class="btn-primary" id="btnVerify">Verify Authenticity</button>
+              </div>
+            </form>
+            <div id="verifyResult" class="result-card" hidden></div>
+          </div>
+
+          <!-- TAB PANEL: DOWNLOAD -->
+          <div class="tab-panel" id="panel-download">
+            <div class="card-head">
+              <h2>Download Certificate</h2>
+              <p>Authentication required. Enter your certificate number and registered date of birth to download your digital certificate.</p>
+            </div>
+            <form id="downloadCertificateForm" class="form-grid" novalidate>
+              <div class="form-field">
+                <label for="downloadCertificateNumber">Certificate Number</label>
+                <input type="text" id="downloadCertificateNumber" placeholder="e.g. SSSAM/CERT/123456" required />
+                <small class="error-text" id="downloadCertificateNumberError"></small>
+              </div>
+              <div class="form-field">
+                <label for="downloadDob">Date of Birth</label>
+                <input type="date" id="downloadDob" required />
+                <small class="error-text" id="downloadDobError"></small>
+              </div>
+              <div class="form-field-full action-wrap">
+                <button type="submit" class="btn-primary" id="btnDownload">Download Certificate PDF</button>
+              </div>
+            </form>
+            <div id="downloadResult" class="result-card" hidden></div>
+          </div>
+
+        </article>
+      </section>
+    </main>
+
+    <script>
+      window.APP_BASE_URL = window.location.origin;
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="/js/certificate-services.js"></script>
+    <script src="/components/script.js"></script>
+  </body>
+</html>

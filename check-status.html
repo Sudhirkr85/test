@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Check Application Status | SSSAM Academy</title>
+    <meta
+      name="description"
+      content="Track your training application status online at SSSAM Academy."
+    />
+    <link rel="icon" href="/assets/logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/components/style.css" />
+    <link rel="stylesheet" href="/components/certificate.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+  </head>
+
+  <body>
+    <main class="certificate-page">
+      <section class="certificate-hero">
+        <p class="hero-kicker">SSSAM Academy</p>
+        <h1>Check Application Status</h1>
+        <p>Enter your application details to track your certificate approval stage.</p>
+      </section>
+
+      <section class="certificate-grid single-grid">
+        <article class="certificate-card">
+          <div class="card-head">
+            <h2>Track Application</h2>
+            <p>Fill in the details below to look up your application record.</p>
+          </div>
+
+          <form id="statusCertificateForm" class="form-grid" novalidate>
+            <div class="form-field">
+              <label for="applicationId">Application ID</label>
+              <input type="text" id="applicationId" placeholder="e.g. APP1234" required />
+              <small class="error-text" id="applicationIdError"></small>
+            </div>
+
+            <div class="form-field">
+              <label for="statusDob">Date of Birth</label>
+              <input type="date" id="statusDob" required />
+              <small class="error-text" id="statusDobError"></small>
+            </div>
+
+            <div class="form-field-full action-wrap">
+              <button type="submit" class="btn-primary" id="btnCheckStatus">Check Status</button>
+            </div>
+          </form>
+
+          <div id="statusResult" class="result-card" hidden></div>
+        </article>
+      </section>
+    </main>
+
+    <script>
+      window.APP_BASE_URL = window.location.origin;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        // Automatically populate appId from URL if query params exist
+        const urlParams = new URLSearchParams(window.location.search);
+        const appIdParam = urlParams.get("appId");
+        if (appIdParam) {
+          document.getElementById("applicationId").value = appIdParam;
+        }
+
+        const statusForm = document.getElementById("statusCertificateForm");
+        const statusResult = document.getElementById("statusResult");
+
+        if (statusForm) {
+          statusForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const appIdInput = document.getElementById("applicationId");
+            const dobInput = document.getElementById("statusDob");
+            const appIdError = document.getElementById("applicationIdError");
+            const dobError = document.getElementById("statusDobError");
+
+            // Reset errors
+            appIdInput.classList.remove("is-invalid");
+            dobInput.classList.remove("is-invalid");
+            appIdError.textContent = "";
+            dobError.textContent = "";
+
+            let hasError = false;
+            if (!appIdInput.value.trim()) {
+              appIdInput.classList.add("is-invalid");
+              appIdError.textContent = "Application ID is required.";
+              hasError = true;
+            }
+            if (!dobInput.value) {
+              dobInput.classList.add("is-invalid");
+              dobError.textContent = "Date of birth is required.";
+              hasError = true;
+            }
+
+            if (hasError) return;
+
+            const btn = document.getElementById("btnCheckStatus");
+            btn.disabled = true;
+            btn.textContent = "Checking...";
+
+            const appId = appIdInput.value.trim();
+            const dob = dobInput.value;
+
+            try {
+              const res = await fetch(`${window.APP_BASE_URL}/api/certificate/status/${encodeURIComponent(appId)}?dateOfBirth=${dob}`);
+              const data = await res.json();
+
+              if (!res.ok) {
+                throw new Error(data.message || "Application not found or details mismatch.");
+              }
+
+              const statusBadge = getStatusBadge(data.status);
+              const isApproved = String(data.status).toLowerCase() === "approved";
+
+              statusResult.hidden = false;
+              statusResult.innerHTML = `
+                <div class="result-title">Application Details</div>
+                <div class="result-grid" style="margin-top: 15px;">
+                  <div>Student Name: <strong>${data.name}</strong></div>
+                  <div>Course: <strong>${data.course}</strong></div>
+                  <div>Certificate Type: <strong>${data.certificateType}</strong></div>
+                  <div class="status-row" style="margin: 10px 0;"><span>Status:</span> ${statusBadge}</div>
+                  ${isApproved ? `
+                    <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 12px; margin-top: 12px;">
+                      <div>Certificate Number: <strong>${data.certificateNumber}</strong></div>
+                      <div>Issue Date: <strong>${data.issueDate}</strong></div>
+                      <div style="margin-top: 15px;">
+                        <a href="/certificate-services.html?certNo=${encodeURIComponent(data.certificateNumber)}&dob=${dob}" class="btn-primary" style="display: inline-block;">Get Certificate</a>
+                      </div>
+                    </div>
+                  ` : ""}
+                </div>
+              `;
+
+              // Light mode adjustments
+              if (document.body.classList.contains("light-mode")) {
+                const badgeText = statusResult.querySelector(".result-title");
+                if (badgeText) badgeText.style.color = "#0f172a";
+              }
+
+              if (typeof window.Toastify === "function") {
+                window.Toastify({
+                  text: "Status fetched successfully!",
+                  duration: 2500,
+                  gravity: "top",
+                  position: "right",
+                  style: { background: "linear-gradient(135deg, #1f9d53, #15753d)", borderRadius: "8px" }
+                }).showToast();
+              }
+
+            } catch (err) {
+              statusResult.hidden = false;
+              statusResult.innerHTML = `
+                <div class="result-title" style="color: #ef5350;">Lookup Failed</div>
+                <div class="result-grid" style="margin-top: 10px;">
+                  <div>${err.message}</div>
+                </div>
+              `;
+              if (typeof window.Toastify === "function") {
+                window.Toastify({
+                  text: err.message,
+                  duration: 3500,
+                  gravity: "top",
+                  position: "right",
+                  style: { background: "linear-gradient(135deg, #e94c4c, #b83434)", borderRadius: "8px" }
+                }).showToast();
+              }
+            } finally {
+              btn.disabled = false;
+              btn.textContent = "Check Status";
+            }
+          });
+        }
+      });
+
+      function getStatusBadge(statusText) {
+        const s = String(statusText || "").toLowerCase();
+        if (s === "approved" || s === "verified") return '<span class="status-badge verified">Approved</span>';
+        if (s === "rejected") return '<span class="status-badge rejected">Rejected</span>';
+        return '<span class="status-badge pending">Under Review</span>';
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="/components/script.js"></script>
+  </body>
+</html>

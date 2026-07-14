@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | SSSAM Academy</title>
+    <link rel="icon" href="/assets/logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+    <style>
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      body { font-family: 'Poppins', sans-serif; background: #0b0f19; color: #e2e8f0; }
+      a { color: inherit; text-decoration: none; }
+      button { cursor: pointer; font-family: inherit; }
+      input, select, textarea { font-family: inherit; }
+
+      .admin-layout {
+        display: flex;
+        min-height: 100vh;
+        background: #0b0f19;
+        font-family: 'Poppins', sans-serif;
+      }
+      body.light-mode .admin-layout {
+        background: #f8fafc;
+      }
+      .admin-sidebar {
+        width: 260px;
+        background: #111827;
+        border-right: 1px solid rgba(255,255,255,0.06);
+        padding: 30px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+      body.light-mode .admin-sidebar {
+        background: #fff;
+        border-right-color: rgba(0,0,0,0.08);
+      }
+      .admin-logo {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 800;
+        font-size: 1.4rem;
+        color: #e0a730;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      body.light-mode .admin-logo {
+        color: #204180;
+      }
+      .admin-nav {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .admin-nav-btn {
+        background: none;
+        border: none;
+        padding: 12px 16px;
+        color: #9ca3af;
+        text-align: left;
+        font-family: inherit;
+        font-size: 0.95rem;
+        font-weight: 600;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+      body.light-mode .admin-nav-btn {
+        color: #475569;
+      }
+      .admin-nav-btn:hover {
+        background: rgba(255,255,255,0.04);
+        color: #fff;
+      }
+      body.light-mode .admin-nav-btn:hover {
+        background: #f1f5f9;
+        color: #0f172a;
+      }
+      .admin-nav-btn.active {
+        background: rgba(224, 167, 48, 0.1);
+        color: #e0a730;
+      }
+      body.light-mode .admin-nav-btn.active {
+        background: rgba(32, 65, 128, 0.08);
+        color: #204180;
+      }
+      .admin-main {
+        flex: 1;
+        padding: 40px;
+        overflow-y: auto;
+      }
+      .admin-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding-bottom: 20px;
+      }
+      body.light-mode .admin-header {
+        border-bottom-color: rgba(0,0,0,0.08);
+      }
+      .admin-title {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #fff;
+        margin: 0;
+      }
+      body.light-mode .admin-title {
+        color: #0f172a;
+      }
+      .admin-login-card {
+        max-width: 400px;
+        margin: 100px auto;
+        background: #111827;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+      }
+      body.light-mode .admin-login-card {
+        background: #fff;
+        border-color: rgba(0,0,0,0.08);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+      }
+      .admin-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: rgba(255,255,255,0.01);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .admin-table th, .admin-table td {
+        padding: 14px 20px;
+        text-align: left;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+      }
+      body.light-mode .admin-table td, body.light-mode .admin-table th {
+        border-bottom-color: rgba(0,0,0,0.06);
+      }
+      .admin-table th {
+        background: rgba(255,255,255,0.03);
+        color: #e0a730;
+        font-weight: 600;
+      }
+      body.light-mode .admin-table th {
+        background: #f1f5f9;
+        color: #204180;
+      }
+      .admin-table td {
+        color: #d1d5db;
+        font-size: 0.92rem;
+      }
+      body.light-mode .admin-table td {
+        color: #334155;
+      }
+      .action-badge {
+        display: inline-block;
+        padding: 5px 12px;
+        border-radius: 999px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .badge-approve {
+        background: rgba(16, 185, 129, 0.15);
+        color: #10b981;
+        border: 1px solid rgba(16, 185, 129, 0.2);
+        margin-right: 8px;
+      }
+      .badge-approve:hover {
+        background: #10b981;
+        color: #fff;
+      }
+      .badge-reject {
+        background: rgba(239, 68, 68, 0.15);
+        color: #ef4242;
+        border: 1px solid rgba(239, 68, 68, 0.2);
+      }
+      .badge-reject:hover {
+        background: #ef4242;
+        color: #fff;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- LOGIN INTERFACE -->
+    <div id="loginScreen">
+      <div class="admin-login-card">
+        <h2 style="text-align: center; margin-bottom: 25px; font-family: 'Outfit', sans-serif; color: #fff;">Admin Portal</h2>
+        <form id="adminLoginForm" class="form-grid">
+          <div class="form-field form-field-full">
+            <label for="username">Username</label>
+            <input type="text" id="username" required />
+          </div>
+          <div class="form-field form-field-full">
+            <label for="password">Password</label>
+            <input type="password" id="password" required />
+          </div>
+          <div class="form-field-full" style="margin-top: 15px;">
+            <button type="submit" class="btn-primary" style="width: 100%;">Login Dashboard</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MAIN DASHBOARD -->
+    <div id="dashboardScreen" class="admin-layout" style="display: none;">
+      <!-- Sidebar -->
+      <aside class="admin-sidebar">
+        <div class="admin-logo">SSSAM Admin</div>
+        <nav class="admin-nav">
+          <button class="admin-nav-btn active" data-panel="applications">Applications</button>
+          <button class="admin-nav-btn" data-panel="certificates">Certificates</button>
+          <button class="admin-nav-btn" data-panel="enquiries">Enquiries</button>
+          <button class="admin-nav-btn" data-panel="import">Legacy Import</button>
+        </nav>
+        <button id="btnLogout" class="btn-secondary" style="margin-top: auto; width: 100%;">Logout</button>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="admin-main">
+        <div class="admin-header">
+          <h1 id="panelTitle" class="admin-title">Manage Applications</h1>
+        </div>
+
+        <!-- PANEL: APPLICATIONS -->
+        <section class="admin-panel-content" id="panel-applications">
+          <p style="color: #888;">List of student training and certification applications.</p>
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>App ID</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Type</th>
+                <th>Phone</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="applicationsTableBody">
+              <tr>
+                <td colspan="7" style="text-align: center; color: #666;">Loading applications...</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- PANEL: CERTIFICATES -->
+        <section class="admin-panel-content" id="panel-certificates" style="display: none;">
+          <p style="color: #888;">Verifiable certificates issued to students.</p>
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Cert Number</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Issue Date</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="certificatesTableBody">
+              <tr>
+                <td colspan="5" style="text-align: center; color: #666;">Loading certificates...</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- PANEL: ENQUIRIES -->
+        <section class="admin-panel-content" id="panel-enquiries" style="display: none;">
+          <p style="color: #888;">List of course and center enquiries received.</p>
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Message</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="enquiriesTableBody">
+              <tr>
+                <td colspan="5" style="text-align: center; color: #666;">Loading enquiries...</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- PANEL: IMPORT -->
+        <section class="admin-panel-content" id="panel-import" style="display: none;">
+          <p style="color: #888; margin-bottom: 25px;">Bulk import legacy certification records from CSV.</p>
+          <div class="result-card" style="padding: 30px;">
+            <h3 style="color: #fff; margin-bottom: 15px;">Import Legacy CSV</h3>
+            <p style="color: #aaa; margin-bottom: 20px; font-size: 0.9rem;">
+              Format matches: <code>Student ID, Full Name, Email Address, Phone Number, Course Enrolled, Batch Type, Enrollment Date, Status</code>.<br>
+              Note: Only rows with status <strong>"Completed"</strong> will be imported as legacy certificates.
+            </p>
+            <div style="background: rgba(255,255,255,0.03); border: 2px dashed rgba(255,255,255,0.1); padding: 40px 20px; text-align: center; border-radius: 12px; margin-bottom: 20px;">
+              <span style="font-size: 2rem; display: block; margin-bottom: 10px;">📄</span>
+              <p style="color: #888; margin-bottom: 15px;">Please select the student records CSV file.</p>
+              <input type="file" id="csvFileInput" accept=".csv" style="display: none;" />
+              <button class="btn-primary" onclick="document.getElementById('csvFileInput').click()">Choose CSV File</button>
+            </div>
+            <button class="btn-secondary" id="btnUploadCsv" style="width: 100%;">Upload & Import Records</button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      window.APP_BASE_URL = window.location.origin;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const token = localStorage.getItem("adminToken");
+        if (token) {
+          showDashboard();
+        }
+
+        // Login Handler
+        const loginForm = document.getElementById("adminLoginForm");
+        if (loginForm) {
+          loginForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            try {
+              const res = await fetch(`${window.APP_BASE_URL}/api/admin/auth/login`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, password })
+              });
+              const data = await res.json();
+              if (!res.ok) throw new Error(data.message || "Login failed");
+
+              localStorage.setItem("adminToken", data.data.token);
+              showToast("Success", "Login successful!", false);
+              showDashboard();
+            } catch (err) {
+              showToast("Error", err.message, true);
+            }
+          });
+        }
+
+        // Logout
+        document.getElementById("btnLogout").addEventListener("click", () => {
+          localStorage.removeItem("adminToken");
+          location.reload();
+        });
+
+        // Tab switches
+        const navBtns = document.querySelectorAll(".admin-nav-btn");
+        const panels = document.querySelectorAll(".admin-panel-content");
+        const panelTitle = document.getElementById("panelTitle");
+
+        navBtns.forEach(btn => {
+          btn.addEventListener("click", () => {
+            navBtns.forEach(b => b.classList.remove("active"));
+            panels.forEach(p => p.style.display = "none");
+
+            btn.classList.add("active");
+            const panelId = `panel-${btn.getAttribute("data-tab") || btn.getAttribute("data-panel")}`;
+            document.getElementById(panelId).style.display = "block";
+            panelTitle.textContent = btn.textContent;
+
+            // Load panel data
+            if (panelId === "panel-applications") loadApplications();
+            if (panelId === "panel-certificates") loadCertificates();
+            if (panelId === "panel-enquiries") loadEnquiries();
+          });
+        });
+      });
+
+      function showDashboard() {
+        document.getElementById("loginScreen").style.display = "none";
+        document.getElementById("dashboardScreen").style.display = "flex";
+        loadApplications();
+      }
+
+      async function adminFetch(url, options = {}) {
+        const token = localStorage.getItem("adminToken");
+        const headers = Object.assign({
+          "Authorization": `Bearer ${token}`,
+          "Content-Type": "application/json"
+        }, options.headers);
+
+        const res = await fetch(`${window.APP_BASE_URL}${url}`, Object.assign({}, options, { headers }));
+        if (res.status === 401) {
+          localStorage.removeItem("adminToken");
+          location.reload();
+        }
+        return res;
+      }
+
+      async function loadApplications() {
+        const tbody = document.getElementById("applicationsTableBody");
+        tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: #888;">Loading applications...</td></tr>`;
+
+        try {
+          const res = await adminFetch("/api/admin/applications");
+          const data = await res.json();
+          const list = data.data || data;
+
+          if (!list || list.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: #888;">No applications found.</td></tr>`;
+            return;
+          }
+
+          tbody.innerHTML = list.map(app => `
+            <tr>
+              <td><strong>${app.applicationId}</strong></td>
+              <td>${app.fullName}</td>
+              <td>${app.course}</td>
+              <td>${app.certificateType}</td>
+              <td>${app.phoneNumber}</td>
+              <td><span style="color: ${app.status === 'Approved' ? '#10b981' : (app.status === 'Rejected' ? '#ef4448' : '#e0a730')}">${app.status}</span></td>
+              <td>
+                ${app.status === "Pending" ? `
+                  <span class="action-badge badge-approve" onclick="approveApp('${app.applicationId}')">Approve</span>
+                  <span class="action-badge badge-reject" onclick="rejectApp('${app.applicationId}')">Reject</span>
+                ` : `N/A`}
+              </td>
+            </tr>
+          `).join("");
+        } catch (err) {
+          tbody.innerHTML = `<tr><td colspan="7" style="text-align: center; color: #ef5350;">Failed to load applications: ${err.message}</td></tr>`;
+        }
+      }
+
+      async function approveApp(appId) {
+        if (!confirm(`Are you sure you want to approve application ${appId}? This generates a certificate number.`)) return;
+        try {
+          const res = await adminFetch(`/api/admin/applications/${appId}/approve`, { method: "PATCH" });
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.message || "Approve failed");
+          showToast("Success", `Approved! Cert Number: ${data.data.certificateNumber}`, false);
+          loadApplications();
+        } catch (err) {
+          showToast("Error", err.message, true);
+        }
+      }
+
+      async function rejectApp(appId) {
+        const reason = prompt("Enter rejection reason:");
+        if (reason === null) return;
+        try {
+          const res = await adminFetch(`/api/admin/applications/${appId}/reject`, {
+            method: "PATCH",
+            body: JSON.stringify({ remarks: reason })
+          });
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.message || "Rejection failed");
+          showToast("Success", "Application rejected successfully.", false);
+          loadApplications();
+        } catch (err) {
+          showToast("Error", err.message, true);
+        }
+      }
+
+      async function loadCertificates() {
+        const tbody = document.getElementById("certificatesTableBody");
+        tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #888;">Loading certificates...</td></tr>`;
+
+        try {
+          const res = await adminFetch("/api/admin/certificates");
+          const data = await res.json();
+          const list = data.data || data;
+
+          if (!list || list.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #888;">No certificates found.</td></tr>`;
+            return;
+          }
+
+          tbody.innerHTML = list.map(cert => `
+            <tr>
+              <td><strong>${cert.certificateNumber}</strong></td>
+              <td>${cert.fullName}</td>
+              <td>${cert.course}</td>
+              <td>${new Date(cert.issueDate).toLocaleDateString()}</td>
+              <td><span style="color: #10b981;">${cert.status || 'Active'}</span></td>
+            </tr>
+          `).join("");
+        } catch (err) {
+          tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #ef5350;">Failed to load certificates: ${err.message}</td></tr>`;
+        }
+      }
+
+      async function loadEnquiries() {
+        const tbody = document.getElementById("enquiriesTableBody");
+        tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #888;">Loading enquiries...</td></tr>`;
+
+        try {
+          const res = await adminFetch("/api/admin/enquiries");
+          const data = await res.json();
+          const list = data.data || data;
+
+          if (!list || list.length === 0) {
+            tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #888;">No enquiries found.</td></tr>`;
+            return;
+          }
+
+          tbody.innerHTML = list.map(e => `
+            <tr>
+              <td>${e.fullName || e.name}</td>
+              <td>${e.email}</td>
+              <td>${e.phoneNumber}</td>
+              <td>${e.message || 'N/A'}</td>
+              <td><span style="color: #888;">${e.status || 'Received'}</span></td>
+            </tr>
+          `).join("");
+        } catch (err) {
+          tbody.innerHTML = `<tr><td colspan="5" style="text-align: center; color: #ef5350;">Failed to load enquiries: ${err.message}</td></tr>`;
+        }
+      }
+
+      function showToast(title, message, isError) {
+        if (typeof window.Toastify === "function") {
+          window.Toastify({
+            text: `${title}: ${message}`,
+            duration: 3500,
+            gravity: "top",
+            position: "right",
+            style: {
+              borderRadius: "8px",
+              background: isError ? "linear-gradient(135deg, #e94c4c, #b83434)" : "linear-gradient(135deg, #1f9d53, #15753d)"
+            }
+          }).showToast();
+        }
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="/components/script.js"></script>
+  </body>
+</html>
