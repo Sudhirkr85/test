@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // STATIC COLLEGES LIST (Delhi NCR)
   const STATIC_COLLEGES = [
-    "IITM (Institute of Information Technology & Management, Janakpuri, New Delhi)",
+    "Institute of Information Technology & Management, Janakpuri, New Delhi",
     "Dronacharya College of Engineering, Gurugram",
     "GD Goenka University, Gurugram",
     "Amity University, Gurugram",
@@ -172,7 +172,19 @@ document.addEventListener("DOMContentLoaded", () => {
       const corporateField = document.getElementById("corporateFieldContainer");
       const startDateField = document.getElementById("startDateFieldWrap");
       const endDateField = document.getElementById("endDateFieldWrap");
+      const qualField = document.getElementById("qualFieldWrap");
       
+      const needsQual = selectedTrainingType === "College Training" || selectedTrainingType === "Corporate Training";
+      if (qualField) {
+        if (needsQual) {
+          qualField.style.display = "block";
+          if (qualificationDropdown && qualificationDropdown.input) qualificationDropdown.input.required = true;
+        } else {
+          qualField.style.display = "none";
+          if (qualificationDropdown && qualificationDropdown.input) qualificationDropdown.input.required = false;
+        }
+      }
+
       if (collegeField) {
         if (selectedTrainingType === "College Training") {
           collegeField.style.display = "block";
@@ -488,7 +500,8 @@ document.addEventListener("DOMContentLoaded", () => {
         markError("dobFieldWrap", "applyDob");
         return false;
       }
-      if (!qualificationDropdown.getValue()) {
+      const needsQual = selectedTrainingType === "College Training" || selectedTrainingType === "Corporate Training";
+      if (needsQual && !qualificationDropdown.getValue()) {
         showToast("Required", "Qualification is required.", "error");
         markDropdownError("qualFieldWrap");
         return false;
@@ -582,32 +595,39 @@ document.addEventListener("DOMContentLoaded", () => {
       "Workshop":           "Workshop",
     };
 
-    let finalCourse = courseDropdown.getValue();
-    if (selectedTrainingType === "College Training") {
-      finalCourse += ` (${collegeDropdown.getValue()})`;
-    } else if (selectedTrainingType === "Corporate Training") {
-      finalCourse += ` (${corporateDropdown.getValue()})`;
+    const needsDates = selectedTrainingType === "College Training" || selectedTrainingType === "Corporate Training" || selectedTrainingType === "Workshop";
+    let startFmt = "";
+    let endFmt = "";
+    if (needsDates) {
+      startFmt = formatDateFriendly(document.getElementById("applyStartDate").value);
+      endFmt = formatDateFriendly(document.getElementById("applyEndDate").value);
     }
 
-    // Format Duration field conditionally: Months for regular students, Hours + Date Period for others
-    let finalDuration = durationDropdown.getValue();
-    const needsDates = selectedTrainingType === "College Training" || selectedTrainingType === "Corporate Training" || selectedTrainingType === "Workshop";
-    if (needsDates) {
-      const startFmt = formatDateFriendly(document.getElementById("applyStartDate").value);
-      const endFmt = formatDateFriendly(document.getElementById("applyEndDate").value);
-      finalDuration = `${durationDropdown.getValue()} | Duration: ${startFmt} - ${endFmt}`;
-    }
+    const needsQual = selectedTrainingType === "College Training" || selectedTrainingType === "Corporate Training";
 
     const payload = {
       fullName:         document.getElementById("applyFullName").value.trim(),
       phoneNumber:      document.getElementById("applyPhone").value.trim(),
       email:            document.getElementById("applyEmail").value.trim(),
       dateOfBirth:      document.getElementById("applyDob").value,
-      address:          "Not Applicable (Wizard Apply)",
-      course:           finalCourse,
+      course:           courseDropdown.getValue(),
       certificateType:  CERT_TYPE_MAP[selectedTrainingType] || "Training",
-      duration:         finalDuration,
+      duration:         durationDropdown.getValue()
     };
+
+    if (needsQual) {
+      payload.qualification = qualificationDropdown.getValue();
+    }
+
+    if (selectedTrainingType === "College Training") {
+      payload.organization = collegeDropdown.getValue();
+    } else if (selectedTrainingType === "Corporate Training") {
+      payload.organization = corporateDropdown.getValue();
+    }
+
+    if (needsDates) {
+      payload.durationDates = `${startFmt} - ${endFmt}`;
+    }
 
     try {
       const response = await fetch(`${BASE_URL}/api/certificate/apply`, {
