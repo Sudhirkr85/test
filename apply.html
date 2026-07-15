@@ -440,7 +440,7 @@
 
     <script>
       // Allow dynamic API hostname mappings based on windows host.
-      window.APP_BASE_URL = window.location.origin;
+      window.APP_BASE_URL = window.location.port === '5000' ? window.location.origin : 'http://localhost:5000';
     </script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="/js/searchable-dropdown.js"></script>
