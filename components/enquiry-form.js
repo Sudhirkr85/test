@@ -267,7 +267,6 @@ window.__sharedEnquiryFormActive = true;
         phoneNumber,
         email,
         course,
-        demoType: "Offline (Gurugram)",
         customCourseName: "",
         message: "Enquiry submitted via contact/enquiry widget"
       };
