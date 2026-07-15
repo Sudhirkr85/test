@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // STATIC COLLEGES LIST (Delhi NCR)
   const STATIC_COLLEGES = [
-    "Institute of Information Technology & Management, Janakpuri, New Delhi",
+    "IITM (Institute of Information Technology & Management, Janakpuri, New Delhi)",
     "Dronacharya College of Engineering, Gurugram",
     "GD Goenka University, Gurugram",
     "Amity University, Gurugram",

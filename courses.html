@@ -1804,7 +1804,9 @@
     );
 
     // Hit the backend API to save the enquiry
-    fetch("https://sssam.onrender.com/api/enquiry/demo-class", {
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://sssam.onrender.com';
+    fetch(`${BASE_URL}/api/enquiry/demo-class`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
