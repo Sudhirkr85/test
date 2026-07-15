@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog & Career Portal | SSSAM Academy</title>
+    <meta name="description" content="Read SSSAM Academy tech blogs, software tutorials, and active career hiring alerts for students in Gurugram NCR." />
+    <link rel="icon" href="/assets/logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/components/style.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      .blog-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+      .blog-hero {
+        text-align: center;
+        padding: 60px 20px;
+        background: radial-gradient(circle at 50% 50%, rgba(224,167,48,0.08) 0%, transparent 60%);
+        margin-bottom: 40px;
+      }
+      .blog-hero h1 {
+        font-family: 'Outfit', sans-serif;
+        font-size: 2.8rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 15px;
+      }
+      .blog-hero h1 span {
+        color: #e0a730;
+      }
+      .blog-hero p {
+        font-size: 1.1rem;
+        color: #aaa;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      /* Tabs filter */
+      .blog-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 40px;
+      }
+      .blog-tab-btn {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.1);
+        color: #aaa;
+        padding: 10px 24px;
+        border-radius: 30px;
+        font-weight: 600;
+        font-family: inherit;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+      .blog-tab-btn:hover, .blog-tab-btn.active {
+        background: #e0a730;
+        color: #111;
+        border-color: #e0a730;
+        box-shadow: 0 4px 15px rgba(224,167,48,0.25);
+      }
+
+      /* Blog Grid */
+      .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 30px;
+      }
+      .blog-card {
+        background: #111827;
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .blog-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+        border-color: rgba(224,167,48,0.25);
+      }
+      .blog-card-img-wrap {
+        height: 200px;
+        position: relative;
+        background: #1f2937;
+      }
+      .blog-card-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .blog-card-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: #e0a730;
+        color: #111;
+        font-weight: 700;
+        font-size: 0.72rem;
+        padding: 4px 12px;
+        border-radius: 20px;
+        text-transform: uppercase;
+      }
+      .blog-card-body {
+        padding: 25px;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+      .blog-card-meta {
+        font-size: 0.8rem;
+        color: #888;
+        margin-bottom: 12px;
+      }
+      .blog-card-title {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.4;
+        margin-bottom: 10px;
+        transition: color 0.2s ease;
+      }
+      .blog-card:hover .blog-card-title {
+        color: #e0a730;
+      }
+      .blog-card-desc {
+        color: #aaa;
+        font-size: 0.92rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        flex: 1;
+      }
+      .blog-card-btn {
+        color: #e0a730;
+        font-weight: 700;
+        font-size: 0.95rem;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+        margin-top: auto;
+      }
+      .blog-card-btn i {
+        transition: transform 0.2s ease;
+      }
+      .blog-card-btn:hover i {
+        transform: translateX(4px);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Component Container -->
+    <div id="navbar-placeholder"></div>
+
+    <main class="blog-container-wrapper">
+      <section class="blog-hero">
+        <h1>SSSAM <span>Blog & Careers</span> 🚀</h1>
+        <p>Explore articles, coding tutorials, academy updates, and active technical job openings for SSSAM graduates.</p>
+      </section>
+
+      <section class="blog-container">
+        <!-- Tabs Filter -->
+        <div class="blog-tabs">
+          <button class="blog-tab-btn active" onclick="filterType('all', this)">All Announcements</button>
+          <button class="blog-tab-btn" onclick="filterType('Blog', this)">Articles & Tutorials</button>
+          <button class="blog-tab-btn" onclick="filterType('Hiring', this)">Hiring Alerts</button>
+        </div>
+
+        <!-- Cards Grid -->
+        <div class="blog-grid" id="blogsGrid">
+          <div style="text-align: center; grid-column: 1 / -1; color: #888; padding: 50px;">
+            <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 15px;"></i>
+            <p>Fetching active blogs and alerts...</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Component Container -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+      window.APP_BASE_URL = window.location.origin;
+      let allPosts = [];
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        // Load Header & Footer components dynamically
+        try {
+          const [navRes, footRes] = await Promise.all([
+            fetch('/components/navbar.html'),
+            fetch('/components/footer.html')
+          ]);
+          document.getElementById('navbar-placeholder').innerHTML = await navRes.text();
+          document.getElementById('footer-placeholder').innerHTML = await footRes.text();
+          
+          // Re-init navbar mobile hamburger events from dynamic import
+          if (typeof window.initNavbarBurger === "function") {
+            window.initNavbarBurger();
+          }
+        } catch(e) { console.error("Components failed to load", e); }
+
+        await loadBlogs();
+      });
+
+      async function loadBlogs() {
+        const grid = document.getElementById("blogsGrid");
+        const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
+
+        try {
+          const res = await fetch(`${BASE_URL}/api/blogs`);
+          if (!res.ok) throw new Error("Failed to fetch");
+          allPosts = await res.json();
+          renderPosts(allPosts);
+        } catch(e) {
+          grid.innerHTML = `
+            <div style="text-align: center; grid-column: 1 / -1; color: #ef5350; padding: 50px;">
+              <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 15px;"></i>
+              <p>Failed to load posts. Please try again later.</p>
+            </div>
+          `;
+        }
+      }
+
+      function renderPosts(posts) {
+        const grid = document.getElementById("blogsGrid");
+        if (!posts || posts.length === 0) {
+          grid.innerHTML = `
+            <div style="text-align: center; grid-column: 1 / -1; color: #888; padding: 50px;">
+              <i class="far fa-folder-open" style="font-size: 2rem; margin-bottom: 15px;"></i>
+              <p>No active announcements found at this time.</p>
+            </div>
+          `;
+          return;
+        }
+
+        grid.innerHTML = posts.map(item => {
+          const imgUrl = item.imageUrl || 'assets/tech.webp';
+          const badgeColor = item.type === 'Hiring' ? 'background: #10b981; color: #fff;' : 'background: #e0a730; color: #111;';
+          const formattedDate = new Date(item.createdAt).toLocaleDateString("en-IN", { day: 'numeric', month: 'short', year: 'numeric' });
+          
+          return `
+            <article class="blog-card">
+              <div class="blog-card-img-wrap">
+                <img src="${imgUrl}" alt="${item.title}" class="blog-card-img" loading="lazy" />
+                <span class="blog-card-badge" style="${badgeColor}">${item.type}</span>
+              </div>
+              <div class="blog-card-body">
+                <div class="blog-card-meta">
+                  <span><i class="far fa-calendar"></i> ${formattedDate}</span> &nbsp;•&nbsp;
+                  <span><i class="far fa-user"></i> ${item.author}</span>
+                </div>
+                <h3 class="blog-card-title">${item.title}</h3>
+                <p class="blog-card-desc">${item.summary}</p>
+                <a href="/blog-detail.html?slug=${item.slug}" class="blog-card-btn">
+                  Read Article <i class="fas fa-arrow-right"></i>
+                </a>
+              </div>
+            </article>
+          `;
+        }).join("");
+      }
+
+      function filterType(type, btn) {
+        // Toggle active tabs class
+        document.querySelectorAll(".blog-tab-btn").forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        if (type === 'all') {
+          renderPosts(allPosts);
+        } else {
+          const filtered = allPosts.filter(p => p.type === type);
+          renderPosts(filtered);
+        }
+      }
+    </script>
+    <script src="/components/script.js" defer></script>
+  </body>
+</html>

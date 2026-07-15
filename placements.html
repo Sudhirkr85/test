@@ -465,5 +465,34 @@
       startAutoSlide();
     });
   </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", async () => {
+      const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
+      try {
+        const res = await fetch(`${BASE_URL}/api/placements`);
+        if (!res.ok) return;
+        const list = await res.json();
+        const grid = document.querySelector(".pl-students-grid");
+        if (grid && list && list.length > 0) {
+          list.forEach(item => {
+            const card = document.createElement("div");
+            card.className = "pl-student-card dynamic-card";
+            
+            const pkg = item.packageLPA ? `Package: ${item.packageLPA} LPA` : "Placed";
+            
+            card.innerHTML = `
+              <img src="${item.photoUrl}" alt="${item.studentName} placed at ${item.companyName} - SSSAM Academy" class="pl-student-photo" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; border: 2px solid #e0a730;" loading="lazy" />
+              <h3 class="pl-student-name">${item.studentName}</h3>
+              <span class="pl-student-course">${item.designation} (${item.companyName})</span>
+              <span class="pl-student-package">${pkg}</span>
+            `;
+            grid.appendChild(card);
+          });
+        }
+      } catch (err) {
+        console.error("Failed to load dynamic placements:", err);
+      }
+    });
+  </script>
 </body>
 </html>

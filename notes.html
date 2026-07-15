@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Free Study Notes &amp; PDF Materials | SSSAM Academy</title>
+    <meta name="description" content="Download free computer training study notes, interview questions, cheat sheets, and PDF course lectures from SSSAM Academy Gurugram." />
+    <link rel="icon" href="/assets/logo.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="/components/style.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <style>
+      .notes-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+      .notes-hero {
+        text-align: center;
+        padding: 60px 20px;
+        background: radial-gradient(circle at 50% 50%, rgba(16,185,129,0.06) 0%, transparent 60%);
+        margin-bottom: 40px;
+      }
+      .notes-hero h1 {
+        font-family: 'Outfit', sans-serif;
+        font-size: 2.8rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 15px;
+      }
+      .notes-hero h1 span {
+        color: #10b981;
+      }
+      .notes-hero p {
+        font-size: 1.1rem;
+        color: #aaa;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      
+      .notes-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 30px;
+      }
+      .notes-card {
+        background: #111827;
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 16px;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      .notes-card:hover {
+        transform: translateY(-5px);
+        border-color: rgba(16,185,129,0.3);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      }
+      .notes-icon {
+        font-size: 2.2rem;
+        color: #10b981;
+      }
+      .notes-category {
+        font-size: 0.72rem;
+        background: rgba(16,185,129,0.15);
+        color: #10b981;
+        padding: 3px 12px;
+        border-radius: 20px;
+        font-weight: 700;
+        text-transform: uppercase;
+        width: fit-content;
+      }
+      .notes-title {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #fff;
+        line-height: 1.4;
+      }
+      .notes-desc {
+        color: #aaa;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        flex: 1;
+      }
+      
+      /* Gate Modal styles */
+      .gate-overlay {
+        position: fixed;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.7);
+        backdrop-filter: blur(4px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10000;
+        padding: 20px;
+      }
+      .gate-card {
+        background: #111827;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 16px;
+        padding: 30px;
+        max-width: 450px;
+        width: 100%;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+      }
+      .gate-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding-bottom: 10px;
+      }
+      .gate-header h3 {
+        font-family: 'Outfit', sans-serif;
+        color: #10b981;
+        margin: 0;
+      }
+      .gate-header .close-btn {
+        font-size: 1.6rem;
+        cursor: pointer;
+        color: #888;
+      }
+      .gate-form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .gate-field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .gate-field label {
+        font-size: 0.8rem;
+        color: #aaa;
+        font-weight: 600;
+      }
+      .gate-field input, .gate-field select {
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.1);
+        padding: 10px 14px;
+        border-radius: 8px;
+        color: #fff;
+        outline: none;
+        transition: border 0.2s ease;
+      }
+      .gate-field input:focus, .gate-field select:focus {
+        border-color: #10b981;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar Component -->
+    <div id="navbar-placeholder"></div>
+
+    <main class="notes-container-wrapper">
+      <section class="notes-hero">
+        <h1>Free <span>Study Materials &amp; Notes</span> 📚</h1>
+        <p>Get instant access to free lecture slides, programming guides, and interview cheat sheets designed by SSSAM faculty.</p>
+      </section>
+
+      <section class="notes-container">
+        <!-- Notes Grid -->
+        <div class="notes-grid" id="notesGrid">
+          <div style="text-align: center; grid-column: 1 / -1; color: #888; padding: 50px;">
+            <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 15px;"></i>
+            <p>Fetching active study materials...</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- LEAD CAPTURE DOWNLOAD POPUP (Gated form) -->
+    <div class="gate-overlay" id="gateModal" style="display: none;">
+      <div class="gate-card">
+        <div class="gate-header">
+          <h3>Unlock Free Download 🔓</h3>
+          <span class="close-btn" onclick="closeGateModal()">&times;</span>
+        </div>
+        <p style="color: #aaa; font-size: 0.85rem; margin-bottom: 15px;">Enter your details to instantly receive the PDF study guide.</p>
+        <form class="gate-form" id="leadGateForm">
+          <input type="hidden" id="targetNoteId" />
+          <div class="gate-field">
+            <label for="leadName">Full Name *</label>
+            <input type="text" id="leadName" required />
+          </div>
+          <div class="gate-field">
+            <label for="leadPhone">Mobile Number *</label>
+            <input type="tel" id="leadPhone" placeholder="10-digit mobile number" required />
+          </div>
+          <div class="gate-field">
+            <label for="leadEmail">Email Address (optional)</label>
+            <input type="email" id="leadEmail" />
+          </div>
+          <div class="gate-field">
+            <label for="leadCourse">Course of Interest *</label>
+            <select id="leadCourse" required>
+              <option value="">-- Select Course --</option>
+              <option value="Data Science">Data Science</option>
+              <option value="Data Analytics + Power BI">Data Analytics + Power BI</option>
+              <option value="AI & Machine Learning">AI & Machine Learning</option>
+              <option value="Full Stack Development with AI">Full Stack Development with AI</option>
+              <option value="Ethical Hacking & Cyber Security">Ethical Hacking & Cyber Security</option>
+              <option value="Digital Marketing & SEO">Digital Marketing & SEO</option>
+              <option value="AWS Cloud Computing">AWS Cloud Computing</option>
+              <option value="Basic Computer Course">Basic Computer Course</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary" style="margin-top: 10px; background: #10b981; color: #fff;">Download Material &rarr;</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Footer Component -->
+    <div id="footer-placeholder"></div>
+
+    <script>
+      window.APP_BASE_URL = window.location.origin;
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        // Load Header & Footer
+        try {
+          const [navRes, footRes] = await Promise.all([
+            fetch('/components/navbar.html'),
+            fetch('/components/footer.html')
+          ]);
+          document.getElementById('navbar-placeholder').innerHTML = await navRes.text();
+          document.getElementById('footer-placeholder').innerHTML = await footRes.text();
+          
+          if (typeof window.initNavbarBurger === "function") {
+            window.initNavbarBurger();
+          }
+        } catch(e) { console.error("Components failed to load", e); }
+
+        await loadNotes();
+        setupGateSubmission();
+      });
+
+      async function loadNotes() {
+        const grid = document.getElementById("notesGrid");
+        const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
+
+        try {
+          const res = await fetch(`${BASE_URL}/api/notes`);
+          if (!res.ok) throw new Error("Fetch failed");
+          const notes = await res.json();
+
+          if (!notes || notes.length === 0) {
+            grid.innerHTML = `
+              <div style="text-align: center; grid-column: 1 / -1; color: #888; padding: 50px;">
+                <i class="far fa-folder-open" style="font-size: 2rem; margin-bottom: 15px;"></i>
+                <p>No study notes uploaded yet. Check back soon!</p>
+              </div>
+            `;
+            return;
+          }
+
+          grid.innerHTML = notes.map(item => `
+            <div class="notes-card">
+              <div class="notes-icon"><i class="far fa-file-pdf"></i></div>
+              <span class="notes-category">${item.category}</span>
+              <h3 class="notes-title">${item.title}</h3>
+              <p class="notes-desc">${item.description}</p>
+              <button class="btn-primary" onclick="initiateDownload('${item._id}')" style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.25); color: #10b981; font-weight: 700;">
+                <i class="fas fa-download"></i> Download PDF
+              </button>
+            </div>
+          `).join("");
+        } catch(e) {
+          grid.innerHTML = `
+            <div style="text-align: center; grid-column: 1 / -1; color: #ef5350; padding: 50px;">
+              <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 15px;"></i>
+              <p>Failed to load study notes: ${e.message}</p>
+            </div>
+          `;
+        }
+      }
+
+      // Check if user has already submitted the lead before
+      window.initiateDownload = function(noteId) {
+        const hasSubmitted = localStorage.getItem("notes_lead_submitted");
+        if (hasSubmitted) {
+          // Bypass form if already submitted
+          triggerDirectDownload(noteId);
+        } else {
+          // Open gated modal popup
+          document.getElementById("targetNoteId").value = noteId;
+          document.getElementById("gateModal").style.display = "flex";
+        }
+      };
+
+      window.closeGateModal = function() {
+        document.getElementById("gateModal").style.display = "none";
+      };
+
+      async function triggerDirectDownload(noteId) {
+        const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
+        const cachedLead = JSON.parse(localStorage.getItem("notes_lead_data") || "{}");
+
+        try {
+          const res = await fetch(`${BASE_URL}/api/notes/download/${noteId}`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(cachedLead)
+          });
+          const data = await res.json();
+          if (!res.ok) throw new Error(data.message);
+          
+          // Trigger file opening
+          window.open(data.fileUrl, '_blank');
+        } catch (e) {
+          alert("Failed to download: " + e.message);
+        }
+      }
+
+      function setupGateSubmission() {
+        const form = document.getElementById("leadGateForm");
+        form.addEventListener("submit", async (e) => {
+          e.preventDefault();
+          const noteId = document.getElementById("targetNoteId").value;
+          const leadData = {
+            fullName: document.getElementById("leadName").value.trim(),
+            phoneNumber: document.getElementById("leadPhone").value.trim(),
+            email: document.getElementById("leadEmail").value.trim(),
+            course: document.getElementById("leadCourse").value
+          };
+
+          const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
+
+          try {
+            const res = await fetch(`${BASE_URL}/api/notes/download/${noteId}`, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify(leadData)
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.message || "Failed to submit lead");
+
+            // Cache lead state so they don't have to fill it again
+            localStorage.setItem("notes_lead_submitted", "true");
+            localStorage.setItem("notes_lead_data", JSON.stringify(leadData));
+
+            closeGateModal();
+            
+            // Instantly open the PDF document
+            window.open(data.fileUrl, '_blank');
+          } catch(err) {
+            alert(err.message);
+          }
+        });
+      }
+    </script>
+    <script src="/components/script.js" defer></script>
+  </body>
+</html>
