@@ -23,12 +23,19 @@ document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const certNoParam = urlParams.get("cert") || urlParams.get("certNo");
   const dobParam = urlParams.get("dob");
+  const tabParam = urlParams.get("tab");
+
+  // Handle explicit tab routing from URL (e.g. ?tab=download or ?tab=verify)
+  if (tabParam === "download" || dobParam) {
+    const downloadTab = document.querySelector('[data-tab="download"]');
+    if (downloadTab) downloadTab.click();
+  } else if (tabParam === "verify") {
+    const verifyTab = document.querySelector('[data-tab="verify"]');
+    if (verifyTab) verifyTab.click();
+  }
 
   if (certNoParam) {
     if (dobParam) {
-      // Activate download tab & populate
-      const downloadTab = document.querySelector('[data-tab="download"]');
-      if (downloadTab) downloadTab.click();
       document.getElementById("downloadCertificateNumber").value = certNoParam;
       document.getElementById("downloadDob").value = dobParam;
     } else {

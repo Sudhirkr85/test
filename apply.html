@@ -50,6 +50,100 @@
         border-radius: 3px;
         animation: fieldShake 0.35s ease;
       }
+
+      /* Premium Tooltip overlay for category cards showing available courses on hover */
+      .category-card {
+        position: relative;
+      }
+      .category-tooltip {
+        position: absolute;
+        bottom: calc(100% + 12px);
+        left: 50%;
+        transform: translateX(-50%) translateY(8px);
+        width: 260px;
+        background: rgba(20, 20, 20, 0.98);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(224, 167, 48, 0.38);
+        border-radius: 10px;
+        padding: 12px 14px;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 100;
+        text-align: left;
+      }
+      .category-tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        border-width: 6px;
+        border-style: solid;
+        border-color: rgba(20, 20, 20, 0.98) transparent transparent transparent;
+      }
+      .category-tooltip strong {
+        display: block;
+        font-size: 0.8rem;
+        color: #e0a730;
+        margin-bottom: 6px;
+        font-family: 'Outfit', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+      }
+      .category-tooltip ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .category-tooltip li {
+        font-size: 0.78rem;
+        color: #dfdfdf;
+        margin-bottom: 5px;
+        line-height: 1.4;
+        position: relative;
+        padding-left: 12px;
+      }
+      .category-tooltip li::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: #e0a730;
+        font-weight: bold;
+      }
+      .category-tooltip li:last-child {
+        margin-bottom: 0;
+      }
+
+      /* Light mode compatibility for tooltips */
+      body.light-mode .category-tooltip {
+        background: rgba(255, 255, 255, 0.98);
+        border-color: rgba(224, 167, 48, 0.5);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      }
+      body.light-mode .category-tooltip::after {
+        border-color: rgba(255, 255, 255, 0.98) transparent transparent transparent;
+      }
+      body.light-mode .category-tooltip strong {
+        color: #b98114;
+      }
+      body.light-mode .category-tooltip li {
+        color: #2d3748;
+      }
+      body.light-mode .category-tooltip li::before {
+        color: #b98114;
+      }
+
+      /* Only show tooltips on hover on screens that support hover pointers */
+      @media (hover: hover) {
+        .category-card:hover .category-tooltip {
+          opacity: 1;
+          transform: translateX(-50%) translateY(0);
+          pointer-events: auto;
+        }
+      }
     </style>
   </head>
 
@@ -188,26 +282,74 @@
                   <div class="category-card" data-category="Programming & Development">
                     <span class="category-card-icon">💻</span>
                     <span class="category-card-title">Programming & Development</span>
+                    <div class="category-tooltip">
+                      <strong>Includes Courses Like:</strong>
+                      <ul>
+                        <li>Python Programming & Full Stack</li>
+                        <li>Java Programming & Full Stack</li>
+                        <li>C & C++ Programming, MERN Stack</li>
+                      </ul>
+                    </div>
                   </div>
                   <div class="category-card" data-category="Data & AI">
                     <span class="category-card-icon">📊</span>
                     <span class="category-card-title">Data & AI</span>
+                    <div class="category-tooltip">
+                      <strong>Includes Courses Like:</strong>
+                      <ul>
+                        <li>Data Science, AI & ML</li>
+                        <li>Data Analytics & Engineering</li>
+                        <li>Oracle SQL & PL/SQL</li>
+                      </ul>
+                    </div>
                   </div>
                   <div class="category-card" data-category="Cyber Security & Ethical Hacking">
                     <span class="category-card-icon">🛡️</span>
                     <span class="category-card-title">Cyber Security & Ethical Hacking</span>
+                    <div class="category-tooltip">
+                      <strong>Includes Courses Like:</strong>
+                      <ul>
+                        <li>Ethical Hacking (CEH)</li>
+                        <li>AWS/Azure/GCP Cloud</li>
+                        <li>CCNA/CCNP, Linux Admin</li>
+                      </ul>
+                    </div>
                   </div>
                   <div class="category-card" data-category="Digital Marketing">
                     <span class="category-card-icon">📈</span>
                     <span class="category-card-title">Digital Marketing</span>
+                    <div class="category-tooltip">
+                      <strong>Includes Courses Like:</strong>
+                      <ul>
+                        <li>SEO & SEM Optimization</li>
+                        <li>Social Media & Content Marketing</li>
+                        <li>Google, Facebook & YouTube Ads</li>
+                      </ul>
+                    </div>
                   </div>
                   <div class="category-card" data-category="Office & Business Skills">
                     <span class="category-card-icon">📝</span>
                     <span class="category-card-title">Office & Business Skills</span>
+                    <div class="category-tooltip">
+                      <strong>Includes Courses Like:</strong>
+                      <ul>
+                        <li>Advanced Excel & Macros</li>
+                        <li>Tally Prime & ERP 9</li>
+                        <li>MIS Reporting & Accounting</li>
+                      </ul>
+                    </div>
                   </div>
                   <div class="category-card" data-category="Design & Creative">
                     <span class="category-card-icon">🎨</span>
                     <span class="category-card-title">Design & Creative</span>
+                    <div class="category-tooltip">
+                      <strong>Includes Courses Like:</strong>
+                      <ul>
+                        <li>Graphic Design & UI/UX</li>
+                        <li>Photoshop, Illustrator, Figma</li>
+                        <li>AutoCAD, 3D Animation, Video Editing</li>
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>
