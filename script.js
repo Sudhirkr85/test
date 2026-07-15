@@ -333,7 +333,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const homeDemoMessage = form.querySelector("textarea[name='message']");
   const homeDemoSubmitBtn = form.querySelector(".home-demo-submit");
 
-  const BASE_URL = "https://sssam.onrender.com".replace(/\/+$/, "");
+  const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
   const DEMO_ENQUIRY_API_URL = `${BASE_URL}/api/enquiry/demo-class`;
   let feedbackTimer = null;
   let successCloseTimer = null;
