@@ -153,6 +153,11 @@
             <span><i class="far fa-calendar"></i> <span id="postDate">—</span></span>
             <span><i class="far fa-user"></i> <span id="postAuthor">SSSAM Academy</span></span>
           </div>
+          <div class="detail-share" style="margin-top: 15px; display: flex; gap: 15px; align-items: center; font-size: 0.85rem;">
+            <span style="color: #666;">Share:</span>
+            <a href="#" id="shareWA" target="_blank" style="color: #25d366; text-decoration: none; display: flex; align-items: center; gap: 5px; font-weight: 600;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="#" id="shareLI" target="_blank" style="color: #0a66c2; text-decoration: none; display: flex; align-items: center; gap: 5px; font-weight: 600;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          </div>
         </header>
 
         <div class="detail-banner-wrap" id="bannerWrap" style="display: none;">
@@ -267,6 +272,12 @@
           }
 
           document.getElementById("postBody").innerHTML = post.content;
+
+          // Setup social share links
+          const shareUrl = encodeURIComponent(window.location.href);
+          const shareText = encodeURIComponent(`Read this article on SSSAM Academy: ${post.title}`);
+          document.getElementById("shareWA").href = `https://api.whatsapp.com/send?text=${shareText}%20${shareUrl}`;
+          document.getElementById("shareLI").href = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
 
           // Dynamically inject JSON-LD schema markup
           injectJsonLdSchema(post);

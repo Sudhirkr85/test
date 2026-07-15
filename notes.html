@@ -315,50 +315,79 @@
           const data = await res.json();
           if (!res.ok) throw new Error(data.message);
           
-          // Trigger file opening
-          window.open(data.fileUrl, '_blank');
-        } catch (e) {
-          alert("Failed to download: " + e.message);
-        }
-      }
-
-      function setupGateSubmission() {
-        const form = document.getElementById("leadGateForm");
-        form.addEventListener("submit", async (e) => {
-          e.preventDefault();
-          const noteId = document.getElementById("targetNoteId").value;
-          const leadData = {
-            fullName: document.getElementById("leadName").value.trim(),
-            phoneNumber: document.getElementById("leadPhone").value.trim(),
-            email: document.getElementById("leadEmail").value.trim(),
-            course: document.getElementById("leadCourse").value
-          };
-
-          const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
-
-          try {
-            const res = await fetch(`${BASE_URL}/api/notes/download/${noteId}`, {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify(leadData)
-            });
-            const data = await res.json();
-            if (!res.ok) throw new Error(data.message || "Failed to submit lead");
-
-            // Cache lead state so they don't have to fill it again
-            localStorage.setItem("notes_lead_submitted", "true");
-            localStorage.setItem("notes_lead_data", JSON.stringify(leadData));
-
-            closeGateModal();
-            
-            // Instantly open the PDF document
+            // Trigger file opening
             window.open(data.fileUrl, '_blank');
-          } catch(err) {
-            alert(err.message);
+            showDownloadToast("Opening study note PDF. Happy learning!");
+          } catch (e) {
+            alert("Failed to download: " + e.message);
           }
-        });
-      }
-    </script>
-    <script src="/components/script.js" defer></script>
-  </body>
-</html>
+        }
+
+        function setupGateSubmission() {
+          const form = document.getElementById("leadGateForm");
+          form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const noteId = document.getElementById("targetNoteId").value;
+            const leadData = {
+              fullName: document.getElementById("leadName").value.trim(),
+              phoneNumber: document.getElementById("leadPhone").value.trim(),
+              email: document.getElementById("leadEmail").value.trim(),
+              course: document.getElementById("leadCourse").value
+            };
+
+            const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
+
+            try {
+              const res = await fetch(`${BASE_URL}/api/notes/download/${noteId}`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(leadData)
+              });
+              const data = await res.json();
+              if (!res.ok) throw new Error(data.message || "Failed to submit lead");
+
+              // Cache lead state so they don't have to fill it again
+              localStorage.setItem("notes_lead_submitted", "true");
+              localStorage.setItem("notes_lead_data", JSON.stringify(leadData));
+
+              closeGateModal();
+              
+              // Instantly open the PDF document
+              window.open(data.fileUrl, '_blank');
+              showDownloadToast("Thank you! Opening PDF. Our counselor will connect shortly.");
+            } catch(err) {
+              alert(err.message);
+            }
+          });
+        }
+
+        function showDownloadToast(message) {
+          const toast = document.createElement("div");
+          toast.style.position = "fixed";
+          toast.style.bottom = "30px";
+          toast.style.right = "30px";
+          toast.style.background = "linear-gradient(135deg, #10b981, #059669)";
+          toast.style.color = "#fff";
+          toast.style.padding = "15px 25px";
+          toast.style.borderRadius = "8px";
+          toast.style.boxShadow = "0 10px 25px rgba(0,0,0,0.3)";
+          toast.style.zIndex = "99999";
+          toast.style.fontFamily = "'Outfit', sans-serif";
+          toast.style.fontSize = "0.92rem";
+          toast.style.fontWeight = "600";
+          toast.style.display = "flex";
+          toast.style.alignItems = "center";
+          toast.style.gap = "8px";
+          toast.innerHTML = `<span>✅</span> <span>${message}</span>`;
+          
+          document.body.appendChild(toast);
+          setTimeout(() => {
+            toast.style.transition = "opacity 0.5s ease";
+            toast.style.opacity = "0";
+            setTimeout(() => toast.remove(), 500);
+          }, 4500);
+        }
+      </script>
+      <script src="/components/script.js" defer></script>
+    </body>
+  </html>
