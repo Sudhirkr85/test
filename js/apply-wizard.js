@@ -205,8 +205,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
 
-      // Check if this type requires Start/End date range
-      const needsDates = selectedTrainingType === "College Training" || selectedTrainingType === "Corporate Training" || selectedTrainingType === "Workshop";
+      // Start/End date range is required for all training types except Workshops
+      const needsDates = selectedTrainingType !== "Workshop";
       if (startDateField && endDateField) {
         if (needsDates) {
           startDateField.style.display = "block";
@@ -511,7 +511,7 @@ document.addEventListener("DOMContentLoaded", () => {
         markDropdownError("durationFieldWrap");
         return false;
       }
-      const needsDates = selectedTrainingType === "College Training" || selectedTrainingType === "Corporate Training" || selectedTrainingType === "Workshop";
+      const needsDates = selectedTrainingType !== "Workshop";
       if (needsDates) {
         const startDate = document.getElementById("applyStartDate");
         const endDate = document.getElementById("applyEndDate");
@@ -595,7 +595,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "Workshop":           "Workshop",
     };
 
-    const needsDates = selectedTrainingType === "College Training" || selectedTrainingType === "Corporate Training" || selectedTrainingType === "Workshop";
+    const needsDates = selectedTrainingType !== "Workshop";
     let startFmt = "";
     let endFmt = "";
     if (needsDates) {

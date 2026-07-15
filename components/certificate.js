@@ -635,4 +635,30 @@
       }
     });
   }
+
+  // Automatically load inputs from URL query params & verify
+  const urlParams = new URLSearchParams(window.location.search);
+  const certNoParam = urlParams.get("cert") || urlParams.get("certNo");
+  const dobParam = urlParams.get("dob");
+
+  if (certNoParam) {
+    if (dobParam) {
+      const downloadCertInput = document.getElementById("downloadCertificateNumber");
+      const downloadDobInput = document.getElementById("downloadDob");
+      if (downloadCertInput && downloadDobInput) {
+        downloadCertInput.value = certNoParam;
+        downloadDobInput.value = dobParam;
+      }
+    } else {
+      const verifyInput = document.getElementById("verifyCertificateNumber");
+      if (verifyInput) {
+        verifyInput.value = certNoParam;
+        if (verifyForm) {
+          setTimeout(() => {
+            verifyForm.dispatchEvent(new Event("submit"));
+          }, 100);
+        }
+      }
+    }
+  }
 })();

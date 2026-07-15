@@ -19,9 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Automatically load inputs from URL query params
+  // Automatically load inputs from URL query params & verify
   const urlParams = new URLSearchParams(window.location.search);
-  const certNoParam = urlParams.get("certNo");
+  const certNoParam = urlParams.get("cert") || urlParams.get("certNo");
   const dobParam = urlParams.get("dob");
 
   if (certNoParam) {
@@ -32,8 +32,17 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("downloadCertificateNumber").value = certNoParam;
       document.getElementById("downloadDob").value = dobParam;
     } else {
-      // Populate verify tab
-      document.getElementById("verifyCertificateNumber").value = certNoParam;
+      // Populate verify tab & auto-verify
+      const verifyInput = document.getElementById("verifyCertificateNumber");
+      if (verifyInput) {
+        verifyInput.value = certNoParam;
+        const verifyForm = document.getElementById("verifyCertificateForm");
+        if (verifyForm) {
+          setTimeout(() => {
+            verifyForm.dispatchEvent(new Event("submit"));
+          }, 100);
+        }
+      }
     }
   }
 
