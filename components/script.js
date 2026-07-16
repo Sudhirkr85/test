@@ -28,34 +28,31 @@ document.addEventListener("DOMContentLoaded", () => {
       const mobileDropdownToggle = document.querySelector(".mobile-dropdown-toggle");
       const mobileDropdown = document.querySelector(".mobile-dropdown");
 
-      // Bind mobile menu toggle helpers
+      // Mobile Menu Toggle Function exposed globally
       window.initNavbarBurger = function() {
-        const hBtn = document.querySelector(".hamburger");
-        const mMenu = document.querySelector(".mobile-menu");
-        if (hBtn && mMenu) {
-          // Remove old listeners to avoid multiple fires
-          const newHBtn = hBtn.cloneNode(true);
-          hBtn.parentNode.replaceChild(newHBtn, hBtn);
-          newHBtn.addEventListener("click", () => {
-            mMenu.classList.toggle("show");
-          });
-        }
-        
-        const mDropdownToggle = document.querySelector(".mobile-dropdown-toggle");
-        const mDropdown = document.querySelector(".mobile-dropdown");
-        if (mDropdownToggle && mDropdown) {
-          const newMDT = mDropdownToggle.cloneNode(true);
-          mDropdownToggle.parentNode.replaceChild(newMDT, mDropdownToggle);
-          newMDT.addEventListener("click", () => {
-            mDropdown.classList.toggle("open");
-            const isOpen = mDropdown.classList.contains("open");
-            newMDT.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        const burger = document.querySelector(".hamburger");
+        const menu = document.querySelector(".mobile-menu");
+        if (burger && menu) {
+          // Remove old listeners to avoid multiple binding events
+          const newBurger = burger.cloneNode(true);
+          burger.parentNode.replaceChild(newBurger, burger);
+          newBurger.addEventListener("click", () => {
+            menu.classList.toggle("show");
           });
         }
       };
 
-      // Run immediately for normal statically included header
+      // Call it initially
       window.initNavbarBurger();
+
+      // Mobile Certificate submenu toggle
+      if (mobileDropdownToggle && mobileDropdown) {
+        mobileDropdownToggle.addEventListener("click", () => {
+          mobileDropdown.classList.toggle("open");
+          const isOpen = mobileDropdown.classList.contains("open");
+          mobileDropdownToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+      }
 
       // Desktop Certificate submenu toggle
       if (desktopDropdownToggle && desktopDropdown) {
@@ -109,42 +106,41 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       // FAQ keyboard support
-      document.addEventListener('DOMContentLoaded', () => {
-        const faqQuestions = document.querySelectorAll('.faq-question');
+      const faqQuestions = document.querySelectorAll('.faq-question');
 
-        faqQuestions.forEach(question => {
-          question.setAttribute('tabindex', '0');
-          question.setAttribute('role', 'button');
+      faqQuestions.forEach(question => {
+        question.setAttribute('tabindex', '0');
+        question.setAttribute('role', 'button');
 
-          question.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              window.toggleFAQ(question);
+        question.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            window.toggleFAQ(question);
+          }
+        });
+      });
+
+      // Smooth scroll animation for FAQ answers with GSAP if available
+      if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('.faq-item').forEach((el, index) => {
+          gsap.from(el, {
+            opacity: 0,
+            y: 20,
+            duration: 0.6,
+            ease: "power2.out",
+            delay: index * 0.08,
+            scrollTrigger: {
+              trigger: el,
+              start: "top 85%",
+              end: "bottom 65%",
+              scrub: false
             }
           });
         });
+      }
 
-        // Smooth scroll animation for FAQ answers with GSAP if available
-        if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-          gsap.registerPlugin(ScrollTrigger);
-
-          gsap.utils.toArray('.faq-item').forEach((el, index) => {
-            gsap.from(el, {
-              opacity: 0,
-              y: 20,
-              duration: 0.6,
-              ease: "power2.out",
-              delay: index * 0.08,
-              scrollTrigger: {
-                trigger: el,
-                start: "top 85%",
-                end: "bottom 65%",
-                scrub: false
-              }
-            });
-          });
-        }
-      });
       // Desktop Theme Toggle
       if (themeBtn) {
         themeBtn.addEventListener("click", () => {
