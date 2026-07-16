@@ -618,8 +618,32 @@
         btn.classList.add("active");
         btn.setAttribute("aria-pressed", "true");
 
-        const filtered = type === 'all' ? allPosts : allPosts.filter(p => p.type === type);
-        renderPosts(filtered);
+        // If dynamic posts loaded, filter using array data
+        if (allPosts && allPosts.length > 0) {
+          const filtered = type === 'all' ? allPosts : allPosts.filter(p => p.type === type);
+          renderPosts(filtered);
+          return;
+        }
+
+        // If using static fallback cards, dynamically filter the DOM elements
+        const grid = document.getElementById("blogsGrid");
+        
+        // Reset grid to full static fallback list first
+        grid.innerHTML = staticFallbackHTML;
+        
+        if (type === 'all') return; // Done resetting
+
+        // Filter the static DOM cards
+        const cards = grid.querySelectorAll(".blog-card");
+        cards.forEach(card => {
+          const badge = card.querySelector(".blog-card-badge");
+          if (badge) {
+            const cardType = badge.textContent.trim();
+            if (cardType !== type) {
+              card.remove(); // Remove card if it doesn't match filter type
+            }
+          }
+        });
       }
     </script>
     <script src="/components/script.js" defer></script>
