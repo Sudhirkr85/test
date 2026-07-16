@@ -508,13 +508,17 @@
         const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
 
         try {
-          const res = await fetch(`${BASE_URL}/api/blogs`);
+          // Add nocache query parameter to bypass 304 caching during local tests
+          const res = await fetch(`${BASE_URL}/api/blogs?nocache=${Date.now()}`);
           if (!res.ok) throw new Error("API error");
 
           const data = await res.json();
+          
+          // API might return { data: [...] } or direct list [...]
+          const rawPosts = Array.isArray(data) ? data : (data.data || []);
 
           // Sort: newest first (createdAt descending)
-          allPosts = data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+          allPosts = rawPosts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
 
           renderPosts(allPosts);
 
