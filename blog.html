@@ -547,7 +547,7 @@
           return diff <= 7;
         };
 
-        grid.innerHTML = posts.map((item, idx) => {
+        const dynamicHTML = posts.map((item, idx) => {
           const imgUrl = item.imageUrl || (item.type === 'Hiring' ? '/assets/career_fallback.webp' : '/assets/blog_fallback.webp');
           const badgeStyle = item.type === 'Hiring'
             ? 'background:#10b981;color:#fff;'
@@ -588,6 +588,10 @@
               </div>
             </article>`;
         }).join("");
+
+        // Append static fallback cards at the bottom of dynamic database posts
+        grid.innerHTML = dynamicHTML + staticFallbackHTML;
+      }
       }
 
       function injectPostsStructuredData(posts) {
