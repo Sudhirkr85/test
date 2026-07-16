@@ -377,6 +377,39 @@
       // Store the original static fallback HTML when DOM loads
       let staticFallbackHTML = "";
       document.addEventListener("DOMContentLoaded", async () => {
+        // Adjust static fallback dates relative to current date so they always look recent
+        const today = new Date();
+        const dateOptions = { day: 'numeric', month: 'short', year: 'numeric' };
+        
+        const date1 = new Date(today);
+        date1.setDate(today.getDate() - 1); // 1 day ago
+        const date2 = new Date(today);
+        date2.setDate(today.getDate() - 3); // 3 days ago
+        const date3 = new Date(today);
+        date3.setDate(today.getDate() - 5); // 5 days ago
+
+        const cards = document.querySelectorAll("#blogsGrid .blog-card");
+        if (cards.length >= 3) {
+          // Card 1 Date
+          const time1 = cards[0].querySelector("time");
+          if (time1) {
+            time1.setAttribute("datetime", date1.toISOString().split('T')[0]);
+            time1.textContent = date1.toLocaleDateString("en-IN", dateOptions);
+          }
+          // Card 2 Date
+          const time2 = cards[1].querySelector("time");
+          if (time2) {
+            time2.setAttribute("datetime", date2.toISOString().split('T')[0]);
+            time2.textContent = date2.toLocaleDateString("en-IN", dateOptions);
+          }
+          // Card 3 Date
+          const time3 = cards[2].querySelector("time");
+          if (time3) {
+            time3.setAttribute("datetime", date3.toISOString().split('T')[0]);
+            time3.textContent = date3.toLocaleDateString("en-IN", dateOptions);
+          }
+        }
+
         staticFallbackHTML = document.getElementById("blogsGrid").innerHTML;
         try {
           const [navRes, footRes] = await Promise.all([
