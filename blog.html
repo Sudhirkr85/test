@@ -363,6 +363,66 @@
             </div>
           </article>
 
+          <!-- STATIC CARD 4 — Data Analyst Roadmap -->
+          <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+            <div class="blog-card-img-wrap" style="background:#0f172a;">
+              <img src="/assets/data_analyst_roadmap.png"
+                   alt="Data Analyst learning roadmap and career guide 2026"
+                   class="blog-card-img"
+                   width="400" height="200"
+                   loading="lazy" />
+              <span class="blog-card-badge" style="background:#e0a730;color:#111;">Blog</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span><i class="far fa-calendar" aria-hidden="true"></i> <time itemprop="datePublished" datetime="2026-07-08">08 Jul 2026</time></span>
+                &nbsp;•&nbsp;
+                <span><i class="far fa-user" aria-hidden="true"></i> <span itemprop="author">SSSAM Academy</span></span>
+              </div>
+              <h2 class="blog-card-title" itemprop="headline">Data Analyst Learning Roadmap 2026 — SQL, Power BI &amp; Python</h2>
+              <div class="blog-card-tags">
+                <span class="blog-card-tag">data analytics</span>
+                <span class="blog-card-tag">power bi</span>
+                <span class="blog-card-tag">sql</span>
+                <span class="blog-card-tag">python</span>
+              </div>
+              <p class="blog-card-desc" itemprop="description">The complete roadmap to becoming a certified Data Analyst in 2026. Master SQL queries, Power BI dashboards, Excel analytics, and basic Python modules.</p>
+              <a href="/blog-detail.html?slug=data-analyst-learning-roadmap-2026" class="blog-card-btn" itemprop="url">
+                Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- STATIC CARD 5 — Digital Marketing Roadmap -->
+          <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+            <div class="blog-card-img-wrap" style="background:#0f172a;">
+              <img src="/assets/digital_marketing_roadmap.png"
+                   alt="Digital Marketing training roadmap 2026 by SSSAM Academy"
+                   class="blog-card-img"
+                   width="400" height="200"
+                   loading="lazy" />
+              <span class="blog-card-badge" style="background:#e0a730;color:#111;">Blog</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span><i class="far fa-calendar" aria-hidden="true"></i> <time itemprop="datePublished" datetime="2026-07-05">05 Jul 2026</time></span>
+                &nbsp;•&nbsp;
+                <span><i class="far fa-user" aria-hidden="true"></i> <span itemprop="author">SSSAM Academy</span></span>
+              </div>
+              <h2 class="blog-card-title" itemprop="headline">Digital Marketing Career Roadmap 2026 — SEO, SEM &amp; Social Media</h2>
+              <div class="blog-card-tags">
+                <span class="blog-card-tag">digital marketing</span>
+                <span class="blog-card-tag">seo</span>
+                <span class="blog-card-tag">google ads</span>
+                <span class="blog-card-tag">social media</span>
+              </div>
+              <p class="blog-card-desc" itemprop="description">Step-by-step training roadmap for Digital Marketing in 2026. Learn Search Engine Optimization (SEO), PPC, Content Marketing, and Analytics to launch your career.</p>
+              <a href="/blog-detail.html?slug=digital-marketing-career-roadmap-2026" class="blog-card-btn" itemprop="url">
+                Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
         </div>
       </section>
     </main>
@@ -390,9 +450,13 @@
         date2.setDate(today.getDate() - 3); // 3 days ago
         const date3 = new Date(today);
         date3.setDate(today.getDate() - 5); // 5 days ago
+        const date4 = new Date(today);
+        date4.setDate(today.getDate() - 7); // 7 days ago
+        const date5 = new Date(today);
+        date5.setDate(today.getDate() - 10); // 10 days ago
 
         const cards = document.querySelectorAll("#blogsGrid .blog-card");
-        if (cards.length >= 3) {
+        if (cards.length >= 5) {
           // Card 1 Date
           const time1 = cards[0].querySelector("time");
           if (time1) {
@@ -410,6 +474,18 @@
           if (time3) {
             time3.setAttribute("datetime", date3.toISOString().split('T')[0]);
             time3.textContent = date3.toLocaleDateString("en-IN", dateOptions);
+          }
+          // Card 4 Date
+          const time4 = cards[3].querySelector("time");
+          if (time4) {
+            time4.setAttribute("datetime", date4.toISOString().split('T')[0]);
+            time4.textContent = date4.toLocaleDateString("en-IN", dateOptions);
+          }
+          // Card 5 Date
+          const time5 = cards[4].querySelector("time");
+          if (time5) {
+            time5.setAttribute("datetime", date5.toISOString().split('T')[0]);
+            time5.textContent = date5.toLocaleDateString("en-IN", dateOptions);
           }
         }
 
