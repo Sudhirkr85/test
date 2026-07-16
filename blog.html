@@ -374,7 +374,10 @@
 
       let allPosts = [];
 
+      // Store the original static fallback HTML when DOM loads
+      let staticFallbackHTML = "";
       document.addEventListener("DOMContentLoaded", async () => {
+        staticFallbackHTML = document.getElementById("blogsGrid").innerHTML;
         try {
           const [navRes, footRes] = await Promise.all([
             fetch('/components/navbar.html'),
@@ -409,6 +412,7 @@
         } catch(e) {
           // Static fallback cards remain visible — do NOT wipe them on error
           console.warn("API unavailable, showing static fallback cards for SEO.", e.message);
+          grid.innerHTML = staticFallbackHTML;
         }
       }
 
@@ -416,11 +420,8 @@
         const grid = document.getElementById("blogsGrid");
 
         if (!posts || posts.length === 0) {
-          grid.innerHTML = `
-            <div style="text-align:center;grid-column:1/-1;color:#888;padding:50px;">
-              <i class="far fa-folder-open" style="font-size:2rem;margin-bottom:15px;display:block;"></i>
-              <p>No active announcements found at this time.</p>
-            </div>`;
+          // Fall back to original static SEO posts if no API data exists
+          grid.innerHTML = staticFallbackHTML;
           return;
         }
 
