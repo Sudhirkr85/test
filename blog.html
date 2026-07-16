@@ -222,7 +222,7 @@
           <!-- Static SEO Fallback Cards (Overwritten when API loads successfully) -->
           <article class="blog-card">
             <div class="blog-card-img-wrap">
-              <img src="assets/tech.webp" alt="Artificial Intelligence trends at SSSAM Academy" class="blog-card-img" />
+              <img src="assets/blog_fallback.webp" alt="Artificial Intelligence trends at SSSAM Academy" class="blog-card-img" />
               <span class="blog-card-badge" style="background: #e0a730; color: #111;">Blog</span>
             </div>
             <div class="blog-card-body">
@@ -240,7 +240,7 @@
 
           <article class="blog-card">
             <div class="blog-card-img-wrap">
-              <img src="assets/tech.webp" alt="MERN Stack developer jobs at SSSAM Academy" class="blog-card-img" />
+              <img src="assets/career_fallback.webp" alt="MERN Stack developer jobs at SSSAM Academy" class="blog-card-img" />
               <span class="blog-card-badge" style="background: #10b981; color: #fff;">Hiring</span>
             </div>
             <div class="blog-card-body">
@@ -318,7 +318,7 @@
         }
 
         grid.innerHTML = posts.map(item => {
-          const imgUrl = item.imageUrl || 'assets/tech.webp';
+          const imgUrl = item.imageUrl || (item.type === 'Hiring' ? 'assets/career_fallback.webp' : 'assets/blog_fallback.webp');
           const badgeColor = item.type === 'Hiring' ? 'background: #10b981; color: #fff;' : 'background: #e0a730; color: #111;';
           const formattedDate = new Date(item.createdAt).toLocaleDateString("en-IN", { day: 'numeric', month: 'short', year: 'numeric' });
           

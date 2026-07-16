@@ -442,6 +442,21 @@
       // Allow dynamic API hostname mappings based on windows host.
       const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
       window.APP_BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://sssam.onrender.com';
+
+      document.addEventListener("DOMContentLoaded", async () => {
+        try {
+          const res = await fetch(`${window.APP_BASE_URL}/api/settings/apply_guide_video_url`);
+          if (res.ok) {
+            const data = await res.json();
+            const iframe = document.getElementById("guideIframe");
+            if (iframe && data.value) {
+              iframe.setAttribute("data-src", data.value);
+            }
+          }
+        } catch (e) {
+          console.error("Failed to load guide video:", e);
+        }
+      });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="/js/searchable-dropdown.js"></script>
