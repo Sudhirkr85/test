@@ -28,19 +28,34 @@ document.addEventListener("DOMContentLoaded", () => {
       const mobileDropdownToggle = document.querySelector(".mobile-dropdown-toggle");
       const mobileDropdown = document.querySelector(".mobile-dropdown");
 
-      // Mobile Menu Toggle
-      hamburger.addEventListener("click", () => {
-        mobileMenu.classList.toggle("show");
-      });
+      // Bind mobile menu toggle helpers
+      window.initNavbarBurger = function() {
+        const hBtn = document.querySelector(".hamburger");
+        const mMenu = document.querySelector(".mobile-menu");
+        if (hBtn && mMenu) {
+          // Remove old listeners to avoid multiple fires
+          const newHBtn = hBtn.cloneNode(true);
+          hBtn.parentNode.replaceChild(newHBtn, hBtn);
+          newHBtn.addEventListener("click", () => {
+            mMenu.classList.toggle("show");
+          });
+        }
+        
+        const mDropdownToggle = document.querySelector(".mobile-dropdown-toggle");
+        const mDropdown = document.querySelector(".mobile-dropdown");
+        if (mDropdownToggle && mDropdown) {
+          const newMDT = mDropdownToggle.cloneNode(true);
+          mDropdownToggle.parentNode.replaceChild(newMDT, mDropdownToggle);
+          newMDT.addEventListener("click", () => {
+            mDropdown.classList.toggle("open");
+            const isOpen = mDropdown.classList.contains("open");
+            newMDT.setAttribute("aria-expanded", isOpen ? "true" : "false");
+          });
+        }
+      };
 
-      // Mobile Certificate submenu toggle
-      if (mobileDropdownToggle && mobileDropdown) {
-        mobileDropdownToggle.addEventListener("click", () => {
-          mobileDropdown.classList.toggle("open");
-          const isOpen = mobileDropdown.classList.contains("open");
-          mobileDropdownToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
-        });
-      }
+      // Run immediately for normal statically included header
+      window.initNavbarBurger();
 
       // Desktop Certificate submenu toggle
       if (desktopDropdownToggle && desktopDropdown) {

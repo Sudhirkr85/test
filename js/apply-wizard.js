@@ -444,7 +444,8 @@ document.addEventListener("DOMContentLoaded", () => {
         markError("nameFieldWrap", "applyFullName");
         return false;
       }
-      if (!phone.value.trim() || !/^[6-9]\d{9}$/.test(phone.value.trim())) {
+      const cleanPhone = phone.value.replace(/\s/g, "");
+      if (!phone.value.trim() || !/^[6-9]\d{9}$/.test(cleanPhone)) {
         showToast("Invalid", "Please enter a valid 10-digit mobile number.", "error");
         markError("phoneFieldWrap", "applyPhone");
         return false;
@@ -683,6 +684,28 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       alert(`${title}: ${message}`);
     }
+  }
+
+  // Format Phone Input: Allow only numbers, max 10 digits, add space at 5th digit (format: XXXXX XXXXX)
+  const phoneInput = document.getElementById("applyPhone");
+  if (phoneInput) {
+    phoneInput.setAttribute("maxlength", "11"); // 10 digits + 1 space
+    phoneInput.addEventListener("input", (e) => {
+      // Allow only numbers
+      let val = e.target.value.replace(/\D/g, "");
+      
+      // Limit to 10 numbers max
+      if (val.length > 10) {
+        val = val.substring(0, 10);
+      }
+      
+      // Add space at index 5
+      if (val.length > 5) {
+        e.target.value = val.substring(0, 5) + " " + val.substring(5);
+      } else {
+        e.target.value = val;
+      }
+    });
   }
 
   // Run initialization — sync now, no async needed
