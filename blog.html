@@ -3,8 +3,59 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog & Career Portal | SSSAM Academy</title>
-    <meta name="description" content="Read SSSAM Academy tech blogs, software tutorials, and active career hiring alerts for students in Gurugram NCR." />
+
+    <!-- Primary SEO -->
+    <title>Tech Blogs &amp; Job Hiring Alerts | SSSAM Academy Gurugram</title>
+    <meta name="description" content="Read SSSAM Academy's latest tech blogs, software development tutorials, AI/ML articles, and active IT job hiring alerts for students in Gurugram, Delhi NCR." />
+    <meta name="keywords" content="SSSAM Academy blog, tech tutorials, IT jobs Gurugram, software developer hiring, AI ML articles, coding tutorials India, MERN stack jobs, Python developer jobs" />
+    <meta name="author" content="SSSAM Academy" />
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <link rel="canonical" href="https://sssamacademy.com/blog.html" />
+
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Tech Blogs &amp; Job Hiring Alerts | SSSAM Academy" />
+    <meta property="og:description" content="Latest tech blogs, coding tutorials, and IT job hiring alerts from SSSAM Academy, Gurugram. Stay updated with the tech industry." />
+    <meta property="og:url" content="https://sssamacademy.com/blog.html" />
+    <meta property="og:site_name" content="SSSAM Academy" />
+    <meta property="og:image" content="https://sssamacademy.com/assets/og-blog.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_IN" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Tech Blogs &amp; Job Hiring Alerts | SSSAM Academy" />
+    <meta name="twitter:description" content="Latest tech blogs, coding tutorials, and IT job hiring alerts from SSSAM Academy, Gurugram." />
+    <meta name="twitter:image" content="https://sssamacademy.com/assets/og-blog.webp" />
+
+    <!-- JSON-LD: Blog Listing Page Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Tech Blogs & Job Hiring Alerts | SSSAM Academy",
+      "description": "Read the latest tech blogs, software tutorials, and active IT job hiring alerts from SSSAM Academy, Gurugram.",
+      "url": "https://sssamacademy.com/blog.html",
+      "publisher": {
+        "@type": "Organization",
+        "name": "SSSAM Academy",
+        "url": "https://sssamacademy.com",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://sssamacademy.com/assets/logo.png"
+        }
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sssamacademy.com" },
+          { "@type": "ListItem", "position": 2, "name": "Blogs & Careers", "item": "https://sssamacademy.com/blog.html" }
+        ]
+      }
+    }
+    </script>
+
     <link rel="icon" href="/assets/logo.ico" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -31,22 +82,21 @@
         color: #fff;
         margin-bottom: 15px;
       }
-      .blog-hero h1 span {
-        color: #e0a730;
-      }
+      .blog-hero h1 span { color: #e0a730; }
       .blog-hero p {
         font-size: 1.1rem;
         color: #aaa;
         max-width: 600px;
         margin: 0 auto;
       }
-      
+
       /* Tabs filter */
       .blog-tabs {
         display: flex;
         justify-content: center;
         gap: 15px;
         margin-bottom: 40px;
+        flex-wrap: wrap;
       }
       .blog-tab-btn {
         background: rgba(255,255,255,0.05);
@@ -69,8 +119,12 @@
       /* Blog Grid */
       .blog-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
         gap: 30px;
+      }
+      @media(max-width: 600px) {
+        .blog-grid { grid-template-columns: 1fr; }
+        .blog-hero h1 { font-size: 2rem; }
       }
       .blog-card {
         background: #111827;
@@ -100,13 +154,29 @@
         position: absolute;
         top: 15px;
         left: 15px;
-        background: #e0a730;
-        color: #111;
         font-weight: 700;
         font-size: 0.72rem;
         padding: 4px 12px;
         border-radius: 20px;
         text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .blog-card-new-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: #ef4444;
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.65rem;
+        padding: 3px 9px;
+        border-radius: 20px;
+        text-transform: uppercase;
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.6; }
       }
       .blog-card-body {
         padding: 25px;
@@ -121,15 +191,27 @@
       }
       .blog-card-title {
         font-family: 'Outfit', sans-serif;
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         font-weight: 700;
         color: #fff;
         line-height: 1.4;
         margin-bottom: 10px;
         transition: color 0.2s ease;
       }
-      .blog-card:hover .blog-card-title {
-        color: #e0a730;
+      .blog-card:hover .blog-card-title { color: #e0a730; }
+      .blog-card-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-bottom: 12px;
+      }
+      .blog-card-tag {
+        background: rgba(59,130,246,0.1);
+        color: #60a5fa;
+        font-size: 0.7rem;
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-weight: 500;
       }
       .blog-card-desc {
         color: #aaa;
@@ -137,6 +219,10 @@
         line-height: 1.6;
         margin-bottom: 20px;
         flex: 1;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
       }
       .blog-card-btn {
         color: #e0a730;
@@ -148,127 +234,147 @@
         text-decoration: none;
         margin-top: auto;
       }
-      .blog-card-btn i {
-        transition: transform 0.2s ease;
-      }
-      .blog-card-btn:hover i {
-        transform: translateX(4px);
-      }
+      .blog-card-btn i { transition: transform 0.2s ease; }
+      .blog-card-btn:hover i { transform: translateX(4px); }
 
-      /* Light Mode overrides */
-      body.light-mode {
-        background-color: #f8fafc;
-        color: #1e293b;
-      }
-      body.light-mode .blog-hero h1 {
-        color: #0f172a;
-      }
-      body.light-mode .blog-hero p {
-        color: #475569;
-      }
-      body.light-mode .blog-tab-btn {
-        background: #ffffff;
-        border-color: #cbd5e1;
-        color: #475569;
-      }
-      body.light-mode .blog-tab-btn:hover, body.light-mode .blog-tab-btn.active {
-        background: #e0a730;
-        color: #111;
-        border-color: #e0a730;
-      }
-      body.light-mode .blog-card {
-        background: #ffffff;
-        border-color: #e2e8f0;
-        box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
-      }
-      body.light-mode .blog-card:hover {
-        border-color: #e0a730;
-        box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
-      }
-      body.light-mode .blog-card-title {
-        color: #0f172a;
-      }
-      body.light-mode .blog-card-title:hover {
-        color: #e0a730;
-      }
-      body.light-mode .blog-card-desc {
-        color: #475569;
-      }
-      body.light-mode .blog-card-meta {
-        color: #64748b;
-      }
+      /* Light Mode */
+      body.light-mode { background-color: #f8fafc; color: #1e293b; }
+      body.light-mode .blog-hero h1 { color: #0f172a; }
+      body.light-mode .blog-hero p { color: #475569; }
+      body.light-mode .blog-tab-btn { background: #ffffff; border-color: #cbd5e1; color: #475569; }
+      body.light-mode .blog-tab-btn:hover,
+      body.light-mode .blog-tab-btn.active { background: #e0a730; color: #111; border-color: #e0a730; }
+      body.light-mode .blog-card { background: #ffffff; border-color: #e2e8f0; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+      body.light-mode .blog-card:hover { border-color: #e0a730; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+      body.light-mode .blog-card-title { color: #0f172a; }
+      body.light-mode .blog-card-desc { color: #475569; }
+      body.light-mode .blog-card-meta { color: #64748b; }
     </style>
   </head>
   <body class="light-mode">
-    <!-- Navbar Component Container -->
     <div id="navbar-placeholder"></div>
 
-    <main class="blog-container-wrapper">
+    <main class="blog-container-wrapper" itemscope itemtype="https://schema.org/Blog">
       <section class="blog-hero">
-        <h1>SSSAM <span>Blog & Careers</span> 🚀</h1>
+        <h1>SSSAM <span>Blogs &amp; Careers</span> 🚀</h1>
         <p>Explore articles, coding tutorials, academy updates, and active technical job openings for SSSAM graduates.</p>
       </section>
 
       <section class="blog-container">
         <!-- Tabs Filter -->
-        <div class="blog-tabs">
-          <button class="blog-tab-btn active" onclick="filterType('all', this)">All Announcements</button>
-          <button class="blog-tab-btn" onclick="filterType('Blog', this)">Articles & Tutorials</button>
-          <button class="blog-tab-btn" onclick="filterType('Hiring', this)">Hiring Alerts</button>
-        </div>
+        <nav class="blog-tabs" aria-label="Post type filter">
+          <button class="blog-tab-btn active" onclick="filterType('all', this)" aria-pressed="true">All Posts</button>
+          <button class="blog-tab-btn" onclick="filterType('Blog', this)" aria-pressed="false">Articles &amp; Tutorials</button>
+          <button class="blog-tab-btn" onclick="filterType('Hiring', this)" aria-pressed="false">Hiring Alerts</button>
+        </nav>
 
-        <!-- Cards Grid -->
-        <div class="blog-grid" id="blogsGrid">
-          <!-- Static SEO Fallback Cards (Overwritten when API loads successfully) -->
-          <article class="blog-card">
+        <!-- Cards Grid — Static SSR-like cards shown immediately for SEO, replaced by API data on load -->
+        <div class="blog-grid" id="blogsGrid" aria-live="polite">
+
+          <!-- STATIC CARD 1 — Newest first, visible to Google before JS runs -->
+          <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
             <div class="blog-card-img-wrap">
-              <img src="assets/blog_fallback.webp" alt="Artificial Intelligence trends at SSSAM Academy" class="blog-card-img" />
-              <span class="blog-card-badge" style="background: #e0a730; color: #111;">Blog</span>
+              <img src="/assets/blog_fallback.webp"
+                   alt="Full Stack Web Development guide 2026 by SSSAM Academy"
+                   class="blog-card-img"
+                   width="400" height="200"
+                   loading="eager"
+                   fetchpriority="high" />
+              <span class="blog-card-badge" style="background:#e0a730;color:#111;">Blog</span>
+              <span class="blog-card-new-badge">New</span>
             </div>
             <div class="blog-card-body">
               <div class="blog-card-meta">
-                <span><i class="far fa-calendar"></i> 10 Jul 2026</span> &nbsp;•&nbsp;
-                <span><i class="far fa-user"></i> SSSAM Academy</span>
+                <span><i class="far fa-calendar" aria-hidden="true"></i> <time itemprop="datePublished" datetime="2026-07-14">14 Jul 2026</time></span>
+                &nbsp;•&nbsp;
+                <span><i class="far fa-user" aria-hidden="true"></i> <span itemprop="author">SSSAM Academy</span></span>
               </div>
-              <h3 class="blog-card-title">Introduction to Artificial Intelligence & Machine Learning in 2026</h3>
-              <p class="blog-card-desc">Explore the core concepts of AI and Machine Learning and understand why they are shaping the future of global industries.</p>
-              <a href="/blog-detail.html?slug=introduction-to-ai-ml-2026" class="blog-card-btn">
-                Read Article <i class="fas fa-arrow-right"></i>
+              <h2 class="blog-card-title" itemprop="headline">Full Stack Web Development Roadmap 2026 — React, Node.js &amp; MongoDB</h2>
+              <div class="blog-card-tags">
+                <span class="blog-card-tag">react</span>
+                <span class="blog-card-tag">nodejs</span>
+                <span class="blog-card-tag">mongodb</span>
+              </div>
+              <p class="blog-card-desc" itemprop="description">Complete step-by-step guide to becoming a Full Stack Developer in 2026. Learn React, Node.js, Express, and MongoDB with practical projects.</p>
+              <a href="/blog-detail.html?slug=full-stack-web-development-roadmap-2026" class="blog-card-btn" itemprop="url">
+                Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i>
               </a>
             </div>
           </article>
 
-          <article class="blog-card">
+          <!-- STATIC CARD 2 -->
+          <article class="blog-card" itemscope itemtype="https://schema.org/JobPosting">
             <div class="blog-card-img-wrap">
-              <img src="assets/career_fallback.webp" alt="MERN Stack developer jobs at SSSAM Academy" class="blog-card-img" />
-              <span class="blog-card-badge" style="background: #10b981; color: #fff;">Hiring</span>
+              <img src="/assets/career_fallback.webp"
+                   alt="IT job hiring alert for React developer in Gurugram Delhi NCR"
+                   class="blog-card-img"
+                   width="400" height="200"
+                   loading="eager" />
+              <span class="blog-card-badge" style="background:#10b981;color:#fff;">Hiring</span>
             </div>
             <div class="blog-card-body">
               <div class="blog-card-meta">
-                <span><i class="far fa-calendar"></i> 12 Jul 2026</span> &nbsp;•&nbsp;
-                <span><i class="far fa-user"></i> SSSAM Academy</span>
+                <span><i class="far fa-calendar" aria-hidden="true"></i> <time itemprop="datePosted" datetime="2026-07-12">12 Jul 2026</time></span>
+                &nbsp;•&nbsp;
+                <span><i class="far fa-building" aria-hidden="true"></i> <span itemprop="hiringOrganization" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">SSSAM Academy</span></span></span>
               </div>
-              <h3 class="blog-card-title">Full Stack Developer (MERN Stack) Job Alert</h3>
-              <p class="blog-card-desc">CompliStack Technologies is hiring a Full Stack Developer specializing in React, Node.js, Express, and MongoDB. Apply now!</p>
-              <a href="/blog-detail.html?slug=hiring-mern-developer-complistack" class="blog-card-btn">
-                Read Article <i class="fas fa-arrow-right"></i>
+              <h2 class="blog-card-title" itemprop="title">React JS Developer — Internship &amp; Full-Time Openings</h2>
+              <div class="blog-card-tags">
+                <span class="blog-card-tag">react</span>
+                <span class="blog-card-tag">javascript</span>
+                <span class="blog-card-tag">gurugram</span>
+              </div>
+              <p class="blog-card-desc" itemprop="description">We are looking for passionate React JS developers for internship and full-time roles at SSSAM Academy, Gurugram. Apply now!</p>
+              <a href="/blog-detail.html?slug=react-js-developer-hiring-sssam-2026" class="blog-card-btn">
+                View Job <i class="fas fa-arrow-right" aria-hidden="true"></i>
               </a>
             </div>
           </article>
+
+          <!-- STATIC CARD 3 -->
+          <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+            <div class="blog-card-img-wrap">
+              <img src="/assets/blog_fallback.webp"
+                   alt="Introduction to Artificial Intelligence and Machine Learning 2026"
+                   class="blog-card-img"
+                   width="400" height="200"
+                   loading="lazy" />
+              <span class="blog-card-badge" style="background:#e0a730;color:#111;">Blog</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span><i class="far fa-calendar" aria-hidden="true"></i> <time itemprop="datePublished" datetime="2026-07-10">10 Jul 2026</time></span>
+                &nbsp;•&nbsp;
+                <span><i class="far fa-user" aria-hidden="true"></i> <span itemprop="author">SSSAM Academy</span></span>
+              </div>
+              <h2 class="blog-card-title" itemprop="headline">Introduction to Artificial Intelligence &amp; Machine Learning in 2026</h2>
+              <div class="blog-card-tags">
+                <span class="blog-card-tag">ai</span>
+                <span class="blog-card-tag">machine learning</span>
+                <span class="blog-card-tag">python</span>
+              </div>
+              <p class="blog-card-desc" itemprop="description">Explore the core concepts of AI and Machine Learning and understand why they are shaping the future of global industries and careers.</p>
+              <a href="/blog-detail.html?slug=introduction-to-ai-ml-2026" class="blog-card-btn" itemprop="url">
+                Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
         </div>
       </section>
     </main>
 
-    <!-- Footer Component Container -->
     <div id="footer-placeholder"></div>
 
     <script>
       const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      window.APP_BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://sssam.onrender.com';
+      window.APP_BASE_URL = isLocal
+        ? `${window.location.protocol}//${window.location.hostname}:5000`
+        : 'https://sssam.onrender.com';
+
       let allPosts = [];
 
       document.addEventListener("DOMContentLoaded", async () => {
-        // Load Header & Footer components dynamically
         try {
           const [navRes, footRes] = await Promise.all([
             fetch('/components/navbar.html'),
@@ -276,11 +382,7 @@
           ]);
           document.getElementById('navbar-placeholder').innerHTML = await navRes.text();
           document.getElementById('footer-placeholder').innerHTML = await footRes.text();
-          
-          // Re-init navbar mobile hamburger events from dynamic import
-          if (typeof window.initNavbarBurger === "function") {
-            window.initNavbarBurger();
-          }
+          if (typeof window.initNavbarBurger === "function") window.initNavbarBurger();
         } catch(e) { console.error("Components failed to load", e); }
 
         await loadBlogs();
@@ -292,69 +394,119 @@
 
         try {
           const res = await fetch(`${BASE_URL}/api/blogs`);
-          if (!res.ok) throw new Error("Failed to fetch");
-          allPosts = await res.json();
+          if (!res.ok) throw new Error("API error");
+
+          const data = await res.json();
+
+          // Sort: newest first (createdAt descending)
+          allPosts = data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
           renderPosts(allPosts);
+
+          // Inject JSON-LD for individual posts dynamically
+          injectPostsStructuredData(allPosts);
+
         } catch(e) {
-          grid.innerHTML = `
-            <div style="text-align: center; grid-column: 1 / -1; color: #ef5350; padding: 50px;">
-              <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 15px;"></i>
-              <p>Failed to load posts. Please try again later.</p>
-            </div>
-          `;
+          // Static fallback cards remain visible — do NOT wipe them on error
+          console.warn("API unavailable, showing static fallback cards for SEO.", e.message);
         }
       }
 
       function renderPosts(posts) {
         const grid = document.getElementById("blogsGrid");
+
         if (!posts || posts.length === 0) {
           grid.innerHTML = `
-            <div style="text-align: center; grid-column: 1 / -1; color: #888; padding: 50px;">
-              <i class="far fa-folder-open" style="font-size: 2rem; margin-bottom: 15px;"></i>
+            <div style="text-align:center;grid-column:1/-1;color:#888;padding:50px;">
+              <i class="far fa-folder-open" style="font-size:2rem;margin-bottom:15px;display:block;"></i>
               <p>No active announcements found at this time.</p>
-            </div>
-          `;
+            </div>`;
           return;
         }
 
-        grid.innerHTML = posts.map(item => {
-          const imgUrl = item.imageUrl || (item.type === 'Hiring' ? 'assets/career_fallback.webp' : 'assets/blog_fallback.webp');
-          const badgeColor = item.type === 'Hiring' ? 'background: #10b981; color: #fff;' : 'background: #e0a730; color: #111;';
-          const formattedDate = new Date(item.createdAt).toLocaleDateString("en-IN", { day: 'numeric', month: 'short', year: 'numeric' });
-          
+        // Check if a post was created in last 7 days
+        const isNew = (dateStr) => {
+          const diff = (Date.now() - new Date(dateStr)) / (1000 * 60 * 60 * 24);
+          return diff <= 7;
+        };
+
+        grid.innerHTML = posts.map((item, idx) => {
+          const imgUrl = item.imageUrl || (item.type === 'Hiring' ? '/assets/career_fallback.webp' : '/assets/blog_fallback.webp');
+          const badgeStyle = item.type === 'Hiring'
+            ? 'background:#10b981;color:#fff;'
+            : 'background:#e0a730;color:#111;';
+          const btnText = item.type === 'Hiring' ? 'View Job' : 'Read Article';
+          const dateStr = new Date(item.createdAt).toLocaleDateString("en-IN", { day:'numeric', month:'short', year:'numeric' });
+          const dateISO = new Date(item.createdAt).toISOString().split('T')[0];
+          const authorIcon = item.type === 'Hiring' ? 'fa-building' : 'fa-user';
+          const newBadge = isNew(item.createdAt) ? `<span class="blog-card-new-badge">New</span>` : '';
+          // First 2 cards: eager load for LCP; rest: lazy
+          const loadAttr = idx < 2 ? 'loading="eager" fetchpriority="high"' : 'loading="lazy"';
+          const tagsHtml = (item.tags || []).slice(0, 3).map(t =>
+            `<span class="blog-card-tag">${t}</span>`).join('');
+
           return `
-            <article class="blog-card">
+            <article class="blog-card" itemscope itemtype="https://schema.org/${item.type === 'Hiring' ? 'JobPosting' : 'BlogPosting'}">
               <div class="blog-card-img-wrap">
-                <img src="${imgUrl}" alt="${item.title}" class="blog-card-img" loading="lazy" />
-                <span class="blog-card-badge" style="${badgeColor}">${item.type}</span>
+                <img src="${imgUrl}"
+                     alt="${item.title} — SSSAM Academy"
+                     class="blog-card-img"
+                     width="400" height="200"
+                     ${loadAttr} />
+                <span class="blog-card-badge" style="${badgeStyle}">${item.type}</span>
+                ${newBadge}
               </div>
               <div class="blog-card-body">
                 <div class="blog-card-meta">
-                  <span><i class="far fa-calendar"></i> ${formattedDate}</span> &nbsp;•&nbsp;
-                  <span><i class="far fa-user"></i> ${item.author}</span>
+                  <span><i class="far fa-calendar" aria-hidden="true"></i> <time datetime="${dateISO}">${dateStr}</time></span>
+                  &nbsp;•&nbsp;
+                  <span><i class="far ${authorIcon}" aria-hidden="true"></i> ${item.author || 'SSSAM Academy'}</span>
                 </div>
-                <h3 class="blog-card-title">${item.title}</h3>
-                <p class="blog-card-desc">${item.summary}</p>
-                <a href="/blog-detail.html?slug=${item.slug}" class="blog-card-btn">
-                  Read Article <i class="fas fa-arrow-right"></i>
+                <h2 class="blog-card-title" itemprop="${item.type === 'Hiring' ? 'title' : 'headline'}">${item.title}</h2>
+                ${tagsHtml ? `<div class="blog-card-tags">${tagsHtml}</div>` : ''}
+                <p class="blog-card-desc" itemprop="description">${item.summary}</p>
+                <a href="/blog-detail.html?slug=${item.slug}" class="blog-card-btn" itemprop="url">
+                  ${btnText} <i class="fas fa-arrow-right" aria-hidden="true"></i>
                 </a>
               </div>
-            </article>
-          `;
+            </article>`;
         }).join("");
       }
 
-      function filterType(type, btn) {
-        // Toggle active tabs class
-        document.querySelectorAll(".blog-tab-btn").forEach(b => b.classList.remove("active"));
-        btn.classList.add("active");
+      function injectPostsStructuredData(posts) {
+        // Remove old dynamic ld+json if any
+        const old = document.getElementById('dynamic-ld-json');
+        if (old) old.remove();
 
-        if (type === 'all') {
-          renderPosts(allPosts);
-        } else {
-          const filtered = allPosts.filter(p => p.type === type);
-          renderPosts(filtered);
-        }
+        const items = posts.slice(0, 10).map((item, i) => ({
+          "@type": "ListItem",
+          "position": i + 1,
+          "url": `https://sssamacademy.com/blog-detail.html?slug=${item.slug}`,
+          "name": item.title
+        }));
+
+        const script = document.createElement('script');
+        script.type = 'application/ld+json';
+        script.id = 'dynamic-ld-json';
+        script.textContent = JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          "name": "Latest Blogs & Hiring Alerts — SSSAM Academy",
+          "itemListElement": items
+        });
+        document.head.appendChild(script);
+      }
+
+      function filterType(type, btn) {
+        document.querySelectorAll(".blog-tab-btn").forEach(b => {
+          b.classList.remove("active");
+          b.setAttribute("aria-pressed", "false");
+        });
+        btn.classList.add("active");
+        btn.setAttribute("aria-pressed", "true");
+
+        const filtered = type === 'all' ? allPosts : allPosts.filter(p => p.type === type);
+        renderPosts(filtered);
       }
     </script>
     <script src="/components/script.js" defer></script>
