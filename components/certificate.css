@@ -296,6 +296,40 @@ body.light-mode .form-field textarea {
   color: #ff8e8e;
 }
 
+body.light-mode .error-text {
+  color: #c92a2a;
+}
+
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+  color: #777;
+  opacity: 0.8;
+}
+
+body.light-mode .form-field input::placeholder,
+body.light-mode .form-field textarea::placeholder {
+  color: #888;
+  opacity: 0.8;
+}
+
+.form-field select option {
+  background: #1c1c1c;
+  color: #f3f3f3;
+}
+
+body.light-mode .form-field select option {
+  background: #ffffff;
+  color: #222222;
+}
+
+.result-card.error .result-title {
+  color: #ea6c6c;
+}
+
+body.light-mode .result-card.error .result-title {
+  color: #c92a2a;
+}
+
 #otherCourseWrap {
   grid-column: 1 / -1;
   overflow: hidden;
