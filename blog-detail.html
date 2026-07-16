@@ -171,7 +171,7 @@
       }
     </style>
   </head>
-  <body>
+  <body class="light-mode">
     <!-- Navbar -->
     <div id="navbar-placeholder"></div>
 
@@ -224,9 +224,23 @@
         </div>
       </article>
 
-      <div id="loadingState" style="text-align: center; padding: 100px 20px; color: #888;">
-        <i class="fas fa-spinner fa-spin fa-2x" style="margin-bottom: 15px;"></i>
-        <p>Fetching article details...</p>
+      <!-- SEO Fallback Content (Hidden when dynamic article loads successfully) -->
+      <div id="loadingState" style="color: #cbd5e1; font-size: 1.05rem; line-height: 1.8;">
+        <header class="detail-header">
+          <span class="detail-badge" style="background: #e0a730; color: #111;">Blog</span>
+          <h1 class="detail-title" style="color: #fff;">SSSAM Academy Tech Blogs & Tutorials</h1>
+          <div class="detail-meta">
+            <span><i class="far fa-calendar"></i> Academic Resource</span>
+            <span><i class="far fa-user"></i> SSSAM Academy</span>
+          </div>
+        </header>
+        <div class="detail-content">
+          <p>SSSAM Academy provides high-quality software engineering, data analytics, data science, and web development courses in Gurugram, Sector 14. Read our latest technical blogs, tutorial guides, and developer updates designed by our expert faculty members to prepare you for the IT industry.</p>
+          <div style="text-align: center; padding: 30px; color: #888;">
+            <i class="fas fa-spinner fa-spin fa-2x" style="margin-bottom: 15px; color: #e0a730;"></i>
+            <p>Loading full live article text...</p>
+          </div>
+        </div>
       </div>
     </main>
 

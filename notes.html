@@ -212,7 +212,7 @@
       }
     </style>
   </head>
-  <body>
+  <body class="light-mode">
     <!-- Navbar Component -->
     <div id="navbar-placeholder"></div>
 
@@ -225,9 +225,29 @@
       <section class="notes-container">
         <!-- Notes Grid -->
         <div class="notes-grid" id="notesGrid">
-          <div style="text-align: center; grid-column: 1 / -1; color: #888; padding: 50px;">
-            <i class="fas fa-spinner fa-spin" style="font-size: 2rem; margin-bottom: 15px;"></i>
-            <p>Fetching active study materials...</p>
+          <!-- Static SEO Fallback Cards (Overwritten when API loads successfully) -->
+          <div class="notes-card">
+            <div class="notes-icon"><i class="fab fa-python"></i></div>
+            <span class="notes-category">Python</span>
+            <h3 class="notes-title">Python Core & OOP Cheat Sheet</h3>
+            <p class="notes-desc">A comprehensive reference guide covering variables, lists, dictionaries, functions, and Object-Oriented Programming principles in Python.</p>
+            <button class="btn-primary" style="width: 100%; border: none;">Download PDF &rarr;</button>
+          </div>
+
+          <div class="notes-card">
+            <div class="notes-icon"><i class="far fa-file-excel"></i></div>
+            <span class="notes-category">Excel</span>
+            <h3 class="notes-title">Advanced Excel & Business Dashboards</h3>
+            <p class="notes-desc">Learn key functions (VLOOKUP, INDEX/MATCH), pivot tables, data visualization rules, and how to construct business analyst dashboards.</p>
+            <button class="btn-primary" style="width: 100%; border: none;">Download PDF &rarr;</button>
+          </div>
+
+          <div class="notes-card">
+            <div class="notes-icon"><i class="fas fa-database"></i></div>
+            <span class="notes-category">SQL</span>
+            <h3 class="notes-title">Relational Databases & SQL Queries Cheat Sheet</h3>
+            <p class="notes-desc">Master SELECT statements, database joins, aggregate functions, subqueries, and database indexing strategies for developer interviews.</p>
+            <button class="btn-primary" style="width: 100%; border: none;">Download PDF &rarr;</button>
           </div>
         </div>
       </section>
