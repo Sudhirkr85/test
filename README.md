@@ -107,16 +107,14 @@ frontend/
 
 External API hosts and sheets mapping values are configured directly in the files:
 
-1.  **Backend API Endpoint** (`components/certificate.js`, `components/enquiry-form.js`, `script.js`):
+1.  **Backend API Endpoint** (`components/certificate.js`, `components/enquiry-form.js`, `components/about.js`, `script.js`):
     *   `BASE_URL`: Points to the deployed Render server or localhost API.
     *   *Default*: `https://sssam.onrender.com`
-    *   *Note*: In `components/certificate.js`, it can also be configured dynamically by setting `window.APP_BASE_URL` prior to script initialization.
-2.  **Google Apps Script Web App URL** (`components/about.js`):
-    *   `DEMO_SHEET_WEB_APP_URL`: Configure this variable with your deployed Apps Script URL.
-    *   *Default*: `https://script.google.com/macros/s/AKfycbz7e3JMuZR23ulfmMXyii56sop28a-tihJk-7WnrEWQ6r0GYNOcrr4Af1hx5n6vK8N4/exec`
-3.  **Google Spreadsheet Identifiers** (`google-apps-script/demo-form-to-sheet.gs`):
+    *   *Note*: In the script files, it can also be configured dynamically by setting `window.APP_BASE_URL` prior to script initialization.
+2.  **Legacy Google Spreadsheet Sync** (`google-apps-script/demo-form-to-sheet.gs`):
     *   `SPREADSHEET_ID`: Target Google Sheets identifier (`1ZY3URfI9WyK4yPQqrAzWvSKRFuAv-khWn7_vkatkog8`).
-    *   `SHEET_NAME`: Sheet name where data will be stored (`Demo Booking Data`).
+    *   `SHEET_NAME`: Sheet name where data was stored (`Demo Booking Data`).
+    *   *Note*: About page submissions have been migrated to the Express API backend, making direct Apps Script submit obsolete.
 
 ---
 
@@ -194,8 +192,8 @@ The frontend integrates with the following REST API endpoints:
 
 ### 2. Lead & Enquiry System
 
-#### **Submit Demo Class Request**
-*   **Endpoint**: `POST /api/enquiry/demo-class`
+#### **Submit Enquiry / Counseling Request**
+*   **Endpoint**: `POST /api/enquiry`
 *   **Payload (JSON)**:
     ```json
     {
@@ -203,8 +201,7 @@ The frontend integrates with the following REST API endpoints:
       "phoneNumber": "9876543211",
       "course": "Ethical Hacking",
       "customCourseName": "",
-      "demoType": "Offline (Gurugram)",
-      "message": "Looking forward to attending the demo class."
+      "message": "[Demo Mode: Offline] Looking forward to attending the demo class."
     }
     ```
 *   **Response (JSON)**:
@@ -224,8 +221,7 @@ graph TD
   A[Client Web Page] -->|Fetches Navbar & Footer| B(Components Loader)
   A -->|User Interaction| C[Theme Engine / LocalStorage]
   A -->|Lead Submission| D{Advisor Lead Form}
-  D -->|POST /api/enquiry/demo-class| E[Render Server API]
-  D -->|POST Iframe Web App URL| F[Google Sheets Apps Script]
+  D -->|POST /api/enquiry| E[Render Server API]
   
   A -->|Certificate Requests| G{Certificate Manager}
   G -->|POST /api/certificate/apply| E

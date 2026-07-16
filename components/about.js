@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-const DEMO_SHEET_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbz7e3JMuZR23ulfmMXyii56sop28a-tihJk-7WnrEWQ6r0GYNOcrr4Af1hx5n6vK8N4/exec";
 
 gsap.from(".story-image img", {
   opacity: 0,
@@ -310,66 +309,9 @@ if (demoDateSelect) {
 const demoForm = document.getElementById("demo-booking-form");
 const demoFormStatus = document.getElementById("demo-form-status");
 
-function submitToAppsScript_(url, payload) {
-  return new Promise((resolve, reject) => {
-    const frameName = `demo-submit-frame-${Date.now()}`;
-    const iframe = document.createElement("iframe");
-    iframe.name = frameName;
-    iframe.style.display = "none";
-
-    const form = document.createElement("form");
-    form.method = "POST";
-    form.action = url;
-    form.target = frameName;
-    form.style.display = "none";
-
-    Object.entries(payload).forEach(([key, value]) => {
-      const input = document.createElement("input");
-      input.type = "hidden";
-      input.name = key;
-      input.value = String(value ?? "");
-      form.appendChild(input);
-    });
-
-    let cleaned = false;
-    const cleanUp = () => {
-      if (cleaned) return;
-      cleaned = true;
-      iframe.remove();
-      form.remove();
-    };
-
-    const timeout = setTimeout(() => {
-      cleanUp();
-      reject(new Error("timeout"));
-    }, 12000);
-
-    iframe.onload = () => {
-      clearTimeout(timeout);
-      cleanUp();
-      resolve();
-    };
-
-    document.body.appendChild(iframe);
-    document.body.appendChild(form);
-    form.submit();
-  });
-}
-
 if (demoForm) {
   demoForm.addEventListener("submit", async (event) => {
     event.preventDefault();
-
-    if (
-      !DEMO_SHEET_WEB_APP_URL ||
-      DEMO_SHEET_WEB_APP_URL.includes("PASTE_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL_HERE")
-    ) {
-      if (demoFormStatus) {
-        demoFormStatus.textContent = "Please add your Google Apps Script Web App URL in components/about.js.";
-        demoFormStatus.classList.add("error");
-      }
-      return;
-    }
 
     const submitButton = demoForm.querySelector(".demo-submit");
     if (submitButton) {
@@ -377,24 +319,98 @@ if (demoForm) {
       submitButton.textContent = "Submitting...";
     }
 
+    if (demoFormStatus) {
+      demoFormStatus.textContent = "";
+      demoFormStatus.classList.remove("error");
+    }
+
     const formData = new FormData(demoForm);
-    const payload = Object.fromEntries(formData.entries());
-    payload.submitted_at = new Date().toISOString();
-    payload.page = "about.html";
+    const fullName = String(formData.get("name") || "").trim();
+    const phoneNumber = String(formData.get("phone") || "").replace(/\D/g, "");
+    const email = String(formData.get("email") || "").trim();
+    const course = String(formData.get("course") || "").trim();
+
+    if (!fullName) {
+      if (demoFormStatus) {
+        demoFormStatus.textContent = "Full name is required.";
+        demoFormStatus.classList.add("error");
+      }
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Get Free Counseling 🎓";
+      }
+      return;
+    }
+
+    if (!/^\d{10}$/.test(phoneNumber)) {
+      if (demoFormStatus) {
+        demoFormStatus.textContent = "Mobile number must be exactly 10 digits.";
+        demoFormStatus.classList.add("error");
+      }
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Get Free Counseling 🎓";
+      }
+      return;
+    }
+
+    if (!course) {
+      if (demoFormStatus) {
+        demoFormStatus.textContent = "Please select a course.";
+        demoFormStatus.classList.add("error");
+      }
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Get Free Counseling 🎓";
+      }
+      return;
+    }
+
+    const payload = {
+      fullName,
+      phoneNumber,
+      email: email || null,
+      course,
+      customCourseName: "",
+      message: "Counseling Lead from About page"
+    };
+
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    const BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://sssam.onrender.com';
 
     try {
-      await submitToAppsScript_(DEMO_SHEET_WEB_APP_URL, payload);
+      const response = await fetch(`${BASE_URL}/api/enquiry`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      if (!response.ok) {
+        let msg = "Submission failed. Please try again.";
+        try {
+          const errorData = await response.json();
+          if (errorData && typeof errorData.message === "string" && errorData.message.trim()) {
+            msg = errorData.message;
+          }
+        } catch (_e) {}
+        throw new Error(msg);
+      }
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'conversion', {
+          'send_to': 'AW-18132709725/3nUFCIiP7MMcEN3irMZD'
+        });
+      }
 
       demoForm.reset();
 
-
       if (demoFormStatus) {
-        demoFormStatus.textContent = "Thanks! Your counseling request was submitted successfully. Our team will contact you shortly.";
+        demoFormStatus.textContent = "✅ Thanks! Your counseling request was submitted successfully. Our team will contact you shortly.";
         demoFormStatus.classList.remove("error");
       }
     } catch (error) {
       if (demoFormStatus) {
-        demoFormStatus.textContent = "Submission failed. Please try again.";
+        demoFormStatus.textContent = error.message || "Submission failed. Please try again.";
         demoFormStatus.classList.add("error");
       }
     } finally {

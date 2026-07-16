@@ -54,6 +54,9 @@
     <button class="filter-tab" data-category="students">
       <span class="tab-icon">🤝</span> Students
     </button>
+    <button class="filter-tab" data-category="other">
+      <span class="tab-icon">📷</span> Other
+    </button>
   </div>
 
   <!-- Photo Grid -->
@@ -362,6 +365,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
   <script src="components/script.js" defer></script>
   <script>
+    const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+    window.APP_BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://sssam.onrender.com';
+
     // Hide broken image cards automatically
     document.querySelectorAll('.gallery-card img').forEach(img => {
       if (img.complete && img.naturalWidth === 0) {
@@ -376,26 +382,82 @@
       });
     });
 
-    // Tab Filtering
+    // Tab Filtering (re-usable function so dynamic cards also get filtered)
     const tabs = document.querySelectorAll('.filter-tab');
-    const items = document.querySelectorAll('.gallery-card');
+
+    function applyFilter(category) {
+      document.querySelectorAll('.gallery-card').forEach(item => {
+        if (category === 'all' || item.getAttribute('data-category') === category) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
 
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-
-        const category = tab.getAttribute('data-category');
-
-        items.forEach(item => {
-          if (category === 'all' || item.getAttribute('data-category') === category) {
-            item.style.display = 'block';
-          } else {
-            item.style.display = 'none';
-          }
-        });
+        applyFilter(tab.getAttribute('data-category'));
       });
     });
+
+    // Dynamic Gallery — Fetch from API and prepend before static cards
+    (async function loadDynamicGallery() {
+      const BASE_URL = (window.APP_BASE_URL || 'https://sssam.onrender.com').replace(/\/+$/, '');
+      const grid = document.getElementById('photo-grid');
+      try {
+        const res = await fetch(`${BASE_URL}/api/gallery`);
+        if (!res.ok) return; // Silently fall back to static cards
+        const items = await res.json();
+        if (!items || items.length === 0) return;
+
+        const fragment = document.createDocumentFragment();
+        items.forEach(item => {
+          const card = document.createElement('div');
+          card.className = 'gallery-card dynamic-gallery-card';
+          card.setAttribute('data-category', item.category);
+          card.innerHTML = `
+            <img src="${item.imageUrl}"
+                 alt="${item.altText || item.title}"
+                 loading="lazy"
+                 width="400" height="300" />
+            <div class="gallery-card-overlay">
+              <span class="gallery-card-label">${item.title}</span>
+            </div>`;
+
+          // Error handler — hide if image fails
+          card.querySelector('img').addEventListener('error', function() {
+            card.style.setProperty('display', 'none', 'important');
+          });
+
+          // Click handler for lightbox
+          card.querySelector('img').addEventListener('click', function(e) {
+            e.stopPropagation();
+            activeImages = Array.from(document.querySelectorAll('.gallery-card'))
+              .filter(w => w.style.display !== 'none')
+              .map(w => w.querySelector('img'));
+            currentIndex = activeImages.indexOf(this);
+            showLightbox(this.src);
+          });
+
+          fragment.appendChild(card);
+        });
+
+        // Prepend dynamic cards before static ones
+        grid.insertBefore(fragment, grid.firstChild);
+
+        // Re-apply active filter to include new dynamic cards
+        const activeTab = document.querySelector('.filter-tab.active');
+        if (activeTab) {
+          applyFilter(activeTab.getAttribute('data-category'));
+        }
+      } catch (e) {
+        // Fail silently — static cards remain
+        console.warn('Dynamic gallery fetch failed, showing static cards:', e.message);
+      }
+    })();
 
     // Lightbox Logic
     const lightbox = document.getElementById('lightbox');

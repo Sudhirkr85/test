@@ -278,7 +278,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const homeDemoSubmitBtn = form.querySelector(".home-demo-submit");
 
   const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
-  const DEMO_ENQUIRY_API_URL = `${BASE_URL}/api/enquiry/demo-class`;
+  const DEMO_ENQUIRY_API_URL = `${BASE_URL}/api/enquiry`;
   let feedbackTimer = null;
   let successCloseTimer = null;
 
@@ -526,8 +526,7 @@ document.addEventListener("DOMContentLoaded", () => {
       phoneNumber,
       course: isOthers ? "Others" : String(formData.course || "").trim(),
       customCourseName,
-      demoType,
-      message: String(formData.message || "").trim(),
+      message: `[Demo Mode: ${demoType}] ` + String(formData.message || "").trim(),
     };
 
     try {
