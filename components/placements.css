@@ -48,14 +48,14 @@ body {
 
 /* Light mode */
 body.light-mode {
-  --dark-bg:     #f4f4f4;
-  --dark-surface:#ffffff;
+  --dark-bg:     #f1f5f9; /* Soft cool grey background for premium card separation */
+  --dark-surface:#e2e8f0;
   --dark-card:   #ffffff;
-  --dark-border: rgba(0,0,0,0.1);
-  --text-primary:#111111;
-  --text-muted:  #555555;
-  --gradient-hero: linear-gradient(135deg, #fff8e7 0%, #fef3cc 60%, #fff8e7 100%);
-  --shadow-card: 0 4px 20px rgba(0,0,0,0.12);
+  --dark-border: rgba(0,0,0,0.06);
+  --text-primary:#0f172a;
+  --text-muted:  #475569;
+  --gradient-hero: linear-gradient(135deg, #f8fafc 0%, #fef8e7 60%, #f8fafc 100%);
+  --shadow-card: 0 10px 30px -10px rgba(0,0,0,0.08);
 }
 
 /* ---- Shared Utilities ---- */
