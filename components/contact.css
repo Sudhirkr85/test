@@ -250,10 +250,6 @@ body.light-mode .hero-actions .btn.outline:hover {
     font-size: 14px;
   }
 
-  .btn-text {
-    display: none;
-  }
-
   .hero-actions .btn {
     padding: 12px 16px;
   }

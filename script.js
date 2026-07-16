@@ -110,63 +110,7 @@ gsap.from(".cta-content", {
 });
 
 
-// ========================
-// FAQ ACCORDION FUNCTIONALITY
-// ========================
-
-// Toggle FAQ Item
-function toggleFAQ(element) {
-  const faqItem = element.parentElement;
-  const answer = faqItem.querySelector('.faq-answer');
-  const question = element;
-
-  // Close other open FAQs
-  document.querySelectorAll('.faq-item').forEach(item => {
-    if (item !== faqItem) {
-      item.querySelector('.faq-question').classList.remove('active');
-      item.querySelector('.faq-answer').classList.remove('active');
-    }
-  });
-
-  // Toggle current FAQ
-  question.classList.toggle('active');
-  answer.classList.toggle('active');
-}
-
-// Add keyboard support (Enter/Space to toggle)
-document.addEventListener('DOMContentLoaded', () => {
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  
-  faqQuestions.forEach(question => {
-    question.setAttribute('tabindex', '0');
-    question.setAttribute('role', 'button');
-    
-    question.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        toggleFAQ(question);
-      }
-    });
-  });
-
-  // Smooth scroll animation for FAQ answers
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.utils.toArray('.faq-item').forEach((el) => {
-    gsap.from(el, {
-      opacity: 0,
-      y: 20,
-      duration: 0.6,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: el,
-        start: "top 85%",
-        end: "bottom 65%",
-        scrub: false
-      }
-    });
-  });
-});
+// FAQ scroll triggers animations logic is handled in global components/script.js
 
 
 // ========================
