@@ -213,9 +213,6 @@
     </style>
   </head>
   <body class="light-mode">
-    <!-- Navbar Component -->
-    <div id="navbar-placeholder"></div>
-
     <main class="notes-container-wrapper">
       <section class="notes-hero">
         <h1>Free <span>Study Materials &amp; Notes</span> 📚</h1>
@@ -294,28 +291,12 @@
       </div>
     </div>
 
-    <!-- Footer Component -->
-    <div id="footer-placeholder"></div>
 
     <script>
       const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
       window.APP_BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://sssam.onrender.com';
 
       document.addEventListener("DOMContentLoaded", async () => {
-        // Load Header & Footer
-        try {
-          const [navRes, footRes] = await Promise.all([
-            fetch('/components/navbar.html'),
-            fetch('/components/footer.html')
-          ]);
-          document.getElementById('navbar-placeholder').innerHTML = await navRes.text();
-          document.getElementById('footer-placeholder').innerHTML = await footRes.text();
-          
-          if (typeof window.initNavbarBurger === "function") {
-            window.initNavbarBurger();
-          }
-        } catch(e) { console.error("Components failed to load", e); }
-
         await loadNotes();
         setupGateSubmission();
       });

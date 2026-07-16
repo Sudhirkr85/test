@@ -253,8 +253,6 @@
     </style>
   </head>
   <body class="light-mode">
-    <div id="navbar-placeholder"></div>
-
     <main class="blog-container-wrapper" itemscope itemtype="https://schema.org/Blog">
       <section class="blog-hero">
         <h1>SSSAM <span>Blogs &amp; Careers</span> 🚀</h1>
@@ -490,16 +488,6 @@
         }
 
         staticFallbackHTML = document.getElementById("blogsGrid").innerHTML;
-        try {
-          const [navRes, footRes] = await Promise.all([
-            fetch('/components/navbar.html'),
-            fetch('/components/footer.html')
-          ]);
-          document.getElementById('navbar-placeholder').innerHTML = await navRes.text();
-          document.getElementById('footer-placeholder').innerHTML = await footRes.text();
-          if (typeof window.initNavbarBurger === "function") window.initNavbarBurger();
-        } catch(e) { console.error("Components failed to load", e); }
-
         await loadBlogs();
       });
 
