@@ -899,6 +899,40 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Auto Capitalize First Character of Name and Surname
+  const nameInput = document.getElementById("applyFullName");
+  if (nameInput) {
+    nameInput.addEventListener("input", (e) => {
+      const selectionStart = e.target.selectionStart;
+      const selectionEnd = e.target.selectionEnd;
+      const val = e.target.value;
+      const capitalized = val
+        .split(/(\s+)/)
+        .map(word => {
+          if (word.trim().length > 0) {
+            return word.charAt(0).toUpperCase() + word.slice(1);
+          }
+          return word;
+        })
+        .join("");
+      if (val !== capitalized) {
+        e.target.value = capitalized;
+        e.target.setSelectionRange(selectionStart, selectionEnd);
+      }
+    });
+
+    nameInput.addEventListener("blur", (e) => {
+      const val = e.target.value;
+      if (val) {
+        e.target.value = val
+          .trim()
+          .split(/\s+/)
+          .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+          .join(" ");
+      }
+    });
+  }
+
   // Run initialization — sync now, no async needed
   initDropdowns();
   initPhoneAutoFormat();

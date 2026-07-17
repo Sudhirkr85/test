@@ -416,6 +416,25 @@ body.light-mode .pl-students {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
+  max-height: 680px;
+  overflow-y: auto;
+  padding: 10px 10px 20px 10px;
+}
+
+/* Custom Scrollbar for Placements Grid */
+.pl-students-grid::-webkit-scrollbar {
+  width: 8px;
+}
+.pl-students-grid::-webkit-scrollbar-track {
+  background: var(--dark-surface);
+  border-radius: var(--radius-sm);
+}
+.pl-students-grid::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: var(--radius-sm);
+}
+.pl-students-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-light);
 }
 
 .pl-student-card {

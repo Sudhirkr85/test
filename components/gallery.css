@@ -279,6 +279,25 @@ body.light-mode .filter-tab.active {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
+  max-height: 700px;
+  overflow-y: auto;
+  padding: 10px 10px 20px 10px;
+}
+
+/* Custom Scrollbar for Gallery Grid */
+.gallery-grid::-webkit-scrollbar {
+  width: 8px;
+}
+.gallery-grid::-webkit-scrollbar-track {
+  background: var(--dark-surface);
+  border-radius: var(--radius-md);
+}
+.gallery-grid::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: var(--radius-md);
+}
+.gallery-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-light);
 }
 
 @media (max-width: 1100px) {
