@@ -525,7 +525,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <p style="margin: 0;">Search or select your specific course name from the dropdown. If your course is not listed, select <strong>"Other"</strong> at the bottom of the list and type your custom course title.</p>
         `;
       } else if (currentStep === 4) {
-        let detailsGuide = `Please double check your spelling. Ensure your name matches your ID proof, and enter a valid email address so we can email your certificate once approved.`;
+        let detailsGuide = `Please double check your spelling. Ensure your name matches your ID proof, and enter a valid email address. Your mobile number will automatically format with a space (e.g., 98765 43210) as you type.`;
         if (selectedTrainingType === "College Training") {
           detailsGuide += `<br/><span style="display: block; margin-top: 8px;"><strong>Note:</strong> Select or type your college name, and enter your training start and end dates. Your duration should be entered in Hours.</span>`;
         } else if (selectedTrainingType === "Corporate Training") {
