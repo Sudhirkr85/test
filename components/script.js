@@ -263,15 +263,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // WHY CHOOSE HOVER EFFECT
-document.addEventListener('mousemove', function(e) {
-  const featureCards = document.querySelectorAll('.feature-card');
-  featureCards.forEach((card) => {
-    const rect = card.getBoundingClientRect();
+document.querySelectorAll('.feature-card').forEach((card) => {
+  let rect = null;
+  card.addEventListener('mouseenter', () => {
+    rect = card.getBoundingClientRect();
+  });
+  card.addEventListener('mousemove', (e) => {
+    if (!rect) rect = card.getBoundingClientRect();
     const cardX = rect.left + rect.width / 2;
     const cardY = rect.top + rect.height / 2;
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-    const angle = Math.atan2(mouseY - cardY, mouseX - cardX);
+    const angle = Math.atan2(e.clientY - cardY, e.clientX - cardX);
     card.style.setProperty('--mouse-angle', `${angle}rad`);
+  });
+  card.addEventListener('mouseleave', () => {
+    rect = null;
   });
 });
