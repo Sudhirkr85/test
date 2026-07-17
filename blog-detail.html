@@ -318,17 +318,21 @@
           }
 
           if (post.type === 'Hiring' && post.hiringDetails) {
-            document.getElementById("jobCompany").textContent = post.hiringDetails.company || "—";
-            document.getElementById("jobRole").textContent = post.hiringDetails.role || "—";
-            document.getElementById("jobLocation").textContent = post.hiringDetails.location || "—";
+            const companyName = post.hiringDetails.company || "SSSAM Academy";
+            const jobRole = post.hiringDetails.role || post.title;
+            const location = post.hiringDetails.location || "Gurugram";
+
+            document.getElementById("jobCompany").textContent = companyName;
+            document.getElementById("jobRole").textContent = jobRole;
+            document.getElementById("jobLocation").textContent = location;
             
             const applyLink = document.getElementById("jobApplyLink");
-            if (post.hiringDetails.applyLink) {
-              applyLink.href = post.hiringDetails.applyLink;
-              applyLink.style.display = "inline-block";
-            } else {
-              applyLink.style.display = "none";
-            }
+            const emailTo = "info@sssamacademy.com";
+            const emailSubject = encodeURIComponent(`Application for ${jobRole} at ${companyName}`);
+            const emailBody = encodeURIComponent(`Hi SSSAM Academy Team,\n\nI am interested in applying for the position of "${jobRole}" at "${companyName}" (Location: ${location}).\n\nPlease find my resume and application details attached.\n\nRegards`);
+            
+            applyLink.href = `mailto:${emailTo}?subject=${emailSubject}&body=${emailBody}`;
+            applyLink.style.display = "inline-block";
             document.getElementById("jobCard").style.display = "block";
           }
 
