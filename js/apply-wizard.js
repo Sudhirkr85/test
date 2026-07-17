@@ -597,7 +597,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const payload = {
       fullName:         document.getElementById("applyFullName").value.trim(),
-      phoneNumber:      document.getElementById("applyPhone").value.trim(),
+      phoneNumber:      document.getElementById("applyPhone").value.replace(/\s/g, ""), // strip all spaces
       email:            document.getElementById("applyEmail").value.trim(),
       dateOfBirth:      document.getElementById("applyDob").value,
       course:           courseDropdown.getValue(),
