@@ -93,27 +93,42 @@ document.addEventListener("DOMContentLoaded", () => {
         const isLegacy = data.isLegacy;
         const statusText = data.status || (isLegacy ? "Valid (Legacy Record)" : "Active");
 
+        // Parse Start and End Date
+        let startDate = "N/A";
+        let endDate = "N/A";
+        if (data.durationDates && data.durationDates.includes("-")) {
+          const parts = data.durationDates.split("-");
+          startDate = parts[0].trim();
+          endDate = parts[1].trim();
+        } else if (data.durationDates) {
+          startDate = data.durationDates.trim();
+        }
+
         verifyResult.hidden = false;
         verifyResult.innerHTML = `
-          <div class="result-title">Verification Successful</div>
-          <div class="result-grid" style="margin-top: 15px;">
-            <div>Student Name: <strong>${data.studentName}</strong></div>
-            <div>Course: <strong>${data.course}</strong></div>
-            <div>Training Type: <strong>${data.certificateType}</strong></div>
-            <div>Certificate Number: <strong>${data.certificateNumber}</strong></div>
-            <div>Issue Date: <strong>${data.issueDate}</strong></div>
-            <div>Organization: <strong>${data.organization || "SSSAM Academy"}</strong></div>
-            <div class="status-row" style="margin-top: 10px;">
-              <span>Status:</span> 
-              <span class="status-badge verified">${statusText}</span>
+          <div class="result-title" style="margin-bottom: 20px;">Verification Successful</div>
+          <div class="result-grid" style="margin-top: 15px; display: grid; gap: 12px; font-size: 0.95rem; line-height: 1.5;">
+            <div class="verify-row"><span>Student Name:</span> <strong>${data.studentName}</strong></div>
+            <div class="verify-row"><span>Course:</span> <strong>${data.course}</strong></div>
+            <div class="verify-row"><span>Training Type:</span> <strong>${data.certificateType}</strong></div>
+            <div class="verify-row"><span>Certificate Number:</span> <strong>${data.certificateNumber}</strong></div>
+            <div class="verify-row"><span>Start Date:</span> <strong>${startDate}</strong></div>
+            <div class="verify-row"><span>End Date:</span> <strong>${endDate}</strong></div>
+            <div class="verify-row"><span>Duration:</span> <strong>${data.duration}</strong></div>
+            <div class="verify-row"><span>Issue Date:</span> <strong>${data.issueDate}</strong></div>
+            <div class="verify-row"><span>Organization:</span> <strong>${data.organization || "SSSAM Academy"}</strong></div>
+            <div class="status-row" style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 15px; display: flex; align-items: center; justify-content: space-between;">
+              <span style="font-weight: 600;">Verification Status:</span> 
+              <span class="status-badge verified" style="font-size: 0.9rem; padding: 6px 14px; border-radius: 20px;">${statusText}</span>
             </div>
             ${isLegacy ? `
-              <div style="margin-top: 12px; font-size: 0.85rem; color: #ffc857; font-style: italic;">
-                Note: Verified from legacy pre-2026 academy records.
+              <div style="margin-top: 12px; font-size: 0.85rem; color: #ffc857; font-style: italic; background: rgba(255,200,87,0.05); padding: 8px 12px; border-radius: 6px; border: 1px solid rgba(255,200,87,0.15);">
+                Note: Verified from legacy pre-2026 academy database.
               </div>
             ` : ""}
           </div>
         `;
+
 
         if (document.body.classList.contains("light-mode")) {
           const t = verifyResult.querySelector(".result-title");

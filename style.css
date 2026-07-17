@@ -3774,5 +3774,38 @@ body.light-mode .success-note {
   color: #64748b;
 }
 
+/* Premium Verify Result Rows */
+.verify-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  padding-bottom: 8px;
+}
+.verify-row:last-of-type {
+  border-bottom: none;
+}
+.verify-row span {
+  color: #94a3b8; /* label color */
+  font-size: 0.88rem;
+}
+.verify-row strong {
+  color: #f8fafc; /* high contrast value */
+  font-weight: 600;
+  text-align: right;
+}
+
+/* Light Mode Overrides for Verify Result Rows */
+body.light-mode .verify-row {
+  border-bottom-color: rgba(0, 0, 0, 0.05);
+}
+body.light-mode .verify-row span {
+  color: #64748b; /* dark label color */
+}
+body.light-mode .verify-row strong {
+  color: #0f172a; /* dark text color */
+}
+
+
 
 

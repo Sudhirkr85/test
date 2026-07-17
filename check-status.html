@@ -121,20 +121,43 @@
               const statusBadge = getStatusBadge(data.status);
               const isApproved = String(data.status).toLowerCase() === "approved";
 
+              // Parse Start and End Date
+              let startDate = "N/A";
+              let endDate = "N/A";
+              if (data.durationDates && data.durationDates.includes("-")) {
+                const parts = data.durationDates.split("-");
+                startDate = parts[0].trim();
+                endDate = parts[1].trim();
+              } else if (data.durationDates) {
+                startDate = data.durationDates.trim();
+              }
+
               statusResult.hidden = false;
               statusResult.innerHTML = `
-                <div class="result-title">Application Details</div>
-                <div class="result-grid" style="margin-top: 15px;">
-                  <div>Student Name: <strong>${data.name}</strong></div>
-                  <div>Course: <strong>${data.course}</strong></div>
-                  <div>Certificate Type: <strong>${data.certificateType}</strong></div>
-                  <div class="status-row" style="margin: 10px 0;"><span>Status:</span> ${statusBadge}</div>
+                <div class="result-title" style="margin-bottom: 20px;">Application Details</div>
+                <div class="result-grid" style="margin-top: 15px; display: grid; gap: 12px; font-size: 0.95rem; line-height: 1.5;">
+                  <div class="verify-row"><span>Student Name:</span> <strong>${data.name}</strong></div>
+                  <div class="verify-row"><span>Course:</span> <strong>${data.course}</strong></div>
+                  <div class="verify-row"><span>Certificate Type:</span> <strong>${data.certificateType}</strong></div>
+                  ${data.durationDates ? `
+                    <div class="verify-row"><span>Start Date:</span> <strong>${startDate}</strong></div>
+                    <div class="verify-row"><span>End Date:</span> <strong>${endDate}</strong></div>
+                  ` : ""}
+                  ${data.duration ? `
+                    <div class="verify-row"><span>Duration:</span> <strong>${data.duration}</strong></div>
+                  ` : ""}
+                  
+                  <div class="status-row" style="margin-top: 15px; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 15px; display: flex; align-items: center; justify-content: space-between;">
+                    <span style="font-weight: 600;">Status:</span> 
+                    ${statusBadge}
+                  </div>
+
                   ${isApproved ? `
-                    <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 12px; margin-top: 12px;">
-                      <div>Certificate Number: <strong>${data.certificateNumber}</strong></div>
-                      <div>Issue Date: <strong>${data.issueDate}</strong></div>
-                      <div style="margin-top: 15px;">
-                        <a href="/certificate-services.html?certNo=${encodeURIComponent(data.certificateNumber)}&dob=${dob}" class="btn-primary" style="display: inline-block;">Get Certificate</a>
+                    <div style="border-top: 1px solid rgba(255,255,255,0.08); padding-top: 15px; margin-top: 5px;">
+                      <div class="verify-row"><span>Certificate Number:</span> <strong>${data.certificateNumber}</strong></div>
+                      <div class="verify-row"><span>Issue Date:</span> <strong>${data.issueDate}</strong></div>
+                      <div style="margin-top: 20px; text-align: center;">
+                        <a href="/certificate-services.html?certNo=${encodeURIComponent(data.certificateNumber)}&dob=${dob}" class="btn-primary" style="display: inline-block; width: auto; padding: 10px 24px;">Get Certificate</a>
                       </div>
                     </div>
                   ` : ""}
