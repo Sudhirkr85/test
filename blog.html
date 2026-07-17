@@ -332,7 +332,38 @@
             </div>
           </article>
 
-          <!-- STATIC CARD 3 -->
+          <!-- STATIC CARD 3 — Counselor Hiring Post -->
+          <article class="blog-card" itemscope itemtype="https://schema.org/JobPosting">
+            <div class="blog-card-img-wrap" style="background:#0f172a;">
+              <img src="/assets/counselor_hiring.webp"
+                   alt="Academic Counselor & Admission Officer Hiring Alert at SSSAM Academy Gurugram"
+                   class="blog-card-img"
+                   style="object-fit: contain; width: 100%; height: 100%;"
+                   width="400" height="200"
+                   loading="lazy" />
+              <span class="blog-card-badge" style="background:#10b981;color:#fff;">Hiring</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span><i class="far fa-calendar" aria-hidden="true"></i> <time itemprop="datePosted" datetime="2026-07-11">11 Jul 2026</time></span>
+                &nbsp;•&nbsp;
+                <span><i class="far fa-building" aria-hidden="true"></i> <span itemprop="hiringOrganization" itemscope itemtype="https://schema.org/Organization"><span itemprop="name">SSSAM Academy</span></span></span>
+              </div>
+              <h2 class="blog-card-title" itemprop="title">Academic Counselor &amp; Admission Officer — Hiring Alert (Gurugram)</h2>
+              <div class="blog-card-tags">
+                <span class="blog-card-tag">counselor</span>
+                <span class="blog-card-tag">admissions</span>
+                <span class="blog-card-tag">telecaller</span>
+                <span class="blog-card-tag">hiring</span>
+              </div>
+              <p class="blog-card-desc" itemprop="description">SSSAM Academy is hiring a senior Academic Counselor and Admission Officer. Guide prospective students on tech career courses in Gurugram NCR.</p>
+              <a href="/blog-detail.html?slug=counselor-hiring-sssam-2026" class="blog-card-btn">
+                View Job Details <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- STATIC CARD 4 -->
           <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
             <div class="blog-card-img-wrap">
               <img src="/assets/blog_fallback.webp"
@@ -361,7 +392,7 @@
             </div>
           </article>
 
-          <!-- STATIC CARD 4 — Data Analyst Roadmap -->
+          <!-- STATIC CARD 5 — Data Analyst Roadmap -->
           <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
             <div class="blog-card-img-wrap" style="background:#0f172a;">
               <img src="/assets/data_analyst_roadmap.png"
@@ -391,7 +422,36 @@
             </div>
           </article>
 
-          <!-- STATIC CARD 5 — Digital Marketing Roadmap -->
+          <!-- STATIC CARD 6 — Cybersecurity Blog -->
+          <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
+            <div class="blog-card-img-wrap">
+              <img src="/assets/cybersecurity_roadmap.webp"
+                   alt="Cybersecurity & Ethical Hacking Roadmap 2026 by SSSAM Academy"
+                   class="blog-card-img"
+                   width="400" height="200"
+                   loading="lazy" />
+              <span class="blog-card-badge" style="background:#e0a730;color:#111;">Blog</span>
+            </div>
+            <div class="blog-card-body">
+              <div class="blog-card-meta">
+                <span><i class="far fa-calendar" aria-hidden="true"></i> <time itemprop="datePublished" datetime="2026-07-06">06 Jul 2026</time></span>
+                &nbsp;•&nbsp;
+                <span><i class="far fa-user" aria-hidden="true"></i> <span itemprop="author">SSSAM Academy</span></span>
+              </div>
+              <h2 class="blog-card-title" itemprop="headline">Cybersecurity &amp; Ethical Hacking Roadmap 2026</h2>
+              <div class="blog-card-tags">
+                <span class="blog-card-tag">cybersecurity</span>
+                <span class="blog-card-tag">ethical hacking</span>
+                <span class="blog-card-tag">linux</span>
+              </div>
+              <p class="blog-card-desc" itemprop="description">Essential learning path to start a career in Cybersecurity and Ethical Hacking in 2026. Learn networking, Linux, penetration testing, and security frameworks.</p>
+              <a href="/blog-detail.html?slug=cybersecurity-ethical-hacking-roadmap-2026" class="blog-card-btn" itemprop="url">
+                Read Article <i class="fas fa-arrow-right" aria-hidden="true"></i>
+              </a>
+            </div>
+          </article>
+
+          <!-- STATIC CARD 7 — Digital Marketing Roadmap -->
           <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
             <div class="blog-card-img-wrap" style="background:#0f172a;">
               <img src="/assets/digital_marketing_roadmap.png"
@@ -441,51 +501,19 @@
         // Adjust static fallback dates relative to current date so they always look recent
         const today = new Date();
         const dateOptions = { day: 'numeric', month: 'short', year: 'numeric' };
+        const relativeDays = [1, 3, 4, 5, 7, 9, 11, 13, 15]; // relative days offset for each sequential card
         
-        const date1 = new Date(today);
-        date1.setDate(today.getDate() - 1); // 1 day ago
-        const date2 = new Date(today);
-        date2.setDate(today.getDate() - 3); // 3 days ago
-        const date3 = new Date(today);
-        date3.setDate(today.getDate() - 5); // 5 days ago
-        const date4 = new Date(today);
-        date4.setDate(today.getDate() - 7); // 7 days ago
-        const date5 = new Date(today);
-        date5.setDate(today.getDate() - 10); // 10 days ago
-
         const cards = document.querySelectorAll("#blogsGrid .blog-card");
-        if (cards.length >= 5) {
-          // Card 1 Date
-          const time1 = cards[0].querySelector("time");
-          if (time1) {
-            time1.setAttribute("datetime", date1.toISOString().split('T')[0]);
-            time1.textContent = date1.toLocaleDateString("en-IN", dateOptions);
+        cards.forEach((card, idx) => {
+          const timeEl = card.querySelector("time");
+          if (timeEl) {
+            const offset = relativeDays[idx] || (idx * 2 + 1);
+            const cardDate = new Date(today);
+            cardDate.setDate(today.getDate() - offset);
+            timeEl.setAttribute("datetime", cardDate.toISOString().split('T')[0]);
+            timeEl.textContent = cardDate.toLocaleDateString("en-IN", dateOptions);
           }
-          // Card 2 Date
-          const time2 = cards[1].querySelector("time");
-          if (time2) {
-            time2.setAttribute("datetime", date2.toISOString().split('T')[0]);
-            time2.textContent = date2.toLocaleDateString("en-IN", dateOptions);
-          }
-          // Card 3 Date
-          const time3 = cards[2].querySelector("time");
-          if (time3) {
-            time3.setAttribute("datetime", date3.toISOString().split('T')[0]);
-            time3.textContent = date3.toLocaleDateString("en-IN", dateOptions);
-          }
-          // Card 4 Date
-          const time4 = cards[3].querySelector("time");
-          if (time4) {
-            time4.setAttribute("datetime", date4.toISOString().split('T')[0]);
-            time4.textContent = date4.toLocaleDateString("en-IN", dateOptions);
-          }
-          // Card 5 Date
-          const time5 = cards[4].querySelector("time");
-          if (time5) {
-            time5.setAttribute("datetime", date5.toISOString().split('T')[0]);
-            time5.textContent = date5.toLocaleDateString("en-IN", dateOptions);
-          }
-        }
+        });
 
         staticFallbackHTML = document.getElementById("blogsGrid").innerHTML;
         await loadBlogs();

@@ -278,12 +278,23 @@
         }
 
         const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
+        let post;
 
         try {
           const res = await fetch(`${BASE_URL}/api/blogs/${slug}`);
           if (!res.ok) throw new Error("Article not found.");
-          const post = await res.json();
+          post = await res.json();
+        } catch(e) {
+          console.warn("API fetch failed, checking static fallback for slug:", slug, e.message);
+          if (window.staticBlogs && window.staticBlogs[slug]) {
+            post = window.staticBlogs[slug];
+          } else {
+            showError(e.message);
+            return;
+          }
+        }
 
+        try {
           // Render details
           document.getElementById("postTitle").textContent = post.title;
           document.title = `${post.title} | SSSAM Academy`;
@@ -395,6 +406,7 @@
         `;
       }
     </script>
+    <script src="/js/static-blogs.js"></script>
     <script src="/components/script.js" defer></script>
   </body>
 </html>
