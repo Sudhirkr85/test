@@ -4,20 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) - loads on first user interaction -->
     <script>
-      window.addEventListener('DOMContentLoaded', () => {
-        const script = document.createElement('script');
-        script.async = true;
-        script.src = "https://www.googletagmanager.com/gtag/js?id=AW-18132709725";
-        document.head.appendChild(script);
-        script.onload = () => {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-18132709725');
-        };
-      });
+      (function() {
+        var gtmLoaded = false;
+        function loadGTM() {
+          if (gtmLoaded) return;
+          gtmLoaded = true;
+          var script = document.createElement('script');
+          script.async = true;
+          script.src = "https://www.googletagmanager.com/gtag/js?id=AW-18132709725";
+          document.head.appendChild(script);
+          script.onload = function() {
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'AW-18132709725');
+          };
+        }
+        window.addEventListener('scroll', loadGTM, { once: true, passive: true });
+        window.addEventListener('click', loadGTM, { once: true });
+        window.addEventListener('touchstart', loadGTM, { once: true, passive: true });
+        // Fallback: load after 5 seconds even if no interaction
+        setTimeout(loadGTM, 5000);
+      })();
     </script>
 
 
