@@ -328,6 +328,144 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
+  // ─── Email Domain Auto-Suggest ────────────────────────────────────────────
+  function initEmailSuggest() {
+    const emailInput  = document.getElementById("applyEmail");
+    const suggestBox  = document.getElementById("emailSuggestions");
+    if (!emailInput || !suggestBox) return;
+
+    const DOMAINS = [
+      "gmail.com", "yahoo.com", "outlook.com",
+      "hotmail.com", "rediffmail.com", "icloud.com", "ymail.com"
+    ];
+
+    let activeIdx = -1;
+
+    function getItems() {
+      return suggestBox.querySelectorAll(".email-suggestion-item");
+    }
+
+    function setActive(idx) {
+      const items = getItems();
+      items.forEach(el => el.classList.remove("active"));
+      if (idx >= 0 && idx < items.length) {
+        items[idx].classList.add("active");
+        activeIdx = idx;
+      } else {
+        activeIdx = -1;
+      }
+    }
+
+    function showSuggestions(prefix) {
+      suggestBox.innerHTML = "";
+      activeIdx = -1;
+
+      DOMAINS.forEach(domain => {
+        const full = prefix + domain;
+        const item = document.createElement("div");
+        item.className = "email-suggestion-item";
+        item.setAttribute("role", "option");
+        // Bold the domain part
+        item.innerHTML = `${prefix}<span>${domain}</span>`;
+
+        item.addEventListener("mousedown", (e) => {
+          e.preventDefault(); // prevent blur before fill
+          emailInput.value = full;
+          closeBox();
+          emailInput.focus();
+        });
+
+        suggestBox.appendChild(item);
+      });
+
+      suggestBox.classList.add("open");
+    }
+
+    function closeBox() {
+      suggestBox.classList.remove("open");
+      suggestBox.innerHTML = "";
+      activeIdx = -1;
+    }
+
+    emailInput.addEventListener("input", () => {
+      const val = emailInput.value;
+      const atIdx = val.indexOf("@");
+
+      // Show suggestions only after @ and no domain typed yet (or partial domain)
+      if (atIdx !== -1) {
+        const prefix = val.slice(0, atIdx + 1); // "user@"
+        const afterAt = val.slice(atIdx + 1);   // what's after @
+
+        // Filter domains matching what user typed after @
+        const filtered = DOMAINS.filter(d => d.startsWith(afterAt));
+
+        if (filtered.length > 0 && afterAt.length < 15) {
+          suggestBox.innerHTML = "";
+          activeIdx = -1;
+
+          filtered.forEach(domain => {
+            const full = prefix + domain;
+            const item = document.createElement("div");
+            item.className = "email-suggestion-item";
+            item.setAttribute("role", "option");
+            item.innerHTML = `${prefix}<span>${domain}</span>`;
+
+            item.addEventListener("mousedown", (e) => {
+              e.preventDefault();
+              emailInput.value = full;
+              closeBox();
+              emailInput.focus();
+            });
+
+            suggestBox.appendChild(item);
+          });
+
+          suggestBox.classList.add("open");
+        } else {
+          closeBox();
+        }
+      } else {
+        closeBox();
+      }
+    });
+
+    // Keyboard navigation
+    emailInput.addEventListener("keydown", (e) => {
+      const items = getItems();
+      if (!suggestBox.classList.contains("open") || items.length === 0) return;
+
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        setActive(Math.min(activeIdx + 1, items.length - 1));
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        setActive(Math.max(activeIdx - 1, 0));
+      } else if (e.key === "Enter" && activeIdx >= 0) {
+        e.preventDefault();
+        emailInput.value = items[activeIdx].textContent;
+        closeBox();
+      } else if (e.key === "Escape") {
+        closeBox();
+      } else if (e.key === "Tab") {
+        // Auto-fill first suggestion on Tab
+        if (activeIdx === -1 && items.length > 0) {
+          e.preventDefault();
+          emailInput.value = items[0].textContent;
+        }
+        closeBox();
+      }
+    });
+
+    // Close on outside click
+    document.addEventListener("click", (e) => {
+      if (!emailInput.contains(e.target) && !suggestBox.contains(e.target)) {
+        closeBox();
+      }
+    });
+  }
+
+
+
   function updateProgress() {
     panels.forEach((p, idx) => {
       p.classList.toggle("active", idx + 1 === currentStep);
@@ -743,5 +881,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Run initialization — sync now, no async needed
   initDropdowns();
   initPhoneAutoFormat();
+  initEmailSuggest();
   updateProgress();
 });
