@@ -3710,4 +3710,69 @@ body.light-mode .apply-terms-label {
   }
 }
 
+/* Success Card Typography and Theme Readability */
+.success-title {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.success-desc {
+  color: #cbd5e1; /* high contrast light gray on dark */
+  margin-bottom: 25px;
+  font-size: 1rem;
+}
+.success-id-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 8px;
+  max-width: 400px;
+  margin: 0 auto 25px;
+}
+.success-id-label {
+  font-size: 0.85rem;
+  color: #94a3b8; /* darker blue gray */
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.success-id-val {
+  font-size: 1.6rem;
+  color: #e0a730;
+  display: block;
+}
+.success-note {
+  color: #94a3b8;
+  font-size: 0.9rem;
+  margin-bottom: 30px;
+}
+.copy-btn svg {
+  transition: transform 0.2s;
+}
+.copy-btn:active svg {
+  transform: scale(0.85);
+}
+
+/* Light Mode Overrides for Success card */
+body.light-mode .success-title {
+  color: #0f172a; /* dark text for light mode */
+}
+body.light-mode .success-desc {
+  color: #475569; /* readable dark gray */
+}
+body.light-mode .success-id-box {
+  background: #f8fafc;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+body.light-mode .success-id-label {
+  color: #64748b;
+}
+body.light-mode .success-id-val {
+  color: #b45309; /* dark gold/amber accent for light mode */
+}
+body.light-mode .success-note {
+  color: #64748b;
+}
+
+
 

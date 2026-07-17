@@ -810,18 +810,39 @@ document.addEventListener("DOMContentLoaded", () => {
       wizardInner.style.display = "none";
       wizardResult.hidden = false;
       wizardResult.innerHTML = `
-        <div class="result-card success" style="text-align: center; padding: 40px 20px;">
+        <div class="result-card success-card" style="text-align: center; padding: 40px 20px;">
           <span style="font-size: 4rem; color: #2e7d32; display: block; margin-bottom: 20px;">✓</span>
-          <h2 style="color: #fff; margin-bottom: 10px;">Application Submitted!</h2>
-          <p style="color: #aaa; margin-bottom: 25px;">Your application has been received and is under review.</p>
-          <div style="background: rgba(255,255,255,0.05); padding: 15px; border-radius: 8px; max-width: 400px; margin: 0 auto 30px;">
-            <span style="font-size: 0.9rem; color: #888; display: block; text-transform: uppercase;">Your Application ID:</span>
-            <strong style="font-size: 1.5rem; color: #e0a730; display: block; margin-top: 5px;">${data.applicationId}</strong>
+          <h2 class="success-title">Application Submitted!</h2>
+          <p class="success-desc">Your application has been received and is under review.</p>
+          <div class="success-id-box">
+            <span class="success-id-label">Your Application ID:</span>
+            <div style="display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 8px;">
+              <strong id="applicationIdVal" class="success-id-val">${data.applicationId}</strong>
+              <button type="button" id="copyAppIdBtn" class="copy-btn" title="Copy Application ID" style="background: none; border: none; cursor: pointer; color: #e0a730; padding: 4px; display: flex; align-items: center;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              </button>
+            </div>
           </div>
-          <p style="color: #888; font-size: 0.9rem; margin-bottom: 30px;">Please copy and save this ID to track your status later.</p>
-          <a href="/check-status.html?appId=${data.applicationId}" class="btn-primary">Check Status</a>
+          <p class="success-note">Please copy and save this ID to track your status later.</p>
+          <a href="/check-status.html?appId=${data.applicationId}" class="btn-primary" style="display: inline-block;">Check Status</a>
         </div>
       `;
+
+      // Add Copy Button event listener
+      const copyBtn = document.getElementById("copyAppIdBtn");
+      if (copyBtn) {
+        copyBtn.addEventListener("click", () => {
+          navigator.clipboard.writeText(data.applicationId).then(() => {
+            showToast("Copied", "Application ID copied to clipboard!", "success");
+            // Simple micro-animation feedback
+            copyBtn.style.color = "#2e7d32";
+            setTimeout(() => copyBtn.style.color = "#e0a730", 1500);
+          }).catch(err => {
+            console.error("Failed to copy:", err);
+          });
+        });
+      }
+
 
     } catch (err) {
       showToast("Error", err.message, true);
