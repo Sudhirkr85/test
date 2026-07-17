@@ -35,25 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Smooth scroll animation for FAQ answers with GSAP if available
-  if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
-    gsap.registerPlugin(ScrollTrigger);
-    gsap.utils.toArray('.faq-item').forEach((el, index) => {
-      gsap.from(el, {
-        opacity: 0,
-        y: 20,
-        duration: 0.6,
-        ease: "power2.out",
-        delay: index * 0.08,
-        scrollTrigger: {
-          trigger: el,
-          start: "top 85%",
-          end: "bottom 65%",
-          scrub: false
-        }
-      });
-    });
-  }
 });
 
 // ==========================================
@@ -68,15 +49,10 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(html => {
       document.body.insertAdjacentHTML("afterbegin", html);
 
-      // GSAP Animation (only if GSAP is loaded)
-      if (typeof gsap !== "undefined") {
-        gsap.from(".nav_content ", {
-          y: -50,
-          opacity: 0,
-          duration: 1,
-          delay: 0.2,
-          ease: "bounce", 
-        });
+      // Navbar slide-in via CSS class
+      const navContent = document.querySelector(".nav_content");
+      if (navContent) {
+        navContent.classList.add("nav-slide-in");
       }
 
       const hamburger = document.querySelector(".hamburger");
@@ -212,29 +188,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// WHY CHOOSE SSSAM SECTION ANIMATION
+// WHY CHOOSE SSSAM SECTION ANIMATION (CSS IntersectionObserver)
 document.addEventListener("DOMContentLoaded", () => {
-  if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
   if (!document.querySelector(".why-choose-sssam")) return;
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.fromTo(
-    ".why-choose-item",
-    { opacity: 0, y: 24 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 0.7,
-      stagger: 0.12,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".why-choose-sssam",
-        start: "top 82%",
-        toggleActions: "play none none none"
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("anim-visible");
+        observer.unobserve(entry.target);
       }
-    }
-  );
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".why-choose-item").forEach((el, i) => {
+    el.classList.add("anim-fade-up");
+    el.style.transitionDelay = `${i * 0.1}s`;
+    observer.observe(el);
+  });
 });
 
 // LOAD FOOTER

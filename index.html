@@ -108,6 +108,20 @@
       .btn-whatsapp{background:#25D366;color:#fff;padding:14px 24px;border-radius:6px;font-size:1rem;font-weight:700;text-decoration:none;transition:background .3s}
       .hero-image{position:relative;display:inline-block;width:100%}
       .hero-image img{position:relative;z-index:1;width:100%;height:auto;border-radius:12px;box-shadow:0 15px 35px rgba(0,0,0,.4)}
+      /* Scroll animation classes */
+      .anim-fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+      .anim-slide-left{opacity:0;transform:translateX(-80px);transition:opacity .7s ease,transform .7s ease}
+      .anim-slide-right{opacity:0;transform:translateX(80px);transition:opacity .7s ease,transform .7s ease}
+      .anim-visible{opacity:1!important;transform:none!important}
+      /* Navbar slide-in */
+      @keyframes navSlideIn{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
+      .nav-slide-in{animation:navSlideIn .6s ease forwards}
+      /* Directions button hover */
+      .directions-btn{transition:transform .3s ease}
+      .directions-btn:hover{transform:scale(1.05)}
+      /* Info card border hover */
+      .info-card{transition:border-left-color .3s ease}
+      .info-card:hover{border-left-color:#e0a730!important}
     </style>
 
     <!-- Deferred full stylesheets (non-render-blocking) -->
@@ -1576,8 +1590,6 @@
 
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <script src="components/students.js" defer></script>
     <script src="./script.js" defer></script>
     <script src="components/script.js" defer></script>
