@@ -295,7 +295,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Navigation Logic
+  // ─── Phone Number Auto-Format (5 5 display) ──────────────────────────────
+  function initPhoneAutoFormat() {
+    const phoneInput = document.getElementById("applyPhone");
+    if (!phoneInput) return;
+
+    phoneInput.addEventListener("input", (e) => {
+      // Strip everything except digits
+      let digits = phoneInput.value.replace(/\D/g, "").slice(0, 10);
+
+      // Format: first 5 digits, space, next 5 digits
+      let formatted = digits;
+      if (digits.length > 5) {
+        formatted = digits.slice(0, 5) + " " + digits.slice(5);
+      }
+
+      phoneInput.value = formatted;
+    });
+
+    // On keydown: handle backspace correctly at space position
+    phoneInput.addEventListener("keydown", (e) => {
+      if (e.key === "Backspace") {
+        const val = phoneInput.value;
+        // If cursor is right after the space, remove the space + last digit before it
+        const pos = phoneInput.selectionStart;
+        if (pos === 6 && val[5] === " ") {
+          e.preventDefault();
+          phoneInput.value = val.slice(0, 4); // remove digit + space
+        }
+      }
+    });
+  }
+
+
   function updateProgress() {
     panels.forEach((p, idx) => {
       p.classList.toggle("active", idx + 1 === currentStep);
@@ -710,5 +742,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Run initialization — sync now, no async needed
   initDropdowns();
+  initPhoneAutoFormat();
   updateProgress();
 });
