@@ -4,31 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google tag (gtag.js) - loads on first user interaction -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18132709725"></script>
     <script>
-      (function() {
-        var gtmLoaded = false;
-        function loadGTM() {
-          if (gtmLoaded) return;
-          gtmLoaded = true;
-          var script = document.createElement('script');
-          script.async = true;
-          script.src = "https://www.googletagmanager.com/gtag/js?id=AW-18132709725";
-          document.head.appendChild(script);
-          script.onload = function() {
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', 'AW-18132709725');
-          };
-        }
-        window.addEventListener('scroll', loadGTM, { once: true, passive: true });
-        window.addEventListener('click', loadGTM, { once: true });
-        window.addEventListener('touchstart', loadGTM, { once: true, passive: true });
-        // Fallback: load after 5 seconds even if no interaction
-        setTimeout(loadGTM, 5000);
-      })();
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18132709725');
     </script>
 
 
@@ -96,29 +78,7 @@
       content="https://sssamacademy.com/assets/home_page.webp"
     />
 
-    <!-- Critical CSS inlined to prevent render blocking -->
     <style>
-      *{margin:0;padding:0;box-sizing:border-box;font-family:'Times New Roman'}
-      html,body{overflow-x:clip;max-width:100%}
-      img{max-width:100%;height:auto}
-      body{background:#0f0e0e;color:#fff;transition:.3s ease;padding-top:72px}
-      body.light-mode{background:#fff;color:#000}
-      .navbar{background:rgba(23,23,23,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:15px 5%;position:fixed;top:0;left:0;right:0;width:100%;z-index:999;border-bottom:1px solid rgba(255,255,255,.05);box-sizing:border-box}
-      body.light-mode .navbar{background:rgba(249,249,249,.85);border-bottom:1px solid rgba(0,0,0,.05)}
-      .nav_content{display:flex;justify-content:space-between;align-items:center;max-width:1200px;margin:0 auto;width:100%}
-      .hero-section{position:relative;min-height:80vh;display:flex;align-items:center;padding:60px 5% 40px;background:#111;color:#fff}
-      body.light-mode .hero-section{background:#f9f9f9;color:#333}
-      .hero-container{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:flex-start;width:100%}
-      .hero-content{position:relative;z-index:1;max-width:750px}
-      .hero-content h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:800;color:#fff;line-height:1.2;margin-bottom:20px}
-      body.light-mode .hero-content h1{color:#0f172a}
-      .hero-desc{font-size:clamp(1rem,1.8vw,1.15rem);color:#f0f0f0;line-height:1.7;margin-bottom:14px}
-      .hero-cta{display:flex;flex-wrap:wrap;gap:20px;align-items:center;margin-top:30px;margin-bottom:20px}
-      .btn-primary{background:#bf5100;color:#fff;padding:14px 28px;border-radius:6px;font-size:1rem;font-weight:700;text-decoration:none;transition:background .3s}
-      .btn-secondary{background:transparent;color:#fff;padding:13px 24px;border-radius:6px;font-size:1rem;font-weight:600;text-decoration:none;border:2px solid #fff;transition:all .3s}
-      .btn-whatsapp{background:#25D366;color:#fff;padding:14px 24px;border-radius:6px;font-size:1rem;font-weight:700;text-decoration:none;transition:background .3s}
-      .hero-image{position:relative;display:inline-block;width:100%}
-      .hero-image img{position:relative;z-index:1;width:100%;height:auto;border-radius:12px;box-shadow:0 15px 35px rgba(0,0,0,.4)}
       /* Scroll animation classes */
       .anim-fade-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
       .anim-slide-left{opacity:0;transform:translateX(-80px);transition:opacity .7s ease,transform .7s ease}
@@ -135,11 +95,8 @@
       .info-card:hover{border-left-color:#e0a730!important}
     </style>
 
-    <!-- Deferred full stylesheets (non-render-blocking) -->
-    <link rel="preload" href="components/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="components/style.css"></noscript>
-    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    <link rel="stylesheet" href="components/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- LOCAL BUSINESS SCHEMA -->
     <script type="application/ld+json">
