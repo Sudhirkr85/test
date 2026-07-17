@@ -502,7 +502,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (currentStep === 1) {
         guideEl.innerHTML = `
           <ul style="margin: 0; padding-left: 20px; list-style-type: disc;">
-            <li style="margin-bottom: 6px;"><strong>Training (SSSAM Student):</strong> Select this if you are a regular student at our SSSAM Academy center (requires duration in Months, no dates needed).</li>
+            <li style="margin-bottom: 6px;"><strong>Training (SSSAM Student):</strong> Select this if you are a regular student at our SSSAM Academy center (requires duration in Months & Date range).</li>
             <li style="margin-bottom: 6px;"><strong>College Training:</strong> Choose this if your training was conducted directly inside your college/campus (requires College selection & Date range).</li>
             <li style="margin-bottom: 6px;"><strong>Corporate Training:</strong> Choose this if training was completed inside a company (requires Company selection & Date range).</li>
             <li style="margin-bottom: 0;"><strong>Workshop / Internship:</strong> Select these for short term workshops (in Days) or SSSAM internships.</li>
@@ -533,7 +533,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (selectedTrainingType === "Workshop") {
           detailsGuide += `<br/><span style="display: block; margin-top: 8px;"><strong>Note:</strong> Enter your workshop start and end dates. Your duration should be entered in Hours/Days.</span>`;
         } else {
-          detailsGuide += `<br/><span style="display: block; margin-top: 8px;"><strong>Note:</strong> Enter your training duration in Months (no start/end dates required).</span>`;
+          detailsGuide += `<br/><span style="display: block; margin-top: 8px;"><strong>Note:</strong> Enter your training duration in Months, along with training start and end dates.</span>`;
         }
         guideEl.innerHTML = `<p style="margin: 0;">${detailsGuide}</p>`;
       }
