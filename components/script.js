@@ -1,5 +1,5 @@
-// window.APP_BASE_URL = "https://sssam-be.onrender.com";
-window.APP_BASE_URL = "http://localhost:5000";
+window.APP_BASE_URL = "https://sssam-be.onrender.com";
+// window.APP_BASE_URL = "http://localhost:5000";
 ((window.toggleFAQ = function (e) {
   const t = e.parentElement,
     o = t.querySelector(".faq-answer"),
