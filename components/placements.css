@@ -1195,43 +1195,7 @@ body.light-mode .skeleton-text {
   100% { background-position: -200% 0; }
 }
 
-/* Retry Button Styling */
-.pl-error-container {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 40px 20px;
-}
 
-.pl-error-message {
-  color: var(--text-muted);
-  font-style: italic;
-  margin-bottom: 16px;
-  font-size: 15px;
-}
-
-body.light-mode .pl-error-message {
-  color: #555;
-}
-
-.pl-btn-retry {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: var(--gold-dim);
-  border: 1px solid var(--gold);
-  color: var(--gold);
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  font-weight: 600;
-  transition: var(--transition);
-}
-
-.pl-btn-retry:hover {
-  background: var(--gold);
-  color: #1a1000;
-  transform: translateY(-2px);
-}
 
 
 
