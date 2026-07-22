@@ -546,60 +546,82 @@
       });
     }
 
-    // Auto-scroll logic for Placements Carousel (1 image at a time)
+    // ── Infinite Circular Loop Carousel for Placement Banners ──
     document.addEventListener("DOMContentLoaded", () => {
       const carousel = document.querySelector(".pl-banners-carousel");
       const cards = document.querySelectorAll(".pl-banner-card");
       const dots = document.querySelectorAll(".pl-dot");
-      
+
       if (!carousel || cards.length === 0) return;
-      
+
+      // Clone first card and append it to end for seamless infinite loop
+      const firstClone = cards[0].cloneNode(true);
+      carousel.appendChild(firstClone);
+
       let currentIndex = 0;
-      let slideInterval;
-      const intervalTime = 3000; // Slide every 3 seconds
-      
-      function showSlide(index) {
-        if (index >= cards.length) currentIndex = 0;
-        else if (index < 0) currentIndex = cards.length - 1;
-        else currentIndex = index;
-        
-        // Move the carousel
-        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
-        
-        // Update dots
+      let slideInterval = null;
+      let isTransitioning = false;
+      const totalOriginalSlides = cards.length;
+      const intervalTime = 3000;
+
+      function updateDots(index) {
+        const activeIdx = index % totalOriginalSlides;
         dots.forEach((dot, idx) => {
-          dot.classList.toggle("active", idx === currentIndex);
+          dot.classList.toggle("active", idx === activeIdx);
         });
       }
-      
-      function nextSlide() {
-        showSlide(currentIndex + 1);
+
+      function goToSlide(index, animate = true) {
+        if (animate) {
+          carousel.style.transition = "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
+        } else {
+          carousel.style.transition = "none";
+        }
+        carousel.style.transform = `translateX(-${index * 100}%)`;
+        currentIndex = index;
+        updateDots(index);
       }
-      
+
+      function nextSlide() {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        goToSlide(currentIndex + 1, true);
+      }
+
+      carousel.addEventListener("transitionend", () => {
+        isTransitioning = false;
+        // If reached cloned first slide, instantly jump to real first slide without animation
+        if (currentIndex === totalOriginalSlides) {
+          goToSlide(0, false);
+        }
+      });
+
+      dots.forEach((dot, idx) => {
+        dot.addEventListener("click", () => {
+          if (isTransitioning) return;
+          stopAutoSlide();
+          goToSlide(idx, true);
+          startAutoSlide();
+        });
+      });
+
       function startAutoSlide() {
         stopAutoSlide();
         slideInterval = setInterval(nextSlide, intervalTime);
       }
-      
+
       function stopAutoSlide() {
         if (slideInterval) clearInterval(slideInterval);
       }
-      
-      // Dot clicks
-      dots.forEach((dot, idx) => {
-        dot.addEventListener("click", () => {
-          showSlide(idx);
-          startAutoSlide(); // Reset timer on manual action
-        });
-      });
-      
-      // Pause on hover
+
       const container = document.querySelector(".pl-banners-carousel-wrap");
       if (container) {
         container.addEventListener("mouseenter", stopAutoSlide);
         container.addEventListener("mouseleave", startAutoSlide);
+        container.addEventListener("touchstart", stopAutoSlide, { passive: true });
+        container.addEventListener("touchend", startAutoSlide, { passive: true });
       }
-      
+
       startAutoSlide();
     });
   </script>
