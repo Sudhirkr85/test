@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const wizardForm = document.getElementById("applyWizardForm");
   if (!wizardForm) return;
 
-  const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
+  const BASE_URL = (window.APP_BASE_URL || "https://sssam-be.onrender.com").replace(/\/+$/, "");
 
   let currentStep = 1;
   const totalSteps = 4;

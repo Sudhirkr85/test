@@ -2,7 +2,7 @@
  * Certificate Services Controller (Verify + Download) for SSSAM Academy
  */
 document.addEventListener("DOMContentLoaded", () => {
-  const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
+  const BASE_URL = (window.APP_BASE_URL || "https://sssam-be.onrender.com").replace(/\/+$/, "");
 
   // Tab switching logic
   const tabs = document.querySelectorAll(".service-tab-btn");

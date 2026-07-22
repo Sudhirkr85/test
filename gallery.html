@@ -405,7 +405,7 @@
 
     // Dynamic Gallery — Fetch from API and prepend before static cards
     (async function loadDynamicGallery() {
-      const BASE_URL = (window.APP_BASE_URL || 'https://sssam.onrender.com').replace(/\/+$/, '');
+      const BASE_URL = (window.APP_BASE_URL || 'https://sssam-be.onrender.com').replace(/\/+$/, '');
       const grid = document.getElementById('photo-grid');
       try {
         const res = await fetch(`${BASE_URL}/api/gallery`);

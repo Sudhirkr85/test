@@ -303,7 +303,7 @@
 
       async function loadNotes() {
         const grid = document.getElementById("notesGrid");
-        const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
+        const BASE_URL = (window.APP_BASE_URL || "https://sssam-be.onrender.com").replace(/\/+$/, "");
 
         try {
           const res = await fetch(`${BASE_URL}/api/notes`);
@@ -359,7 +359,7 @@
       };
 
       async function triggerDirectDownload(noteId) {
-        const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
+        const BASE_URL = (window.APP_BASE_URL || "https://sssam-be.onrender.com").replace(/\/+$/, "");
         const cachedLead = JSON.parse(localStorage.getItem("notes_lead_data") || "{}");
 
         try {
@@ -391,7 +391,7 @@
               course: document.getElementById("leadCourse").value
             };
 
-            const BASE_URL = (window.APP_BASE_URL || "https://sssam.onrender.com").replace(/\/+$/, "");
+            const BASE_URL = (window.APP_BASE_URL || "https://sssam-be.onrender.com").replace(/\/+$/, "");
 
             try {
               const res = await fetch(`${BASE_URL}/api/notes/download/${noteId}`, {
