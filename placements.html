@@ -182,12 +182,6 @@
             <img src="assets/gallery/sssam-placement-4.webp" alt="SSSAM Academy Placement Success Banner - IT Graduate Placed in Leading Company" loading="lazy">
           </div>
         </div>
-        <div class="pl-carousel-dots">
-          <span class="pl-dot active" data-index="0"></span>
-          <span class="pl-dot" data-index="1"></span>
-          <span class="pl-dot" data-index="2"></span>
-          <span class="pl-dot" data-index="3"></span>
-        </div>
       </div>
     </div>
   </section>
@@ -550,7 +544,6 @@
     document.addEventListener("DOMContentLoaded", () => {
       const carousel = document.querySelector(".pl-banners-carousel");
       const cards = document.querySelectorAll(".pl-banner-card");
-      const dots = document.querySelectorAll(".pl-dot");
 
       if (!carousel || cards.length === 0) return;
 
@@ -564,13 +557,6 @@
       const totalOriginalSlides = cards.length;
       const intervalTime = 3000;
 
-      function updateDots(index) {
-        const activeIdx = index % totalOriginalSlides;
-        dots.forEach((dot, idx) => {
-          dot.classList.toggle("active", idx === activeIdx);
-        });
-      }
-
       function goToSlide(index, animate = true) {
         if (animate) {
           carousel.style.transition = "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)";
@@ -579,7 +565,6 @@
         }
         carousel.style.transform = `translateX(-${index * 100}%)`;
         currentIndex = index;
-        updateDots(index);
       }
 
       function nextSlide() {
@@ -594,15 +579,6 @@
         if (currentIndex === totalOriginalSlides) {
           goToSlide(0, false);
         }
-      });
-
-      dots.forEach((dot, idx) => {
-        dot.addEventListener("click", () => {
-          if (isTransitioning) return;
-          stopAutoSlide();
-          goToSlide(idx, true);
-          startAutoSlide();
-        });
       });
 
       function startAutoSlide() {
