@@ -269,19 +269,19 @@
             <div class="pl-form-grid">
               <div class="pl-form-field">
                 <label for="company_name">Company Name *</label>
-                <input type="text" id="company_name" placeholder="e.g. Google, Tech Mahindra" required>
+                <input type="text" id="company_name" placeholder="e.g. TCS, Infosys, Wipro, Google" required>
               </div>
               <div class="pl-form-field">
                 <label for="hr_name">HR / Coordinator Name *</label>
-                <input type="text" id="hr_name" placeholder="e.g. Dr. Amit Sharma" required>
+                <input type="text" id="hr_name" placeholder="e.g. Priya Sharma (HR Head)" required>
               </div>
               <div class="pl-form-field">
                 <label for="hr_mobile">Mobile Number *</label>
-                <input type="tel" id="hr_mobile" placeholder="10-digit mobile number" pattern="[0-9]{5}\s[0-9]{5}" maxlength="11" oninput="let v = this.value.replace(/\D/g, '').slice(0,10); this.value = v.length > 5 ? v.slice(0,5) + ' ' + v.slice(5) : v;" required>
+                <input type="tel" id="hr_mobile" placeholder="e.g. 98765 43210" pattern="[0-9]{5}\s[0-9]{5}" maxlength="11" oninput="let v = this.value.replace(/\D/g, '').slice(0,10); this.value = v.length > 5 ? v.slice(0,5) + ' ' + v.slice(5) : v;" required>
               </div>
               <div class="pl-form-field">
                 <label for="hr_email">Official Email Address *</label>
-                <input type="email" id="hr_email" placeholder="e.g. hr@company.com" required>
+                <input type="email" id="hr_email" placeholder="e.g. careers@company.com" required>
               </div>
               <div class="pl-form-field full-width">
                 <label for="hiring_domain">Preferred Tech Domain *</label>

@@ -233,19 +233,19 @@
           <div class="ct-form-grid">
             <div class="ct-form-field">
               <label for="college_name">College / Institution Name *</label>
-              <input type="text" id="college_name" required placeholder="e.g. Gurugram University">
+              <input type="text" id="college_name" required placeholder="e.g. Gurugram University, Amity University">
             </div>
             <div class="ct-form-field">
               <label for="coordinator_name">Coordinator / HOD Name *</label>
-              <input type="text" id="coordinator_name" required placeholder="e.g. Dr. Amit Sharma">
+              <input type="text" id="coordinator_name" required placeholder="e.g. Prof. R.K. Sharma (HOD CSE)">
             </div>
             <div class="ct-form-field">
               <label for="coordinator_mobile">Mobile Number *</label>
-              <input type="tel" id="coordinator_mobile" required placeholder="10-digit mobile number" maxlength="11" oninput="let v = this.value.replace(/\D/g, '').slice(0,10); this.value = v.length > 5 ? v.slice(0,5) + ' ' + v.slice(5) : v;">
+              <input type="tel" id="coordinator_mobile" required placeholder="e.g. 98765 43210" maxlength="11" oninput="let v = this.value.replace(/\D/g, '').slice(0,10); this.value = v.length > 5 ? v.slice(0,5) + ' ' + v.slice(5) : v;">
             </div>
             <div class="ct-form-field">
               <label for="coordinator_email">Official Email Address</label>
-              <input type="email" id="coordinator_email" placeholder="e.g. hod.it@college.edu">
+              <input type="email" id="coordinator_email" placeholder="e.g. hod.it@college.ac.in">
             </div>
             <div class="ct-form-field full-width">
               <label for="seminar_topic">Seminar Tech Topic *</label>
