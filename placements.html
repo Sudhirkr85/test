@@ -159,46 +159,7 @@
         <p class="pl-section-sub">A glimpse of SSSAM graduates who transformed their careers.</p>
       </div>
       <div class="pl-students-grid">
-        <!-- 1 -->
-        <div class="pl-student-card">
-          <div class="pl-student-avatar">👩‍💻</div>
-          <h3 class="pl-student-name">Laxmi Kumari</h3>
-          <span class="pl-student-course">Full Stack Web Development</span>
-          <span class="pl-student-company">CompliStack Technologies</span>
-          <span class="pl-student-package">Package: 5.5 LPA</span>
-        </div>
-        <!-- 2 -->
-        <div class="pl-student-card">
-          <div class="pl-student-avatar">👩‍💻</div>
-          <h3 class="pl-student-name">Pratibha Anand</h3>
-          <span class="pl-student-course">Data Science & Analytics</span>
-          <span class="pl-student-company">TCS</span>
-          <span class="pl-student-package">Package: 11 LPA</span>
-        </div>
-        <!-- 3 -->
-        <div class="pl-student-card">
-          <div class="pl-student-avatar">🧑‍💻</div>
-          <h3 class="pl-student-name">Pranav Sen</h3>
-          <span class="pl-student-course">Ethical Hacking & Cyber Security</span>
-          <span class="pl-student-company">Wipro</span>
-          <span class="pl-student-package">Package: 5 LPA</span>
-        </div>
-        <!-- 4 -->
-        <div class="pl-student-card">
-          <div class="pl-student-avatar">🧑‍💻</div>
-          <h3 class="pl-student-name">Amit Reddy</h3>
-          <span class="pl-student-course">AWS Cloud Computing</span>
-          <span class="pl-student-company">Accenture</span>
-          <span class="pl-student-package">Package: 7 LPA</span>
-        </div>
-        <!-- 5 -->
-        <div class="pl-student-card">
-          <div class="pl-student-avatar">🧑‍💻</div>
-          <h3 class="pl-student-name">Ajay Kumar</h3>
-          <span class="pl-student-course">Data Science & AI</span>
-          <span class="pl-student-company">Capgemini</span>
-          <span class="pl-student-package">Package: 6.5 LPA</span>
-        </div>
+        <p class="pl-loading-text" style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); font-style: italic; padding: 40px 0;">Loading placement records...</p>
       </div>
     </div>
   </section>
@@ -458,41 +419,55 @@
       const BASE_URL = (window.APP_BASE_URL || "https://sssam-be.onrender.com").replace(/\/+$/, "");
       try {
         const res = await fetch(`${BASE_URL}/api/placements`);
-        if (!res.ok) return;
+        if (!res.ok) {
+          const grid = document.querySelector(".pl-students-grid");
+          if (grid) {
+            grid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); font-style: italic; padding: 40px 0;">Failed to load placement records.</p>`;
+          }
+          return;
+        }
         const list = await res.json();
         const grid = document.querySelector(".pl-students-grid");
-        if (grid && list && list.length > 0) {
-          // Prepend dynamic records (newest at the top)
-          list.forEach(item => {
-            const card = document.createElement("div");
-            card.className = "pl-student-card dynamic-card";
-            
-            const pkg = item.packageLPA ? `Package: ${item.packageLPA} LPA` : "Placed";
-            
-            // Check if company logo exists, show image. Else fallback to textual display.
-            const companyLogoHTML = item.companyLogoUrl 
-              ? `<img src="${item.companyLogoUrl}" alt="${item.companyName} Logo" class="pl-card-company-logo" style="height: 20px; object-fit: contain; margin-top: 4px; vertical-align: middle; border-radius: 4px;" />`
-              : `<span class="company-text" style="color: var(--gold); font-weight:600;">${item.companyName}</span>`;
+        if (grid) {
+          if (list && list.length > 0) {
+            grid.innerHTML = ""; // Clear loading indicator
+            list.forEach(item => {
+              const card = document.createElement("div");
+              card.className = "pl-student-card dynamic-card";
+              
+              const pkg = item.packageLPA ? `Package: ${item.packageLPA} LPA` : "Placed";
+              
+              // Check if company logo exists, show image. Else fallback to textual display.
+              const companyLogoHTML = item.companyLogoUrl 
+                ? `<img src="${item.companyLogoUrl}" alt="${item.companyName} Logo" class="pl-card-company-logo" style="height: 20px; object-fit: contain; margin-top: 4px; vertical-align: middle; border-radius: 4px;" />`
+                : `<span class="company-text" style="color: var(--gold); font-weight:600;">${item.companyName}</span>`;
 
-            card.innerHTML = `
-              <img src="${item.photoUrl}" alt="${item.studentName} placed at ${item.companyName} - SSSAM Academy" class="pl-student-photo" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; border: 2px solid #e0a730;" loading="lazy" />
-              <h3 class="pl-student-name">${item.studentName}</h3>
-              <span class="pl-student-course" style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
-                ${item.designation}
-                ${companyLogoHTML}
-              </span>
-              <span class="pl-student-package">${pkg}</span>
-            `;
-            // Prepend card to the grid container
-            if (grid.firstChild) {
-              grid.insertBefore(card, grid.firstChild);
-            } else {
-              grid.appendChild(card);
-            }
-          });
+              card.innerHTML = `
+                <img src="${item.photoUrl}" alt="${item.studentName} placed at ${item.companyName} - SSSAM Academy" class="pl-student-photo" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; border: 2px solid #e0a730;" loading="lazy" />
+                <h3 class="pl-student-name">${item.studentName}</h3>
+                <span class="pl-student-course" style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                  ${item.designation}
+                  ${companyLogoHTML}
+                </span>
+                <span class="pl-student-package">${pkg}</span>
+              `;
+              // Prepend card to the grid container
+              if (grid.firstChild) {
+                grid.insertBefore(card, grid.firstChild);
+              } else {
+                grid.appendChild(card);
+              }
+            });
+          } else {
+            grid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); font-style: italic; padding: 40px 0;">No placement records found.</p>`;
+          }
         }
       } catch (err) {
         console.error("Failed to load dynamic placements:", err);
+        const grid = document.querySelector(".pl-students-grid");
+        if (grid) {
+          grid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); font-style: italic; padding: 40px 0;">Failed to load placement records.</p>`;
+        }
       }
     });
   </script>
