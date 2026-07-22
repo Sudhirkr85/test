@@ -135,6 +135,22 @@
         text-decoration: underline;
       }
 
+      blockquote {
+        border-left: 4px solid #e0a730;
+        padding: 16px 22px;
+        background: rgba(224,167,48,0.06);
+        border-radius: 0 12px 12px 0;
+        margin: 25px 0;
+        font-style: italic;
+        color: #cbd5e1;
+        font-size: 1.05rem;
+      }
+      body.light-mode blockquote {
+        background: rgba(32,65,128,0.05);
+        border-color: #204180;
+        color: #334155;
+      }
+
       /* Light Mode overrides */
       body.light-mode {
         background-color: #f8fafc;
@@ -172,12 +188,15 @@
     </style>
   </head>
   <body class="light-mode">
+    <!-- Top Reading Progress Indicator -->
+    <div id="readingProgress" style="position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg, #e0a730, #f5c760);z-index:99999;width:0%;transition:width 0.1s ease;box-shadow:0 0 10px rgba(224,167,48,0.5);"></div>
+
     <!-- Navbar -->
     <div id="navbar-placeholder"></div>
 
     <main class="detail-container">
       <a href="/blog.html" class="back-to-blogs">
-        <i class="fas fa-arrow-left"></i> Back to Blog
+        <i class="fas fa-arrow-left"></i> Back to All Articles
       </a>
 
       <article id="articleContent" style="display: none;">
@@ -187,11 +206,15 @@
           <div class="detail-meta">
             <span><i class="far fa-calendar"></i> <span id="postDate">—</span></span>
             <span><i class="far fa-user"></i> <span id="postAuthor">SSSAM Academy</span></span>
+            <span><i class="far fa-clock"></i> <span id="postReadTime">5 min read</span></span>
           </div>
-          <div class="detail-share" style="margin-top: 15px; display: flex; gap: 15px; align-items: center; font-size: 0.85rem;">
-            <span style="color: #666;">Share:</span>
-            <a href="#" id="shareWA" target="_blank" style="color: #25d366; text-decoration: none; display: flex; align-items: center; gap: 5px; font-weight: 600;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-            <a href="#" id="shareLI" target="_blank" style="color: #0a66c2; text-decoration: none; display: flex; align-items: center; gap: 5px; font-weight: 600;"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <div class="detail-share" style="margin-top: 18px; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; font-size: 0.88rem;">
+            <span style="color: #888; font-weight: 600;">Share Article:</span>
+            <button onclick="copyArticleLink(this)" style="background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15); color: #cbd5e1; padding: 6px 14px; border-radius: 20px; font-size: 0.82rem; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 6px; transition: all 0.2s;">
+              <i class="far fa-copy"></i> Copy Link
+            </button>
+            <a href="#" id="shareWA" target="_blank" style="background: rgba(37,211,102,0.1); border: 1px solid rgba(37,211,102,0.25); color: #25d366; padding: 6px 14px; border-radius: 20px; font-size: 0.82rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="#" id="shareLI" target="_blank" style="background: rgba(10,102,194,0.1); border: 1px solid rgba(10,102,194,0.25); color: #0a66c2; padding: 6px 14px; border-radius: 20px; font-size: 0.82rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-weight: 600;"><i class="fab fa-linkedin"></i> LinkedIn</a>
           </div>
         </header>
 
@@ -405,9 +428,27 @@
       function showError(msg) {
         document.getElementById("loadingState").innerHTML = `
           <i class="fas fa-exclamation-triangle" style="font-size: 2rem; color: #ef5350; margin-bottom: 15px;"></i>
-          <p style="color: #ef5350;">Error loading article: ${msg}</p>
-          <a href="/blog.html" class="btn-secondary" style="display: inline-block; margin-top: 15px; text-decoration: none;">Back to Blogs</a>
+          <h2>Article Not Found</h2>
+          <p>${msg}</p>
+          <a href="/blog.html" class="back-to-blogs" style="margin-top: 15px; display: inline-block;">Return to Blog Catalog</a>
         `;
+      }
+
+      // Reading Progress Bar Scroll Listener
+      window.addEventListener("scroll", () => {
+        const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        const bar = document.getElementById("readingProgress");
+        if (bar) bar.style.width = (scrolled || 0) + "%";
+      });
+
+      function copyArticleLink(btn) {
+        navigator.clipboard.writeText(window.location.href).then(() => {
+          const orig = btn.innerHTML;
+          btn.innerHTML = `<i class="fas fa-check" style="color:#10b981;"></i> Copied!`;
+          setTimeout(() => { btn.innerHTML = orig; }, 2000);
+        });
       }
     </script>
     <script src="/js/static-blogs.js"></script>

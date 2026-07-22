@@ -71,9 +71,10 @@
       }
       .blog-hero {
         text-align: center;
-        padding: 60px 20px;
-        background: radial-gradient(circle at 50% 50%, rgba(224,167,48,0.08) 0%, transparent 60%);
-        margin-bottom: 40px;
+        padding: 60px 20px 40px;
+        background: radial-gradient(circle at 50% 30%, rgba(224,167,48,0.12) 0%, transparent 65%);
+        margin-bottom: 30px;
+        position: relative;
       }
       .blog-hero h1 {
         font-family: 'Outfit', sans-serif;
@@ -86,15 +87,49 @@
       .blog-hero p {
         font-size: 1.1rem;
         color: #aaa;
-        max-width: 600px;
+        max-width: 620px;
+        margin: 0 auto 28px;
+        line-height: 1.6;
+      }
+
+      /* Hero Search Box */
+      .blog-search-box {
+        max-width: 540px;
         margin: 0 auto;
+        position: relative;
+      }
+      .blog-search-input {
+        width: 100%;
+        background: rgba(255,255,255,0.06);
+        backdrop-filter: blur(10px);
+        border: 1.5px solid rgba(255,255,255,0.15);
+        border-radius: 50px;
+        padding: 14px 24px 14px 48px;
+        color: #fff;
+        font-size: 0.98rem;
+        outline: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+      }
+      .blog-search-input:focus {
+        border-color: #e0a730;
+        background: rgba(255,255,255,0.1);
+        box-shadow: 0 0 25px rgba(224,167,48,0.3);
+      }
+      .blog-search-icon {
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #e0a730;
+        font-size: 1.1rem;
       }
 
       /* Tabs filter */
       .blog-tabs {
         display: flex;
         justify-content: center;
-        gap: 15px;
+        gap: 12px;
         margin-bottom: 40px;
         flex-wrap: wrap;
       }
@@ -113,7 +148,8 @@
         background: #e0a730;
         color: #111;
         border-color: #e0a730;
-        box-shadow: 0 4px 15px rgba(224,167,48,0.25);
+        box-shadow: 0 6px 20px rgba(224,167,48,0.3);
+        transform: translateY(-2px);
       }
 
       /* Blog Grid */
@@ -124,32 +160,37 @@
       }
       @media(max-width: 600px) {
         .blog-grid { grid-template-columns: 1fr; }
-        .blog-hero h1 { font-size: 2rem; }
+        .blog-hero h1 { font-size: 2.1rem; }
       }
       .blog-card {
         background: #111827;
         border: 1px solid rgba(255,255,255,0.06);
-        border-radius: 16px;
+        border-radius: 18px;
         overflow: hidden;
         display: flex;
         flex-direction: column;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
       }
       .blog-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-        border-color: rgba(224,167,48,0.25);
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 30px rgba(224,167,48,0.12);
+        border-color: rgba(224,167,48,0.35);
       }
       .blog-card-img-wrap {
-        height: 200px;
+        height: 210px;
         position: relative;
         background: #1f2937;
+        overflow: hidden;
       }
       .blog-card-img {
         width: 100%;
         height: 100%;
         object-fit: contain;
         background-color: #0f172a;
+        transition: transform 0.5s ease;
+      }
+      .blog-card:hover .blog-card-img {
+        transform: scale(1.06);
       }
       .blog-card-badge {
         position: absolute;
@@ -667,6 +708,34 @@
             }
           }
         });
+      }
+
+      function filterBlogsSearch() {
+        const query = (document.getElementById("blogSearchInput")?.value || "").toLowerCase().trim();
+        const grid = document.getElementById("blogsGrid");
+        if (!grid) return;
+
+        const cards = grid.querySelectorAll(".blog-card");
+        let visibleCount = 0;
+
+        cards.forEach(card => {
+          const text = card.textContent.toLowerCase();
+          if (!query || text.includes(query)) {
+            card.style.display = "flex";
+            visibleCount++;
+          } else {
+            card.style.display = "none";
+          }
+        });
+
+        const noResultsMsg = document.getElementById("noBlogsResult");
+        if (visibleCount === 0) {
+          if (!noResultsMsg) {
+            grid.insertAdjacentHTML("beforeend", `<div id="noBlogsResult" style="grid-column: 1 / -1; text-align: center; padding: 40px; color: #888; font-size: 1.1rem;"><i class="fas fa-search" style="font-size: 2rem; color: #e0a730; margin-bottom: 12px; display: block;"></i>No articles found matching "${query}".</div>`);
+          }
+        } else if (noResultsMsg) {
+          noResultsMsg.remove();
+        }
       }
     </script>
     <script src="/components/script.js" defer></script>
