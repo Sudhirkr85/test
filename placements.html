@@ -416,19 +416,17 @@
       }
     }
 
-    function handleHiringSubmit(e) {
+    async function handleHiringSubmit(e) {
       e.preventDefault();
-      const company = document.getElementById("company_name").value;
-      const hr = document.getElementById("hr_name").value;
+      const company = document.getElementById("company_name").value.trim();
+      const hr = document.getElementById("hr_name").value.trim();
       const mobile = document.getElementById("hr_mobile").value.replace(/\s/g, "");
-      const email = document.getElementById("hr_email").value;
+      const email = document.getElementById("hr_email").value.trim();
       let domain = document.getElementById("hiring_domain").value;
 
       if (domain === "Other") {
-        const customDomain = document.getElementById("custom_domain").value;
-        if (customDomain) {
-          domain = `Other (${customDomain})`;
-        }
+        const customDomain = document.getElementById("custom_domain").value.trim();
+        if (customDomain) domain = `Other (${customDomain})`;
       }
 
       if (!company || !hr || !mobile || !email || !domain) {
@@ -436,17 +434,54 @@
         return;
       }
 
-      const msg = encodeURIComponent(
-        `Hi SSSAM Academy! We want to hire trained IT graduates from your institute:\n\n` +
-        `• Company Name: ${company}\n` +
-        `• HR / Coordinator Name: ${hr}\n` +
-        `• Contact Mobile: ${mobile}\n` +
-        `• Official Email: ${email}\n` +
-        `• Preferred Tech Domain: ${domain}\n\n` +
-        `Please connect us with your placement cell coordinator.`
-      );
+      const submitBtn = document.querySelector("#hiring-booking-form button[type='submit']");
+      const originalText = submitBtn ? submitBtn.innerHTML : "";
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = "Submitting..."; }
 
-      window.open(`https://wa.me/919217031899?text=${msg}`, '_blank');
+      const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+      const BASE_URL = isLocal
+        ? `${window.location.protocol}//${window.location.hostname}:5000`
+        : "https://sssam-be.onrender.com";
+
+      try {
+        const res = await fetch(`${BASE_URL}/api/hiring/book`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ companyName: company, hrName: hr, mobileNumber: mobile, email, techDomain: domain }),
+        });
+        const data = await res.json();
+
+        if (!res.ok) { alert(data.message || "Submission failed. Please try again."); return; }
+
+        // WhatsApp pre-filled message
+        const waMsg = encodeURIComponent(
+          `Hi SSSAM Academy! We have submitted a hiring request (ID: ${data.requestId || "N/A"}) for ${company}.\n• Domain: ${domain}\n• HR: ${hr}\nPlease connect us with your placement coordinator.`
+        );
+
+        // Show success modal
+        document.body.insertAdjacentHTML("beforeend", `
+          <div id="hire-success-modal" style="position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;">
+            <div style="background:#1a1a2e;border:1px solid rgba(224,167,48,0.4);border-radius:16px;max-width:420px;width:100%;padding:32px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+              <div style="font-size:48px;margin-bottom:12px;">🏢</div>
+              <h3 style="color:#e0a730;margin:0 0 8px;">Hiring Request Received!</h3>
+              <p style="color:#ccc;font-size:14px;margin:0 0 8px;">Your request from <b style="color:#fff;">${company}</b> has been submitted successfully.</p>
+              <p style="color:#999;font-size:13px;margin:0 0 20px;">Request ID: <b style="color:#e0a730;">${data.requestId || "N/A"}</b><br>Our placement coordinator will contact you within 24 hours.</p>
+              <a href="https://wa.me/919217031899?text=${waMsg}" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;margin-bottom:12px;">
+                💬 Chat on WhatsApp
+              </a>
+              <br>
+              <button onclick="document.getElementById('hire-success-modal').remove()" style="background:transparent;border:1px solid rgba(255,255,255,0.2);color:#aaa;padding:8px 20px;border-radius:6px;cursor:pointer;margin-top:8px;">Close</button>
+            </div>
+          </div>
+        `);
+
+        document.getElementById("hiring-booking-form").reset();
+      } catch (err) {
+        alert("Network error. Please check your connection and try again.");
+        console.error(err);
+      } finally {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalText; }
+      }
     }
 
     // Auto-scroll logic for Placements Carousel (1 image at a time)

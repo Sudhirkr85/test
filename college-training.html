@@ -333,19 +333,17 @@
       }
     }
 
-    function handleCollegeSubmit(e) {
+    async function handleCollegeSubmit(e) {
       e.preventDefault();
-      const college = document.getElementById("college_name").value;
-      const coordinator = document.getElementById("coordinator_name").value;
+      const college = document.getElementById("college_name").value.trim();
+      const coordinator = document.getElementById("coordinator_name").value.trim();
       const mobile = document.getElementById("coordinator_mobile").value.replace(/\s/g, "");
-      const email = document.getElementById("coordinator_email").value || 'Not provided';
+      const email = document.getElementById("coordinator_email").value.trim();
       let topic = document.getElementById("seminar_topic").value;
 
       if (topic === "Other") {
-        const customTopic = document.getElementById("custom_topic").value;
-        if (customTopic) {
-          topic = `Other (${customTopic})`;
-        }
+        const customTopic = document.getElementById("custom_topic").value.trim();
+        if (customTopic) topic = `Other (${customTopic})`;
       }
 
       if (!college || !coordinator || !mobile || !topic) {
@@ -353,17 +351,54 @@
         return;
       }
 
-      const msg = encodeURIComponent(
-        `Hi SSSAM Academy! I want to request a FREE IT seminar for our college:\n\n` +
-        `• College Name: ${college}\n` +
-        `• Coordinator Name: ${coordinator}\n` +
-        `• Contact Mobile: ${mobile}\n` +
-        `• Email Address: ${email}\n` +
-        `• Tech Topic: ${topic}\n\n` +
-        `Please coordinate with us for dates.`
-      );
+      const submitBtn = document.querySelector("#college-seminar-form button[type='submit']");
+      const originalText = submitBtn ? submitBtn.innerHTML : "";
+      if (submitBtn) { submitBtn.disabled = true; submitBtn.innerHTML = "Submitting..."; }
 
-      window.open(`https://wa.me/919217031899?text=${msg}`, '_blank');
+      const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1";
+      const BASE_URL = isLocal
+        ? `${window.location.protocol}//${window.location.hostname}:5000`
+        : "https://sssam-be.onrender.com";
+
+      try {
+        const res = await fetch(`${BASE_URL}/api/seminar/book`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ collegeName: college, coordinatorName: coordinator, mobileNumber: mobile, email: email || undefined, topic }),
+        });
+        const data = await res.json();
+
+        if (!res.ok) { alert(data.message || "Submission failed. Please try again."); return; }
+
+        // Build WhatsApp pre-filled message
+        const waMsg = encodeURIComponent(
+          `Hi SSSAM Academy! I just requested a FREE IT seminar (ID: ${data.bookingId || "N/A"}) for ${college}.\n• Topic: ${topic}\n• Coordinator: ${coordinator}\nPlease confirm the schedule.`
+        );
+
+        // Show success modal
+        document.body.insertAdjacentHTML("beforeend", `
+          <div id="ct-success-modal" style="position:fixed;inset:0;background:rgba(0,0,0,0.75);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;">
+            <div style="background:#1a1a2e;border:1px solid rgba(224,167,48,0.4);border-radius:16px;max-width:420px;width:100%;padding:32px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.5);">
+              <div style="font-size:48px;margin-bottom:12px;">🎓</div>
+              <h3 style="color:#e0a730;margin:0 0 8px;">Request Submitted!</h3>
+              <p style="color:#ccc;font-size:14px;margin:0 0 8px;">Your seminar request for <b style="color:#fff;">${college}</b> has been received.</p>
+              <p style="color:#999;font-size:13px;margin:0 0 20px;">Booking ID: <b style="color:#e0a730;">${data.bookingId || "N/A"}</b><br>We will contact you within 24 hours.</p>
+              <a href="https://wa.me/919217031899?text=${waMsg}" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;padding:12px 24px;border-radius:8px;text-decoration:none;font-weight:600;margin-bottom:12px;">
+                💬 Chat on WhatsApp
+              </a>
+              <br>
+              <button onclick="document.getElementById('ct-success-modal').remove()" style="background:transparent;border:1px solid rgba(255,255,255,0.2);color:#aaa;padding:8px 20px;border-radius:6px;cursor:pointer;margin-top:8px;">Close</button>
+            </div>
+          </div>
+        `);
+
+        document.getElementById("college-seminar-form").reset();
+      } catch (err) {
+        alert("Network error. Please check your connection and try again.");
+        console.error(err);
+      } finally {
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.innerHTML = originalText; }
+      }
     }
   </script>
 </body>
