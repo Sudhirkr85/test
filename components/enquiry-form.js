@@ -250,6 +250,12 @@ window.__sharedEnquiryFormActive = true;
         return;
       }
 
+      if (!/^[a-zA-Z\s.'-]+$/.test(fullName)) {
+        setStatus("Full name must contain only letters and spaces.", true);
+        if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = "Submit Enquiry"; }
+        return;
+      }
+
       if (!/^\d{10}$/.test(phoneNumber)) {
         setStatus("Mobile number must be exactly 10 digits.", true);
         if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = "Submit Enquiry"; }

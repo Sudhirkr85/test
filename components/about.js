@@ -342,6 +342,18 @@ if (demoForm) {
       return;
     }
 
+    if (!/^[a-zA-Z\s.'-]+$/.test(fullName)) {
+      if (demoFormStatus) {
+        demoFormStatus.textContent = "Full name must contain only letters and spaces.";
+        demoFormStatus.classList.add("error");
+      }
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = "Get Free Counseling 🎓";
+      }
+      return;
+    }
+
     if (!/^\d{10}$/.test(phoneNumber)) {
       if (demoFormStatus) {
         demoFormStatus.textContent = "Mobile number must be exactly 10 digits.";

@@ -1456,6 +1456,14 @@
       cpShakeField(field);
       return;
     }
+    if (!/^[a-zA-Z\s.'-]+$/.test(name)) {
+      error.textContent = "⚠ Full name must contain only letters and spaces.";
+      error.style.display = "block";
+      const field = document.getElementById("cp-name");
+      field.style.borderColor = "#ff6b6b";
+      cpShakeField(field);
+      return;
+    }
     if (!mobile || mobile.length !== 10 || !/^\d+$/.test(mobile)) {
       error.textContent = "⚠ Please enter a valid 10-digit mobile number.";
       error.style.display = "block";
