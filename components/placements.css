@@ -1129,5 +1129,109 @@ body.light-mode .pl-form-field select option {
   box-shadow: 0 0 8px var(--gold);
 }
 
+/* ---- Skeleton Loader Styles ---- */
+.skeleton-card {
+  pointer-events: none;
+  border-color: rgba(255,255,255,0.03) !important;
+}
+
+body.light-mode .skeleton-card {
+  border-color: rgba(0,0,0,0.03) !important;
+}
+
+.skeleton-avatar {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #222 25%, #333 50%, #222 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  margin-bottom: 12px;
+}
+
+body.light-mode .skeleton-avatar {
+  background: linear-gradient(90deg, #e2e8f0 25%, #cbd5e1 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+}
+
+.skeleton-text {
+  height: 12px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #222 25%, #333 50%, #222 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+body.light-mode .skeleton-text {
+  background: linear-gradient(90deg, #e2e8f0 25%, #cbd5e1 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+}
+
+.skeleton-title {
+  width: 60%;
+  height: 16px;
+  margin-bottom: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skeleton-sub {
+  width: 80%;
+  margin-bottom: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.skeleton-btn {
+  width: 40%;
+  height: 24px;
+  border-radius: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* Retry Button Styling */
+.pl-error-container {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.pl-error-message {
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 16px;
+  font-size: 15px;
+}
+
+body.light-mode .pl-error-message {
+  color: #555;
+}
+
+.pl-btn-retry {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: var(--gold-dim);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.pl-btn-retry:hover {
+  background: var(--gold);
+  color: #1a1000;
+  transform: translateY(-2px);
+}
+
 
 

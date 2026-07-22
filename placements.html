@@ -419,61 +419,95 @@
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
     window.APP_BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://sssam-be.onrender.com';
 
-    document.addEventListener("DOMContentLoaded", async () => {
+    async function loadPlacements() {
+      const grid = document.querySelector(".pl-students-grid");
+      if (!grid) return;
+
+      // Show skeleton loader cards while fetching
+      grid.innerHTML = `
+        <div class="pl-student-card skeleton-card">
+          <div class="skeleton-avatar"></div>
+          <div class="skeleton-text skeleton-title"></div>
+          <div class="skeleton-text skeleton-sub"></div>
+          <div class="skeleton-text skeleton-btn"></div>
+        </div>
+        <div class="pl-student-card skeleton-card">
+          <div class="skeleton-avatar"></div>
+          <div class="skeleton-text skeleton-title"></div>
+          <div class="skeleton-text skeleton-sub"></div>
+          <div class="skeleton-text skeleton-btn"></div>
+        </div>
+        <div class="pl-student-card skeleton-card">
+          <div class="skeleton-avatar"></div>
+          <div class="skeleton-text skeleton-title"></div>
+          <div class="skeleton-text skeleton-sub"></div>
+          <div class="skeleton-text skeleton-btn"></div>
+        </div>
+        <div class="pl-student-card skeleton-card">
+          <div class="skeleton-avatar"></div>
+          <div class="skeleton-text skeleton-title"></div>
+          <div class="skeleton-text skeleton-sub"></div>
+          <div class="skeleton-text skeleton-btn"></div>
+        </div>
+      `;
+
       const BASE_URL = (window.APP_BASE_URL || "https://sssam-be.onrender.com").replace(/\/+$/, "");
       try {
         const res = await fetch(`${BASE_URL}/api/placements`);
         if (!res.ok) {
-          const grid = document.querySelector(".pl-students-grid");
-          if (grid) {
-            grid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); font-style: italic; padding: 40px 0;">Failed to load placement records.</p>`;
-          }
+          showErrorState();
           return;
         }
         const list = await res.json();
-        const grid = document.querySelector(".pl-students-grid");
-        if (grid) {
-          if (list && list.length > 0) {
-            grid.innerHTML = ""; // Clear loading indicator
-            list.forEach(item => {
-              const card = document.createElement("div");
-              card.className = "pl-student-card dynamic-card";
-              
-              const pkg = item.packageLPA ? `Package: ${item.packageLPA} LPA` : "Placed";
-              
-              // Check if company logo exists, show image. Else fallback to textual display.
-              const companyLogoHTML = item.companyLogoUrl 
-                ? `<img src="${item.companyLogoUrl}" alt="${item.companyName} Logo" class="pl-card-company-logo" style="height: 20px; object-fit: contain; margin-top: 4px; vertical-align: middle; border-radius: 4px;" />`
-                : `<span class="company-text" style="color: var(--gold); font-weight:600;">${item.companyName}</span>`;
+        if (list && list.length > 0) {
+          grid.innerHTML = ""; // Clear skeletons
+          list.forEach(item => {
+            const card = document.createElement("div");
+            card.className = "pl-student-card dynamic-card";
+            
+            const pkg = item.packageLPA ? `Package: ${item.packageLPA} LPA` : "Placed";
+            
+            const companyLogoHTML = item.companyLogoUrl 
+              ? `<img src="${item.companyLogoUrl}" alt="${item.companyName} Logo" class="pl-card-company-logo" style="height: 20px; object-fit: contain; margin-top: 4px; vertical-align: middle; border-radius: 4px;" />`
+              : `<span class="company-text" style="color: var(--gold); font-weight:600;">${item.companyName}</span>`;
 
-              card.innerHTML = `
-                <img src="${item.photoUrl}" alt="${item.studentName} placed at ${item.companyName} - SSSAM Academy" class="pl-student-photo" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; border: 2px solid #e0a730;" loading="lazy" />
-                <h3 class="pl-student-name">${item.studentName}</h3>
-                <span class="pl-student-course" style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
-                  ${item.designation}
-                  ${companyLogoHTML}
-                </span>
-                <span class="pl-student-package">${pkg}</span>
-              `;
-              // Prepend card to the grid container
-              if (grid.firstChild) {
-                grid.insertBefore(card, grid.firstChild);
-              } else {
-                grid.appendChild(card);
-              }
-            });
-          } else {
-            grid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); font-style: italic; padding: 40px 0;">No placement records found.</p>`;
-          }
+            card.innerHTML = `
+              <img src="${item.photoUrl}" alt="${item.studentName} placed at ${item.companyName} - SSSAM Academy" class="pl-student-photo" style="width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: 12px; border: 2px solid #e0a730;" loading="lazy" />
+              <h3 class="pl-student-name">${item.studentName}</h3>
+              <span class="pl-student-course" style="display: flex; flex-direction: column; align-items: center; gap: 4px;">
+                ${item.designation}
+                ${companyLogoHTML}
+              </span>
+              <span class="pl-student-package">${pkg}</span>
+            `;
+            // Prepend card to the grid container
+            if (grid.firstChild) {
+              grid.insertBefore(card, grid.firstChild);
+            } else {
+              grid.appendChild(card);
+            }
+          });
+        } else {
+          grid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); font-style: italic; padding: 40px 0;">No placement records found.</p>`;
         }
       } catch (err) {
         console.error("Failed to load dynamic placements:", err);
-        const grid = document.querySelector(".pl-students-grid");
-        if (grid) {
-          grid.innerHTML = `<p style="grid-column: 1 / -1; text-align: center; color: var(--text-muted); font-style: italic; padding: 40px 0;">Failed to load placement records.</p>`;
-        }
+        showErrorState();
       }
-    });
+
+      function showErrorState() {
+        grid.innerHTML = `
+          <div class="pl-error-container">
+            <p class="pl-error-message">Unable to connect to the server. Please check your connection or try again.</p>
+            <button class="pl-btn-retry" onclick="loadPlacements()">
+              <i class="fas fa-sync-alt"></i> Retry Connection
+            </button>
+          </div>
+        `;
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", loadPlacements);
   </script>
 </body>
 </html>
