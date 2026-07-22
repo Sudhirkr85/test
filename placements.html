@@ -75,6 +75,44 @@
           "ratingValue": "4.9",
           "reviewCount": "248"
         }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.sssamacademy.com/placements.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How does SSSAM Academy assist with placements?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SSSAM Academy provides 100% placement assistance to all eligible candidates. This includes one-on-one resume formatting sessions, portfolio review classes, exhaustive mock technical and HR interviews, and direct referrals to recruitment drives across our active employer network."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Which companies recruit graduates from SSSAM Academy?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Our successfully placed students work at top MNCs, global consultancy groups, and IT firms including TCS, Wipro, Accenture, Capgemini, and Infosys. We also coordinate hiring rounds for multiple fast-growing startups and digital agencies."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Who is eligible to participate in SSSAM placement drives?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Candidates who maintain above 85% attendance, successfully complete all course modules, submit their capstone projects, and clear the internal mock assessment panel are immediately eligible for coordinator referrals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there any hidden fee or placement charge?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, SSSAM Academy has a strict zero-charge policy. We do not demand any placement fees, commission, or salary cuts from candidates who get selected through our placement drives."
+            }
+          }
+        ]
       }
     ]
   }
@@ -303,6 +341,59 @@
           <div class="pl-step-num">04</div>
           <h3 class="pl-step-title">Interview Loops</h3>
           <p class="pl-step-desc">Get referred to hiring partner drives and land your dream job.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="pl-faq pl-section pl-section-dark">
+    <div class="pl-container">
+      <div class="pl-section-header">
+        <span class="pl-section-label">Common Queries</span>
+        <h2 class="pl-section-title">Frequently Asked Questions</h2>
+        <p class="pl-section-sub">Everything you need to know about SSSAM Academy training, mock preparations, and hiring coordinator services.</p>
+      </div>
+
+      <div class="pl-faq-list">
+        <div class="pl-faq-item">
+          <button class="pl-faq-question" aria-expanded="false">
+            <span>How does SSSAM Academy assist with placements?</span>
+            <span class="pl-faq-icon">+</span>
+          </button>
+          <div class="pl-faq-answer">
+            <p>SSSAM Academy provides 100% placement assistance to all eligible candidates. This includes one-on-one resume formatting sessions, portfolio review classes, exhaustive mock technical and HR interviews, and direct referrals to recruitment drives across our active employer network.</p>
+          </div>
+        </div>
+
+        <div class="pl-faq-item">
+          <button class="pl-faq-question" aria-expanded="false">
+            <span>Which companies recruit graduates from SSSAM Academy?</span>
+            <span class="pl-faq-icon">+</span>
+          </button>
+          <div class="pl-faq-answer">
+            <p>Our successfully placed students work at top MNCs, global consultancy groups, and IT firms including TCS, Wipro, Accenture, Capgemini, and Infosys. We also coordinate hiring rounds for multiple fast-growing startups and digital agencies.</p>
+          </div>
+        </div>
+
+        <div class="pl-faq-item">
+          <button class="pl-faq-question" aria-expanded="false">
+            <span>Who is eligible to participate in SSSAM placement drives?</span>
+            <span class="pl-faq-icon">+</span>
+          </button>
+          <div class="pl-faq-answer">
+            <p>Candidates who maintain above 85% attendance, successfully complete all course modules, submit their capstone projects, and clear the internal mock assessment panel are immediately eligible for coordinator referrals.</p>
+          </div>
+        </div>
+
+        <div class="pl-faq-item">
+          <button class="pl-faq-question" aria-expanded="false">
+            <span>Is there any hidden fee or placement charge?</span>
+            <span class="pl-faq-icon">+</span>
+          </button>
+          <div class="pl-faq-answer">
+            <p>No, SSSAM Academy has a strict zero-charge policy. We do not demand any placement fees, commission, or salary cuts from candidates who get selected through our placement drives.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -544,6 +635,34 @@
     }
 
     document.addEventListener("DOMContentLoaded", loadPlacements);
+
+    // FAQ Accordion Toggle
+    document.addEventListener("DOMContentLoaded", () => {
+      const faqQuestions = document.querySelectorAll(".pl-faq-question");
+      faqQuestions.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const item = btn.parentElement;
+          const isActive = item.classList.contains("active");
+          
+          // Close other FAQs
+          document.querySelectorAll(".pl-faq-item").forEach(el => {
+            el.classList.remove("active");
+            el.querySelector(".pl-faq-question").setAttribute("aria-expanded", "false");
+            const ans = el.querySelector(".pl-faq-answer");
+            if (ans) ans.style.maxHeight = null;
+          });
+
+          if (!isActive) {
+            item.classList.add("active");
+            btn.setAttribute("aria-expanded", "true");
+            const ans = item.querySelector(".pl-faq-answer");
+            if (ans) {
+              ans.style.maxHeight = ans.scrollHeight + "px";
+            }
+          }
+        });
+      });
+    });
   </script>
 </body>
 </html>
