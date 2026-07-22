@@ -393,6 +393,7 @@
               <input type="email" id="coordinator_email" placeholder="e.g. hod.it@college.ac.in">
             </div>
             <div class="ct-form-field full-width">
+
               <label for="seminar_topic">Seminar Tech Topic *</label>
               <select id="seminar_topic" required onchange="toggleCustomTopic(this)">
                 <option value="">-- Choose Seminar Topic --</option>
@@ -404,7 +405,7 @@
                 <option value="Digital Marketing & SEO">Digital Marketing & SEO</option>
                 <option value="Full Stack Web Development">Full Stack Web Development</option>
                 <option value="AWS Cloud Computing">AWS Cloud Computing</option>
-                <option value="Other">Other (Custom Topic)</option>
+                <option value="Other">Other</option>
               </select>
             </div>
             <div class="ct-form-field full-width" id="custom_topic_wrapper" style="display: none;">
@@ -425,22 +426,42 @@
     <div class="ct-container ct-faq-container">
       <h2 class="ct-section-title">Frequently Asked <span>Questions</span></h2>
       
-      <div class="ct-faq-grid">
+      <div class="ct-faq-list">
         <div class="ct-faq-item">
-          <div class="ct-faq-q">Are these IT seminars really 100% free? <i class="fas fa-chevron-down"></i></div>
-          <div class="ct-faq-a">Yes! SSSAM Academy delivers free guest lectures and technical awareness seminars to colleges across Delhi NCR & Haryana as part of our student outreach initiative.</div>
+          <div class="ct-faq-question" onclick="toggleCollegeFAQ(this)">
+            <h3>Are these IT seminars really 100% free?</h3>
+            <div class="ct-faq-icon"><i class="fas fa-chevron-down"></i></div>
+          </div>
+          <div class="ct-faq-answer">
+            <p>Yes! SSSAM Academy delivers free guest lectures and technical awareness seminars to colleges across Delhi NCR & Haryana as part of our student outreach initiative.</p>
+          </div>
         </div>
         <div class="ct-faq-item">
-          <div class="ct-faq-q">What is the duration of a seminar session? <i class="fas fa-chevron-down"></i></div>
-          <div class="ct-faq-a">Standard sessions run for 90 to 120 minutes, including a live technology demonstration and interactive Q&A session with students.</div>
+          <div class="ct-faq-question" onclick="toggleCollegeFAQ(this)">
+            <h3>What is the duration of a seminar session?</h3>
+            <div class="ct-faq-icon"><i class="fas fa-chevron-down"></i></div>
+          </div>
+          <div class="ct-faq-answer">
+            <p>Standard sessions run for 90 to 120 minutes, including a live technology demonstration and interactive Q&A session with students.</p>
+          </div>
         </div>
         <div class="ct-faq-item">
-          <div class="ct-faq-q">Who will deliver the workshop? <i class="fas fa-chevron-down"></i></div>
-          <div class="ct-faq-a">Our senior industry trainers, Certified Ethical Hackers, AI/ML consultants, and Full-Stack Architects with 8+ years of industry experience.</div>
+          <div class="ct-faq-question" onclick="toggleCollegeFAQ(this)">
+            <h3>Who will deliver the workshop?</h3>
+            <div class="ct-faq-icon"><i class="fas fa-chevron-down"></i></div>
+          </div>
+          <div class="ct-faq-answer">
+            <p>Our senior industry trainers, Certified Ethical Hackers, AI/ML consultants, and Full-Stack Architects with 8+ years of industry experience.</p>
+          </div>
         </div>
         <div class="ct-faq-item">
-          <div class="ct-faq-q">Do students receive participation certificates? <i class="fas fa-chevron-down"></i></div>
-          <div class="ct-faq-a">Yes, upon request by the college coordinator, e-certificates can be issued for participants.</div>
+          <div class="ct-faq-question" onclick="toggleCollegeFAQ(this)">
+            <h3>Do students receive participation certificates?</h3>
+            <div class="ct-faq-icon"><i class="fas fa-chevron-down"></i></div>
+          </div>
+          <div class="ct-faq-answer">
+            <p>Yes, upon request by the college coordinator, e-certificates can be issued for participants.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -457,6 +478,18 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
   <script src="components/script.js" defer></script>
   <script>
+    function toggleCollegeFAQ(el) {
+      const item = el.closest('.ct-faq-item');
+      const allItems = document.querySelectorAll('.ct-faq-item');
+      allItems.forEach(i => {
+        if (i !== item) {
+          i.classList.remove('open', 'active');
+        }
+      });
+      item.classList.toggle('open');
+      item.classList.toggle('active');
+    }
+
     function toggleCustomTopic(select) {
       const wrapper = document.getElementById("custom_topic_wrapper");
       const customInput = document.getElementById("custom_topic");
@@ -534,6 +567,10 @@
         }
 
         const bookingId = data.bookingId || "SEM-CONFIRMED";
+        const waMsg = encodeURIComponent(
+          `Hi SSSAM Academy! I have submitted a free IT seminar request for ${college} (ID: ${bookingId}).\n• Topic: ${topic}\n• Coordinator: ${coordinator}\nPlease confirm the schedule date.`
+        );
+        const waUrl = `https://wa.me/919217031899?text=${waMsg}`;
 
         // Render Premium Glassmorphism Modal
         const modalHtml = `
@@ -543,9 +580,9 @@
                 🎓
               </div>
               <h3 style="color:#ffffff;font-size:1.4rem;font-weight:800;margin:0 0 6px;font-family:'Inter',sans-serif;">Seminar Request Received!</h3>
-              <p style="color:#a0aec0;font-size:0.92rem;margin:0 0 20px;line-height:1.5;">Your seminar request for <b style="color:#ffffff;">${college}</b> has been submitted successfully.</p>
+              <p style="color:#a0aec0;font-size:0.92rem;margin:0 0 16px;line-height:1.5;">Your request for <b style="color:#ffffff;">${college}</b> has been registered. An email notification has been sent, and you are being redirected to WhatsApp...</p>
               
-              <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px;margin-bottom:24px;text-align:left;font-size:0.88rem;color:#cbd5e1;">
+              <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px;margin-bottom:20px;text-align:left;font-size:0.88rem;color:#cbd5e1;">
                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding-bottom:8px;border-bottom:1px dashed rgba(255,255,255,0.1);">
                   <span style="color:#94a3b8;">Booking ID:</span>
                   <span style="font-weight:700;color:#e0a730;font-family:monospace;font-size:0.98rem;" id="copyTargetId">${bookingId}</span>
@@ -561,11 +598,14 @@
               </div>
 
               <div style="display:flex;flex-direction:column;gap:10px;">
-                <button onclick="copyBookingId('${bookingId}', this)" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#e2e8f0;padding:12px;border-radius:10px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:all 0.2s;">
+                <a href="${waUrl}" target="_blank" onclick="document.getElementById('ct-success-modal').remove()" style="width:100%;box-sizing:border-box;background:#25D366;color:#ffffff;padding:12px;border-radius:10px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 16px rgba(37,211,102,0.3);transition:all 0.2s;">
+                  <i class="fab fa-whatsapp" style="font-size:1.2rem;"></i> Connect on WhatsApp Now
+                </a>
+                <button onclick="copyBookingId('${bookingId}', this)" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#e2e8f0;padding:10px;border-radius:10px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;">
                   <i class="far fa-copy"></i> Copy Booking ID
                 </button>
-                <button onclick="document.getElementById('ct-success-modal').remove()" style="width:100%;background:linear-gradient(135deg, #e0a730 0%, #c99324 100%);color:#111827;padding:12px;border-radius:10px;border:none;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 16px rgba(224,167,48,0.3);transition:all 0.2s;">
-                  <i class="fas fa-check-circle"></i> Done
+                <button onclick="document.getElementById('ct-success-modal').remove()" style="width:100%;background:rgba(255,255,255,0.05);color:#94a3b8;padding:8px;border-radius:8px;border:none;font-weight:600;cursor:pointer;">
+                  Done
                 </button>
               </div>
             </div>
@@ -574,6 +614,11 @@
 
         document.body.insertAdjacentHTML("beforeend", modalHtml);
         document.getElementById("college-seminar-form").reset();
+
+        // Auto-redirect to WhatsApp after 2 seconds
+        setTimeout(() => {
+          window.open(waUrl, "_blank");
+        }, 2000);
       } catch (err) {
         alert("Network error. Please check your connection and try again.");
         console.error(err);

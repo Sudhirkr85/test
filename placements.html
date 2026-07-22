@@ -479,8 +479,9 @@
 
         const requestId = data.requestId || "HIR-CONFIRMED";
         const waMsg = encodeURIComponent(
-          `Hi SSSAM Academy! We submitted a hiring request for ${company} (ID: ${requestId}).\n• Tech Domain: ${domain}\n• HR Contact: ${hr}\nPlease connect us with your placement coordinator.`
+          `Hi SSSAM Academy! We submitted a corporate hiring request for ${company} (ID: ${requestId}).\n• Tech Domain: ${domain}\n• HR Contact: ${hr}\nPlease connect us with your placement cell.`
         );
+        const waUrl = `https://wa.me/919217031899?text=${waMsg}`;
 
         // Render Premium Glassmorphism Modal
         const modalHtml = `
@@ -490,9 +491,9 @@
                 🏢
               </div>
               <h3 style="color:#ffffff;font-size:1.4rem;font-weight:800;margin:0 0 6px;font-family:'Inter',sans-serif;">Hiring Request Received!</h3>
-              <p style="color:#a0aec0;font-size:0.92rem;margin:0 0 20px;line-height:1.5;">Your request for <b style="color:#ffffff;">${company}</b> has been registered and emailed to our placement cell.</p>
+              <p style="color:#a0aec0;font-size:0.92rem;margin:0 0 16px;line-height:1.5;">Your request for <b style="color:#ffffff;">${company}</b> has been registered. An email notification has been sent, and you are being redirected to WhatsApp...</p>
               
-              <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px;margin-bottom:24px;text-align:left;font-size:0.88rem;color:#cbd5e1;">
+              <div style="background:rgba(0,0,0,0.3);border:1px solid rgba(255,255,255,0.08);border-radius:12px;padding:16px;margin-bottom:20px;text-align:left;font-size:0.88rem;color:#cbd5e1;">
                 <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;padding-bottom:8px;border-bottom:1px dashed rgba(255,255,255,0.1);">
                   <span style="color:#94a3b8;">Request ID:</span>
                   <span style="font-weight:700;color:#e0a730;font-family:monospace;font-size:0.98rem;" id="copyTargetHireId">${requestId}</span>
@@ -508,11 +509,14 @@
               </div>
 
               <div style="display:flex;flex-direction:column;gap:10px;">
-                <button onclick="copyHiringId('${requestId}', this)" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#e2e8f0;padding:12px;border-radius:10px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:all 0.2s;">
+                <a href="${waUrl}" target="_blank" onclick="document.getElementById('hire-success-modal').remove()" style="width:100%;box-sizing:border-box;background:#25D366;color:#ffffff;padding:12px;border-radius:10px;font-weight:700;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 16px rgba(37,211,102,0.3);transition:all 0.2s;">
+                  <i class="fab fa-whatsapp" style="font-size:1.2rem;"></i> Connect on WhatsApp Now
+                </a>
+                <button onclick="copyHiringId('${requestId}', this)" style="width:100%;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);color:#e2e8f0;padding:10px;border-radius:10px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;">
                   <i class="far fa-copy"></i> Copy Request ID
                 </button>
-                <button onclick="document.getElementById('hire-success-modal').remove()" style="width:100%;background:linear-gradient(135deg, #e0a730 0%, #c99324 100%);color:#111827;padding:12px;border-radius:10px;border:none;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 16px rgba(224,167,48,0.3);transition:all 0.2s;">
-                  <i class="fas fa-check-circle"></i> Done
+                <button onclick="document.getElementById('hire-success-modal').remove()" style="width:100%;background:rgba(255,255,255,0.05);color:#94a3b8;padding:8px;border-radius:8px;border:none;font-weight:600;cursor:pointer;">
+                  Done
                 </button>
               </div>
             </div>
@@ -521,6 +525,11 @@
 
         document.body.insertAdjacentHTML("beforeend", modalHtml);
         document.getElementById("hiring-booking-form").reset();
+
+        // Auto-redirect to WhatsApp after 2 seconds
+        setTimeout(() => {
+          window.open(waUrl, "_blank");
+        }, 2000);
       } catch (err) {
         alert("Network error. Please check your connection and try again.");
         console.error(err);
