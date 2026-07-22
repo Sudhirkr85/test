@@ -1524,7 +1524,7 @@
         phoneNumber: mobile,
         course: courseInput,
         customCourseName: "",
-        message: email ? ("Email: " + email) : "Counseling Lead from Homepage"
+        email: email || null
       })
     }).catch(function(err) {
       console.warn("Failed to hit backend API:", err);

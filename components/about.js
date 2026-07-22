@@ -371,8 +371,7 @@ if (demoForm) {
       phoneNumber,
       email: email || null,
       course,
-      customCourseName: "",
-      message: "Counseling Lead from About page"
+      customCourseName: ""
     };
 
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';

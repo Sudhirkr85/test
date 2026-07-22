@@ -267,8 +267,7 @@ window.__sharedEnquiryFormActive = true;
         phoneNumber,
         email,
         course,
-        customCourseName: "",
-        message: "Enquiry submitted via contact/enquiry widget"
+        customCourseName: ""
       };
 
       try {
