@@ -1183,71 +1183,600 @@
       <article
         class="course-item"
         data-level="beginner"
-        data-tags="seo search engine optimization digital marketing gurugram"
-      >
-        <img
-          class="course-thumb"
-          src="assets/courses/seo.webp"
-          alt="SEO Course in Gurugram at SSSAM Academy"
-         loading="lazy" />
+    <!-- PAGE HERO -->
+    <header class="courses-hero">
+      <div class="container">
+        <h1>
+          Best Computer Institute in Gurugram — Job-Oriented Computer Courses
+        </h1>
+        <p>
+          Discover practical, job-oriented computer courses at SSSAM Academy, a
+          trusted computer training institute in Gurugram located in Old DLF,
+          Sector 14. Our industry-focused programs include Data Science, Python
+          Programming, Full Stack Web Development, Digital Marketing, Data
+          Analytics, Cyber Security, and other professional IT courses designed
+          for students, freshers, and working professionals seeking real
+          career-ready skills.
+        </p>
+        <div class="hero-actions">
+          <div class="search-wrap">
+            <i class="fas fa-search search-icon"></i>
+            <input
+              id="course-search"
+              type="search"
+              placeholder="Search courses… e.g. Python, AWS, Digital Marketing"
+              aria-label="Search computer courses at SSSAM Academy Gurugram"
+            />
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- CATEGORY TABS -->
+    <div class="cat-tabs-wrap">
+      <div class="container">
+        <div class="cat-tabs" role="tablist" aria-label="Filter courses by category">
+          <button class="cat-tab active" data-cat="all" role="tab" aria-selected="true">All <span class="cat-count"></span></button>
+          <button class="cat-tab" data-cat="ai-data" role="tab" aria-selected="false"><i class="fas fa-brain"></i> AI &amp; Data</button>
+          <button class="cat-tab" data-cat="development" role="tab" aria-selected="false"><i class="fas fa-code"></i> Development</button>
+          <button class="cat-tab" data-cat="cloud-devops" role="tab" aria-selected="false"><i class="fas fa-cloud"></i> Cloud &amp; DevOps</button>
+          <button class="cat-tab" data-cat="cyber-security" role="tab" aria-selected="false"><i class="fas fa-shield-alt"></i> Cyber Security</button>
+          <button class="cat-tab" data-cat="design" role="tab" aria-selected="false"><i class="fas fa-palette"></i> Design</button>
+          <button class="cat-tab" data-cat="marketing" role="tab" aria-selected="false"><i class="fas fa-bullhorn"></i> Marketing</button>
+          <button class="cat-tab" data-cat="networking" role="tab" aria-selected="false"><i class="fas fa-network-wired"></i> Networking</button>
+          <button class="cat-tab" data-cat="office-tools" role="tab" aria-selected="false"><i class="fas fa-briefcase"></i> Office &amp; Tools</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- COURSES LIST -->
+    <main class="container courses-list">
+
+      <!-- Live count bar -->
+      <div class="courses-count-bar">
+        <span id="courses-count-text">Showing <strong id="visible-count">70</strong> of <strong>70</strong> courses</span>
+      </div>
+
+      <!-- ═══════════ AI & DATA ═══════════ -->
+      <article class="course-item" data-category="ai-data" data-level="advanced" data-tags="data science python machine learning ai statistics gurugram">
+        <img class="course-thumb" src="assets/courses/data Science.webp" alt="Data Science Course in Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Data Science Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">12 weeks</span><span class="dot">•</span><span class="cat-label">AI &amp; Data</span></p>
+          <p class="course-desc">Master Python for data analysis, ML algorithms, and predictive modeling through real-world projects.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/data-science-course-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="ai-data" data-level="advanced" data-tags="artificial intelligence machine learning deep learning neural network python ai gurugram">
+        <img class="course-thumb" src="assets/courses/Ai & ML.webp" alt="AI & ML Course in Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">AI &amp; Machine Learning Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">14 weeks</span><span class="dot">•</span><span class="cat-label">AI &amp; Data</span></p>
+          <p class="course-desc">Deep learning, neural networks, NLP, computer vision and real-world ML deployment pipelines.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/aiml-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="ai-data" data-level="advanced" data-tags="artificial intelligence generative ai chatgpt openai llm prompt gurugram">
+        <img class="course-thumb" src="assets/courses/Ai & ML.webp" alt="Artificial Intelligence Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Artificial Intelligence Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">12 weeks</span><span class="dot">•</span><span class="cat-label">AI &amp; Data</span></p>
+          <p class="course-desc">Comprehensive AI foundations — algorithms, reasoning, computer vision and applied AI projects.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/artificial-intelligence-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="ai-data" data-level="advanced" data-tags="generative ai chatgpt gpt openai llm large language model genai gurugram">
+        <img class="course-thumb" src="assets/courses/Ai & ML.webp" alt="Generative AI Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Generative AI (GenAI) Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">AI &amp; Data</span></p>
+          <p class="course-desc">Build LLM-powered apps, fine-tune GPT models, RAG pipelines and deploy AI agents to production.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/genai-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="ai-data" data-level="intermediate" data-tags="prompt engineering chatgpt llm ai tools openai gurugram">
+        <img class="course-thumb" src="assets/courses/Ai & ML.webp" alt="Prompt Engineering Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Prompt Engineering Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">4 weeks</span><span class="dot">•</span><span class="cat-label">AI &amp; Data</span></p>
+          <p class="course-desc">Master ChatGPT, Gemini &amp; Claude prompt design, chain-of-thought reasoning and AI workflow automation.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/prompt-engineering-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="ai-data" data-level="intermediate" data-tags="data analytics excel sql powerbi tableau statistics gurugram">
+        <img class="course-thumb" src="assets/courses/Data Analytics.webp" alt="Data Analytics Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Data Analytics Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">10 weeks</span><span class="dot">•</span><span class="cat-label">AI &amp; Data</span></p>
+          <p class="course-desc">Excel, SQL, Power BI and Python for transforming raw data into actionable business insights.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/data-analysis-course-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="ai-data" data-level="intermediate" data-tags="power bi microsoft dashboard dax data visualization gurugram">
+        <img class="course-thumb" src="assets/courses/Data Analytics.webp" alt="Power BI Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Power BI Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">6 weeks</span><span class="dot">•</span><span class="cat-label">AI &amp; Data</span></p>
+          <p class="course-desc">Build interactive business dashboards, DAX measures, Power Query ETL and publish to Power BI Service.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/power-bi-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="ai-data" data-level="intermediate" data-tags="tableau data visualization business intelligence dashboard gurugram">
+        <img class="course-thumb" src="assets/courses/Data Analytics.webp" alt="Tableau Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Tableau Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">6 weeks</span><span class="dot">•</span><span class="cat-label">AI &amp; Data</span></p>
+          <p class="course-desc">Master Tableau Desktop, LOD expressions, calculated fields and publish interactive dashboards online.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/tableau-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="ai-data" data-level="advanced" data-tags="data engineering pyspark databricks kafka apache big data gurugram">
+        <img class="course-thumb" src="assets/courses/data-engineering.webp" alt="Data Engineering Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Data Engineering Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">12 weeks</span><span class="dot">•</span><span class="cat-label">AI &amp; Data</span></p>
+          <p class="course-desc">ETL pipelines, Apache Spark, Hadoop, dbt, Snowflake and real-time Kafka streaming systems.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/data-engineering-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="ai-data" data-level="advanced" data-tags="pyspark databricks kafka apache big data delta lake snowflake gurugram">
+        <img class="course-thumb" src="assets/courses/data-engineering.webp" alt="PySpark Databricks Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">PySpark, Databricks &amp; Kafka Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">10 weeks</span><span class="dot">•</span><span class="cat-label">AI &amp; Data</span></p>
+          <p class="course-desc">Distributed data pipelines with PySpark DataFrames, Databricks Delta Lake and real-time Kafka streaming.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/pyspark-databricks-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="ai-data" data-level="intermediate" data-tags="hr analytics people analytics excel power bi hrms workforce data gurugram">
+        <img class="course-thumb" src="assets/courses/Data Analytics.webp" alt="HR Analytics Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">HR Analytics Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">6 weeks</span><span class="dot">•</span><span class="cat-label">AI &amp; Data</span></p>
+          <p class="course-desc">People analytics, attrition prediction, workforce dashboards and HR reporting with Power BI &amp; Excel.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/hr-analytics-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="ai-data" data-level="advanced" data-tags="oracle database dba sql plsql oracle 19c 21c gurugram">
+        <img class="course-thumb" src="assets/courses/oracle.webp" alt="Oracle Database Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Oracle Database DBA &amp; PL/SQL Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">AI &amp; Data</span></p>
+          <p class="course-desc">Oracle 21c DBA administration, PL/SQL programming, RMAN backup and performance tuning.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/oracle-database-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="ai-data" data-level="advanced" data-tags="salesforce crm salesforce admin developer apex lightning gurugram">
+        <img class="course-thumb" src="assets/courses/SAP.webp" alt="Salesforce Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Salesforce CRM Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">AI &amp; Data</span></p>
+          <p class="course-desc">Salesforce Admin &amp; Developer certification — Apex, Lightning Web Components, SOQL and Flow Automation.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/salesforce-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <!-- ═══════════ DEVELOPMENT ═══════════ -->
+      <article class="course-item" data-category="development" data-level="advanced" data-tags="full stack web development react node express gurugram">
+        <img class="course-thumb" src="assets/courses/full stack.webp" alt="Full Stack Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Full Stack Web Development Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">16 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">HTML, CSS, JavaScript, React, Node.js, Express and MongoDB — from UI design to API deployment.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/fullstack-course-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="advanced" data-tags="mern stack full stack react node express mongodb javascript gurugram">
+        <img class="course-thumb" src="assets/courses/mern.webp" alt="MERN Stack Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">MERN Stack Development Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">14 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">MongoDB, Express.js, React 18 and Node.js — build full-stack JavaScript SaaS applications end-to-end.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/mern-stack-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="intermediate" data-tags="python programming django flask scripting gurugram">
+        <img class="course-thumb" src="assets/courses/data Science.webp" alt="Python Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Python Programming Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Core Python, OOP, file handling, APIs, automation scripts — build 10+ real Python projects.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/python-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="advanced" data-tags="python fullstack django flask react frontend backend gurugram">
+        <img class="course-thumb" src="assets/courses/python-fs.webp" alt="Python Full Stack Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Python Full Stack Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">16 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Django REST Framework, React, PostgreSQL — build and deploy production-grade Python web apps.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/python-fullstack-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="advanced" data-tags="django python rest api backend web framework gurugram">
+        <img class="course-thumb" src="assets/courses/python-fs.webp" alt="Django Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Python Django &amp; REST API Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Django MVT architecture, ORM, REST APIs with DRF, JWT auth and PostgreSQL-backed production apps.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/django-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="intermediate" data-tags="java programming oop core java spring gurugram">
+        <img class="course-thumb" src="assets/courses/java.webp" alt="Java Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Core Java Programming Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Java OOP, Collections Framework, Multithreading, JDBC and design patterns for backend developers.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/java-programming-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="advanced" data-tags="java fullstack spring boot hibernate react microservices gurugram">
+        <img class="course-thumb" src="assets/courses/java-fs.webp" alt="Java Full Stack Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Java Full Stack Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">16 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Spring Boot microservices, Hibernate ORM, React frontend and Docker containerization.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/java-fullstack-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="advanced" data-tags="spring boot java microservices rest api hibernate jpa gurugram">
+        <img class="course-thumb" src="assets/courses/java.webp" alt="Spring Boot Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Spring Boot &amp; Microservices Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">10 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Spring Boot 3, Spring Security, REST APIs, Eureka service discovery and Docker/Kubernetes deployment.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/spring-boot-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="advanced" data-tags="react.js frontend javascript hooks redux web development gurugram">
+        <img class="course-thumb" src="assets/courses/js.webp" alt="React.js Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">React.js Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">React 18, hooks, Redux Toolkit, React Router, Next.js and REST API integration for modern SPAs.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/reactjs-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="intermediate" data-tags="node.js backend javascript express rest api gurugram">
+        <img class="course-thumb" src="assets/courses/js.webp" alt="Node.js Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Node.js &amp; Express Backend Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">6 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Node.js event loop, Express REST APIs, JWT authentication, MongoDB integration and API deployment.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/node-js-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="advanced" data-tags="angular 18 typescript frontend enterprise rxjs gurugram">
+        <img class="course-thumb" src="assets/courses/js.webp" alt="Angular Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Angular 18 Enterprise Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Angular components, services, RxJS observables, NgRx state management and enterprise app patterns.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/angular-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="beginner" data-tags="html css web design bootstrap responsive beginner gurugram">
+        <img class="course-thumb" src="assets/courses/html&cCSS.webp" alt="HTML CSS Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">HTML &amp; CSS Web Design Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Beginner</span><span class="dot">•</span><span class="duration">4 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">HTML5 semantic markup, CSS3 Flexbox, Grid, animations and Bootstrap responsive design from scratch.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/html-css-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="intermediate" data-tags="php backend web development mysql cms wordpress laravel gurugram">
+        <img class="course-thumb" src="assets/courses/php.webp" alt="PHP Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">PHP &amp; Laravel Web Development Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">PHP OOP, Laravel MVC, MySQL, REST APIs and building eCommerce CMS platforms.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/php-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="advanced" data-tags="dotnet c# asp.net core microsoft web development gurugram">
+        <img class="course-thumb" src="assets/courses/dotnet.webp" alt=".NET Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">.NET Core &amp; C# Development Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">10 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">ASP.NET Core MVC, Web API, Entity Framework, Azure deployment and C# OOP patterns.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/dotnet-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="beginner" data-tags="c programming fundamentals basic coding computer science gurugram">
+        <img class="course-thumb" src="assets/courses/C&C++.webp" alt="C Programming Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">C Programming Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Beginner</span><span class="dot">•</span><span class="duration">6 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">C language fundamentals, pointers, memory management, data structures and system-level programming.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/c-programming-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="intermediate" data-tags="dsa data structures algorithms coding interview leetcode competitive gurugram">
+        <img class="course-thumb" src="assets/courses/C&C++.webp" alt="DSA Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">DSA &amp; Coding Interview Prep Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">10 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Arrays, trees, graphs, dynamic programming and 200+ curated problems for FAANG-level interview prep.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/dsa-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="advanced" data-tags="system design high level low level scalability microservices gurugram">
+        <img class="course-thumb" src="assets/courses/full stack.webp" alt="System Design Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">System Design (HLD &amp; LLD) Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Design Twitter, Uber, WhatsApp clones — HLD, LLD, database sharding, caching and scalability patterns.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/system-design-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="intermediate" data-tags="software testing manual testing selenium qa quality assurance gurugram">
+        <img class="course-thumb" src="assets/courses/software testing.webp" alt="Software Testing Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Software Testing Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Manual testing, Selenium WebDriver, TestNG, JIRA bug tracking and SDLC/STLC fundamentals.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/software-testing-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="intermediate" data-tags="automation testing selenium python robot framework gurugram">
+        <img class="course-thumb" src="assets/courses/software testing.webp" alt="Automation Testing Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Automation Testing Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Selenium, Playwright, Cypress and Python automation — build a full CI/CD test pipeline.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/automation-testing-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="advanced" data-tags="flutter dart mobile app development ios android gurugram">
+        <img class="course-thumb" src="assets/courses/js.webp" alt="Flutter App Development Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Flutter Mobile App Development Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">10 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Flutter &amp; Dart, Firebase, state management (Riverpod), REST APIs and Play Store deployment.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/flutter-app-development-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="intermediate" data-tags="mongodb nosql database document database json backend gurugram">
+        <img class="course-thumb" src="assets/courses/sql.webp" alt="MongoDB Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">MongoDB NoSQL Database Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">4 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">MongoDB CRUD, aggregation pipelines, indexing, Atlas cloud and Mongoose ODM for Node.js.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/mongodb-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="intermediate" data-tags="mysql sql database relational queries backend gurugram">
+        <img class="course-thumb" src="assets/courses/sql.webp" alt="MySQL Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">MySQL &amp; SQL Database Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">4 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">SQL queries, joins, stored procedures, triggers, indexing strategies and MySQL database design.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/mysql-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="intermediate" data-tags="ruby programming ruby on rails backend web framework gurugram">
+        <img class="course-thumb" src="assets/courses/ruby.webp" alt="Ruby Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Ruby on Rails Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">6 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Ruby fundamentals, Rails MVC, Active Record, RESTful APIs and full-stack Rails app deployment.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/ruby-programming-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="beginner" data-tags="no-code bubble webflow flutterflow zapier nocode gurugram">
+        <img class="course-thumb" src="assets/courses/graphic desgin.webp" alt="No-Code Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">No-Code Web &amp; App Development Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Beginner</span><span class="dot">•</span><span class="duration">6 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Build apps with Bubble.io, Webflow, FlutterFlow and Zapier — without writing a single line of code.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/nocode-development-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="development" data-level="advanced" data-tags="game development unity 3d c# mobile game unreal gurugram">
+        <img class="course-thumb" src="assets/courses/game-dev.webp" alt="Game Development Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Unity 3D &amp; C# Game Development Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">12 weeks</span><span class="dot">•</span><span class="cat-label">Development</span></p>
+          <p class="course-desc">Unity engine, C# scripting, 2D/3D physics, particle VFX and Google Play Store game publishing.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/game-development-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <!-- ═══════════ CLOUD & DEVOPS ═══════════ -->
+      <article class="course-item" data-category="cloud-devops" data-level="advanced" data-tags="aws cloud amazon ec2 s3 lambda devops cloud computing gurugram">
+        <img class="course-thumb" src="assets/courses/AWS.webp" alt="AWS Cloud Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">AWS Cloud Computing Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">10 weeks</span><span class="dot">•</span><span class="cat-label">Cloud &amp; DevOps</span></p>
+          <p class="course-desc">EC2, S3, RDS, Lambda, VPC, IAM, CloudFormation — prepare for AWS Solutions Architect certification.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/aws-cloud-course-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="cloud-devops" data-level="advanced" data-tags="azure microsoft cloud az-900 az-104 devops cloud gurugram">
+        <img class="course-thumb" src="assets/courses/azure.webp" alt="Azure Cloud Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Microsoft Azure Cloud Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">10 weeks</span><span class="dot">•</span><span class="cat-label">Cloud &amp; DevOps</span></p>
+          <p class="course-desc">Azure VMs, App Service, Azure DevOps, Kubernetes AKS and AZ-104 Administrator certification prep.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/azure-cloud-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="cloud-devops" data-level="advanced" data-tags="gcp google cloud platform bigquery kubernetes gke gurugram">
+        <img class="course-thumb" src="assets/courses/gcp.webp" alt="GCP Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Google Cloud Platform (GCP) Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">10 weeks</span><span class="dot">•</span><span class="cat-label">Cloud &amp; DevOps</span></p>
+          <p class="course-desc">GCP Compute, BigQuery, GKE Kubernetes, Cloud Run, Pub/Sub and Associate Cloud Engineer cert prep.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/gcp-cloud-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="cloud-devops" data-level="advanced" data-tags="devops docker kubernetes ci cd jenkins ansible terraform gurugram">
+        <img class="course-thumb" src="assets/courses/devops.webp" alt="DevOps Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">DevOps Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">12 weeks</span><span class="dot">•</span><span class="cat-label">Cloud &amp; DevOps</span></p>
+          <p class="course-desc">Docker, Kubernetes, Jenkins CI/CD, Terraform IaC, Ansible, Prometheus monitoring and GitOps workflows.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/devops-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="cloud-devops" data-level="intermediate" data-tags="cloud computing saas paas iaas aws azure gcp gurugram">
+        <img class="course-thumb" src="assets/courses/AWS.webp" alt="Cloud Computing Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Cloud Computing Fundamentals Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">6 weeks</span><span class="dot">•</span><span class="cat-label">Cloud &amp; DevOps</span></p>
+          <p class="course-desc">IaaS/PaaS/SaaS concepts, multi-cloud architecture, virtualization, serverless computing and cloud security.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/cloud-computing-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <!-- ═══════════ CYBER SECURITY ═══════════ -->
+      <article class="course-item" data-category="cyber-security" data-level="advanced" data-tags="cyber security network security penetration testing siem gurugram">
+        <img class="course-thumb" src="assets/courses/cyber Security .webp" alt="Cyber Security Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Cyber Security Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">12 weeks</span><span class="dot">•</span><span class="cat-label">Cyber Security</span></p>
+          <p class="course-desc">Network security, cryptography, SIEM, vulnerability assessment, SOC operations and CEH exam prep.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/cyber-security-course-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="cyber-security" data-level="advanced" data-tags="ethical hacking penetration testing kali linux metasploit ceh gurugram">
+        <img class="course-thumb" src="assets/courses/hacking.webp" alt="Ethical Hacking Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Ethical Hacking Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">10 weeks</span><span class="dot">•</span><span class="cat-label">Cyber Security</span></p>
+          <p class="course-desc">Kali Linux, Metasploit, Burp Suite, web app pentesting, Wi-Fi hacking and CEH certification path.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/ethical-hacking-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="cyber-security" data-level="advanced" data-tags="soc analyst siem splunk threat intelligence security operations center gurugram">
+        <img class="course-thumb" src="assets/courses/cyber Security .webp" alt="SOC Analyst Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">SOC Analyst &amp; SIEM Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Advanced</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">Cyber Security</span></p>
+          <p class="course-desc">Splunk SIEM, threat hunting, incident response, malware analysis and Security+ / CompTIA exam prep.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/soc-analyst-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <!-- ═══════════ DESIGN ═══════════ -->
+      <article class="course-item" data-category="design" data-level="beginner" data-tags="graphic design photoshop illustrator canva logo design branding gurugram">
+        <img class="course-thumb" src="assets/courses/graphic desgin.webp" alt="Graphic Design Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Graphic Design Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Beginner</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">Design</span></p>
+          <p class="course-desc">Adobe Photoshop, Illustrator, Canva, logo design, branding identity and social media creatives.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/graphic-design-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="design" data-level="intermediate" data-tags="ui ux design figma wireframe prototype user experience gurugram">
+        <img class="course-thumb" src="assets/courses/graphic desgin.webp" alt="UI UX Design Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">UI/UX Design Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">Design</span></p>
+          <p class="course-desc">Figma wireframing, user research, design systems, prototyping and usability testing for apps &amp; web.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/ui-ux-design-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="design" data-level="intermediate" data-tags="autocad cad 2d 3d mechanical architecture engineering drawing gurugram">
+        <img class="course-thumb" src="assets/courses/autocad.webp" alt="AutoCAD Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">AutoCAD Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">6 weeks</span><span class="dot">•</span><span class="cat-label">Design</span></p>
+          <p class="course-desc">2D drafting, 3D modeling, mechanical &amp; architectural drawings, dimensions and AutoCAD plotting.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/autocad-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="design" data-level="intermediate" data-tags="revit architecture bim building information modeling autodesk gurugram">
+        <img class="course-thumb" src="assets/courses/autocad.webp" alt="Revit Architecture Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Revit Architecture &amp; BIM Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">6 weeks</span><span class="dot">•</span><span class="cat-label">Design</span></p>
+          <p class="course-desc">Revit BIM modeling, floor plans, sections, elevations, MEP coordination and Navisworks clash detection.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/revit-architecture-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="design" data-level="beginner" data-tags="video editing premiere pro after effects youtube reels gurugram">
+        <img class="course-thumb" src="assets/courses/video-editing.webp" alt="Video Editing Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Video Editing Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Beginner</span><span class="dot">•</span><span class="duration">6 weeks</span><span class="dot">•</span><span class="cat-label">Design</span></p>
+          <p class="course-desc">Adobe Premiere Pro, After Effects, color grading, YouTube editing, Reels &amp; motion graphics.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/video-editing-course-in-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <!-- ═══════════ MARKETING ═══════════ -->
+      <article class="course-item" data-category="marketing" data-level="beginner" data-tags="digital marketing seo social media google ads email marketing gurugram">
+        <img class="course-thumb" src="assets/courses/digital marketing.webp" alt="Digital Marketing Course Gurugram"/>
+        <div class="course-body">
+          <h2 class="course-title">Digital Marketing Course in Gurugram</h2>
+          <p class="course-meta"><span class="pill">Beginner</span><span class="dot">•</span><span class="duration">8 weeks</span><span class="dot">•</span><span class="cat-label">Marketing</span></p>
+          <p class="course-desc">SEO, Google Ads, Meta Ads, email marketing, analytics and full digital marketing strategy execution.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/digital-marketing-course-gurugram.html">Syllabus</a></div>
+        </div>
+      </article>
+
+      <article class="course-item" data-category="marketing" data-level="intermediate" data-tags="seo search engine optimization keyword research on page off page gurugram">
+        <img class="course-thumb" src="assets/courses/seo.webp" alt="SEO Course Gurugram"/>
         <div class="course-body">
           <h2 class="course-title">SEO Course in Gurugram</h2>
-          <p class="course-meta">
-            <span class="pill">Beginner</span><span class="dot">•</span>
-            <span class="duration">6 weeks</span><span class="dot">•</span>
-            <span class="students">Digital Marketing</span>
-          </p>
-          <p class="course-desc">
-            Learn SEO at SSSAM Academy, a computer institute in Gurugram. Master on-page and off-page SEO, keyword research, link building, analytics, and search engine optimization strategies with real projects.
-          </p>
-          <div class="course-actions">
-            <a class="btn btn-primary" href="/contact.html">Enroll</a>
-            <a
-              class="btn btn-outline"
-              target="_blank"
-              href="./courses/seo-course-in-gurugram.html"
-              >Syllabus</a
-            >
-            
-          </div>
+          <p class="course-meta"><span class="pill">Intermediate</span><span class="dot">•</span><span class="duration">6 weeks</span><span class="dot">•</span><span class="cat-label">Marketing</span></p>
+          <p class="course-desc">On-page, off-page, technical SEO, Google Search Console, keyword research and content clustering.</p>
+          <div class="course-actions"><a class="btn btn-primary" href="/contact.html">Enroll</a><a class="btn btn-outline" href="./courses/seo-course-in-gurugram.html">Syllabus</a></div>
         </div>
       </article>
 
-      <article
-        class="course-item"
-        data-level="beginner"
-        data-tags="google ads paid search ppc advertising digital marketing gurugram"
-      >
-        <img
-          class="course-thumb"
-          src="assets/courses/google-ads.webp"
-          alt="Google Ads Course in Gurugram at SSSAM Academy"
-         loading="lazy" />
+      <article class="course-item" data-category="marketing" data-level="intermediate" data-tags="google ads ppc pay per click search ads display ads sem gurugram">
+        <img class="course-thumb" src="assets/courses/google-ads.webp" alt="Google Ads Course Gurugram"/>
         <div class="course-body">
           <h2 class="course-title">Google Ads Course in Gurugram</h2>
-          <p class="course-meta">
-            <span class="pill">Beginner</span><span class="dot">•</span>
-            <span class="duration">4 weeks</span><span class="dot">•</span>
-            <span class="students">Paid Search</span>
-          </p>
-          <p class="course-desc">
-            Learn Google Ads at SSSAM Academy, a computer institute in Gurugram. Master Google Search Ads, Display Ads, bidding strategies, conversion tracking, and campaign optimization with real campaigns.
-          </p>
-          <div class="course-actions">
-            <a class="btn btn-primary" href="/contact.html">Enroll</a>
-            <a
-              class="btn btn-outline"
-              target="_blank"
-              href="./courses/google-ads-course-in-gurugram.html"
-              >Syllabus</a
-            >
-            
-          </div>
-        </div>
-      </article>
-
-      <article
-        class="course-item"
         data-level="intermediate"
         data-tags="social media marketing facebook instagram twitter linkedin gurugram"
       >

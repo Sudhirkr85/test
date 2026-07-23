@@ -1,68 +1,81 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.getElementById("course-search");
-  const levelFilter = document.getElementById("level-filter");
-  const courseItems = document.querySelectorAll(".course-item");
+  const searchInput   = document.getElementById("course-search");
+  const courseItems   = document.querySelectorAll(".course-item");
+  const catTabs       = document.querySelectorAll(".cat-tab");
+  const visibleCount  = document.getElementById("visible-count");
+  const emptyState    = document.getElementById("courses-empty");
+  const resetBtn      = document.getElementById("reset-filter-btn");
 
-  if (!searchInput || !levelFilter || !courseItems.length) {
-    return;
+  if (!courseItems.length) return;
+
+  let activeCategory = "all";
+
+  function norm(v) {
+    return String(v || "").toLowerCase().replace(/\s+/g, " ").trim();
   }
-
-  function normalizeText(value) {
-    return String(value || "")
-      .toLowerCase()
-      .replace(/\s+/g, " ")
-      .trim();
-  }
-
-  function normalizeLevel(value) {
-    const normalized = normalizeText(value);
-    if (normalized.includes("beginner")) return "beginner";
-    if (normalized.includes("intermediate")) return "intermediate";
-    if (normalized.includes("advanced")) return "advanced";
-    return "";
-  }
-
-  courseItems.forEach(item => {
-    const levelFromData = normalizeLevel(item.dataset.level);
-    const levelFromPill = normalizeLevel(item.querySelector(".pill")?.textContent);
-    const finalLevel = levelFromData || levelFromPill;
-
-    if (finalLevel) {
-      item.dataset.level = finalLevel;
-    }
-  });
 
   function applyFilters() {
-    const searchText = normalizeText(searchInput.value);
-    const searchTerms = searchText ? searchText.split(" ") : [];
-    const selectedLevel = normalizeLevel(levelFilter.value) || "all";
+    const query   = norm(searchInput ? searchInput.value : "");
+    const terms   = query ? query.split(" ").filter(Boolean) : [];
+    let   shown   = 0;
 
     courseItems.forEach(item => {
-      const title = normalizeText(item.querySelector(".course-title")?.textContent);
-      const description = normalizeText(item.querySelector(".course-desc")?.textContent);
-      const tags = normalizeText(item.dataset.tags);
-      const level = normalizeLevel(item.dataset.level);
-      const searchableText = `${title} ${description} ${tags}`;
+      const title = norm(item.querySelector(".course-title")?.textContent);
+      const desc  = norm(item.querySelector(".course-desc")?.textContent);
+      const tags  = norm(item.dataset.tags);
+      const cat   = norm(item.dataset.category);
+      const text  = `${title} ${desc} ${tags}`;
 
-      const matchesSearch =
-        searchTerms.length === 0 ||
-        searchTerms.every(term => searchableText.includes(term));
+      const matchCat    = activeCategory === "all" || cat === activeCategory;
+      const matchSearch = terms.length === 0 || terms.every(t => text.includes(t));
 
-      const matchesLevel =
-        selectedLevel === "all" || selectedLevel === level;
+      const visible = matchCat && matchSearch;
+      item.style.display = visible ? "" : "none";
+      if (visible) shown++;
+    });
 
-      if (matchesSearch && matchesLevel) {
-        item.style.display = "flex";
-      } else {
-        item.style.display = "none";
+    if (visibleCount) visibleCount.textContent = shown;
+
+    if (emptyState) {
+      emptyState.style.display = shown === 0 ? "flex" : "none";
+    }
+  }
+
+  catTabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      catTabs.forEach(t => {
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+      });
+      tab.classList.add("active");
+      tab.setAttribute("aria-selected", "true");
+      activeCategory = tab.dataset.cat;
+      applyFilters();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener("input", applyFilters);
+  }
+
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      if (searchInput) searchInput.value = "";
+      catTabs.forEach(t => {
+        t.classList.remove("active");
+        t.setAttribute("aria-selected", "false");
+      });
+      const allTab = document.querySelector(".cat-tab[data-cat='all']");
+      if (allTab) {
+        allTab.classList.add("active");
+        allTab.setAttribute("aria-selected", "true");
       }
+      activeCategory = "all";
+      applyFilters();
     });
   }
 
-  searchInput.addEventListener("input", applyFilters);
-  levelFilter.addEventListener("change", applyFilters);
-
-  applyFilters(); // initial run
+  applyFilters();
 });
 
 

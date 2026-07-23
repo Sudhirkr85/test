@@ -150,6 +150,107 @@ body.light-mode .hero-actions select:focus {
   }
 }
 
+/* Category Tabs Navigation */
+.cat-tabs-wrap {
+  background: rgba(255, 255, 255, 0.02);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  position: sticky;
+  top: 70px;
+  z-index: 90;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+body.light-mode .cat-tabs-wrap {
+  background: rgba(255, 255, 255, 0.85);
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.cat-tabs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 0;
+  scrollbar-width: none;
+}
+.cat-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.cat-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  padding: 8px 16px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--muted);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.cat-tab:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  background: rgba(224, 167, 48, 0.08);
+}
+.cat-tab.active {
+  background: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(224, 167, 48, 0.3);
+}
+body.light-mode .cat-tab {
+  border-color: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.02);
+}
+body.light-mode .cat-tab.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+/* Count Bar & Empty State */
+.courses-count-bar {
+  margin: 18px 0 10px;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+.courses-count-bar strong {
+  color: var(--accent);
+}
+
+.courses-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+.courses-empty .empty-icon {
+  font-size: 3rem;
+  margin-bottom: 12px;
+}
+.courses-empty h3 {
+  font-size: 1.4rem;
+  color: var(--text);
+  margin: 0 0 6px;
+}
+
+.cat-label {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+
 /* COURSES LIST (main) - Responsive Out-of-the-Box Grid */
 .courses-list {
   display: grid;
