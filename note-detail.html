@@ -432,31 +432,28 @@
       const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
       window.APP_BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://sssam-be.onrender.com';
 
-      // Static fallback notes catalog for SEO
+      // Static fallback notes catalog for SEO (no fileUrl — PDFs served from S3 via backend API)
       const staticNotesMap = {
         "python-core-oop-cheat-sheet": {
           _id: "python-core-oop-cheat-sheet",
           title: "Python Core & OOP Cheat Sheet",
           category: "Python",
           description: "A comprehensive reference guide covering variables, lists, dictionaries, functions, and Object-Oriented Programming (OOP) principles in Python. Includes real-world code snippets and interview questions.",
-          downloadCount: 1450,
-          fileUrl: "/assets/python_cheat_sheet.pdf"
+          downloadCount: 1450
         },
         "advanced-excel-business-dashboards": {
           _id: "advanced-excel-business-dashboards",
           title: "Advanced Excel & Business Dashboards",
           category: "Excel",
           description: "Learn key functions (VLOOKUP, INDEX/MATCH, XLOOKUP), pivot tables, data visualization rules, and how to construct executive business analyst dashboards.",
-          downloadCount: 1280,
-          fileUrl: "/assets/excel_dashboards_guide.pdf"
+          downloadCount: 1280
         },
         "relational-databases-sql-queries": {
           _id: "relational-databases-sql-queries",
           title: "Relational Databases & SQL Queries Cheat Sheet",
           category: "SQL",
           description: "Master SELECT statements, database joins, aggregate functions, subqueries, and database indexing strategies for backend developer and data analyst interviews.",
-          downloadCount: 1690,
-          fileUrl: "/assets/sql_queries_cheatsheet.pdf"
+          downloadCount: 1690
         }
       };
 
@@ -468,43 +465,72 @@
 
       async function loadNoteDetails() {
         const urlParams = new URLSearchParams(window.location.search);
-        const noteId = urlParams.get("id") || urlParams.get("slug");
+        let noteId = urlParams.get("id") || urlParams.get("slug");
+
+        const localStaticMap = window.staticNotesMap || staticNotesMap || {};
+
+        // Default to first static note if no ID provided in URL
         if (!noteId) {
-          showError("No study note selected.");
-          return;
+          const keys = Object.keys(localStaticMap);
+          if (keys.length > 0) {
+            noteId = keys[0];
+          } else {
+            showError("No study note selected.");
+            return;
+          }
         }
 
         const BASE_URL = (window.APP_BASE_URL || "https://sssam-be.onrender.com").replace(/\/+$/, "");
         let note;
 
-        try {
-          const res = await fetch(`${BASE_URL}/api/notes/${noteId}`);
-          if (!res.ok) throw new Error("Study note document not found.");
-          note = await res.json();
-        } catch(e) {
-          if (staticNotesMap[noteId]) {
-            note = staticNotesMap[noteId];
-          } else {
-            showError(e.message);
-            return;
+        // If it's a known static note, use local static content directly for instant response
+        if (localStaticMap[noteId]) {
+          note = localStaticMap[noteId];
+        } else {
+          try {
+            const res = await fetch(`${BASE_URL}/api/notes/${noteId}`);
+            if (!res.ok) throw new Error("Study note document not found.");
+            note = await res.json();
+          } catch(e) {
+            if (localStaticMap[noteId]) {
+              note = localStaticMap[noteId];
+            } else {
+              showError(e.message || "Failed to load study note.");
+              return;
+            }
           }
         }
 
         try {
+          const targetId = note._id || note.id || noteId;
           document.getElementById("noteTitle").textContent = note.title;
           document.getElementById("cardTitle").textContent = note.title;
           document.title = `${note.title} | Free Study PDF | SSSAM Academy`;
-          document.getElementById("metaDescription").setAttribute("content", note.description);
-          document.getElementById("ogTitle").setAttribute("content", note.title);
-          document.getElementById("ogDesc").setAttribute("content", note.description);
 
-          document.getElementById("noteCategory").textContent = note.category;
+          const metaDesc = document.getElementById("metaDescription");
+          if (metaDesc) metaDesc.setAttribute("content", note.description);
+
+          const ogTitle = document.getElementById("ogTitle");
+          if (ogTitle) ogTitle.setAttribute("content", note.title);
+
+          const ogDesc = document.getElementById("ogDesc");
+          if (ogDesc) ogDesc.setAttribute("content", note.description);
+
+          document.getElementById("noteCategory").textContent = note.category || "General IT";
           document.getElementById("noteDownloads").textContent = note.downloadCount || 0;
           document.getElementById("noteDescription").textContent = note.description;
 
+          // Render highlights if provided
+          if (note.highlights && Array.isArray(note.highlights) && note.highlights.length > 0) {
+            const highlightsEl = document.getElementById("noteHighlights");
+            if (highlightsEl) {
+              highlightsEl.innerHTML = note.highlights.map(h => `<li>${h}</li>`).join("");
+            }
+          }
+
           // Wire up CTA download button
           const btn = document.getElementById("btnDownloadCTA");
-          btn.onclick = () => initiateDownload(note._id);
+          btn.onclick = () => initiateDownload(targetId);
 
           // Setup social share links
           const shareUrl = encodeURIComponent(window.location.href);
@@ -569,12 +595,6 @@
         const BASE_URL = (window.APP_BASE_URL || "https://sssam-be.onrender.com").replace(/\/+$/, "");
         const cachedLead = JSON.parse(localStorage.getItem("notes_lead_data") || "{}");
 
-        if (staticNotesMap[noteId]) {
-          window.open(staticNotesMap[noteId].fileUrl, '_blank');
-          showDownloadToast("Opening study note PDF. Happy learning!");
-          return;
-        }
-
         try {
           const res = await fetch(`${BASE_URL}/api/notes/download/${noteId}`, {
             method: "POST",
@@ -601,15 +621,6 @@
             email: document.getElementById("leadEmail").value.trim(),
             course: document.getElementById("leadCourse").value
           };
-
-          if (staticNotesMap[noteId]) {
-            localStorage.setItem("notes_lead_submitted", "true");
-            localStorage.setItem("notes_lead_data", JSON.stringify(leadData));
-            closeGateModal();
-            window.open(staticNotesMap[noteId].fileUrl, '_blank');
-            showDownloadToast("Thank you! Opening PDF. Our counselor will connect shortly.");
-            return;
-          }
 
           const BASE_URL = (window.APP_BASE_URL || "https://sssam-be.onrender.com").replace(/\/+$/, "");
 
@@ -700,6 +711,7 @@
         if (bar) bar.style.width = (scrolled || 0) + "%";
       });
     </script>
+    <script src="/js/static-notes.js"></script>
     <script src="/components/script.js"></script>
   </body>
 </html>

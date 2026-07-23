@@ -1,5 +1,7 @@
-window.APP_BASE_URL = "https://sssam-be.onrender.com";
-// window.APP_BASE_URL = "http://localhost:5000";
+if (!window.APP_BASE_URL) {
+  const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+  window.APP_BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://sssam-be.onrender.com';
+}
 ((window.toggleFAQ = function (e) {
   const t = e.parentElement,
     o = t.querySelector(".faq-answer"),
