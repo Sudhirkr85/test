@@ -638,6 +638,7 @@
                      alt="${item.title} — SSSAM Academy"
                      class="blog-card-img"
                      width="400" height="200"
+                     onerror="this.onerror=null;this.src='${item.type === 'Hiring' ? '/assets/career_fallback.webp' : '/assets/blog_fallback.webp'}';"
                      ${loadAttr} />
                 <span class="blog-card-badge" style="${badgeStyle}">${item.type}</span>
                 ${newBadge}
