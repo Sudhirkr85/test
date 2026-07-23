@@ -55,25 +55,36 @@ if (!window.APP_BASE_URL) {
           }
         }),
           window.initNavbarBurger(),
-          a &&
-            l &&
-            a.addEventListener("click", () => {
-              l.classList.toggle("open");
-              const e = l.classList.contains("open");
-              a.setAttribute("aria-expanded", e ? "true" : "false");
-            }),
-          s &&
-            c &&
-            (s.addEventListener("click", (e) => {
-              (e.preventDefault(), c.classList.toggle("open"));
-              const t = c.classList.contains("open");
-              s.setAttribute("aria-expanded", t ? "true" : "false");
-            }),
-            document.addEventListener("click", (e) => {
-              c.contains(e.target) ||
-                (c.classList.remove("open"),
-                s.setAttribute("aria-expanded", "false"));
-            })));
+        document.querySelectorAll(".mobile-dropdown-toggle").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const parent = btn.closest(".mobile-dropdown");
+            if (parent) {
+              parent.classList.toggle("open");
+              btn.setAttribute("aria-expanded", parent.classList.contains("open") ? "true" : "false");
+            }
+          });
+        });
+
+        document.querySelectorAll(".dropdown-toggle").forEach((btn) => {
+          const parent = btn.closest(".nav-dropdown");
+          if (parent) {
+            btn.addEventListener("click", (e) => {
+              e.preventDefault();
+              parent.classList.toggle("open");
+              btn.setAttribute("aria-expanded", parent.classList.contains("open") ? "true" : "false");
+            });
+          }
+        });
+
+        document.addEventListener("click", (e) => {
+          document.querySelectorAll(".nav-dropdown").forEach((parent) => {
+            if (!parent.contains(e.target)) {
+              parent.classList.remove("open");
+              const btn = parent.querySelector(".dropdown-toggle");
+              if (btn) btn.setAttribute("aria-expanded", "false");
+            }
+          });
+        });
         const i = localStorage.getItem("theme");
         ("light" !== i && i
           ? (document.body.classList.remove("light-mode"),
