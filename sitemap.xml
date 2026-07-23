@@ -1,266 +1,482 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://sssamacademy.com/</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
     <loc>https://sssamacademy.com/about.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/college-training.html</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/contact.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/gallery.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sssamacademy.com/</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://sssamacademy.com/placements.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sssamacademy.com/placements.html</loc>
-    <lastmod>2026-06-23</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://sssamacademy.com/blog.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/notes.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/training.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/adca-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/advanced-excel-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/aiml-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/angular-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/artificial-intelligence-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/autocad-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/automation-testing-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/aws-cloud-course-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/azure-cloud-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/basic-computer-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/c-programming-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/ccna-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/ccnp-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/cloud-computing-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/content-writing-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/cyber-security-course-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/data-analysis-course-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/data-engineering-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/data-science-course-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/devops-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/digital-marketing-course-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/django-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/dotnet-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/dsa-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/ethical-hacking-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/flutter-app-development-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/fullstack-course-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/game-development-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/gcp-cloud-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/genai-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/google-ads-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/graphic-design-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/hr-analytics-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/html-css-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/java-fullstack-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/java-programming-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/linux-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/mern-stack-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/mis-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/mongodb-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/msoffice-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/mysql-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/nocode-development-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/node-js-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/oracle-database-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/php-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/power-bi-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/prompt-engineering-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/pyspark-databricks-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/python-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/python-fullstack-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/reactjs-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/revit-architecture-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/rhcsa-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/ruby-programming-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/salesforce-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/sap-fico-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/search-engine-marketing-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/seo-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/soc-analyst-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/social-media-marketing-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/software-testing-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/spoken-english-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/spring-boot-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/system-design-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/tableau-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/tally-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/ui-ux-design-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sssamacademy.com/courses/vba-excel-macros-course-in-gurugram.html</loc>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sssamacademy.com/courses/video-editing-course-in-gurugram.html</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
