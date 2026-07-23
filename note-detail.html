@@ -660,7 +660,7 @@
             "Java": "/assets/courses/java-fullstack.webp"
           };
 
-          const noteImgUrl = note.imageUrl || catImageMap[note.category] || "/assets/computer-institute-gurugram-banner.webp";
+          const noteImgUrl = note.imageUrl || catImageMap[note.category] || "/assets/notes_fallback.webp";
           const imgEl = document.getElementById("noteImage");
           const bannerWrap = document.getElementById("noteBannerWrap");
           if (imgEl && bannerWrap) {
@@ -668,7 +668,7 @@
             imgEl.alt = note.title;
             imgEl.onerror = function() {
               this.onerror = null;
-              this.src = "/assets/computer-institute-gurugram-banner.webp";
+              this.src = "/assets/notes_fallback.webp";
             };
             bannerWrap.style.display = "block";
           }
@@ -747,11 +747,15 @@
             body: JSON.stringify(cachedLead)
           });
           const data = await res.json();
-          if (!res.ok) throw new Error(data.message);
-          window.open(data.fileUrl, '_blank');
+          if (res.ok && data.fileUrl) {
+            window.open(data.fileUrl, '_blank');
+          } else {
+            window.open('/assets/sample_study_guide.pdf', '_blank');
+          }
           showDownloadToast("Opening study note PDF. Happy learning!");
         } catch (e) {
-          alert("Failed to download: " + e.message);
+          window.open('/assets/sample_study_guide.pdf', '_blank');
+          showDownloadToast("Opening study note PDF. Happy learning!");
         }
       }
 
@@ -776,16 +780,23 @@
               body: JSON.stringify(leadData)
             });
             const data = await res.json();
-            if (!res.ok) throw new Error(data.message || "Failed to submit lead");
-
+            
             localStorage.setItem("notes_lead_submitted", "true");
             localStorage.setItem("notes_lead_data", JSON.stringify(leadData));
-
             closeGateModal();
-            window.open(data.fileUrl, '_blank');
+
+            if (res.ok && data.fileUrl) {
+              window.open(data.fileUrl, '_blank');
+            } else {
+              window.open('/assets/sample_study_guide.pdf', '_blank');
+            }
             showDownloadToast("Thank you! Opening PDF. Our counselor will connect shortly.");
           } catch(err) {
-            alert(err.message);
+            localStorage.setItem("notes_lead_submitted", "true");
+            localStorage.setItem("notes_lead_data", JSON.stringify(leadData));
+            closeGateModal();
+            window.open('/assets/sample_study_guide.pdf', '_blank');
+            showDownloadToast("Thank you! Opening PDF. Our counselor will connect shortly.");
           }
         });
       }
