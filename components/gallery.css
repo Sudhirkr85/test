@@ -25,7 +25,7 @@
 
 /* ---------- Base overrides for gallery page ---------- */
 body {
-  font-family: 'Inter', 'Times New Roman', sans-serif;
+  font-family: 'Inter', 'Outfit', system-ui, -apple-system, sans-serif;
   background: var(--dark-bg);
   color: var(--text-primary);
 }
