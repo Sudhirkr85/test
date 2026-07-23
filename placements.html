@@ -690,9 +690,19 @@
       `;
 
       const BASE_URL = (window.APP_BASE_URL || "https://sssam-be.onrender.com").replace(/\/+$/, "");
+      let res;
       try {
-        const res = await fetch(`${BASE_URL}/api/placements`);
-        if (!res.ok) {
+        res = await fetch(`${BASE_URL}/api/placements`);
+      } catch (err) {
+        if (BASE_URL !== "https://sssam-be.onrender.com") {
+          try {
+            res = await fetch("https://sssam-be.onrender.com/api/placements");
+          } catch(e) {}
+        }
+      }
+
+      try {
+        if (!res || !res.ok) {
           showFallbackState();
           return;
         }
@@ -718,7 +728,6 @@
               </span>
               <span class="pl-student-package">${pkg}</span>
             `;
-            // Prepend card to the grid container
             if (grid.firstChild) {
               grid.insertBefore(card, grid.firstChild);
             } else {
@@ -729,7 +738,6 @@
           showFallbackState();
         }
       } catch (err) {
-        console.error("Failed to load dynamic placements:", err);
         showFallbackState();
       }
 
