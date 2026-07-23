@@ -21,7 +21,12 @@
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
 
   <link rel="canonical" href="https://sssamacademy.com/corporate-training.html">
-  <link rel="icon" href="assets/sssam.webp">
+  <link rel="icon" href="assets/logo.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
@@ -38,6 +43,7 @@
   <meta name="twitter:image" content="https://sssamacademy.com/assets/logo.webp">
 
   <!-- Style Sheets -->
+  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="components/style.css">
   <link rel="stylesheet" href="components/placements.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -57,24 +63,55 @@
 
   <style>
     .corp-hero {
-      background: radial-gradient(circle at 50% 30%, rgba(16, 185, 129, 0.12) 0%, rgba(17, 24, 39, 1) 70%);
-      padding: 80px 20px 60px;
+      background: radial-gradient(circle at 50% 30%, rgba(224, 167, 48, 0.15) 0%, rgba(15, 14, 14, 1) 75%);
+      padding: 90px 20px 70px;
       text-align: center;
+    }
+    body.light-mode .corp-hero {
+      background: radial-gradient(circle at 50% 30%, rgba(32, 65, 128, 0.08) 0%, #f9f9f9 75%);
     }
     .corp-hero h1 {
       font-family: 'Outfit', sans-serif;
-      font-size: 2.8rem;
+      font-size: clamp(2.2rem, 4.2vw, 3.2rem);
       font-weight: 800;
       color: #fff;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
+      line-height: 1.2;
     }
-    .corp-hero h1 span { color: #10b981; }
+    body.light-mode .corp-hero h1 { color: #0f172a; }
+    .corp-hero h1 span { color: #e0a730; }
+    body.light-mode .corp-hero h1 span { color: #204180; }
     .corp-hero p {
-      font-size: 1.15rem;
-      color: #9ca3af;
-      max-width: 750px;
-      margin: 0 auto 30px;
-      line-height: 1.6;
+      font-size: 1.18rem;
+      color: #e0e0e0;
+      max-width: 780px;
+      margin: 0 auto 32px;
+      line-height: 1.65;
+    }
+    body.light-mode .corp-hero p { color: #334155; }
+    .btn-secondary {
+      background: transparent;
+      color: #fff !important;
+      border: 2px solid #e0a730 !important;
+      padding: 13px 24px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+    }
+    body.light-mode .btn-secondary {
+      color: #204180 !important;
+      border-color: #204180 !important;
+      background: transparent !important;
+    }
+    .btn-secondary:hover {
+      background: #e0a730 !important;
+      color: #000 !important;
+    }
+    body.light-mode .btn-secondary:hover {
+      background: #204180 !important;
+      color: #fff !important;
     }
     .corp-grid {
       display: grid;
@@ -83,15 +120,25 @@
       margin-top: 40px;
     }
     .corp-card {
-      background: #111827;
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(224, 167, 48, 0.25);
       border-radius: 16px;
       padding: 30px 24px;
-      transition: transform 0.3s ease, border-color 0.3s ease;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    body.light-mode .corp-card {
+      background: #fff;
+      border: 1px solid rgba(32, 65, 128, 0.15);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
     }
     .corp-card:hover {
       transform: translateY(-6px);
-      border-color: #10b981;
+      border-color: #e0a730;
+      box-shadow: 0 12px 30px rgba(224, 167, 48, 0.2);
+    }
+    body.light-mode .corp-card:hover {
+      border-color: #204180;
+      box-shadow: 0 12px 30px rgba(32, 65, 128, 0.12);
     }
     .corp-icon {
       font-size: 2.5rem;
@@ -101,15 +148,38 @@
       font-size: 1.3rem;
       color: #fff;
       margin-bottom: 10px;
+      font-weight: 700;
     }
+    body.light-mode .corp-card h3 { color: #0f172a; }
     .corp-card p {
-      color: #9ca3af;
-      font-size: 0.92rem;
-      line-height: 1.5;
+      color: #ccc;
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+    body.light-mode .corp-card p { color: #475569; }
+    .corp-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #e0a730;
+      background: rgba(224, 167, 48, 0.12);
+      border: 1px solid rgba(224, 167, 48, 0.3);
+      padding: 6px 18px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 18px;
+    }
+    body.light-mode .corp-badge {
+      color: #204180;
+      background: rgba(32, 65, 128, 0.08);
+      border-color: rgba(32, 65, 128, 0.25);
     }
   </style>
 </head>
-<body class="dark-mode placements-page">
+<body class="light-mode placements-page">
 
   <!-- Navigation Placeholder -->
   <div id="navbar-placeholder"></div>
@@ -117,12 +187,12 @@
   <!-- Hero Section -->
   <section class="corp-hero">
     <div class="pl-container">
-      <span class="pl-section-label" style="color: #10b981; background: rgba(16,185,129,0.12); border-color: rgba(16,185,129,0.3);">Enterprise Upskilling</span>
+      <span class="corp-badge">Enterprise Upskilling</span>
       <h1>Corporate IT Training & <span>Employee Upskilling</span> in Gurugram</h1>
       <p>Empower your workforce with tailored technology workshops in AI, Data Analytics, AWS Cloud, and Cyber Security. Designed for enterprises in Cyber City, Udyog Vihar & NCR.</p>
-      <div class="pl-hero-cta">
-        <a href="#rfq-section" class="pl-btn pl-btn-primary" style="background: #10b981; color: #fff;">Request Corporate Quote 🏢</a>
-        <a href="tel:+919217031899" class="pl-btn pl-btn-outline">📞 Call Corporate Desk: +91 92170 31899</a>
+      <div class="pl-hero-cta" style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="#rfq-section" class="btn-primary" style="display: inline-block; padding: 14px 28px; border-radius: 8px; text-decoration: none;">Request Corporate Quote 🏢</a>
+        <a href="tel:+919217031899" class="btn-secondary">📞 Call Corporate Desk: +91 92170 31899</a>
       </div>
     </div>
   </section>
@@ -131,7 +201,7 @@
   <section class="pl-section pl-section-dark">
     <div class="pl-container">
       <div class="pl-section-header">
-        <span class="pl-section-label" style="color: #10b981;">Custom Enterprise Programs</span>
+        <span class="pl-section-label" style="color: #e0a730;">Custom Enterprise Programs</span>
         <h2 class="pl-section-title">Popular Corporate Training Modules</h2>
         <p class="pl-section-sub">Flexible training delivery: On-premise at your office, live interactive online, or weekend bootcamps.</p>
       </div>
@@ -157,6 +227,26 @@
           <h3>Corporate Cyber Security & SOC</h3>
           <p>Employee security awareness, threat detection, ethical hacking, compliance & network defense.</p>
         </div>
+        <div class="corp-card">
+          <div class="corp-icon">☁️</div>
+          <h3>AWS Cloud & DevOps Engineering</h3>
+          <p>Enterprise cloud architecture, EC2/S3 infrastructure, Docker/Kubernetes containerization, and CI/CD pipelines.</p>
+        </div>
+        <div class="corp-card">
+          <div class="corp-icon">💻</div>
+          <h3>Full Stack Development (MERN / Java)</h3>
+          <p>Enterprise web app architecture, RESTful API design, modern React/Node frontend, and scalable microservices upskilling.</p>
+        </div>
+        <div class="corp-card">
+          <div class="corp-icon">📊</div>
+          <h3>Advanced Excel, VBA & Business Automation</h3>
+          <p>XLOOKUP, Power Query, automated Macros, financial modeling, and spreadsheet workflow optimization for non-tech & Finance teams.</p>
+        </div>
+        <div class="corp-card">
+          <div class="corp-icon">🎯</div>
+          <h3>Digital Marketing & Corporate Growth</h3>
+          <p>B2B lead generation, SEO optimization, Google & LinkedIn Ads management, performance analytics, and brand building.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -168,32 +258,32 @@
         
         <!-- Left Column -->
         <div class="pl-companies-content">
-          <span class="pl-section-label" style="color: #10b981;">Tailored Learning Solutions</span>
+          <span class="pl-section-label" style="color: #e0a730;">Tailored Learning Solutions</span>
           <h2>Why Top Companies Choose SSSAM Academy For Corporate Training</h2>
           <p class="pl-companies-desc">We customize curriculums based on your team's real project requirements, tech stack gaps, and business objectives.</p>
           
           <ul class="pl-benefits-list">
             <li>
-              <span class="pl-benefit-icon" style="color: #10b981;">✔</span>
+              <span class="pl-benefit-icon" style="color: #e0a730;">✔</span>
               <span><strong>Custom Modules:</strong> Curriculum tailored to your company's tech stack.</span>
             </li>
             <li>
-              <span class="pl-benefit-icon" style="color: #10b981;">✔</span>
+              <span class="pl-benefit-icon" style="color: #e0a730;">✔</span>
               <span><strong>Certified Corporate Trainers:</strong> Industry practitioners with real enterprise experience.</span>
             </li>
             <li>
-              <span class="pl-benefit-icon" style="color: #10b981;">✔</span>
+              <span class="pl-benefit-icon" style="color: #e0a730;">✔</span>
               <span><strong>Flexible Modes:</strong> On-site corporate premises training across Gurgaon & NCR.</span>
             </li>
             <li>
-              <span class="pl-benefit-icon" style="color: #10b981;">✔</span>
+              <span class="pl-benefit-icon" style="color: #e0a730;">✔</span>
               <span><strong>Post-Training Support:</strong> Dedicated Q&A sessions and practical project reviews.</span>
             </li>
           </ul>
         </div>
 
         <!-- Right Column: RFQ Form Card -->
-        <div class="pl-form-wrap" style="border-top: 4px solid #10b981;">
+        <div class="pl-form-wrap" style="border-top: 4px solid #e0a730;">
           <div class="pl-form-header">
             <h2>Request Corporate Proposal</h2>
             <p>Fill in details below to receive a customized training proposal.</p>
@@ -225,16 +315,19 @@
                   <option value="Python & Machine Learning">Python & Machine Learning</option>
                   <option value="AWS Cloud & DevOps">AWS Cloud & DevOps</option>
                   <option value="Cyber Security & Compliance">Cyber Security & Compliance</option>
+                  <option value="Full Stack Web Development">Full Stack Web Development</option>
+                  <option value="Advanced Excel & Business Automation">Advanced Excel & Business Automation</option>
+                  <option value="Digital Marketing & Growth">Digital Marketing & Growth</option>
                   <option value="Custom Tech Stack">Custom Tech Stack</option>
                 </select>
               </div>
             </div>
             
-            <button type="submit" class="btn-submit-pl" style="background: #10b981;">
+            <button type="submit" class="btn-primary" style="width: 100%; padding: 14px; border-radius: 10px; font-size: 1rem; cursor: pointer; border: none; margin-top: 10px;">
               Submit Corporate Inquiry <i class="fas fa-paper-plane"></i>
             </button>
-            <div class="pl-form-note">
-              Or email Corporate Desk: <a href="mailto:info@sssamacademy.com" style="color: #10b981; text-decoration: underline;">info@sssamacademy.com</a>
+            <div class="pl-form-note" style="margin-top: 12px; font-size: 0.9rem; text-align: center;">
+              Or email Corporate Desk: <a href="mailto:info@sssamacademy.com" style="color: #e0a730; text-decoration: underline;">info@sssamacademy.com</a>
             </div>
           </form>
         </div>
@@ -266,3 +359,4 @@
   </script>
 </body>
 </html>
+

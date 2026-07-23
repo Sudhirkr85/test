@@ -95,19 +95,19 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       });
 
-      // Theme Toggle Functionality
+      // Theme Toggle Functionality — Default to Light Mode (White)
       const themeToggle = document.getElementById("themeToggle");
       const mobileThemeToggle = document.getElementById("mobileThemeToggle");
       const savedTheme = localStorage.getItem("theme");
 
-      if (savedTheme === "light") {
-        document.body.classList.add("light-mode");
-        if (themeToggle) themeToggle.textContent = "☀️";
-        if (mobileThemeToggle) mobileThemeToggle.textContent = "☀️";
-      } else {
+      if (savedTheme === "dark") {
         document.body.classList.remove("light-mode");
         if (themeToggle) themeToggle.textContent = "🌙";
         if (mobileThemeToggle) mobileThemeToggle.textContent = "🌙";
+      } else {
+        document.body.classList.add("light-mode");
+        if (themeToggle) themeToggle.textContent = "☀️";
+        if (mobileThemeToggle) mobileThemeToggle.textContent = "☀️";
       }
 
       if (themeToggle) {
