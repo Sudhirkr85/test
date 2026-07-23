@@ -2777,22 +2777,32 @@ body.light-mode .syllabus-list li i {
 }
 
 /* Active States */
-.accordion-item.active {
+.accordion-item.active,
+.accordion-item.open {
   border-color: rgba(224, 167, 48, 0.3);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
 }
-body.light-mode .accordion-item.active {
+body.light-mode .accordion-item.active,
+body.light-mode .accordion-item.open {
   border-color: rgba(32, 65, 128, 0.3);
   box-shadow: 0 8px 24px rgba(32, 65, 128, 0.08);
 }
-.accordion-item.active .accordion-icon {
+.accordion-item.active .accordion-icon,
+.accordion-item.open .accordion-icon {
   transform: rotate(180deg);
 }
-.accordion-item.active .accordion-header {
+.accordion-item.active .accordion-header,
+.accordion-item.open .accordion-header {
   background: rgba(255, 255, 255, 0.015);
 }
-body.light-mode .accordion-item.active .accordion-header {
+body.light-mode .accordion-item.active .accordion-header,
+body.light-mode .accordion-item.open .accordion-header {
   background: rgba(0, 0, 0, 0.005);
+}
+/* Expand accordion content on open */
+.accordion-item.active .accordion-content,
+.accordion-item.open .accordion-content {
+  max-height: 2000px;
 }
 
 @media (max-width: 768px) {

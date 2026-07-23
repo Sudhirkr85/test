@@ -8,7 +8,38 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeButtons();
   setupScrollAnimations();
   initializeTestimonialsCarousel();
+  initializeSyllabusAccordion();
 });
+
+/**
+ * Syllabus Accordion (used on new lightweight course pages)
+ * Toggles .accordion-content open/close when .accordion-header is clicked
+ */
+function initializeSyllabusAccordion() {
+  const headers = document.querySelectorAll('.accordion-header');
+  if (!headers.length) return;
+
+  headers.forEach(function(header) {
+    header.addEventListener('click', function() {
+      const item = this.closest('.accordion-item');
+      const isOpen = item.classList.contains('open');
+
+      // Close all other items
+      document.querySelectorAll('.accordion-item.open').forEach(function(openItem) {
+        if (openItem !== item) {
+          openItem.classList.remove('open');
+          const icon = openItem.querySelector('.accordion-icon');
+          if (icon) icon.style.transform = 'rotate(0deg)';
+        }
+      });
+
+      // Toggle current item
+      item.classList.toggle('open', !isOpen);
+      const icon = this.querySelector('.accordion-icon');
+      if (icon) icon.style.transform = isOpen ? 'rotate(0deg)' : 'rotate(180deg)';
+    });
+  });
+}
 
 /**
  * Initialize Carousel Slider
