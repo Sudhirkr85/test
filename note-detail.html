@@ -438,7 +438,7 @@
       window.APP_BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://sssam-be.onrender.com';
 
       // Static fallback notes catalog for SEO and instant offline rendering
-      const staticNotesMap = {
+      window.staticNotesMap = window.staticNotesMap || {
         "python-core-oop-cheat-sheet": {
           _id: "python-core-oop-cheat-sheet",
           title: "Python Core & OOP Cheat Sheet",

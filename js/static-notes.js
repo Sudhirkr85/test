@@ -1,4 +1,4 @@
-const staticNotesMap = {
+window.staticNotesMap = window.staticNotesMap || {
   "python-core-oop-cheat-sheet": {
     _id: "python-core-oop-cheat-sheet",
     title: "Python Core & OOP Cheat Sheet",
@@ -39,7 +39,3 @@ const staticNotesMap = {
     ]
   }
 };
-
-if (typeof window !== "undefined") {
-  window.staticNotesMap = staticNotesMap;
-}
