@@ -47,6 +47,7 @@
         gap: 30px;
       }
       .notes-card {
+        cursor: pointer;
         background: #111827;
         border: 1px solid rgba(255,255,255,0.06);
         border-radius: 16px;
@@ -223,28 +224,34 @@
         <!-- Notes Grid -->
         <div class="notes-grid" id="notesGrid">
           <!-- Static SEO Fallback Cards (Overwritten when API loads successfully) -->
-          <div class="notes-card">
+          <div class="notes-card" onclick="window.location.href='/note-detail.html?id=python-core-oop-cheat-sheet'">
             <div class="notes-icon"><i class="fab fa-python"></i></div>
             <span class="notes-category">Python</span>
             <h3 class="notes-title">Python Core & OOP Cheat Sheet</h3>
             <p class="notes-desc">A comprehensive reference guide covering variables, lists, dictionaries, functions, and Object-Oriented Programming principles in Python.</p>
-            <button class="btn-primary" style="width: 100%; border: none;">Download PDF &rarr;</button>
+            <a href="/note-detail.html?id=python-core-oop-cheat-sheet" class="btn-primary" style="display: block; text-align: center; text-decoration: none; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.25); color: #10b981; font-weight: 700;">
+              View Details &amp; Download PDF &rarr;
+            </a>
           </div>
 
-          <div class="notes-card">
+          <div class="notes-card" onclick="window.location.href='/note-detail.html?id=advanced-excel-business-dashboards'">
             <div class="notes-icon"><i class="far fa-file-excel"></i></div>
             <span class="notes-category">Excel</span>
             <h3 class="notes-title">Advanced Excel & Business Dashboards</h3>
             <p class="notes-desc">Learn key functions (VLOOKUP, INDEX/MATCH), pivot tables, data visualization rules, and how to construct business analyst dashboards.</p>
-            <button class="btn-primary" style="width: 100%; border: none;">Download PDF &rarr;</button>
+            <a href="/note-detail.html?id=advanced-excel-business-dashboards" class="btn-primary" style="display: block; text-align: center; text-decoration: none; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.25); color: #10b981; font-weight: 700;">
+              View Details &amp; Download PDF &rarr;
+            </a>
           </div>
 
-          <div class="notes-card">
+          <div class="notes-card" onclick="window.location.href='/note-detail.html?id=relational-databases-sql-queries'">
             <div class="notes-icon"><i class="fas fa-database"></i></div>
             <span class="notes-category">SQL</span>
             <h3 class="notes-title">Relational Databases & SQL Queries Cheat Sheet</h3>
             <p class="notes-desc">Master SELECT statements, database joins, aggregate functions, subqueries, and database indexing strategies for developer interviews.</p>
-            <button class="btn-primary" style="width: 100%; border: none;">Download PDF &rarr;</button>
+            <a href="/note-detail.html?id=relational-databases-sql-queries" class="btn-primary" style="display: block; text-align: center; text-decoration: none; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.25); color: #10b981; font-weight: 700;">
+              View Details &amp; Download PDF &rarr;
+            </a>
           </div>
         </div>
       </section>
@@ -321,14 +328,14 @@
           }
 
           grid.innerHTML = notes.map(item => `
-            <div class="notes-card">
+            <div class="notes-card" onclick="window.location.href='/note-detail.html?id=${item._id}'">
               <div class="notes-icon"><i class="far fa-file-pdf"></i></div>
               <span class="notes-category">${item.category}</span>
               <h3 class="notes-title">${item.title}</h3>
               <p class="notes-desc">${item.description}</p>
-              <button class="btn-primary" onclick="initiateDownload('${item._id}')" style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.25); color: #10b981; font-weight: 700;">
-                <i class="fas fa-download"></i> Download PDF
-              </button>
+              <a href="/note-detail.html?id=${item._id}" class="btn-primary" style="display: block; text-align: center; text-decoration: none; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.25); color: #10b981; font-weight: 700;">
+                <i class="fas fa-file-pdf"></i> View Details &amp; Download PDF &rarr;
+              </a>
             </div>
           `).join("");
         } catch(e) {
