@@ -343,6 +343,11 @@
           </div>
         </header>
 
+        <!-- Banner Image -->
+        <div class="detail-banner-wrap" id="noteBannerWrap" style="display: none; margin-bottom: 30px; border-radius: 16px; overflow: hidden; max-height: 320px; box-shadow: 0 10px 25px rgba(0,0,0,0.3);">
+          <img src="" alt="" id="noteImage" style="width: 100%; height: 280px; object-fit: cover; border-radius: 16px; display: block;" />
+        </div>
+
         <!-- Main Resource Card -->
         <div class="resource-card">
           <div class="resource-header">
@@ -639,6 +644,33 @@
             if (highlightsEl) {
               highlightsEl.innerHTML = note.highlights.map(h => `<li>${h}</li>`).join("");
             }
+          }
+
+          // Render banner image with tech category fallback map
+          const catImageMap = {
+            "Python": "/assets/courses/python-fullstack.webp",
+            "Excel": "/assets/courses/advanced-excel.webp",
+            "SQL": "/assets/courses/sql.webp",
+            "Web Dev": "/assets/courses/fullstack.webp",
+            "Data Science": "/assets/courses/data-science.webp",
+            "Security": "/assets/courses/cyber-security.webp",
+            "Cloud": "/assets/courses/aws.webp",
+            "Marketing": "/assets/courses/digital-marketing.webp",
+            "Frontend": "/assets/courses/react.webp",
+            "Java": "/assets/courses/java-fullstack.webp"
+          };
+
+          const noteImgUrl = note.imageUrl || catImageMap[note.category] || "/assets/computer-institute-gurugram-banner.webp";
+          const imgEl = document.getElementById("noteImage");
+          const bannerWrap = document.getElementById("noteBannerWrap");
+          if (imgEl && bannerWrap) {
+            imgEl.src = noteImgUrl;
+            imgEl.alt = note.title;
+            imgEl.onerror = function() {
+              this.onerror = null;
+              this.src = "/assets/computer-institute-gurugram-banner.webp";
+            };
+            bannerWrap.style.display = "block";
           }
 
           // Wire up CTA download button
