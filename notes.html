@@ -339,12 +339,8 @@
             </div>
           `).join("");
         } catch(e) {
-          grid.innerHTML = `
-            <div style="text-align: center; grid-column: 1 / -1; color: #ef5350; padding: 50px;">
-              <i class="fas fa-exclamation-triangle" style="font-size: 2rem; margin-bottom: 15px;"></i>
-              <p>Failed to load study notes: ${e.message}</p>
-            </div>
-          `;
+          console.warn("Backend notes API unavailable, preserving static catalog:", e);
+          // Keep the existing static SEO fallback cards intact
         }
       }
 
