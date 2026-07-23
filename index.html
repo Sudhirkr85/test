@@ -1429,10 +1429,15 @@
 
   window.closeCounselingPopup = function() {
     const popup = document.getElementById("counseling-popup");
+    if (!popup) return;
     const content = popup.querySelector(".popup-content");
     popup.style.display = "none";
-    content.className = "popup-content";
+    if (content) content.className = "popup-content";
     document.body.style.overflow = "";
+    try {
+      sessionStorage.setItem("counselingPopupDismissed", "true");
+      localStorage.setItem("counselingPopupDismissed", "true");
+    } catch(e) {}
   };
 
   window.cpSubmit = function() {
@@ -1558,7 +1563,11 @@
   };
 
   setTimeout(function() {
-    window.openCounselingPopup();
+    try {
+      if (!sessionStorage.getItem("counselingPopupDismissed") && !localStorage.getItem("counselingPopupDismissed")) {
+        window.openCounselingPopup();
+      }
+    } catch(e) {}
   }, 7000);
 
 })();
