@@ -163,6 +163,7 @@
         .blog-hero h1 { font-size: 2.1rem; }
       }
       .blog-card {
+        cursor: pointer;
         background: #111827;
         border: 1px solid rgba(255,255,255,0.06);
         border-radius: 18px;
@@ -557,6 +558,17 @@
         });
 
         staticFallbackHTML = document.getElementById("blogsGrid").innerHTML;
+
+        // Make entire blog card box clickable
+        document.getElementById("blogsGrid")?.addEventListener("click", (e) => {
+          const card = e.target.closest(".blog-card");
+          if (!card) return;
+          const link = card.querySelector("a.blog-card-btn");
+          if (link && link.href) {
+            window.location.href = link.href;
+          }
+        });
+
         await loadBlogs();
       });
 
