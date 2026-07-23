@@ -43,19 +43,81 @@ body {
 
 /* HERO */
 .courses-hero {
-  padding: 56px 0 28px;
-  background: linear-gradient(180deg, rgba(0,0,0,0.12), transparent);
-  border-bottom: 1px solid rgba(255,255,255,0.03);
+  padding: 60px 0 36px;
+  background: radial-gradient(circle at 50% 0%, rgba(224, 167, 48, 0.08) 0%, transparent 65%),
+              linear-gradient(180deg, rgba(0,0,0,0.2), transparent);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  position: relative;
 }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(224, 167, 48, 0.12);
+  border: 1px solid rgba(224, 167, 48, 0.3);
+  color: var(--accent);
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+body.light-mode .hero-badge {
+  background: rgba(32, 65, 128, 0.08);
+  border-color: rgba(32, 65, 128, 0.2);
+  color: var(--accent);
+}
+
 .courses-hero h1 {
   font-family: var(--font-heading);
-  font-size: 34px;
-  margin: 0 0 8px;
+  font-size: 2.3rem;
+  margin: 0 0 12px;
   color: var(--text);
   font-weight: 800;
+  line-height: 1.25;
   letter-spacing: -0.5px;
 }
-.courses-hero p { margin: 0 0 18px; color: var(--muted); }
+.courses-hero p { margin: 0 0 24px; color: var(--muted); font-size: 1rem; max-width: 900px; line-height: 1.6; }
+
+.hero-trust-metrics {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+.metric-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.metric-icon {
+  font-size: 1.3rem;
+  color: var(--accent);
+  background: rgba(224, 167, 48, 0.12);
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body.light-mode .metric-icon {
+  background: rgba(32, 65, 128, 0.08);
+}
+.metric-item strong {
+  display: block;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--text);
+}
+.metric-item span {
+  font-size: 0.82rem;
+  color: var(--muted);
+}
 
 /* hero actions: search + select */
 .hero-actions {
