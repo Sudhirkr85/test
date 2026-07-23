@@ -351,20 +351,7 @@
       window.APP_BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://sssam-be.onrender.com';
 
       document.addEventListener("DOMContentLoaded", async () => {
-        // Load Navbar and Footer
-        try {
-          const [navRes, footRes] = await Promise.all([
-            fetch('/components/navbar.html'),
-            fetch('/components/footer.html')
-          ]);
-          document.getElementById('navbar-placeholder').innerHTML = await navRes.text();
-          document.getElementById('footer-placeholder').innerHTML = await footRes.text();
-          
-          if (typeof window.initNavbarBurger === "function") {
-            window.initNavbarBurger();
-          }
-        } catch(e) { console.error("Components failed to load", e); }
-
+        // Navbar & footer are loaded by /components/script.js
         await loadPostDetails();
       });
 
@@ -554,6 +541,6 @@
       }
     </script>
     <script src="/js/static-blogs.js"></script>
-    <script src="/components/script.js" defer></script>
+    <script src="/components/script.js"></script>
   </body>
 </html>
