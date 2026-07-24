@@ -635,7 +635,8 @@
           if (ogDesc) ogDesc.setAttribute("content", note.description);
 
           document.getElementById("noteCategory").textContent = note.category || "General IT";
-          document.getElementById("noteDownloads").textContent = note.downloadCount || 0;
+          const displayedDownloads = (parseInt(note.downloadCount, 10) || 0) + 500;
+          document.getElementById("noteDownloads").textContent = displayedDownloads.toLocaleString();
           document.getElementById("noteDescription").textContent = note.description;
 
           // Render highlights if provided
