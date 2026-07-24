@@ -156,7 +156,7 @@
           <div class="metric-item">
             <i class="fas fa-star metric-icon"></i>
             <div>
-              <strong>4.9/5 Rating</strong>
+              <strong>5.0/5 Rating</strong>
               <span>Google Reviews</span>
             </div>
           </div>
@@ -1333,9 +1333,7 @@
 
   setTimeout(function() {
     try {
-      if (!sessionStorage.getItem("counselingPopupDismissed") && !localStorage.getItem("counselingPopupDismissed")) {
-        window.openCounselingPopup();
-      }
+      window.openCounselingPopup();
     } catch(e) {}
   }, 7000);
 
