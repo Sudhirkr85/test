@@ -391,7 +391,7 @@
   <script src="components/script.js" defer></script>
   <script>
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    window.APP_BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://sssam-be.onrender.com';
+    window.APP_BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://api.sssamacademy.com';
 
     // Hide broken image cards automatically
     document.querySelectorAll('.gallery-card img').forEach(img => {
@@ -430,7 +430,7 @@
 
     // Dynamic Gallery — Fetch from API and prepend before static cards
     (async function loadDynamicGallery() {
-      const BASE_URL = (window.APP_BASE_URL || 'https://sssam-be.onrender.com').replace(/\/+$/, '');
+      const BASE_URL = (window.APP_BASE_URL || 'https://api.sssamacademy.com').replace(/\/+$/, '');
       const grid = document.getElementById('photo-grid');
       try {
         const res = await fetch(`${BASE_URL}/api/gallery`);

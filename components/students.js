@@ -1,4 +1,4 @@
-﻿const SSSAM_STUDENTS = [
+const SSSAM_STUDENTS = [
   {
     "id": "SSSAM-2026-0001",
     "name": "Poonam Mukherjee",

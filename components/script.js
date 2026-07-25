@@ -1,7 +1,7 @@
 if (!window.APP_BASE_URL) {
   window.APP_BASE_URL = window.USE_LOCAL_BACKEND
     ? `${window.location.protocol}//${window.location.hostname}:5000`
-    : 'https://sssam-be.onrender.com';
+    : 'https://api.sssamacademy.com';
 }
 
 window.toggleFAQ = function (element) {

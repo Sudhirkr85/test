@@ -435,7 +435,7 @@
 
     <script>
       const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-      window.APP_BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://sssam-be.onrender.com';
+      window.APP_BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://api.sssamacademy.com';
 
       // Static fallback notes catalog for SEO and instant offline rendering
       window.staticNotesMap = window.staticNotesMap || {
@@ -588,7 +588,7 @@
           noteId = keys.length > 0 ? keys[0] : "python-core-oop-cheat-sheet";
         }
 
-        const BASE_URL = (window.APP_BASE_URL || "https://sssam-be.onrender.com").replace(/\/+$/, "");
+        const BASE_URL = (window.APP_BASE_URL || "https://api.sssamacademy.com").replace(/\/+$/, "");
         let note = localStaticMap[noteId];
 
         if (!note) {
@@ -725,7 +725,7 @@
       };
 
       async function triggerDirectDownload(noteId) {
-        const BASE_URL = (window.APP_BASE_URL || "https://sssam-be.onrender.com").replace(/\/+$/, "");
+        const BASE_URL = (window.APP_BASE_URL || "https://api.sssamacademy.com").replace(/\/+$/, "");
         const cachedLead = JSON.parse(localStorage.getItem("notes_lead_data") || "{}");
 
         try {
@@ -759,7 +759,7 @@
             course: document.getElementById("leadCourse").value
           };
 
-          const BASE_URL = (window.APP_BASE_URL || "https://sssam-be.onrender.com").replace(/\/+$/, "");
+          const BASE_URL = (window.APP_BASE_URL || "https://api.sssamacademy.com").replace(/\/+$/, "");
 
           try {
             const res = await fetch(`${BASE_URL}/api/notes/download/${noteId}`, {

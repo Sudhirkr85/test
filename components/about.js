@@ -387,7 +387,7 @@ if (demoForm) {
     };
 
     const isLocal = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
-    const BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://sssam-be.onrender.com';
+    const BASE_URL = isLocal ? `${window.location.protocol}//${window.location.hostname}:5000` : 'https://api.sssamacademy.com';
 
     try {
       const response = await fetch(`${BASE_URL}/api/enquiry`, {
