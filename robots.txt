@@ -4,4 +4,23 @@ Disallow: /certificate.html
 Disallow: /apply.html
 Disallow: /check-status.html
 
+# AI Agent & LLM Crawlers
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
 Sitemap: https://sssamacademy.com/sitemap.xml
+# LLM Information
+# https://sssamacademy.com/llms.txt
+

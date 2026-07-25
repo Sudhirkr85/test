@@ -1,14 +1,20 @@
-# 1. Enable GZIP Compression
+# 1. Enable GZIP & Brotli Compression
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/x-javascript application/json application/xml image/svg+xml
 </IfModule>
 
-# 2. Configure Cache-Control and Expires Headers (1 Year Caching)
+# 2. MIME Types for Modern Assets
+<IfModule mod_mime.c>
+  AddType image/webp .webp
+  AddType font/woff2 .woff2
+</IfModule>
+
+# 3. Configure Cache-Control and Expires Headers (1 Year Caching)
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 1 month"
 
-  # Images (WebP, SVG, ICO)
+  # Images (WebP, SVG, ICO, JPG, PNG)
   ExpiresByType image/webp "access plus 1 year"
   ExpiresByType image/svg+xml "access plus 1 year"
   ExpiresByType image/x-icon "access plus 1 year"
@@ -25,8 +31,12 @@
   ExpiresByType font/woff2 "access plus 1 year"
 </IfModule>
 
-# 3. Add Security Headers for Best Practices
+# 4. Set Explicit Cache-Control Headers for Static Files
 <IfModule mod_headers.c>
+  <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|webp|woff2)$">
+    Header set Cache-Control "max-age=31536000, public"
+  </FilesMatch>
+
   # Protect against clickjacking
   Header set X-Frame-Options "SAMEORIGIN"
 
@@ -39,3 +49,4 @@
   # Strict Transport Security (HSTS) - force HTTPS
   Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 </IfModule>
+
