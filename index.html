@@ -27,7 +27,8 @@
     <link rel="icon" href="assets/logo.ico" />
 
     <!-- AI Agent & LLM Information -->
-    <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Information" />
+    <link rel="alternate" type="text/markdown" href="https://sssamacademy.com/llms.txt" title="LLM Context" />
+    <link rel="alternate" type="text/markdown" href="https://sssamacademy.com/llms-full.txt" title="Full LLM Documentation" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -87,11 +88,13 @@
     />
 
     <style>
-      /* Scroll animation classes without layout shift (CLS = 0) */
+      /* Prevent Cumulative Layout Shift (CLS = 0) */
       .anim-fade-up{opacity:0;transition:opacity .6s ease}
       .anim-slide-left{opacity:0;transition:opacity .6s ease}
       .anim-slide-right{opacity:0;transition:opacity .6s ease}
       .anim-visible{opacity:1!important}
+      .gallery-img img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
+      .ticker-logo{width:120px;height:35px;aspect-ratio:120/35}
       /* Navbar slide-in */
       @keyframes navSlideIn{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
       .nav-slide-in{animation:navSlideIn .6s ease forwards}
@@ -149,7 +152,15 @@
           "https://www.facebook.com/people/Sssam-Academy/61584693416129/",
           "https://www.instagram.com/sssamacademy",
           "https://www.linkedin.com/company/sssamacademy"
-        ]
+        ],
+        "potentialAction": {
+          "@type": "CommunicateAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://sssamacademy.com/contact.html",
+            "actionPlatform": ["http://schema.org/DesktopWebPlatform", "http://schema.org/MobileWebPlatform"]
+          }
+        }
       }
     </script>
 
@@ -652,8 +663,7 @@
             <img
               src="assets/gallery/sssam-academy-classroom-1.webp"
               alt="SSSAM Academy computer training classroom in Old DLF Gurugram"
-              loading="lazy"
-            />
+              width="400" height="267" decoding="async" loading="lazy" />
             <div class="gallery-overlay">
               <span class="overlay-tag">SSSAM Academy</span>
               <p class="overlay-text">Smart Classroom & Labs</p>
@@ -665,8 +675,7 @@
             <img
               src="assets/gallery/sssam-academy-students-1.webp"
               alt="Students learning Data Science at SSSAM Academy Gurugram"
-              loading="lazy"
-            />
+              width="400" height="267" decoding="async" loading="lazy" />
             <div class="gallery-overlay">
               <span class="overlay-tag">Practical Training</span>
               <p class="overlay-text">Data Science & IT Sessions</p>
@@ -678,8 +687,7 @@
             <img
               src="assets/gallery/sssam-academy-lab-1.webp"
               alt="Practical computer training session at SSSAM Academy in Gurugram"
-              loading="lazy"
-            />
+              width="400" height="267" decoding="async" loading="lazy" />
             <div class="gallery-overlay">
               <span class="overlay-tag">Infrastructure</span>
               <p class="overlay-text">Modern Practice Setup</p>
@@ -691,8 +699,7 @@
             <img
               src="assets/gallery/sssam-academy-classroom-2.webp"
               alt="IT training lab at SSSAM Academy Old DLF Gurugram"
-              loading="lazy"
-            />
+              width="400" height="267" decoding="async" loading="lazy" />
             <div class="gallery-overlay">
               <span class="overlay-tag">SSSAM Academy</span>
               <p class="overlay-text">High-Tech IT Lab</p>
@@ -704,8 +711,7 @@
             <img
               src="assets/gallery/sssam-academy-students-2.webp"
               alt="Students attending Full Stack Development class at SSSAM Academy Gurugram"
-              loading="lazy"
-            />
+              width="400" height="267" decoding="async" loading="lazy" />
             <div class="gallery-overlay">
               <span class="overlay-tag">MERN Stack Lab</span>
               <p class="overlay-text">Interactive Development Class</p>
@@ -717,8 +723,7 @@
             <img
               src="assets/gallery/sssam-academy-lab-2.webp"
               alt="Computer institute classroom environment at SSSAM Academy Gurugram Haryana"
-              loading="lazy"
-            />
+              width="400" height="267" decoding="async" loading="lazy" />
             <div class="gallery-overlay">
               <span class="overlay-tag">Doubt Support</span>
               <p class="overlay-text">1-on-1 Student Mentorship</p>
@@ -732,8 +737,7 @@
             <img
               src="assets/gallery/sssam-academy-classroom-1.webp"
               alt="SSSAM Academy computer training classroom in Old DLF Gurugram"
-              loading="lazy"
-            />
+              width="400" height="267" decoding="async" loading="lazy" />
             <div class="gallery-overlay">
               <span class="overlay-tag">SSSAM Academy</span>
               <p class="overlay-text">Smart Classroom & Labs</p>
@@ -745,8 +749,7 @@
             <img
               src="assets/gallery/sssam-academy-students-1.webp"
               alt="Students learning Data Science at SSSAM Academy Gurugram"
-              loading="lazy"
-            />
+              width="400" height="267" decoding="async" loading="lazy" />
             <div class="gallery-overlay">
               <span class="overlay-tag">Practical Training</span>
               <p class="overlay-text">Data Science & IT Sessions</p>
@@ -758,8 +761,7 @@
             <img
               src="assets/gallery/sssam-academy-lab-1.webp"
               alt="Practical computer training session at SSSAM Academy in Gurugram"
-              loading="lazy"
-            />
+              width="400" height="267" decoding="async" loading="lazy" />
             <div class="gallery-overlay">
               <span class="overlay-tag">Infrastructure</span>
               <p class="overlay-text">Modern Practice Setup</p>
@@ -771,8 +773,7 @@
             <img
               src="assets/gallery/sssam-academy-classroom-2.webp"
               alt="IT training lab at SSSAM Academy Old DLF Gurugram"
-              loading="lazy"
-            />
+              width="400" height="267" decoding="async" loading="lazy" />
             <div class="gallery-overlay">
               <span class="overlay-tag">SSSAM Academy</span>
               <p class="overlay-text">High-Tech IT Lab</p>
@@ -784,8 +785,7 @@
             <img
               src="assets/gallery/sssam-academy-students-2.webp"
               alt="Students attending Full Stack Development class at SSSAM Academy Gurugram"
-              loading="lazy"
-            />
+              width="400" height="267" decoding="async" loading="lazy" />
             <div class="gallery-overlay">
               <span class="overlay-tag">MERN Stack Lab</span>
               <p class="overlay-text">Interactive Development Class</p>
@@ -797,8 +797,7 @@
             <img
               src="assets/gallery/sssam-academy-lab-2.webp"
               alt="Computer institute classroom environment at SSSAM Academy Gurugram Haryana"
-              loading="lazy"
-            />
+              width="400" height="267" decoding="async" loading="lazy" />
             <div class="gallery-overlay">
               <span class="overlay-tag">Doubt Support</span>
               <p class="overlay-text">1-on-1 Student Mentorship</p>

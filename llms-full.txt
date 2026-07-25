@@ -1,0 +1,59 @@
+# SSSAM Academy — Full Machine-Readable Knowledge Base & API Specification
+
+> Best Computer Training Institute in Old DLF, Sector 14, Gurugram (Gurgaon). Providing job-oriented IT courses, live industry projects, resume preparation, and 100% placement support.
+
+## 1. General Information
+- **Institute Name:** SSSAM Academy
+- **Location:** M24 Ground Floor, Old DLF Colony, Sector 14, Gurugram, Haryana 122001, India
+- **Phone Numbers:** +91 95174 47689, +91 92170 31899
+- **Email:** info@sssamacademy.com
+- **Website URL:** https://sssamacademy.com/
+- **Google Maps Location:** https://maps.google.com/?q=SSSAM+Academy+Sector+14+Gurugram
+- **Operating Hours:** Monday to Sunday: 09:00 AM – 09:00 PM IST
+
+## 2. Course Catalog & Details
+
+### 2.1 Data Science & AI Course
+- **URL:** https://sssamacademy.com/courses.html
+- **Duration:** 4 – 6 Months
+- **Mode:** Offline (Gurugram Center) & Online Live Batches
+- **Key Modules:** Python Programming, Statistics, Data Analysis with Pandas & NumPy, Machine Learning Algorithms, Deep Learning, Generative AI, Capstone Projects.
+
+### 2.2 Data Analytics with Power BI & SQL
+- **URL:** https://sssamacademy.com/courses.html
+- **Duration:** 3 – 4 Months
+- **Mode:** Offline & Online
+- **Key Modules:** Advanced Excel, SQL Queries & Database Optimization, Power BI Dashboards, Tableau Visualization, Business Intelligence.
+
+### 2.3 Full Stack Web Development (MERN / Java / Python)
+- **URL:** https://sssamacademy.com/courses.html
+- **Duration:** 4 – 6 Months
+- **Key Modules:** HTML5, CSS3, JavaScript ES6+, React.js, Node.js, Express, MongoDB, MySQL, Git & GitHub, REST API development.
+
+### 2.4 Cyber Security & Ethical Hacking
+- **URL:** https://sssamacademy.com/courses.html
+- **Duration:** 4 Months
+- **Key Modules:** Networking Fundamentals, Linux System Administration, Ethical Hacking Tools, Penetration Testing, Cryptography, Web Application Security.
+
+### 2.5 AWS Cloud Computing & DevOps
+- **URL:** https://sssamacademy.com/courses.html
+- **Duration:** 3 – 4 Months
+- **Key Modules:** EC2, S3, IAM, VPC, CloudWatch, Lambda, Docker, Kubernetes, CI/CD Pipelines, Infrastructure as Code.
+
+## 3. Inquiry & Admission API Endpoints
+- **Enquiry Endpoint:** `POST https://api.sssamacademy.com/api/enquiry`
+- **Content-Type:** `application/json`
+- **Request Body Fields:**
+  - `fullName` (string, required): Full Name of applicant
+  - `phoneNumber` (string, 10 digits, required): Mobile number
+  - `course` (string, required): Course name or "Others"
+  - `customCourseName` (string, optional): Custom course title if course is "Others"
+  - `email` (string, optional): Email address
+
+## 4. Key Links & Sitemap
+- **Home:** https://sssamacademy.com/
+- **About Us:** https://sssamacademy.com/about.html
+- **Courses:** https://sssamacademy.com/courses.html
+- **Placements:** https://sssamacademy.com/placements.html
+- **Contact:** https://sssamacademy.com/contact.html
+- **Sitemap:** https://sssamacademy.com/sitemap.xml
