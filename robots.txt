@@ -18,10 +18,3 @@ User-agent: ClaudeBot
 Allow: /
 
 Sitemap: https://sssamacademy.com/sitemap.xml
-
-# LLM Context Documents
-llms.txt: /llms.txt
-llms-full.txt: /llms-full.txt
-llms.txt: https://sssamacademy.com/llms.txt
-llms-full.txt: https://sssamacademy.com/llms-full.txt
-
