@@ -419,11 +419,33 @@
             document.getElementById("jobLocation").textContent = location;
             
             const applyLink = document.getElementById("jobApplyLink");
-            const emailTo = "info@sssamacademy.com";
-            const emailSubject = encodeURIComponent(`Application for ${jobRole} at ${companyName}`);
-            const emailBody = encodeURIComponent(`Hi SSSAM Academy Team,\n\nI am interested in applying for the position of "${jobRole}" at "${companyName}" (Location: ${location}).\n\nPlease find my resume and application details attached.\n\nRegards`);
+            const rawApply = (post.hiringDetails.applyLink || "").trim();
             
-            applyLink.href = `mailto:${emailTo}?subject=${emailSubject}&body=${emailBody}`;
+            let finalHref = "";
+            if (rawApply) {
+              if (rawApply.startsWith("http://") || rawApply.startsWith("https://")) {
+                finalHref = rawApply;
+                applyLink.target = "_blank";
+              } else if (rawApply.includes("@")) {
+                const cleanEmail = rawApply.replace(/^mailto:/i, "").trim();
+                const emailSubject = encodeURIComponent(`Application for ${jobRole} at ${companyName}`);
+                const emailBody = encodeURIComponent(`Hi ${companyName} Hiring Team,\n\nI am interested in applying for the position of "${jobRole}" (Location: ${location}).\n\nPlease find my resume and application details attached.\n\nRegards`);
+                finalHref = `mailto:${cleanEmail}?subject=${emailSubject}&body=${emailBody}`;
+                applyLink.target = "_self";
+              } else {
+                finalHref = rawApply;
+                applyLink.target = "_blank";
+              }
+            } else {
+              // Default fallback to official academy email
+              const emailTo = "info@sssamacademy.com";
+              const emailSubject = encodeURIComponent(`Application for ${jobRole} at ${companyName}`);
+              const emailBody = encodeURIComponent(`Hi SSSAM Academy Team,\n\nI am interested in applying for the position of "${jobRole}" at "${companyName}" (Location: ${location}).\n\nPlease find my resume and application details attached.\n\nRegards`);
+              finalHref = `mailto:${emailTo}?subject=${emailSubject}&body=${emailBody}`;
+              applyLink.target = "_self";
+            }
+
+            applyLink.href = finalHref;
             applyLink.style.display = "inline-block";
             document.getElementById("jobCard").style.display = "block";
           }
