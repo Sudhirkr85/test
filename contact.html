@@ -4,16 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18132709725"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-18132709725');
-</script>
-
 
     <!-- Primary SEO Title -->
 
@@ -180,8 +170,9 @@
 
     <!-- Stylesheets -->
 
-    <link rel="stylesheet" href="components/style.css" />
-    <link rel="stylesheet" href="components/contact.css" />
+    <link rel="preload" href="components/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="components/contact.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="components/style.css" /><link rel="stylesheet" href="components/contact.css" /></noscript>
   </head>
 
   <body class="light-mode contact-page">`n    <div id="navbar-placeholder"></div>
