@@ -21,6 +21,7 @@ User-agent: ClaudeBot
 Allow: /
 
 Sitemap: https://sssamacademy.com/sitemap.xml
-# LLM Information
-# https://sssamacademy.com/llms.txt
+# LLM Information Context
+llms.txt: https://sssamacademy.com/llms.txt
+llms-full.txt: https://sssamacademy.com/llms-full.txt
 
