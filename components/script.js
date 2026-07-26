@@ -50,17 +50,10 @@ function initNavbarHTML(html) {
         const hamburger = document.querySelector(".hamburger");
         const mobileMenu = document.querySelector(".mobile-menu");
         if (hamburger && mobileMenu) {
-          if (!hamburger.querySelector("i")) {
-            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
-          }
           const clone = hamburger.cloneNode(true);
           hamburger.parentNode.replaceChild(clone, hamburger);
           clone.addEventListener("click", () => {
-            const isOpen = mobileMenu.classList.toggle("show");
-            const icon = clone.querySelector("i");
-            if (icon) {
-              icon.className = isOpen ? "fas fa-xmark" : "fas fa-bars";
-            }
+            mobileMenu.classList.toggle("show");
           });
         }
       };

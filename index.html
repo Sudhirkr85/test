@@ -1258,11 +1258,9 @@
         <input type="text" id="cp-name" 
           placeholder="Your Full Name *" 
           style="width:100%; padding:10px 12px; border-radius:8px; 
-          border:1px solid #333; background:#111; color:#fff; 
           font-size:0.9rem; outline:none; box-sizing:border-box;
           transition:border-color 0.2s;" 
-          onfocus="this.style.borderColor='#e0a730'" 
-          onblur="this.style.borderColor='#333'" />
+          />
       </div>
       
       <div style="margin-bottom:10px;">
@@ -1271,11 +1269,9 @@
           maxlength="11" inputmode="numeric"
           oninput="let v = this.value.replace(/\D/g, '').slice(0,10); this.value = v.length > 5 ? v.slice(0,5) + ' ' + v.slice(5) : v;"
           style="width:100%; padding:10px 12px; border-radius:8px; 
-          border:1px solid #333; background:#111; color:#fff; 
           font-size:0.9rem; outline:none; box-sizing:border-box;
           transition:border-color 0.2s;"
-          onfocus="this.style.borderColor='#e0a730'" 
-          onblur="this.style.borderColor='#333'" />
+          />
       </div>
       
       <div style="margin-bottom:10px; position:relative;">
@@ -1285,10 +1281,9 @@
           oninput="cpFilterCourses(this.value)"
           onfocus="cpShowDropdown()"
           style="width:100%; padding:10px 12px; border-radius:8px; 
-          border:1px solid #333; background:#111; color:#fff; 
           font-size:0.9rem; outline:none; box-sizing:border-box;
           transition:border-color 0.2s;"
-          onblur="this.style.borderColor='#333'"  />
+          />
         <div id="cp-course-dd" style="display:none; position:absolute; 
           top:100%; left:0; right:0; background:#222; 
           border:1px solid #444; border-radius:8px; 
@@ -1301,11 +1296,9 @@
         <input type="email" id="cp-email" 
           placeholder="Email Address (Optional)" 
           style="width:100%; padding:10px 12px; border-radius:8px; 
-          border:1px solid #333; background:#111; color:#fff; 
           font-size:0.9rem; outline:none; box-sizing:border-box;
           transition:border-color 0.2s;"
-          onfocus="this.style.borderColor='#e0a730'" 
-          onblur="this.style.borderColor='#333'" />
+          />
       </div>
       
       <div id="cp-error" style="color:#ff6b6b; font-size:0.85rem; 
