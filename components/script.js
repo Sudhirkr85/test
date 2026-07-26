@@ -34,23 +34,16 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Dynamic Navbar Loader & Navigation State
-document.addEventListener("DOMContentLoaded", () => {
-  const navPath = window.location.pathname.includes("/courses/")
-    ? "../components/navbar.html"
-    : "components/navbar.html";
-
-  fetch(navPath)
-    .then((res) => res.text())
-    .then((html) => {
-      const placeholder = document.getElementById("navbar-placeholder");
-      if (placeholder) {
-        placeholder.innerHTML = html;
-      } else {
-        document.body.insertAdjacentHTML("afterbegin", html);
-      }
-      const navContent = document.querySelector(".nav_content");
-      if (navContent) navContent.classList.add("nav-slide-in");
+// Dynamic Navbar Loader & Navigation State — with localStorage cache
+function initNavbarHTML(html) {
+  const placeholder = document.getElementById("navbar-placeholder");
+  if (placeholder) {
+    placeholder.innerHTML = html;
+  } else {
+    document.body.insertAdjacentHTML("afterbegin", html);
+  }
+  const navContent = document.querySelector(".nav_content");
+  if (navContent) navContent.classList.add("nav-slide-in");
 
       // Initialize Mobile Hamburger Menu
       window.initNavbarBurger = function () {
@@ -155,37 +148,100 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     })
-    .catch((err) => console.error("Error loading navbar:", err));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navPath = window.location.pathname.includes("/courses/")
+    ? "../components/navbar.html"
+    : "components/navbar.html";
+
+  const CACHE_KEY = "sssam_navbar_html";
+  const CACHE_TIME_KEY = "sssam_navbar_cached_at";
+  const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
+
+  const cachedHTML = localStorage.getItem(CACHE_KEY);
+  const cachedAt = parseInt(localStorage.getItem(CACHE_TIME_KEY) || "0", 10);
+  const isCacheValid = cachedHTML && (Date.now() - cachedAt < CACHE_TTL);
+
+  if (isCacheValid) {
+    // Instant render from cache (0ms network delay)
+    initNavbarHTML(cachedHTML);
+    // Silently refresh cache in background
+    fetch(navPath)
+      .then((res) => res.text())
+      .then((html) => {
+        localStorage.setItem(CACHE_KEY, html);
+        localStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
+      })
+      .catch(() => {});
+  } else {
+    // First visit: fetch, render, then cache
+    fetch(navPath)
+      .then((res) => res.text())
+      .then((html) => {
+        initNavbarHTML(html);
+        localStorage.setItem(CACHE_KEY, html);
+        localStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
+      })
+      .catch((err) => console.error("Error loading navbar:", err));
+  }
 });
 
-// Dynamic Footer Loader
+// Dynamic Footer Loader — with localStorage cache
+function initFooterHTML(html) {
+  const footerPlaceholder = document.getElementById("footer-placeholder");
+  if (footerPlaceholder) {
+    footerPlaceholder.innerHTML = html;
+  } else {
+    document.body.insertAdjacentHTML("beforeend", html);
+  }
+  const currentFilename = window.location.pathname.split("/").pop();
+  const isHome = currentFilename === "" || currentFilename === "/" || currentFilename === "index.html";
+  document.querySelectorAll(".footer-box#box2 a").forEach((link) => {
+    const href = link.getAttribute("href");
+    if (isHome && (href === "/" || href === "index.html")) {
+      link.classList.add("active-footer");
+    } else if (!isHome && href === currentFilename) {
+      link.classList.add("active-footer");
+    }
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   const footerPath = window.location.pathname.includes("/courses/")
     ? "../components/footer.html"
     : "components/footer.html";
 
-  fetch(footerPath)
-    .then((res) => res.text())
-    .then((html) => {
-      const footerPlaceholder = document.getElementById("footer-placeholder");
-      if (footerPlaceholder) {
-        footerPlaceholder.innerHTML = html;
-      } else {
-        document.body.insertAdjacentHTML("beforeend", html);
-      }
-      const currentFilename = window.location.pathname.split("/").pop();
-      const isHome = currentFilename === "" || currentFilename === "/" || currentFilename === "index.html";
+  const FOOTER_CACHE_KEY = "sssam_footer_html";
+  const FOOTER_TIME_KEY = "sssam_footer_cached_at";
+  const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
 
-      document.querySelectorAll(".footer-box#box2 a").forEach((link) => {
-        const href = link.getAttribute("href");
-        if (isHome && (href === "/" || href === "index.html")) {
-          link.classList.add("active-footer");
-        } else if (!isHome && href === currentFilename) {
-          link.classList.add("active-footer");
-        }
-      });
-    })
-    .catch((err) => console.error("Error loading footer:", err));
+  const cachedFooter = localStorage.getItem(FOOTER_CACHE_KEY);
+  const cachedAt = parseInt(localStorage.getItem(FOOTER_TIME_KEY) || "0", 10);
+  const isCacheValid = cachedFooter && (Date.now() - cachedAt < CACHE_TTL);
+
+  if (isCacheValid) {
+    // Instant render from cache
+    initFooterHTML(cachedFooter);
+    // Silently refresh in background
+    fetch(footerPath)
+      .then((res) => res.text())
+      .then((html) => {
+        localStorage.setItem(FOOTER_CACHE_KEY, html);
+        localStorage.setItem(FOOTER_TIME_KEY, Date.now().toString());
+      })
+      .catch(() => {});
+  } else {
+    // First visit: fetch, render, then cache
+    fetch(footerPath)
+      .then((res) => res.text())
+      .then((html) => {
+        initFooterHTML(html);
+        localStorage.setItem(FOOTER_CACHE_KEY, html);
+        localStorage.setItem(FOOTER_TIME_KEY, Date.now().toString());
+      })
+      .catch((err) => console.error("Error loading footer:", err));
+  }
 });
 
 // Mouse Tracking for Feature Cards
