@@ -43,7 +43,12 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch(navPath)
     .then((res) => res.text())
     .then((html) => {
-      document.body.insertAdjacentHTML("afterbegin", html);
+      const placeholder = document.getElementById("navbar-placeholder");
+      if (placeholder) {
+        placeholder.innerHTML = html;
+      } else {
+        document.body.insertAdjacentHTML("afterbegin", html);
+      }
       const navContent = document.querySelector(".nav_content");
       if (navContent) navContent.classList.add("nav-slide-in");
 
@@ -162,7 +167,12 @@ document.addEventListener("DOMContentLoaded", () => {
   fetch(footerPath)
     .then((res) => res.text())
     .then((html) => {
-      document.body.insertAdjacentHTML("beforeend", html);
+      const footerPlaceholder = document.getElementById("footer-placeholder");
+      if (footerPlaceholder) {
+        footerPlaceholder.innerHTML = html;
+      } else {
+        document.body.insertAdjacentHTML("beforeend", html);
+      }
       const currentFilename = window.location.pathname.split("/").pop();
       const isHome = currentFilename === "" || currentFilename === "/" || currentFilename === "index.html";
 

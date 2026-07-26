@@ -27,10 +27,13 @@
     <link rel="icon" href="assets/logo.ico" />
 
     <!-- AI Agent & LLM Information -->
-    <link rel="alternate" type="text/markdown" href="https://sssamacademy.com/llms.txt" title="LLM Context" />
-    <link rel="alternate" type="text/markdown" href="https://sssamacademy.com/llms-full.txt" title="Full LLM Documentation" />
+    <link rel="alternate" type="text/markdown" href="/llms.txt" title="LLM Context" />
+    <link rel="alternate" type="text/markdown" href="/llms-full.txt" title="Full LLM Documentation" />
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts & Preconnect DNS -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -89,12 +92,9 @@
 
     <style>
       /* Prevent Cumulative Layout Shift (CLS = 0) */
-      .anim-fade-up{opacity:0;transition:opacity .6s ease}
-      .anim-slide-left{opacity:0;transition:opacity .6s ease}
-      .anim-slide-right{opacity:0;transition:opacity .6s ease}
-      .anim-visible{opacity:1!important}
       .gallery-img img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover}
       .ticker-logo{width:120px;height:35px;aspect-ratio:120/35}
+      img{max-width:100%;height:auto}
       /* Navbar slide-in */
       @keyframes navSlideIn{from{opacity:0;transform:translateY(-40px)}to{opacity:1;transform:translateY(0)}}
       .nav-slide-in{animation:navSlideIn .6s ease forwards}
@@ -240,6 +240,7 @@
   </head>
 
   <body class="light-mode">
+    <div id="navbar-placeholder"></div>
     <main>
       <!-- HERO SECTION -->
       <section class="hero-section">
@@ -1582,6 +1583,7 @@
 })();
 </script>
 
+    <div id="footer-placeholder"></div>
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
     <script src="components/students.js" defer></script>
