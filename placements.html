@@ -4,15 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18132709725"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'AW-18132709725');
-</script>
 
 
   <title>SSSAM Academy Placement Record — IT Course Placements Gurugram</title>
@@ -37,12 +29,16 @@
       <link rel="alternate" type="text/plain" href="/llms.txt" title="LLM Information" />
     <link rel="icon" href="assets/logo.ico">
 
-  <!-- Style Sheets -->
+  <!-- Style Sheets (Non-Blocking) -->
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/webfonts/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="components/style.css">
-  <link rel="stylesheet" href="components/placements.css">
+  <link rel="preload" href="components/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <link rel="preload" href="components/placements.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript>
+    <link rel="stylesheet" href="components/style.css" />
+    <link rel="stylesheet" href="components/placements.css" />
+  </noscript>
 
   <!-- JSON-LD LocalBusiness & Education & AggregateRating Schema -->
   <script type="application/ld+json">
@@ -119,7 +115,8 @@
   }
   </script>
 </head>
-<body class="light-mode placements-page">`n    <div id="navbar-placeholder"></div>
+<body class="light-mode placements-page">
+    <div id="navbar-placeholder"></div>
 
   <!-- Hero Section -->
   <section class="pl-hero">
