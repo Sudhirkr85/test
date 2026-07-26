@@ -47,6 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (verifyForm) {
           setTimeout(() => {
             verifyForm.dispatchEvent(new Event("submit"));
+            setTimeout(() => {
+              const res = document.getElementById("verifyResult");
+              if (res) res.scrollIntoView({ behavior: "smooth", block: "center" });
+            }, 300);
           }, 100);
         }
       }
@@ -135,6 +139,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (t) t.style.color = "#0f172a";
         }
 
+        verifyResult.scrollIntoView({ behavior: "smooth", block: "center" });
         showToast("Success", "Certificate verification successful!", false);
 
       } catch (err) {
@@ -145,6 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
             <div>${err.message}</div>
           </div>
         `;
+        verifyResult.scrollIntoView({ behavior: "smooth", block: "center" });
         showToast("Error", err.message, true);
       } finally {
         btn.disabled = false;

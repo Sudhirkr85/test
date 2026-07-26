@@ -69,7 +69,7 @@
     card.hidden = false;
     card.classList.toggle("error", !!isError);
     card.innerHTML = html;
-    card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    card.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 
   function setLoading(button, isLoading, text) {
@@ -643,22 +643,11 @@
 
   if (certNoParam) {
     if (dobParam) {
-      const downloadCertInput = document.getElementById("downloadCertificateNumber");
-      const downloadDobInput = document.getElementById("downloadDob");
-      if (downloadCertInput && downloadDobInput) {
-        downloadCertInput.value = certNoParam;
-        downloadDobInput.value = dobParam;
-      }
+      window.location.replace(`/certificate-services.html?tab=download&cert=${encodeURIComponent(certNoParam)}&dob=${encodeURIComponent(dobParam)}`);
+      return;
     } else {
-      const verifyInput = document.getElementById("verifyCertificateNumber");
-      if (verifyInput) {
-        verifyInput.value = certNoParam;
-        if (verifyForm) {
-          setTimeout(() => {
-            verifyForm.dispatchEvent(new Event("submit"));
-          }, 100);
-        }
-      }
+      window.location.replace(`/certificate-services.html?tab=verify&cert=${encodeURIComponent(certNoParam)}`);
+      return;
     }
   }
 })();
