@@ -108,8 +108,13 @@
       .info-card:hover{border-left-color:#e0a730!important}
     </style>
 
-    <link rel="stylesheet" href="components/style.css" />
-    <link rel="stylesheet" href="style.css" />
+    <!-- Non-Blocking Stylesheets -->
+    <link rel="preload" href="components/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript>
+      <link rel="stylesheet" href="components/style.css" />
+      <link rel="stylesheet" href="style.css" />
+    </noscript>
 
     <!-- LOCAL BUSINESS SCHEMA -->
     <script type="application/ld+json">
