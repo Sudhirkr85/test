@@ -92,14 +92,14 @@ document.addEventListener("DOMContentLoaded", () => {
   --------------------------------*/
   gsap.from(".courses-hero h1", {
     opacity: 0,
-    y: -30,
+    opacity: 0,
     duration: 1.1,
     ease: "power3.out"
   });
 
   gsap.from(".courses-hero p", {
     opacity: 0,
-    y: -20,
+    opacity: 0,
     delay: 0.2,
     duration: 1,
     ease: "power3.out"
@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   gsap.from(".hero-actions", {
     opacity: 0,
-    y: 20,
+    opacity: 0,
     delay: 0.3,
     duration: 1,
     ease: "power3.out"

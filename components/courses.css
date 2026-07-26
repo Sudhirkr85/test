@@ -357,6 +357,7 @@ body.light-mode .course-item:hover {
 .course-thumb {
   width: 100%;
   height: 190px;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 12px;
   flex-shrink: 0;
@@ -3824,4 +3825,12 @@ body.light-mode #enroll-html-css-course-gurugram .btn-outline:hover {
 body.light-mode .course-demo-form select option {
   background: #ffffff;
   color: #111111;
+}
+/* Prevent CLS during FontAwesome SVG replacement */
+.cat-tab i, .cat-tab svg {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  text-align: center;
 }
