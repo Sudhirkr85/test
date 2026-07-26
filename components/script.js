@@ -147,7 +147,6 @@ function initNavbarHTML(html) {
           link.classList.add("active");
         }
       });
-    })
 }
 
 document.addEventListener("DOMContentLoaded", () => {

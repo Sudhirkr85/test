@@ -37,7 +37,7 @@ body.light-mode {
    ============================================================ */
 .gallery-hero {
   position: relative;
-  padding: 90px 24px 64px;
+  padding: 24px 24px 64px;
   text-align: center;
   overflow: hidden;
   background: linear-gradient(160deg, #111 0%, #1a1508 50%, #0f0e0e 100%);

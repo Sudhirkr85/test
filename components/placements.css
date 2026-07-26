@@ -107,7 +107,7 @@ body.light-mode {
 /* ===== 1. HERO SECTION ===== */
 .pl-hero {
   background: var(--gradient-hero);
-  padding: 100px 0 80px;
+  padding: 24px 0 60px;
   position: relative;
   overflow: hidden;
 }
