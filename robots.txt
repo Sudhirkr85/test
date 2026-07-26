@@ -1,8 +1,5 @@
 User-agent: *
 Allow: /
-Disallow: /certificate.html
-Disallow: /apply.html
-Disallow: /check-status.html
 
 # AI Agent & LLM Crawlers
 User-agent: Google-Extended
@@ -21,7 +18,10 @@ User-agent: ClaudeBot
 Allow: /
 
 Sitemap: https://sssamacademy.com/sitemap.xml
-# LLM Information Context
+
+# LLM Context Documents
+llms.txt: /llms.txt
+llms-full.txt: /llms-full.txt
 llms.txt: https://sssamacademy.com/llms.txt
 llms-full.txt: https://sssamacademy.com/llms-full.txt
 
