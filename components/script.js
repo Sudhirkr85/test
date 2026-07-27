@@ -93,19 +93,19 @@ function initNavbarHTML(html) {
         });
       });
 
-      // Theme Toggle Functionality — Default to Light Mode (White)
+      // Theme Toggle Functionality — Inverted icons: Show Moon in Light Mode, Sun in Dark Mode
       const themeToggle = document.getElementById("themeToggle");
       const mobileThemeToggle = document.getElementById("mobileThemeToggle");
       const savedTheme = localStorage.getItem("theme");
 
       if (savedTheme === "dark") {
         document.body.classList.remove("light-mode");
-        if (themeToggle) themeToggle.textContent = "🌙";
-        if (mobileThemeToggle) mobileThemeToggle.textContent = "🌙";
-      } else {
-        document.body.classList.add("light-mode");
         if (themeToggle) themeToggle.textContent = "☀️";
         if (mobileThemeToggle) mobileThemeToggle.textContent = "☀️";
+      } else {
+        document.body.classList.add("light-mode");
+        if (themeToggle) themeToggle.textContent = "🌙";
+        if (mobileThemeToggle) mobileThemeToggle.textContent = "🌙";
       }
 
       if (themeToggle) {
@@ -113,8 +113,8 @@ function initNavbarHTML(html) {
           document.body.classList.toggle("light-mode");
           const isLight = document.body.classList.contains("light-mode");
           localStorage.setItem("theme", isLight ? "light" : "dark");
-          themeToggle.textContent = isLight ? "☀️" : "🌙";
-          if (mobileThemeToggle) mobileThemeToggle.textContent = isLight ? "☀️" : "🌙";
+          themeToggle.textContent = isLight ? "🌙" : "☀️";
+          if (mobileThemeToggle) mobileThemeToggle.textContent = isLight ? "🌙" : "☀️";
         });
       }
 
@@ -123,16 +123,18 @@ function initNavbarHTML(html) {
           document.body.classList.toggle("light-mode");
           const isLight = document.body.classList.contains("light-mode");
           localStorage.setItem("theme", isLight ? "light" : "dark");
-          if (themeToggle) themeToggle.textContent = isLight ? "☀️" : "🌙";
-          mobileThemeToggle.textContent = isLight ? "☀️" : "🌙";
+          if (themeToggle) themeToggle.textContent = isLight ? "🌙" : "☀️";
+          mobileThemeToggle.textContent = isLight ? "🌙" : "☀️";
         });
       }
 
-      // Active Menu Item Highlighter
-      const currentFilename = window.location.pathname.split("/").pop();
+      // Active Menu Item Highlighter (Supports Sub-Pages and Parent Dropdowns)
+      const currentPath = window.location.pathname;
+      const currentFilename = currentPath.split("/").pop();
       const isHome = currentFilename === "" || currentFilename === "/" || currentFilename === "index.html";
+      const isCoursePage = currentPath.includes("/courses/");
 
-      document.querySelectorAll(".nav-links a, .mobile-menu a").forEach((link) => {
+      document.querySelectorAll(".nav-links a, .mobile-menu a, .dropdown-menu a, .mobile-dropdown-menu a").forEach((link) => {
         const href = link.getAttribute("href");
         let linkFilename = "";
         try {
@@ -141,10 +143,26 @@ function initNavbarHTML(html) {
           linkFilename = (href || "").split("/").pop().split("#")[0];
         }
 
+        let isActive = false;
         if (isHome && (href === "/" || href === "index.html")) {
-          link.classList.add("active");
+          isActive = true;
+        } else if (isCoursePage && (href === "/courses.html" || linkFilename === "courses.html")) {
+          isActive = true;
         } else if (!isHome && linkFilename === currentFilename && linkFilename !== "") {
+          isActive = true;
+        }
+
+        if (isActive) {
           link.classList.add("active");
+          
+          // Highlight parent dropdown toggle if link is inside dropdown
+          const dropdownMenu = link.closest(".dropdown-menu, .mobile-dropdown-menu");
+          if (dropdownMenu) {
+            const parentToggle = dropdownMenu.parentElement.querySelector(".dropdown-toggle, .mobile-dropdown-toggle");
+            if (parentToggle) {
+              parentToggle.classList.add("active");
+            }
+          }
         }
       });
 }
@@ -154,36 +172,17 @@ document.addEventListener("DOMContentLoaded", () => {
     ? "../components/navbar.html"
     : "components/navbar.html";
 
-  const CACHE_KEY = "sssam_navbar_html";
-  const CACHE_TIME_KEY = "sssam_navbar_cached_at";
-  const CACHE_TTL = 24 * 60 * 60 * 1000; // 24 hours
+  // Clear previous localStorage caches if any to prevent stale render
+  localStorage.removeItem("sssam_navbar_html");
+  localStorage.removeItem("sssam_navbar_cached_at");
 
-  const cachedHTML = localStorage.getItem(CACHE_KEY);
-  const cachedAt = parseInt(localStorage.getItem(CACHE_TIME_KEY) || "0", 10);
-  const isCacheValid = cachedHTML && (Date.now() - cachedAt < CACHE_TTL);
-
-  if (isCacheValid) {
-    // Instant render from cache (0ms network delay)
-    initNavbarHTML(cachedHTML);
-    // Silently refresh cache in background
-    fetch(navPath)
-      .then((res) => res.text())
-      .then((html) => {
-        localStorage.setItem(CACHE_KEY, html);
-        localStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
-      })
-      .catch(() => {});
-  } else {
-    // First visit: fetch, render, then cache
-    fetch(navPath)
-      .then((res) => res.text())
-      .then((html) => {
-        initNavbarHTML(html);
-        localStorage.setItem(CACHE_KEY, html);
-        localStorage.setItem(CACHE_TIME_KEY, Date.now().toString());
-      })
-      .catch((err) => console.error("Error loading navbar:", err));
-  }
+  // Always fetch fresh navbar HTML to guarantee latest layout and styles
+  fetch(navPath)
+    .then((res) => res.text())
+    .then((html) => {
+      initNavbarHTML(html);
+    })
+    .catch((err) => console.error("Error loading navbar:", err));
 });
 
 // Dynamic Footer Loader — with localStorage cache

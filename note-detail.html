@@ -26,7 +26,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" /></noscript>
-    <link rel="stylesheet" href="/components/style.css" />
+    <link rel="stylesheet" href="/components/style.css?v=1.4" />
     <link rel="stylesheet" href="/style.css" />
     <style>
       .detail-container {
@@ -574,7 +574,7 @@
       };
 
       document.addEventListener("DOMContentLoaded", async () => {
-        // Navbar & footer are loaded by /components/script.js
+        // Navbar & footer are loaded by /components/script.js?v=1.4
         await loadNoteDetails();
         setupGateSubmission();
       });
@@ -858,6 +858,6 @@
       });
     </script>
     <script src="/js/static-notes.js" defer></script>
-    <script src="/components/script.js" defer></script>
+    <script src="/components/script.js?v=1.4" defer></script>
   </body>
 </html>
