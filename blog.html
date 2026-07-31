@@ -179,16 +179,22 @@
         border-color: rgba(224,167,48,0.35);
       }
       .blog-card-img-wrap {
-        height: 210px;
+        height: 220px;
         position: relative;
-        background: #1f2937;
+        background: #0f172a;
         overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      body.light-mode .blog-card-img-wrap {
+        background: #f1f5f9;
       }
       .blog-card-img {
         width: 100%;
         height: 100%;
-        object-fit: contain;
-        background-color: #0f172a;
+        object-fit: cover;
+        object-position: center top;
         transition: transform 0.5s ease;
       }
       .blog-card:hover .blog-card-img {
@@ -348,11 +354,10 @@
 
           <!-- STATIC CARD 2 — Data Analyst Trainer Hiring Post -->
           <article class="blog-card" itemscope itemtype="https://schema.org/JobPosting">
-            <div class="blog-card-img-wrap" style="background:#0f172a;">
+            <div class="blog-card-img-wrap">
               <img src="/assets/data_analytics_blog_banner.webp"
                    alt="Data Analyst Trainer Hiring Alert at SSSAM Academy Gurugram"
                    class="blog-card-img"
-                   style="object-fit: contain; width: 100%; height: 100%;"
                    width="400" height="200"
                    loading="eager" />
               <span class="blog-card-badge" style="background:#10b981;color:#fff;">Hiring</span>
@@ -379,11 +384,10 @@
 
           <!-- STATIC CARD 3 — Counselor Hiring Post -->
           <article class="blog-card" itemscope itemtype="https://schema.org/JobPosting">
-            <div class="blog-card-img-wrap" style="background:#0f172a;">
+            <div class="blog-card-img-wrap">
               <img src="/assets/counselor_hiring.webp"
                    alt="Academic Counselor & Admission Officer Hiring Alert at SSSAM Academy Gurugram"
                    class="blog-card-img"
-                   style="object-fit: contain; width: 100%; height: 100%;"
                    width="400" height="200"
                    loading="lazy" />
               <span class="blog-card-badge" style="background:#10b981;color:#fff;">Hiring</span>
@@ -439,7 +443,7 @@
 
           <!-- STATIC CARD 5 — Data Analyst Roadmap -->
           <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
-            <div class="blog-card-img-wrap" style="background:#0f172a;">
+            <div class="blog-card-img-wrap">
               <img src="/assets/data_analyst_roadmap.webp"
                    alt="Data Analyst learning roadmap and career guide 2026"
                    class="blog-card-img"
@@ -498,7 +502,7 @@
 
           <!-- STATIC CARD 7 — Digital Marketing Roadmap -->
           <article class="blog-card" itemscope itemtype="https://schema.org/BlogPosting">
-            <div class="blog-card-img-wrap" style="background:#0f172a;">
+            <div class="blog-card-img-wrap">
               <img src="/assets/digital_marketing_roadmap.webp"
                    alt="Digital Marketing training roadmap 2026 by SSSAM Academy"
                    class="blog-card-img"
