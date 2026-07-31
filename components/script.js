@@ -55,6 +55,13 @@ function initNavbarHTML(html) {
           clone.addEventListener("click", () => {
             mobileMenu.classList.toggle("show");
           });
+
+          // Close mobile menu when clicking a direct navigation link
+          mobileMenu.querySelectorAll("a:not(.mobile-dropdown-toggle)").forEach((link) => {
+            link.addEventListener("click", () => {
+              mobileMenu.classList.remove("show");
+            });
+          });
         }
       };
       window.initNavbarBurger();
