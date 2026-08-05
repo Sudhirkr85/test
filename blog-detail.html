@@ -505,16 +505,36 @@
             "title": post.hiringDetails?.role || post.title,
             "description": post.summary,
             "datePosted": post.createdAt,
+            "employmentType": "FULL_TIME",
+            "validThrough": (() => {
+              const d = new Date(post.createdAt);
+              d.setMonth(d.getMonth() + 6);
+              return d.toISOString().split('T')[0];
+            })(),
             "hiringOrganization": {
               "@type": "Organization",
-              "name": post.hiringDetails?.company || "SSSAM Partner Company"
+              "name": post.hiringDetails?.company || "SSSAM Academy",
+              "url": "https://sssamacademy.com"
             },
             "jobLocation": {
               "@type": "Place",
               "address": {
                 "@type": "PostalAddress",
+                "streetAddress": "M24 Ground Floor, Old DLF Colony, Sector 14",
                 "addressLocality": post.hiringDetails?.location || "Gurugram",
+                "addressRegion": "Haryana",
+                "postalCode": "122001",
                 "addressCountry": "IN"
+              }
+            },
+            "baseSalary": {
+              "@type": "MonetaryAmount",
+              "currency": "INR",
+              "value": {
+                "@type": "QuantitativeValue",
+                "minValue": 300000,
+                "maxValue": 1000000,
+                "unitText": "YEAR"
               }
             }
           };

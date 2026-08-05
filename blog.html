@@ -354,6 +354,26 @@
 
           <!-- STATIC CARD 2 — Data Analyst Trainer Hiring Post -->
           <article class="blog-card" itemscope itemtype="https://schema.org/JobPosting">
+            <!-- Hidden required JobPosting fields -->
+            <meta itemprop="employmentType" content="FULL_TIME" />
+            <meta itemprop="validThrough" content="2026-12-31" />
+            <span itemprop="baseSalary" itemscope itemtype="https://schema.org/MonetaryAmount" style="display:none;">
+              <meta itemprop="currency" content="INR" />
+              <span itemprop="value" itemscope itemtype="https://schema.org/QuantitativeValue">
+                <meta itemprop="minValue" content="300000" />
+                <meta itemprop="maxValue" content="600000" />
+                <meta itemprop="unitText" content="YEAR" />
+              </span>
+            </span>
+            <span itemprop="jobLocation" itemscope itemtype="https://schema.org/Place" style="display:none;">
+              <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <meta itemprop="streetAddress" content="M24 Ground Floor, Old DLF Colony, Sector 14" />
+                <meta itemprop="addressLocality" content="Gurugram" />
+                <meta itemprop="addressRegion" content="Haryana" />
+                <meta itemprop="postalCode" content="122001" />
+                <meta itemprop="addressCountry" content="IN" />
+              </span>
+            </span>
             <div class="blog-card-img-wrap">
               <img src="/assets/data_analytics_blog_banner.webp"
                    alt="Data Analyst Trainer Hiring Alert at SSSAM Academy Gurugram"
@@ -384,6 +404,26 @@
 
           <!-- STATIC CARD 3 — Counselor Hiring Post -->
           <article class="blog-card" itemscope itemtype="https://schema.org/JobPosting">
+            <!-- Hidden required JobPosting fields -->
+            <meta itemprop="employmentType" content="FULL_TIME" />
+            <meta itemprop="validThrough" content="2026-12-31" />
+            <span itemprop="baseSalary" itemscope itemtype="https://schema.org/MonetaryAmount" style="display:none;">
+              <meta itemprop="currency" content="INR" />
+              <span itemprop="value" itemscope itemtype="https://schema.org/QuantitativeValue">
+                <meta itemprop="minValue" content="240000" />
+                <meta itemprop="maxValue" content="480000" />
+                <meta itemprop="unitText" content="YEAR" />
+              </span>
+            </span>
+            <span itemprop="jobLocation" itemscope itemtype="https://schema.org/Place" style="display:none;">
+              <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <meta itemprop="streetAddress" content="M24 Ground Floor, Old DLF Colony, Sector 14" />
+                <meta itemprop="addressLocality" content="Gurugram" />
+                <meta itemprop="addressRegion" content="Haryana" />
+                <meta itemprop="postalCode" content="122001" />
+                <meta itemprop="addressCountry" content="IN" />
+              </span>
+            </span>
             <div class="blog-card-img-wrap">
               <img src="/assets/counselor_hiring.webp"
                    alt="Academic Counselor & Admission Officer Hiring Alert at SSSAM Academy Gurugram"
@@ -659,8 +699,36 @@
           const tagsHtml = (item.tags || []).slice(0, 3).map(t =>
             `<span class="blog-card-tag">${t}</span>`).join('');
 
+          // Build hidden JobPosting required fields for Hiring cards
+          const hiringMeta = item.type === 'Hiring' ? `
+            <meta itemprop="datePosted" content="${dateISO}" />
+            <meta itemprop="employmentType" content="FULL_TIME" />
+            <meta itemprop="validThrough" content="${new Date(new Date(item.createdAt).setMonth(new Date(item.createdAt).getMonth() + 6)).toISOString().split('T')[0]}" />
+            <span itemprop="hiringOrganization" itemscope itemtype="https://schema.org/Organization" style="display:none;">
+              <meta itemprop="name" content="${(item.hiringDetails && item.hiringDetails.company) || 'SSSAM Academy'}" />
+              <meta itemprop="url" content="https://sssamacademy.com" />
+            </span>
+            <span itemprop="jobLocation" itemscope itemtype="https://schema.org/Place" style="display:none;">
+              <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                <meta itemprop="streetAddress" content="M24 Ground Floor, Old DLF Colony, Sector 14" />
+                <meta itemprop="addressLocality" content="${(item.hiringDetails && item.hiringDetails.location) || 'Gurugram'}" />
+                <meta itemprop="addressRegion" content="Haryana" />
+                <meta itemprop="postalCode" content="122001" />
+                <meta itemprop="addressCountry" content="IN" />
+              </span>
+            </span>
+            <span itemprop="baseSalary" itemscope itemtype="https://schema.org/MonetaryAmount" style="display:none;">
+              <meta itemprop="currency" content="INR" />
+              <span itemprop="value" itemscope itemtype="https://schema.org/QuantitativeValue">
+                <meta itemprop="minValue" content="300000" />
+                <meta itemprop="maxValue" content="1000000" />
+                <meta itemprop="unitText" content="YEAR" />
+              </span>
+            </span>` : '';
+
           return `
             <article class="blog-card" itemscope itemtype="https://schema.org/${item.type === 'Hiring' ? 'JobPosting' : 'BlogPosting'}">
+              ${hiringMeta}
               <div class="blog-card-img-wrap">
                 <img src="${imgUrl}"
                      alt="${formattedTitle} — SSSAM Academy"
